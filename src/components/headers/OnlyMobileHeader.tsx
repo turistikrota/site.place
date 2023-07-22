@@ -1,6 +1,6 @@
 import Logo from '../Logo'
 //import AccountHeaderButton from './AccountHeaderButton'
-import MobileHeader from '@turistikrota/ui/headers/mobile'
+import MobileHeader from '@turistikrota/ui/cjs/headers/mobile'
 import HeaderLogo from './HeaderLogo'
 
 export default function OnlyMobileHeader() {

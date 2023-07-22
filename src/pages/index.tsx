@@ -1,6 +1,15 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import MapLayout from '~/layouts/MapLayout'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 export default function Home() {
-  return <div>buraya content switcher lütfen</div>
+  return <MapLayout>buraya content switcher lütfen</MapLayout>
+}
+
+export async function getServerSideProps({ locale }: any) {
+  console.log('locale::', locale)
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [])),
+    },
+  }
 }

@@ -1,5 +1,5 @@
 import OnlyMobileHeader from '~/components/headers/OnlyMobileHeader'
-import { TooltipProvider } from '@turistikrota/ui/tooltip/provider'
+import { TooltipProvider } from '@turistikrota/ui/cjs/tooltip/provider'
 import { useSizeWithoutHeader } from '~/hooks/dom'
 
 export default function MapLayout({ children }: React.PropsWithChildren) {
