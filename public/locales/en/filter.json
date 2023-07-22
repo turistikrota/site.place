@@ -1,0 +1,97 @@
+{
+  "filter": {
+    "title": "Filter",
+    "city": "City",
+    "features": "Features",
+    "components": {
+      "city-select": {
+        "title": "Select City",
+        "text": "City"
+      },
+      "distance": {
+        "title": "Distance",
+        "text": "Distance",
+        "description": "Enter how many kilometers from the city center you want to see the places you want to see.",
+        "label": "Distance (km)"
+      },
+      "features": {
+        "title": "Select Feature",
+        "text": "Features",
+        "description": "Choose which features you want to see the venues."
+      },
+      "time-spent": {
+        "title": "Avg. Elapsed Time",
+        "text": "Average Elapsed Time",
+        "description": "Determine the average time interval you will spend in venues. The time interval is calculated in minutes."
+      },
+      "query": {
+        "title": "Word Search",
+        "text": "Word Search",
+        "description": "Search venue name, description, or tags.",
+        "label": "Word"
+      },
+      "is-payed": {
+        "title": "Paid Venues",
+        "text": "Paid Locations",
+        "description": "Check this option if you want to see paid venues.",
+        "label": "Paying Places"
+      },
+      "types": {
+        "title": "Select Type",
+        "text": "Types",
+        "description": "Choose which types of venues you want to see.",
+        "translation": {
+          "eating": "Eating - Drinking",
+          "coffee": "Coffee",
+          "bar": "bar",
+          "beach": "beach",
+          "amaze": "entertainment"
+        }
+      },
+      "review": {
+        "title": "Review Score",
+        "text": "Review Score",
+        "description": "Determine the review range of venues.",
+        "labels": {
+          "x": "{star} Stars and Up",
+          "last": "{star} stars only"
+        }
+      },
+      "other": {
+        "title": "Other Filters"
+      }
+    },
+    "clear-all": "Clear All Filters",
+    "clear-filter": "Clear Filter",
+    "apply": "Apply",
+    "see-results": "See Results ({count})",
+    "results": "{count} results found",
+    "tools": {
+      "min": "At least {time} minutes",
+      "max": "max {time} minutes",
+      "range": "{min} - {max} minutes",
+      "paid": "Paid"
+    }
+  },
+  "switch": {
+    "filter": "Filter",
+    "sort": "Sort"
+  },
+  "sort": {
+    "mobile": {
+      "title": "Sort",
+      "sort-by": {
+        "title": "Sort by",
+        "most_popular": "Popularity",
+        "most_liked": "Liked",
+        "most_recent": "Date Added",
+        "nearest": "Nearness"
+      },
+      "order-by": {
+        "title": "Sort Method",
+        "desc": "descending",
+        "asc": "asc"
+      }
+    }
+  }
+}

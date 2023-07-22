@@ -1,1 +1,33 @@
-{}
+{
+  "ux": {
+    "button": {
+      "show": "Göster",
+      "hide": "Gizle",
+      "close": "Kapat",
+      "save": "Kaydet",
+      "cancel": "İptal",
+      "zoom-in": "Yakınlaştır",
+      "zoom-out": "Uzaklaştır",
+      "rotate-left": "Sola döndür",
+      "rotate-right": "Sağa döndür",
+      "flip-horizontal": "Yatay çevir",
+      "flip-vertical": "Dikey çevir",
+      "clear": "Temizle",
+      "clear-filter": "Filtreleri temizle"
+    },
+    "select": {
+      "default": "Seçiniz"
+    },
+    "label": {
+      "result": "Sonuç"
+    },
+    "input": {
+      "invalid": {
+        "min-max": "En çok değeri en az değerinden küçük olamaz"
+      },
+      "search": "Ara",
+      "min": "En az",
+      "max": "En çok"
+    }
+  }
+}

@@ -11,6 +11,7 @@
   "dependencies": {
     "@turistikrota/ui": "^0.1.2",
     "autoprefixer": "10.4.14",
+    "axios": "^1.4.0",
     "boxicons": "^2.1.4",
     "i18next": "^23.2.11",
     "next": "13.4.12",
