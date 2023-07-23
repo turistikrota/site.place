@@ -13,7 +13,13 @@ type CacheEntity<T = unknown> = {
   expiresAt: number
 }
 
-export const useQuery = <T = unknown,>(url: string, cache: boolean = false): UseQueryResult<T> => {
+type Options = {
+  cache?: boolean
+  method?: 'GET' | 'POST' | 'PUT' | 'DELETE'
+  params?: any
+}
+
+export const useQuery = <T = unknown,>(url: string, opts: Options = { cache: false }): UseQueryResult<T> => {
   const [data, setData] = useState<T | null>(null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [error, setError] = useState<Error | null>(null)
@@ -34,11 +40,16 @@ export const useQuery = <T = unknown,>(url: string, cache: boolean = false): Use
       }
     }
     if (cached) return
-    httpClient
-      .get(url)
+    let promise
+    if (opts && opts.method === 'POST') {
+      promise = httpClient.post(url, opts.params)
+    } else {
+      promise = httpClient.get(url)
+    }
+    promise
       .then((res) => {
         setData(res.data)
-        if (cache && typeof window !== 'undefined') {
+        if (opts.cache && typeof window !== 'undefined') {
           const cacheEntity: CacheEntity<T> = {
             data: res.data,
             expiresAt: Date.now() + 1000 * 60 * 60 * 24,
@@ -57,7 +68,7 @@ export const useQuery = <T = unknown,>(url: string, cache: boolean = false): Use
   }
 
   useEffect(() => {
-    fetcher(url, cache)
+    fetcher(url, opts.cache)
   }, [url])
 
   return { data, isLoading, error, refetch: () => fetcher(url, true) }

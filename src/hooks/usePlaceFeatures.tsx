@@ -13,7 +13,7 @@ export const usePlaceFeatures = (): UsePlaceFeaturesResponse => {
     data: features,
     isLoading,
     error,
-  } = useQuery<PlaceFeatureListItem[]>(apiUrl(Services.Place, '/feature'), true)
+  } = useQuery<PlaceFeatureListItem[]>(apiUrl(Services.Place, '/feature'), { cache: true })
   return {
     features: features || [],
     isLoading,
