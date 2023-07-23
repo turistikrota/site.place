@@ -22,7 +22,9 @@
       "time-spent": {
         "title": "Avg. Elapsed Time",
         "text": "Average Elapsed Time",
-        "description": "Determine the average time interval you will spend in venues. The time interval is calculated in minutes."
+        "description": "Determine the average time interval you will spend in venues. The time interval is calculated in minutes.",
+        "minText": "En az",
+        "maxText": "En çok"
       },
       "query": {
         "title": "Word Search",
