@@ -12,8 +12,8 @@
     },
     "order-by": {
       "title": "Sort Method",
-      "desc": "descending",
-      "asc": "asc",
+      "desc": "Descending",
+      "asc": "Ascending",
       "clear-text": "Clear",
       "clear-aria-label": "Clear Sort Method"
     }

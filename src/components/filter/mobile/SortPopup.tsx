@@ -45,7 +45,7 @@ const SortSection: React.FC<SortSectionProps> = ({ selected, onSelect }) => {
           checked={currentSort === sort}
           onChange={() => onSelect(sort)}
         >
-          {t(sort)}
+          {t(`mobile.sort-by.${sort}`)}
         </RadioGroup.Item>
       ))}
     </RadioGroup>
@@ -76,7 +76,7 @@ const OrderSection: React.FC<OrderSectionProps> = ({ selected, onSelect }) => {
           checked={currentOrder === order}
           onChange={() => onSelect(order)}
         >
-          {t(order)}
+          {t(`mobile.order-by.${order}`)}
         </RadioGroup.Item>
       ))}
     </RadioGroup>
