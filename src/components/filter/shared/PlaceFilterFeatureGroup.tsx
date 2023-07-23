@@ -3,12 +3,10 @@ import { useEffect, useState } from 'react'
 import { DesktopInfoBox, MobileInfoBox } from '@turistikrota/ui/accessibility/info'
 import Checkbox from '@turistikrota/ui/form/checkbox'
 import { useIsDesktop } from '@turistikrota/ui/hooks/dom'
-import { useQuery } from '~/hooks/query'
-import { PlaceFeatureListItem } from '~/features/place.types'
-import { Services, apiUrl } from '~/config/services'
 import { usePlaceFilter } from '~/features/place.filter'
 import { Locales } from '@turistikrota/ui/types'
 import Spin from 'sspin'
+import { usePlaceFeatures } from '~/hooks/usePlaceFeatures'
 
 type Props = {
   onClose: () => void
@@ -16,7 +14,7 @@ type Props = {
 
 const PLaceFilterFeatureGroup: React.FC = () => {
   const [selected, setSelected] = useState<string[]>([])
-  const { data: features, isLoading } = useQuery<PlaceFeatureListItem[]>(apiUrl(Services.Place, '/feature'))
+  const { features, isLoading } = usePlaceFeatures()
   const isDesktop = useIsDesktop()
   const { t, i18n } = useTranslation('filter.components.features')
   const { query, push } = usePlaceFilter()
@@ -43,21 +41,20 @@ const PLaceFilterFeatureGroup: React.FC = () => {
     <Spin loading={isLoading}>
       <div className='space-y-4 lg:space-y-0'>
         <MobileInfoBox>{t('description')}</MobileInfoBox>
-        {features &&
-          features.map((feature) => (
-            <Checkbox
-              key={feature.uuid}
-              id={feature.uuid}
-              name='feature'
-              value={selected.includes(feature.uuid)}
-              onChange={() => handleChange(feature.uuid)}
-              reversed={!isDesktop}
-              effect={isDesktop ? 'hover' : undefined}
-            >
-              {feature.translations[i18n.language as Locales].title}
-              <DesktopInfoBox>{feature.translations[i18n.language as Locales].description}</DesktopInfoBox>
-            </Checkbox>
-          ))}
+        {features.map((feature) => (
+          <Checkbox
+            key={feature.uuid}
+            id={feature.uuid}
+            name='feature'
+            value={selected.includes(feature.uuid)}
+            onChange={() => handleChange(feature.uuid)}
+            reversed={!isDesktop}
+            effect={isDesktop ? 'hover' : undefined}
+          >
+            {feature.translations[i18n.language as Locales].title}
+            <DesktopInfoBox>{feature.translations[i18n.language as Locales].description}</DesktopInfoBox>
+          </Checkbox>
+        ))}
       </div>
     </Spin>
   )
