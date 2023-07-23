@@ -1,8 +1,8 @@
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
-import { MobileInfoBox } from '@turistikrota/ui/accessibility/info'
-import Radio from '@turistikrota/ui/form/radio'
-import { useIsDesktop } from '@turistikrota/ui/hooks/dom'
+import { MobileInfoBox } from '@turistikrota/ui/cjs/accessibility/info'
+import Radio from '@turistikrota/ui/cjs/form/radio'
+import { useIsDesktop } from '@turistikrota/ui/cjs/hooks/dom'
 import { usePlaceFilter } from '~/features/place.filter'
 
 const list = [1, 2, 3, 4, 5]

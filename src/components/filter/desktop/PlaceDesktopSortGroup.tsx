@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
-import Dropdown from '@turistikrota/ui/dropdown'
+import Dropdown from '@turistikrota/ui/cjs/dropdown'
 import { Order, Sort } from '~/features/place.types'
 import { usePlaceFilter, usePlaceSort } from '~/features/place.filter'
 

@@ -1,5 +1,5 @@
 import cities from './tr-city-names.json'
-import { turkishSorting } from '@turistikrota/ui/utils/sort'
+import { turkishSorting } from '@turistikrota/ui/cjs/utils/sort'
 
 export type City = (typeof cities)[0]
 

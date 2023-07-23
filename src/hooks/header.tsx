@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useListener } from '@turistikrota/ui/hooks/dom'
+import { useListener } from '@turistikrota/ui/cjs/hooks/dom'
 
 export const useHeaderFixed = () => {
   const [fixed, setFixed] = useState(false)

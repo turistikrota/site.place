@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next'
-import { DesktopInfoBox } from '@turistikrota/ui/accessibility/info'
+import { DesktopInfoBox } from '@turistikrota/ui/cjs/accessibility/info'
 import PlaceFilterDistanceGroup from '../shared/PlaceFilterDistanceGroup'
 import PlaceDesktopFilterSection from './PlaceDesktopFilterSection'
 import PlaceDesktopHead from './PlaceDesktopHead'

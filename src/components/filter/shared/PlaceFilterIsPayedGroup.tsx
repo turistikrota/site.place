@@ -1,8 +1,8 @@
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
-import { DesktopInfoBox, MobileInfoBox } from '@turistikrota/ui/accessibility/info'
-import Checkbox from '@turistikrota/ui/form/checkbox'
-import { useIsDesktop } from '@turistikrota/ui/hooks/dom'
+import { DesktopInfoBox, MobileInfoBox } from '@turistikrota/ui/cjs/accessibility/info'
+import Checkbox from '@turistikrota/ui/cjs/form/checkbox'
+import { useIsDesktop } from '@turistikrota/ui/cjs/hooks/dom'
 import { usePlaceFilter } from '~/features/place.filter'
 
 export default function PlaceFilterIsPayedGroup() {

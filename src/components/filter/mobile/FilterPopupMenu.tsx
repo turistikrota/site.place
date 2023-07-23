@@ -3,7 +3,7 @@ import { findCityByCoordinates } from '~/static/location/cities'
 import FilterGroup from './FilterGroup'
 import { PlaceFeatureListItem, PlaceFilterRequest, isPlaceType, isTimeSpent } from '~/features/place.types'
 import { FilterComponents } from './types'
-import { Locales, isCoordinates } from '@turistikrota/ui/types'
+import { Locales, isCoordinates } from '@turistikrota/ui/cjs/types'
 import { usePlaceFilter } from '~/features/place.filter'
 import { usePlaceFeatures } from '~/hooks/usePlaceFeatures'
 

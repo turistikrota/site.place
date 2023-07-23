@@ -1,4 +1,4 @@
-import Carousel from '@turistikrota/ui/carousel'
+import Carousel from '@turistikrota/ui/cjs/carousel'
 import ListFilter from './ListFilter'
 import ListHead from './ListHead'
 import { ContentProps } from '~/features/place.types'

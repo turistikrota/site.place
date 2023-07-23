@@ -1,4 +1,4 @@
-import { ListResponse } from '@turistikrota/ui/types'
+import { ListResponse } from '@turistikrota/ui/cjs/types'
 import { PlaceFilterRequest, PlaceListItem } from '~/features/place.types'
 import { PaginationRequest } from '~/types/pagination'
 import { useQuery } from './query'
