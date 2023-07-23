@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import { City, findCityByCoordinates } from '~/static/location/cities'
 import PlaceFilterCityGroup from '../shared/PlaceFilterCityGroup'

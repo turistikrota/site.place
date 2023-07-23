@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import ClearButton from './ClearButton'
 import { PlaceFilterRequest } from '~/features/place.types'
 import { usePlaceFilter } from '~/features/place.filter'

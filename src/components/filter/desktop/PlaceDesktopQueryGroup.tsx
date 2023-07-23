@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import { DesktopInfoBox } from '@turistikrota/ui/accessibility/info'
 import PlaceFilterQueryGroup from '../shared/PlaceFilterQueryGroup'
 import PlaceDesktopFilterSection from './PlaceDesktopFilterSection'

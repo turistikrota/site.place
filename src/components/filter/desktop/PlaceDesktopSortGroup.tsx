@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import Dropdown from '@turistikrota/ui/dropdown'
 import { Order, Sort } from '~/features/place.types'

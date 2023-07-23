@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import { MobileInfoBox } from '@turistikrota/ui/accessibility/info'
 import Checkbox from '@turistikrota/ui/form/checkbox'

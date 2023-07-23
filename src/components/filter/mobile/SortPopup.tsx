@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import RadioGroup from '@turistikrota/ui/form/radio/group'
 import Popup from '@turistikrota/ui/popup'
