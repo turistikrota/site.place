@@ -35,7 +35,7 @@ const FilterHead: FilterComponent = ({
   onClose,
   onClearAll,
 }) => {
-  const { t } = useTranslation('ux')
+  const { t } = useTranslation('common')
   const { query, push } = usePlaceFilter()
 
   const clear = () => {
@@ -53,8 +53,8 @@ const FilterHead: FilterComponent = ({
               className='text-gray-600 dark:text-gray-300 mr-3 h-full flex items-center'
               onClick={onClose}
               role='button'
-              title={t('button.close')}
-              aria-label={t('button.close')}
+              title={t('ux.button.close')}
+              aria-label={t('ux.button.close')}
             >
               <i className='bx bx-sm bx-arrow-back'></i>
             </span>
@@ -62,11 +62,11 @@ const FilterHead: FilterComponent = ({
           <span className='text-2xl font-semibold'>{title}</span>
         </div>
         {filterKey && !!query.filter[filterKey] && <ClearButton onClear={() => clear()} />}
-        {!filterKey && clearable && <ClearButton onClear={() => onClearAll()} text={t('button.clear-filter')} />}
+        {!filterKey && clearable && <ClearButton onClear={() => onClearAll()} text={t('ux.button.clear-filter')} />}
       </div>
       {!closeable && (
         <span className='text-gray-500 text-sm dark:text-gray-400'>
-          {resultCount} {t('label.result')}
+          {resultCount} {t('ux.label.result')}
         </span>
       )}
     </>
