@@ -111,6 +111,11 @@ type Review = {
   averagePoint: number
 }
 
+export type ContentProps = {
+  loading: boolean
+  data: ListResponse<PlaceListItem> | null
+}
+
 export type Coordinates = [number, number]
 
 export function isPlaceListResponse(response: any): response is ListResponse<PlaceListItem> {

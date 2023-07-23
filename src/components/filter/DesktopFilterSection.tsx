@@ -2,14 +2,8 @@ import { useTranslation } from 'next-i18next'
 import { useHeaderFixed } from '~/hooks/header'
 import PlaceDesktopHead from './desktop/PlaceDesktopHead'
 import PlaceFilterSection from './desktop/PlaceFilterSection'
-import { ListResponse } from '@turistikrota/ui/types'
-import { PlaceListItem } from '~/features/place.types'
+import { ContentProps } from '~/features/place.types'
 import { usePlaceFilter } from '~/features/place.filter'
-
-type ContentProps = {
-  loading: boolean
-  data: ListResponse<PlaceListItem> | null
-}
 
 export default function DesktopFilterSection({ data, loading }: ContentProps) {
   const headerFixed = useHeaderFixed()

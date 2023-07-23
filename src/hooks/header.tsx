@@ -1,5 +1,3 @@
-'use client'
-
 import { useState } from 'react'
 import { useListener } from '@turistikrota/ui/hooks/dom'
 

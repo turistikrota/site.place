@@ -7,15 +7,9 @@ import Condition from '@turistikrota/ui/condition'
 import Popup from '@turistikrota/ui/popup'
 import FilterHead from './FilterPopupHead'
 import FilterMenu from './FilterPopupMenu'
-import { ListResponse } from '@turistikrota/ui/types'
-import { PlaceFilterRequest, PlaceListItem } from '~/features/place.types'
+import { ContentProps, PlaceFilterRequest } from '~/features/place.types'
 import { usePlaceFilter } from '~/features/place.filter'
 import { FilterComponents } from './types'
-
-type ContentProps = {
-  loading: boolean
-  data: ListResponse<PlaceListItem> | null
-}
 
 type CloseableProps = {
   onClose: () => void
