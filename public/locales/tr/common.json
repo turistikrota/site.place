@@ -29,5 +29,9 @@
       "min": "En az",
       "max": "En çok"
     }
+  },
+  "switch": {
+    "filter": "Filtrele",
+    "sort": "Sırala"
   }
 }

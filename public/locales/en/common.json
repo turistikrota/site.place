@@ -29,5 +29,9 @@
       "min": "Min",
       "max": "Max"
     }
+  },
+  "switch": {
+    "filter": "Filter",
+    "sort": "Sort"
   }
 }
