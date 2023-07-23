@@ -7,7 +7,7 @@ import { TimeSpent } from '~/features/place.types'
 import { usePlaceFilter } from '~/features/place.filter'
 
 export default function PlaceFilterTimeSpentGroup() {
-  const { t } = useTranslation('filter.components.time-spent')
+  const { t } = useTranslation('filter')
   const [firstSet, setFirstSet] = useState<boolean>(false)
   const [values, setValues] = useState<TimeSpent>({ min: 0, max: 0 })
   const { query, push } = usePlaceFilter()
@@ -34,14 +34,14 @@ export default function PlaceFilterTimeSpentGroup() {
 
   return (
     <>
-      <MobileInfoBox>{t('description')}</MobileInfoBox>
+      <MobileInfoBox>{t('components.time-spent.description')}</MobileInfoBox>
       <InputRange
         onChange={handleChange}
         values={values}
         min={0}
         size={isDesktop ? 'md' : undefined}
-        minText={t('minText')}
-        maxText={t('maxText')}
+        minText={t('components.time-spent.minText')}
+        maxText={t('components.time-spent.maxText')}
       />
     </>
   )

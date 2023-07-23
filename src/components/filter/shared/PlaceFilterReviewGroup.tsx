@@ -11,7 +11,7 @@ const lastIdx = list.length - 1
 
 export default function PlaceFilterReviewGroup() {
   const [minReview, setMinReview] = useState<number>(0)
-  const { t } = useTranslation('filter.components.review')
+  const { t } = useTranslation('filter')
   const { query, push } = usePlaceFilter()
   const isDesktop = useIsDesktop()
 
@@ -29,7 +29,7 @@ export default function PlaceFilterReviewGroup() {
 
   return (
     <>
-      <MobileInfoBox>{t('description')}</MobileInfoBox>
+      <MobileInfoBox>{t('components.review.description')}</MobileInfoBox>
       <div className='space-y-1 lg:space-y-0 mt-2'>
         {list.map((num, idx) => (
           <Radio
@@ -42,7 +42,7 @@ export default function PlaceFilterReviewGroup() {
             effect={isDesktop ? 'hover' : undefined}
           >
             <i className='bx bx-sm bxs-star text-yellow-400 mr-2 lg:ml-1'></i>
-            {t(lastIdx === idx ? 'labels.last' : 'labels.x', {
+            {t(lastIdx === idx ? 'components.review.labels.last' : 'components.review.labels.x', {
               star: num,
             })}
           </Radio>

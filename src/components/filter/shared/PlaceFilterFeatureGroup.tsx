@@ -16,7 +16,7 @@ const PLaceFilterFeatureGroup: React.FC = () => {
   const [selected, setSelected] = useState<string[]>([])
   const { features, isLoading } = usePlaceFeatures()
   const isDesktop = useIsDesktop()
-  const { t, i18n } = useTranslation('filter.components.features')
+  const { t, i18n } = useTranslation('filter')
   const { query, push } = usePlaceFilter()
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const PLaceFilterFeatureGroup: React.FC = () => {
   return (
     <Spin loading={isLoading}>
       <div className='space-y-4 lg:space-y-0'>
-        <MobileInfoBox>{t('description')}</MobileInfoBox>
+        <MobileInfoBox>{t('components.features.description')}</MobileInfoBox>
         {features.map((feature) => (
           <Checkbox
             key={feature.uuid}

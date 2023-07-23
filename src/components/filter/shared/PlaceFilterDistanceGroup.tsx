@@ -12,7 +12,7 @@ type Props = {
 
 export default function PlaceFilterDistanceGroup() {
   const [distance, setDistance] = useState<number>(DefaultDistance)
-  const { t } = useTranslation('filter.components.distance')
+  const { t } = useTranslation('filter')
   const { query, push } = usePlaceFilter()
 
   useEffect(() => {
@@ -32,9 +32,9 @@ export default function PlaceFilterDistanceGroup() {
 
   return (
     <>
-      <MobileInfoBox>{t('description')}</MobileInfoBox>
+      <MobileInfoBox>{t('components.distance.description')}</MobileInfoBox>
       <Input<number>
-        label={t('label')}
+        label={t('components.distance.label')}
         name='distance'
         type='number'
         pattern='[0-9]*'

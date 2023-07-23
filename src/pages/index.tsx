@@ -14,7 +14,7 @@ export async function getServerSideProps({ locale }: any) {
   console.log('locale::', locale)
   return {
     props: {
-      ...(await serverSideTranslations(locale, [])),
+      ...(await serverSideTranslations(locale, ['common', 'filter', 'sort'])),
     },
   }
 }

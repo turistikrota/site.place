@@ -6,7 +6,7 @@ import { usePlaceFilter } from '~/features/place.filter'
 
 export default function PlaceFilterQueryGroup() {
   const [word, setWord] = useState<string>('')
-  const { t } = useTranslation('filter.components.query')
+  const { t } = useTranslation('filter')
   const { query, push } = usePlaceFilter()
 
   useEffect(() => {
@@ -23,8 +23,8 @@ export default function PlaceFilterQueryGroup() {
 
   return (
     <>
-      <MobileInfoBox>{t('description')}</MobileInfoBox>
-      <Input label={t('label')} name='word' value={word} onChange={handleChange} />
+      <MobileInfoBox>{t('components.query.description')}</MobileInfoBox>
+      <Input label={t('components.query.label')} name='word' value={word} onChange={handleChange} />
     </>
   )
 }

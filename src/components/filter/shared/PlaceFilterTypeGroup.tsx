@@ -10,7 +10,7 @@ const types = Object.values(Type)
 
 export default function PlaceFilterTypeGroup() {
   const [selected, setSelected] = useState<Type[]>([])
-  const { t } = useTranslation('filter.components.types')
+  const { t } = useTranslation('filter')
   const { query, push } = usePlaceFilter()
   const isDesktop = useIsDesktop()
 
@@ -34,7 +34,7 @@ export default function PlaceFilterTypeGroup() {
 
   return (
     <div className='space-y-4 lg:space-y-0'>
-      <MobileInfoBox>{t('description')}</MobileInfoBox>
+      <MobileInfoBox>{t('components.types.description')}</MobileInfoBox>
       {types.map((type) => (
         <Checkbox
           key={type}
@@ -45,7 +45,7 @@ export default function PlaceFilterTypeGroup() {
           reversed={!isDesktop}
           effect={isDesktop ? 'hover' : undefined}
         >
-          {t(`translation.${type}`)}
+          {t(`components.types.translation.${type}`)}
         </Checkbox>
       ))}
     </div>

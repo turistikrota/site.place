@@ -33,5 +33,9 @@
   "switch": {
     "filter": "Filter",
     "sort": "Sort"
+  },
+  "content-switch": {
+    "map": "Show Map",
+    "list": "Show List"
   }
 }

@@ -17,7 +17,7 @@ type OrderSectionProps = {
 const SortSection: React.FC<SortSectionProps> = ({ selected, onSelect }) => {
   const { defaultSort, sorts } = usePlaceSort()
   const [currentSort, setCurrentSort] = useState<Sort>(defaultSort)
-  const { t } = useTranslation('sort.mobile.sort-by')
+  const { t } = useTranslation('sort')
 
   useEffect(() => {
     setCurrentSort(selected ?? defaultSort)
@@ -25,11 +25,11 @@ const SortSection: React.FC<SortSectionProps> = ({ selected, onSelect }) => {
 
   return (
     <Dropdown>
-      <Dropdown.Button active={currentSort !== defaultSort}>{t('title')}</Dropdown.Button>
+      <Dropdown.Button active={currentSort !== defaultSort}>{t('mobile.sort-by.title')}</Dropdown.Button>
       <Dropdown.Overlay>
         {sorts.map((sort) => (
           <Dropdown.OverlayItem key={sort} onClick={() => onSelect(sort)} active={sort === currentSort}>
-            {t(sort)}
+            {t(`mobile.sort-by.${sort}`)}
           </Dropdown.OverlayItem>
         ))}
       </Dropdown.Overlay>
@@ -40,7 +40,7 @@ const SortSection: React.FC<SortSectionProps> = ({ selected, onSelect }) => {
 const OrderSection: React.FC<OrderSectionProps> = ({ selected, onSelect }) => {
   const { defaultOrder, orders } = usePlaceSort()
   const [currentOrder, setCurrentOrder] = useState<Order>(defaultOrder)
-  const { t } = useTranslation('sort.mobile.order-by')
+  const { t } = useTranslation('sort')
 
   useEffect(() => {
     setCurrentOrder(selected ?? defaultOrder)
@@ -48,11 +48,11 @@ const OrderSection: React.FC<OrderSectionProps> = ({ selected, onSelect }) => {
 
   return (
     <Dropdown>
-      <Dropdown.Button active={currentOrder !== defaultOrder}>{t('title')}</Dropdown.Button>
+      <Dropdown.Button active={currentOrder !== defaultOrder}>{t('mobile.order-by.title')}</Dropdown.Button>
       <Dropdown.Overlay>
         {orders.map((order) => (
           <Dropdown.OverlayItem key={order} onClick={() => onSelect(order)} active={order === currentOrder}>
-            {t(order)}
+            {t(`mobile.order-by.${order}`)}
           </Dropdown.OverlayItem>
         ))}
       </Dropdown.Overlay>
@@ -62,7 +62,6 @@ const OrderSection: React.FC<OrderSectionProps> = ({ selected, onSelect }) => {
 
 export default function PlaceDesktopSortGroup() {
   const { defaultOrder, defaultSort } = usePlaceSort()
-  const { t } = useTranslation('sort.mobile')
   const [isDefault, setIsDefault] = useState<boolean>(true)
   const { query, push } = usePlaceFilter()
 
@@ -79,7 +78,6 @@ export default function PlaceDesktopSortGroup() {
   }
 
   const onSortSelect = (sort: Sort) => {
-    console.log('sort', sort)
     query.filter.sort = sort
     push(query)
   }

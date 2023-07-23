@@ -6,7 +6,7 @@ import PlaceDesktopHead from './PlaceDesktopHead'
 import { usePlaceFilter } from '~/features/place.filter'
 
 export default function PlaceDesktopTimeSpentGroup() {
-  const { t } = useTranslation('filter.components.time-spent')
+  const { t } = useTranslation('filter')
   const { query, push } = usePlaceFilter()
 
   const clearTimeSpent = () => {
@@ -18,8 +18,8 @@ export default function PlaceDesktopTimeSpentGroup() {
     <PlaceDesktopFilterSection>
       <PlaceDesktopHead>
         <PlaceDesktopHead.Title className='flex'>
-          {t('title')}
-          <DesktopInfoBox>{t('description')}</DesktopInfoBox>
+          {t('components.time-spent.title')}
+          <DesktopInfoBox>{t('components.time-spent.description')}</DesktopInfoBox>
         </PlaceDesktopHead.Title>
         {!!query.filter.distance && <PlaceDesktopHead.Clear onClear={clearTimeSpent} />}
       </PlaceDesktopHead>

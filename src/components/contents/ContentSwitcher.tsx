@@ -42,7 +42,7 @@ const FixedButton: React.FC<ButtonProps> = ({ text, variant, icon, onClick }) =>
 }
 
 export default function ContentSwitcher() {
-  const { t } = useTranslation('content-switch')
+  const { t } = useTranslation('common')
   const { query } = usePlaceFilter()
   const { places, isLoading, refetch } = usePlaces(query)
   const [active, setActive] = useState<ContentType>('list')
@@ -58,7 +58,7 @@ export default function ContentSwitcher() {
     return (
       <>
         <DynamicList data={places} loading={isLoading} />
-        <FixedButton text={t('map')} icon='map-alt' onClick={() => setActive('map')} variant='primary' />
+        <FixedButton text={t('content-switch.map')} icon='map-alt' onClick={() => setActive('map')} variant='primary' />
       </>
     )
   }
@@ -66,7 +66,12 @@ export default function ContentSwitcher() {
   return (
     <>
       <DynamicMap data={places} loading={isLoading} position={[41.0082, 28.9784]} />
-      <FixedButton text={t('list')} icon='list-ul' onClick={() => setActive('list')} variant='secondary' />
+      <FixedButton
+        text={t('content-switch.list')}
+        icon='list-ul'
+        onClick={() => setActive('list')}
+        variant='secondary'
+      />
     </>
   )
 }

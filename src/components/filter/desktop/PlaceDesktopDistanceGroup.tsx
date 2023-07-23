@@ -6,7 +6,7 @@ import PlaceDesktopHead from './PlaceDesktopHead'
 import { usePlaceFilter } from '~/features/place.filter'
 
 export default function PlaceDesktopDistanceGroup() {
-  const { t } = useTranslation('filter.components.distance')
+  const { t } = useTranslation('filter')
   const { query, push } = usePlaceFilter()
 
   const clearDistance = () => {
@@ -18,8 +18,8 @@ export default function PlaceDesktopDistanceGroup() {
     <PlaceDesktopFilterSection>
       <PlaceDesktopHead>
         <PlaceDesktopHead.Title className='flex'>
-          {t('text')}
-          <DesktopInfoBox>{t('description')}</DesktopInfoBox>
+          {t('components.distance.text')}
+          <DesktopInfoBox>{t('components.distance.description')}</DesktopInfoBox>
         </PlaceDesktopHead.Title>
         {!!query.filter.distance && <PlaceDesktopHead.Clear onClear={clearDistance} />}
       </PlaceDesktopHead>

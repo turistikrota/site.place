@@ -12,7 +12,7 @@ type Props = {
 }
 
 const PlaceFilterCityGroup: React.FC<Props> = ({ className }) => {
-  const { t } = useTranslation('common.ux.input')
+  const { t } = useTranslation('common')
   const [searchVal, setSearchVal] = useState<string | null>(null)
   const cities = useCities(searchVal)
   const { query, push } = usePlaceFilter()
@@ -27,7 +27,7 @@ const PlaceFilterCityGroup: React.FC<Props> = ({ className }) => {
   return (
     <>
       <Input
-        label={t('search')}
+        label={t('ux.input.search')}
         name='search'
         size={isDesktop ? 'md' : undefined}
         suffix={<i className='bx bx-xs bx-search-alt-2'></i>}

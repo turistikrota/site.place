@@ -6,7 +6,7 @@ import PlaceDesktopHead from './PlaceDesktopHead'
 import { usePlaceFilter } from '~/features/place.filter'
 
 export default function PlaceDesktopFeatureGroup() {
-  const { t } = useTranslation('filter.components.features')
+  const { t } = useTranslation('filter')
   const { query, push } = usePlaceFilter()
 
   const clearFeatures = () => {
@@ -18,8 +18,8 @@ export default function PlaceDesktopFeatureGroup() {
     <PlaceDesktopFilterSection>
       <PlaceDesktopHead>
         <PlaceDesktopHead.Title className='flex'>
-          {t('text')}
-          <DesktopInfoBox>{t('description')}</DesktopInfoBox>
+          {t('components.features.text')}
+          <DesktopInfoBox>{t('components.features.description')}</DesktopInfoBox>
         </PlaceDesktopHead.Title>
         {!!query.filter.featureUUIDs && <PlaceDesktopHead.Clear onClear={clearFeatures} />}
       </PlaceDesktopHead>

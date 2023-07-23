@@ -6,7 +6,7 @@ import PlaceDesktopHead from './PlaceDesktopHead'
 import { usePlaceFilter } from '~/features/place.filter'
 
 export default function PlaceDesktopMinReviewGroup() {
-  const { t } = useTranslation('filter.components.review')
+  const { t } = useTranslation('filter')
   const { query, push } = usePlaceFilter()
 
   const clearReview = () => {
@@ -18,8 +18,8 @@ export default function PlaceDesktopMinReviewGroup() {
     <PlaceDesktopFilterSection>
       <PlaceDesktopHead>
         <PlaceDesktopHead.Title className='flex'>
-          {t('text')}
-          <DesktopInfoBox>{t('description')}</DesktopInfoBox>
+          {t('components.review.text')}
+          <DesktopInfoBox>{t('components.review.description')}</DesktopInfoBox>
         </PlaceDesktopHead.Title>
         {!!query.filter.distance && <PlaceDesktopHead.Clear onClear={clearReview} />}
       </PlaceDesktopHead>

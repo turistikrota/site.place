@@ -8,7 +8,7 @@ import PlaceDesktopHead from './PlaceDesktopHead'
 
 export default function PlaceDesktopCityGroup() {
   const [city, setCity] = useState<City | null>(null)
-  const { t } = useTranslation('filter.components.city-select')
+  const { t } = useTranslation('filter')
   const { query, push } = usePlaceFilter()
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function PlaceDesktopCityGroup() {
   return (
     <PlaceDesktopFilterSection className='pt-4'>
       <PlaceDesktopHead>
-        <PlaceDesktopHead.Title>{t('text')}</PlaceDesktopHead.Title>
+        <PlaceDesktopHead.Title>{t('components.city-select.text')}</PlaceDesktopHead.Title>
         {!!city && <PlaceDesktopHead.Clear onClear={clearCity} />}
       </PlaceDesktopHead>
       <PlaceFilterCityGroup className='max-h-60 mt-2' />

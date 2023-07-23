@@ -131,7 +131,7 @@ const componentValueParsers: Record<FilterComponents, (value: any, options: Pars
 }
 
 const FilterMenu: React.FC<Props> = ({ onOpen }) => {
-  const { t, i18n } = useTranslation('place.filter')
+  const { t, i18n } = useTranslation('filter')
   const { query } = usePlaceFilter()
   const { features } = usePlaceFeatures()
 

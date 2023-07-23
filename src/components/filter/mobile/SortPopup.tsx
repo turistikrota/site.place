@@ -24,14 +24,18 @@ type OrderSectionProps = {
 const SortSection: React.FC<SortSectionProps> = ({ selected, onSelect }) => {
   const { defaultSort, sorts } = usePlaceSort()
   const [currentSort, setCurrentSort] = useState<Sort>(defaultSort)
-  const { t } = useTranslation('sort.mobile.sort-by')
+  const { t } = useTranslation('sort')
 
   useEffect(() => {
     setCurrentSort(selected ?? defaultSort)
   }, [selected])
 
   return (
-    <RadioGroup title={t('title')} clearText={t('clear-text')} clearAriaLabel={t('clear-aria-label')}>
+    <RadioGroup
+      title={t('mobile.sort-by.title')}
+      clearText={t('mobile.sort-by.clear-text')}
+      clearAriaLabel={t('mobile.sort-by.clear-aria-label')}
+    >
       {sorts.map((sort) => (
         <RadioGroup.Item
           key={sort}
@@ -51,14 +55,18 @@ const SortSection: React.FC<SortSectionProps> = ({ selected, onSelect }) => {
 const OrderSection: React.FC<OrderSectionProps> = ({ selected, onSelect }) => {
   const { defaultOrder, orders } = usePlaceSort()
   const [currentOrder, setCurrentOrder] = useState<Order>(defaultOrder)
-  const { t } = useTranslation('sort.mobile.order-by')
+  const { t } = useTranslation('sort')
 
   useEffect(() => {
     setCurrentOrder(selected ?? defaultOrder)
   }, [selected])
 
   return (
-    <RadioGroup title={t('title')} clearText={t('clear-text')} clearAriaLabel={t('clear-aria-label')}>
+    <RadioGroup
+      title={t('mobile.order-by.title')}
+      clearText={t('mobile.order-by.clear-text')}
+      clearAriaLabel={t('mobile.order-by.clear-aria-label')}
+    >
       {orders.map((order, idx) => (
         <RadioGroup.Item
           key={idx}
@@ -77,7 +85,7 @@ const OrderSection: React.FC<OrderSectionProps> = ({ selected, onSelect }) => {
 
 const SortPopup: React.FC<Props> = ({ onClose, open }) => {
   const { defaultOrder, defaultSort } = usePlaceSort()
-  const { t } = useTranslation('sort.mobile')
+  const { t } = useTranslation('sort')
   const [isDefault, setIsDefault] = useState<boolean>(true)
   const { query, push } = usePlaceFilter()
 
@@ -110,7 +118,7 @@ const SortPopup: React.FC<Props> = ({ onClose, open }) => {
       size='2xl'
       head={
         <FilterHead.TitleSection>
-          <FilterHead.Title>{t('title')}</FilterHead.Title>
+          <FilterHead.Title>{t('mobile.title')}</FilterHead.Title>
           {!isDefault && <FilterHead.ClearButton onClear={() => clear()} />}
         </FilterHead.TitleSection>
       }

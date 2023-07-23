@@ -6,16 +6,16 @@ type Props = {
 }
 
 const ClearButton: React.FC<Props> = ({ onClear, text }) => {
-  const { t } = useTranslation('common.ux.button')
+  const { t } = useTranslation('common')
   return (
     <span
       className=' text-primary hover:opacity-90 transition-colors'
       onClick={() => onClear && onClear()}
       role='button'
-      title={t('clear-filter')}
-      aria-label={t('clear-filter')}
+      title={t('ux.button.clear-filter')}
+      aria-label={t('ux.button.clear-filter')}
     >
-      {text ?? t('clear')}
+      {text ?? t('ux.button.clear')}
     </span>
   )
 }

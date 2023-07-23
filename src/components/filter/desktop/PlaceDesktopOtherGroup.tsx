@@ -5,7 +5,7 @@ import PlaceDesktopHead from './PlaceDesktopHead'
 import { usePlaceFilter } from '~/features/place.filter'
 
 export default function PlaceDesktopOtherGroup() {
-  const { t } = useTranslation('filter.components.other')
+  const { t } = useTranslation('filter')
   const { query, push } = usePlaceFilter()
 
   const clearIsPayed = () => {
@@ -16,7 +16,7 @@ export default function PlaceDesktopOtherGroup() {
   return (
     <PlaceDesktopFilterSection>
       <PlaceDesktopHead>
-        <PlaceDesktopHead.Title>{t('title')}</PlaceDesktopHead.Title>
+        <PlaceDesktopHead.Title>{t('components.other.title')}</PlaceDesktopHead.Title>
         {!!query.filter.distance && <PlaceDesktopHead.Clear onClear={clearIsPayed} />}
       </PlaceDesktopHead>
       <PlaceFilterIsPayedGroup />
