@@ -47,7 +47,7 @@ const FixedButton: React.FC<ButtonProps> = ({ text, variant, icon, onClick }) =>
 
 export default function ContentSwitcher({ response }: Props) {
   const { t } = useTranslation('common')
-  const { query } = usePlaceFilter()
+  const { query, isQueryChanged } = usePlaceFilter()
   const { places, isLoading, refetch } = usePlaces(query, response)
   const [active, setActive] = useState<ContentType>('list')
   const debouncedFilter = debounce(() => {
@@ -55,8 +55,9 @@ export default function ContentSwitcher({ response }: Props) {
   }, 500)
 
   useEffect(() => {
+    if (!isQueryChanged) return
     debouncedFilter()
-  }, [query])
+  }, [isQueryChanged])
 
   if (active === 'list') {
     return (

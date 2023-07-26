@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import debounce from '@turistikrota/ui/cjs/utils/debounce'
 import { Order, PlaceFilterRequest, Sort, Type, isOrder, isPlaceType, isSort } from './place.types'
 import { PaginationRequest } from '~/types/pagination'
+import { deepEqual } from '~/utils/deepEqual'
 
 export const getQueryByKeyBindings = (searchParams: ReadonlyURLSearchParams | URLSearchParams) => {
   const query: PaginationRequest<PlaceFilterRequest> = { filter: {} }
@@ -193,13 +194,16 @@ type PlaceFilterHookResult = {
   push: (query: PaginationRequest<PlaceFilterRequest>, cb?: Callback) => void
   clean: (cb?: Callback) => void
   isFiltered: boolean
+  isQueryChanged: boolean
 }
 
 export const usePlaceFilter = (): PlaceFilterHookResult => {
   const searchParams = useSearchParams()
   const [query, setQuery] = useState<PaginationRequest<PlaceFilterRequest>>(getQueryByKeyBindings(searchParams))
+  const [lastQuery, setLastQuery] = useState<PaginationRequest<PlaceFilterRequest> | null>(query)
   const pathname = usePathname()
   const router = useRouter()
+
   const debouncedPush = debounce((path: string, cb?: Callback) => {
     const url = `${pathname}?${path}`
     router.push(url)
@@ -216,12 +220,19 @@ export const usePlaceFilter = (): PlaceFilterHookResult => {
   }
 
   useEffect(() => {
-    if (placeToQuery(query) === placeToQuery(getQueryByKeyBindings(searchParams))) return
-    setQuery(getQueryByKeyBindings(searchParams))
+    if (lastQuery && deepEqual(lastQuery, query)) return
+    setLastQuery(query)
+  }, [query])
+
+  useEffect(() => {
+    const newQuery = getQueryByKeyBindings(searchParams)
+    if (placeToQuery(query) === placeToQuery(newQuery)) return
+    setQuery(newQuery)
   }, [searchParams])
 
   return {
     query,
+    isQueryChanged: lastQuery !== null && !deepEqual(lastQuery, query),
     isFiltered: Object.keys(query.filter).length > 0,
     clean: cleaner,
     push,
