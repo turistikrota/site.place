@@ -196,11 +196,9 @@ type PlaceFilterHookResult = {
 }
 
 export const usePlaceFilter = (): PlaceFilterHookResult => {
-  const [query, setQuery] = useState<PaginationRequest<PlaceFilterRequest>>({
-    filter: {},
-  })
-  const pathname = usePathname()
   const searchParams = useSearchParams()
+  const [query, setQuery] = useState<PaginationRequest<PlaceFilterRequest>>(getQueryByKeyBindings(searchParams))
+  const pathname = usePathname()
   const router = useRouter()
   const debouncedPush = debounce((path: string, cb?: Callback) => {
     const url = `${pathname}?${path}`
@@ -218,6 +216,7 @@ export const usePlaceFilter = (): PlaceFilterHookResult => {
   }
 
   useEffect(() => {
+    if (placeToQuery(query) === placeToQuery(getQueryByKeyBindings(searchParams))) return
     setQuery(getQueryByKeyBindings(searchParams))
   }, [searchParams])
 

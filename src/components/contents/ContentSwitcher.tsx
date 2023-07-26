@@ -31,7 +31,7 @@ type ButtonProps = {
 
 const FixedButton: React.FC<ButtonProps> = ({ text, variant, icon, onClick }) => {
   return (
-    <div className='fixed bottom-10 right-1/2 transform translate-x-1/2 z-500'>
+    <div className='fixed bottom-6 right-1/2 transform translate-x-1/2 z-500'>
       <Button
         onClick={() => onClick()}
         className='hover:scale-103 hover:shadow-lg flex items-center justify-center gap-2 text-lg'
