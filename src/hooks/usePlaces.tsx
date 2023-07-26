@@ -2,8 +2,8 @@ import { ListResponse } from '@turistikrota/ui/cjs/types'
 import { PlaceFilterRequest, PlaceListItem } from '~/features/place.types'
 import { PaginationRequest } from '~/types/pagination'
 import { useQuery } from './query'
-import { placeToQuery } from '~/features/place.filter'
 import { Services, apiUrl } from '~/config/services'
+import { placeQueryToURL } from '~/features/place.filter'
 
 type UsePlacesResult = {
   places: ListResponse<PlaceListItem>
@@ -12,18 +12,22 @@ type UsePlacesResult = {
   refetch: () => void
 }
 
-export const usePlaces = (query: PaginationRequest<PlaceFilterRequest>): UsePlacesResult => {
+export const usePlaces = (
+  query: PaginationRequest<PlaceFilterRequest>,
+  initial?: ListResponse<PlaceListItem>,
+): UsePlacesResult => {
   const {
     data: places,
     isLoading,
     error,
     refetch,
   } = useQuery<ListResponse<PlaceListItem>>(
-    apiUrl(Services.Place, `/?page=${query.page ?? 1}&limit=${query.limit ?? 100}`),
+    apiUrl(Services.Place, `/?${placeQueryToURL(query)}`),
     {
       cache: true,
       method: 'POST',
       params: query,
+      withSSR: initial,
     },
   )
   return {

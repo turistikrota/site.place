@@ -4,9 +4,13 @@ import { useEffect, useState } from 'react'
 import Button from '@turistikrota/ui/cjs/button'
 import debounce from '@turistikrota/ui/cjs/utils/debounce'
 import { ListResponse, Variant } from '@turistikrota/ui/cjs/types'
-import { PlaceListItem, isPlaceListResponse } from '~/features/place.types'
+import { PlaceListItem } from '~/features/place.types'
 import { usePlaceFilter } from '~/features/place.filter'
 import { usePlaces } from '~/hooks/usePlaces'
+
+type Props = {
+  response?: ListResponse<PlaceListItem>
+}
 
 type ContentType = 'list' | 'map'
 
@@ -41,10 +45,10 @@ const FixedButton: React.FC<ButtonProps> = ({ text, variant, icon, onClick }) =>
   )
 }
 
-export default function ContentSwitcher() {
+export default function ContentSwitcher({ response }: Props) {
   const { t } = useTranslation('common')
   const { query } = usePlaceFilter()
-  const { places, isLoading, refetch } = usePlaces(query)
+  const { places, isLoading, refetch } = usePlaces(query, response)
   const [active, setActive] = useState<ContentType>('list')
   const debouncedFilter = debounce(() => {
     refetch()

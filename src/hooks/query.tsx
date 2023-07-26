@@ -1,3 +1,4 @@
+import debounce from '@turistikrota/ui/cjs/utils/debounce'
 import { useState, useEffect } from 'react'
 import { httpClient } from '~/http/client'
 
@@ -13,14 +14,18 @@ type CacheEntity<T = unknown> = {
   expiresAt: number
 }
 
-type Options = {
+type Options<T> = {
   cache?: boolean
   method?: 'GET' | 'POST' | 'PUT' | 'DELETE'
   params?: any
+  withSSR?: T
 }
 
-export const useQuery = <T = unknown,>(url: string, opts: Options = { cache: false }): UseQueryResult<T> => {
-  const [data, setData] = useState<T | null>(null)
+export const useQuery = <T = unknown,>(
+  url: string,
+  opts: Options<T> = { cache: false, withSSR: undefined },
+): UseQueryResult<T> => {
+  const [data, setData] = useState<T | null>(opts.withSSR || null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [error, setError] = useState<Error | null>(null)
 
@@ -68,8 +73,14 @@ export const useQuery = <T = unknown,>(url: string, opts: Options = { cache: fal
   }
 
   useEffect(() => {
+    if (!!opts.withSSR) return
     fetcher(url, opts.cache)
   }, [url])
 
-  return { data, isLoading, error, refetch: () => fetcher(url, true) }
+  return {
+    data,
+    isLoading,
+    error,
+    refetch: () => fetcher(url, true),
+  }
 }

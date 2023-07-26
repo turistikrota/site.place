@@ -5,7 +5,7 @@ import debounce from '@turistikrota/ui/cjs/utils/debounce'
 import { Order, PlaceFilterRequest, Sort, Type, isOrder, isPlaceType, isSort } from './place.types'
 import { PaginationRequest } from '~/types/pagination'
 
-const getQueryByKeyBindings = (searchParams: ReadonlyURLSearchParams) => {
+export const getQueryByKeyBindings = (searchParams: ReadonlyURLSearchParams | URLSearchParams) => {
   const query: PaginationRequest<PlaceFilterRequest> = { filter: {} }
   const keyBindings = {
     page: (value: string) => {
@@ -120,6 +120,17 @@ const getQueryByKeyBindings = (searchParams: ReadonlyURLSearchParams) => {
     }
   })
   return query
+}
+
+export const placeQueryToURL = (query: PaginationRequest<PlaceFilterRequest>): string => {
+  const q = new URLSearchParams()
+  if (query.page) {
+    q.append('page', query.page.toString())
+  }
+  if (query.limit) {
+    q.append('limit', query.limit.toString())
+  }
+  return q.toString()
 }
 
 export const placeToQuery = (place: PaginationRequest<PlaceFilterRequest>): string => {
