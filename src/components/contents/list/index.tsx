@@ -1,4 +1,3 @@
-import Carousel from '@turistikrota/ui/cjs/carousel'
 import ListFilter from './ListFilter'
 import ListHead from './ListHead'
 import { ContentProps } from '~/features/place.types'
@@ -9,7 +8,7 @@ function ListItemSection({ data, loading }: ContentProps) {
   if (!data) return <div>no data</div>
   return (
     <section className='grow grid grid-cols-12 gap-4'>
-      {[...data.list,...data.list,...data.list].map((item, idx) => (
+      {[...data.list, ...data.list, ...data.list].map((item, idx) => (
         <PlaceListCard key={idx} />
       ))}
     </section>
