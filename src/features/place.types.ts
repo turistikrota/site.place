@@ -46,6 +46,7 @@ export type PlaceDetail = {
   isPayed: boolean
   type: Type
   createdAt: Date
+  updatedAt: Date
 }
 
 type FeatureItem = {

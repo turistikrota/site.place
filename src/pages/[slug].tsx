@@ -130,8 +130,8 @@ export default function PlaceDetail({ response, md }: Props) {
                 ></FeatureCard>
               ))}
               <div className='text-gray-400 text-sm col-span-4'>
-                {t('base.created', {
-                  date: dayjs(response.createdAt).format('MMMM YYYY'),
+                {t('base.updated', {
+                  date: dayjs(response.updatedAt).format('MMMM YYYY'),
                 })}
               </div>
             </div>
