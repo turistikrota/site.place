@@ -1,3 +1,6 @@
+import Tooltip, { TooltipProvider } from '@turistikrota/ui/cjs/tooltip'
+import { useTranslation } from 'next-i18next'
+
 export type FeatureVariants =
   | 'success'
   | 'warning'
@@ -18,6 +21,7 @@ type Props = {
   icon: string
   subtext: string
   variant?: FeatureVariants
+  core?: boolean
 }
 
 const VariantClasses: Record<FeatureVariants, string> = {
@@ -36,9 +40,12 @@ const VariantClasses: Record<FeatureVariants, string> = {
   teal: 'bg-teal-100 bg-opacity-50 text-teal-500 dark:bg-teal-500 dark:bg-opacity-10 dark:text-teal-100',
 }
 
-export default function FeatureCard({ text, icon, subtext, variant = 'default' }: Props) {
+export default function FeatureCard({ text, icon, subtext, variant = 'default', core = false }: Props) {
+  const { t } = useTranslation('common')
   return (
-    <div className={`col-span-4 grid grid-cols-6 items-center px-0 py-4 rounded-md ${VariantClasses[variant]}`}>
+    <div
+      className={`col-span-4 relative grid grid-cols-6 items-center px-0 py-4 rounded-md ${VariantClasses[variant]}`}
+    >
       <div className='col-span-1 flex items-center justify-center'>
         <i className={`${icon} bx-xl`}></i>
       </div>
@@ -46,6 +53,15 @@ export default function FeatureCard({ text, icon, subtext, variant = 'default' }
         <div className='text-2xl font-bold'>{text}</div>
         <div className='text-sm'>{subtext}</div>
       </div>
+      {core && (
+        <div className='absolute top-1.5 right-1 flex items-center justify-center w-8 h-8 rounded-full'>
+          <TooltipProvider>
+            <Tooltip content={t('features.core')}>
+              <i className='bx bx-sm bxs-star text-primary'></i>
+            </Tooltip>
+          </TooltipProvider>
+        </div>
+      )}
     </div>
   )
 }

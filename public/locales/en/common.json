@@ -40,5 +40,8 @@
   },
   "brace": {
     "and": "and"
+  },
+  "features": {
+    "core": "This feature verified by our team."
   }
 }

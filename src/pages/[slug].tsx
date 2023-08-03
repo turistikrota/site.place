@@ -120,6 +120,16 @@ export default function PlaceDetail({ response, md }: Props) {
                   <div className='text-lg text-gray-600 dark:text-gray-300'>{t('reviews')}</div>
                 </div>
               </div>
+              {response.features.map((feature, idx) => (
+                <FeatureCard
+                  key={feature.uuid}
+                  icon={feature.icon}
+                  text={feature.translations.en.title}
+                  subtext={feature.translations.en.description}
+                  variant='primary'
+                  core
+                ></FeatureCard>
+              ))}
               {features.map((feature, index) => (
                 <FeatureCard
                   key={index}
