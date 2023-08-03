@@ -1,6 +1,6 @@
-import debounce from '@turistikrota/ui/cjs/utils/debounce'
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { httpClient } from '~/http/client'
+import { deepEqual } from '~/utils/deepEqual'
 
 type UseQueryResult<T = unknown> = {
   data: T | null
@@ -12,6 +12,7 @@ type UseQueryResult<T = unknown> = {
 type CacheEntity<T = unknown> = {
   data: T
   expiresAt: number
+  params: any
 }
 
 type Options<T> = {
@@ -36,7 +37,7 @@ export const useQuery = <T = unknown,>(
       const cacheData = localStorage.getItem(url)
       if (cacheData) {
         const cacheEntity: CacheEntity<T> = JSON.parse(cacheData)
-        if (cacheEntity.expiresAt > Date.now()) {
+        if (cacheEntity.expiresAt > Date.now() && deepEqual(cacheEntity.params, opts.params)) {
           cached = true
           setData(cacheEntity.data)
           setIsLoading(false)
@@ -58,6 +59,7 @@ export const useQuery = <T = unknown,>(
           const cacheEntity: CacheEntity<T> = {
             data: res.data,
             expiresAt: Date.now() + 1000 * 60 * 60 * 24,
+            params: opts.params,
           }
           localStorage.setItem(url, JSON.stringify(cacheEntity))
         }

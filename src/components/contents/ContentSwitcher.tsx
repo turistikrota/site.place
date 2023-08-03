@@ -1,15 +1,18 @@
+import Alert from '@turistikrota/ui/cjs/alert'
+import Button from '@turistikrota/ui/cjs/button'
+import { ListResponse, Variant } from '@turistikrota/ui/cjs/types'
+import debounce from '@turistikrota/ui/cjs/utils/debounce'
 import { useTranslation } from 'next-i18next'
 import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
-import Button from '@turistikrota/ui/cjs/button'
-import debounce from '@turistikrota/ui/cjs/utils/debounce'
-import { ListResponse, Variant } from '@turistikrota/ui/cjs/types'
-import { PlaceListItem } from '~/features/place.types'
 import { usePlaceFilter } from '~/features/place.filter'
+import { PlaceListItem } from '~/features/place.types'
 import { usePlaces } from '~/hooks/usePlaces'
+import { isValidationError } from '~/types/error'
 
 type Props = {
   response?: ListResponse<PlaceListItem>
+  error: any
 }
 
 type ContentType = 'list' | 'map'
@@ -45,9 +48,10 @@ const FixedButton: React.FC<ButtonProps> = ({ text, variant, icon, onClick }) =>
   )
 }
 
-export default function ContentSwitcher({ response }: Props) {
+export default function ContentSwitcher({ response, error }: Props) {
   const { t } = useTranslation('common')
-  const { query, isQueryChanged } = usePlaceFilter()
+  const { query, isQueryChanged, clean } = usePlaceFilter()
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const { places, isLoading, refetch } = usePlaces(query, response)
   const [active, setActive] = useState<ContentType>('list')
   const debouncedFilter = debounce(() => {
@@ -59,9 +63,25 @@ export default function ContentSwitcher({ response }: Props) {
     debouncedFilter()
   }, [isQueryChanged])
 
+  useEffect(() => {
+    if (!error || !isValidationError(error)) return
+    setErrorMessage(error.map((err) => err.message).join(', '))
+    setTimeout(() => {
+      setErrorMessage(null)
+    }, 5000)
+    clean()
+  }, [error])
+
   if (active === 'list') {
     return (
       <>
+        {errorMessage && (
+          <div className='p-4 pb-0'>
+            <Alert type='error' closable onClose={() => setErrorMessage('')}>
+              {errorMessage}
+            </Alert>
+          </div>
+        )}
         <DynamicList data={places} loading={isLoading} />
         <FixedButton text={t('content-switch.map')} icon='map-alt' onClick={() => setActive('map')} variant='primary' />
       </>
@@ -70,6 +90,13 @@ export default function ContentSwitcher({ response }: Props) {
 
   return (
     <>
+      {errorMessage && (
+        <div className='p-4 pb-0'>
+          <Alert type='error' closable onClose={() => setErrorMessage(null)}>
+            {errorMessage}
+          </Alert>
+        </div>
+      )}
       <DynamicMap data={places} loading={isLoading} position={[41.0082, 28.9784]} />
       <FixedButton
         text={t('content-switch.list')}

@@ -1,10 +1,10 @@
+import debounce from '@turistikrota/ui/cjs/utils/debounce'
 import { ReadonlyURLSearchParams, usePathname, useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import debounce from '@turistikrota/ui/cjs/utils/debounce'
-import { Order, PlaceFilterRequest, Sort, Type, isOrder, isPlaceType, isSort } from './place.types'
 import { PaginationRequest } from '~/types/pagination'
 import { deepEqual } from '~/utils/deepEqual'
+import { Order, PlaceFilterRequest, Sort, Type, isDistance, isOrder, isPlaceType, isSort } from './place.types'
 
 export const getQueryByKeyBindings = (searchParams: ReadonlyURLSearchParams | URLSearchParams) => {
   const query: PaginationRequest<PlaceFilterRequest> = { filter: {} }
@@ -58,7 +58,7 @@ export const getQueryByKeyBindings = (searchParams: ReadonlyURLSearchParams | UR
     },
     dist: (value: string) => {
       const val = parseInt(value)
-      if (!isNaN(val)) {
+      if (!isNaN(val) && isDistance(val)) {
         query.filter.distance = val
       }
     },

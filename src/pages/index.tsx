@@ -6,15 +6,17 @@ import { getQueryByKeyBindings, placeQueryToURL } from '~/features/place.filter'
 import { PlaceListItem } from '~/features/place.types'
 import { httpClient } from '~/http/client'
 import MapLayout from '~/layouts/MapLayout'
+import { isApiError } from '~/types/error'
 
 type Props = {
   response?: ListResponse<PlaceListItem>
+  error?: any
 }
 
-export default function Home({ response }: Props) {
+export default function Home({ response, error }: Props) {
   return (
     <MapLayout>
-      <ContentSwitcher response={response} />
+      <ContentSwitcher response={response} error={error} />
     </MapLayout>
   )
 }
@@ -22,13 +24,22 @@ export default function Home({ response }: Props) {
 export async function getServerSideProps(ctx: any) {
   const urlSearchParams = new URLSearchParams(ctx.query)
   const query = getQueryByKeyBindings(urlSearchParams)
+  let err: any
   const res = await httpClient
     .post(apiUrl(Services.Place, `/?${placeQueryToURL(query)}`), query.filter)
-    .catch(() => ({ data: undefined }))
+    .catch((_err) => {
+      err = _err
+      return { data: undefined }
+    })
   return {
     props: {
       ...(await serverSideTranslations(ctx.locale, ['common', 'filter', 'sort', 'place'])),
-      response: res.data,
+      response: !!res.data
+        ? res.data
+        : {
+            list: [],
+          },
+      error: !!err && isApiError(err) ? err.response.data : null,
     },
   }
 }

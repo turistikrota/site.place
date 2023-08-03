@@ -126,6 +126,8 @@ export type ContentProps = {
 
 export type Coordinates = [number, number]
 
+export type Distance = 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
+
 export function isPlaceListResponse(response: any): response is ListResponse<PlaceListItem> {
   return response && response.list && response.total
 }
@@ -148,6 +150,10 @@ export function isOrder(order: string): order is Order {
 
 export function isTimeSpent(timeSpent: any): timeSpent is TimeSpent {
   return timeSpent && typeof timeSpent.min === 'number' && typeof timeSpent.max === 'number'
+}
+
+export function isDistance(distance: any): distance is Distance {
+  return typeof distance === 'number' && distance >= 7 && distance <= 15
 }
 
 export const getTranslations = <T>(obj: I18nTranslation<T>, locale: string, fb: T): T => {
