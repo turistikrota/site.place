@@ -53,5 +53,9 @@
       "text": "Admission",
       "subtext": "You can visit this place for free."
     }
+  },
+  "base": {
+    "reviews": "Reviews",
+    "created": "Created at {{date}}"
   }
 }

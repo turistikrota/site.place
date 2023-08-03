@@ -3,9 +3,11 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useMemo } from 'react'
 import MarkdownContent from '~/components/MarkdownContent'
+import FiveStars from '~/components/Stars'
 import FeatureCard, { FeatureVariants } from '~/components/card/FeatureCard'
 import { Services, apiUrl } from '~/config/services'
 import { FullTranslation, PlaceDetail, Type, getTranslations } from '~/features/place.types'
+import { useDayJS } from '~/hooks/dayjs'
 import { useTimeSpentUnit } from '~/hooks/timespent'
 import { useBraceText } from '~/hooks/useBraceText'
 import { httpClient } from '~/http/client'
@@ -41,6 +43,7 @@ export default function PlaceDetail({ response, md }: Props) {
       title: '',
     },
   })
+  const dayjs = useDayJS(i18n.language)
   const cities = findBestNearestCities(response.coordinates, 2)
   const cityTexts = useBraceText(cities.map((city) => city.name))
   const currentType: PlaceTypeItems = !!PlaceTypes[response.type] ? PlaceTypes[response.type] : PlaceTypes[Type.Other]
@@ -107,9 +110,16 @@ export default function PlaceDetail({ response, md }: Props) {
           <div className='flex flex-col h-full gap-20 p-4 py-0'>
             <div className='flex flex-col gap-2'>
               <div className='text-2xl font-bold'>{translations.title}</div>
-              <div className='text-sm line-clamp-6 text-ellipsis'>{translations.description}</div>
+              <div className='text-sm'>{translations.description}</div>
             </div>
             <div className='grid grid-cols-4 gap-3'>
+              <div className='col-span-4 flex justify-between items-center'>
+                <FiveStars star={response.review.averagePoint} iconSize='bx-md' />
+                <div className='flex items-end gap-1'>
+                  <div className='text-4xl font-bold text-gray-600 dark:text-gray-300'>{response.review.total}</div>
+                  <div className='text-lg text-gray-600 dark:text-gray-300'>{t('reviews')}</div>
+                </div>
+              </div>
               {features.map((feature, index) => (
                 <FeatureCard
                   key={index}
@@ -119,6 +129,11 @@ export default function PlaceDetail({ response, md }: Props) {
                   variant={feature.variant as FeatureVariants}
                 ></FeatureCard>
               ))}
+              <div className='text-gray-400 text-sm col-span-4'>
+                {t('base.created', {
+                  date: dayjs(response.createdAt).format('MMMM YYYY'),
+                })}
+              </div>
             </div>
           </div>
         </div>
@@ -144,7 +159,6 @@ export async function getServerSideProps(ctx: any) {
     }
   }
   const md = await getMdContent(res.data.translations[locale].markdownUrl)
-  console.log('md::', md)
   return {
     props: {
       ...(await serverSideTranslations(ctx.locale, ['common', 'filter', 'sort', 'place'])),

@@ -6,6 +6,7 @@ import FiveStars from '../Stars'
 type ReviewCardProps = {
   star: number
   total: number
+  
 }
 
 type IsPayedProps = {
