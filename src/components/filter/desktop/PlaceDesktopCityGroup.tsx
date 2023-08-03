@@ -29,6 +29,7 @@ export default function PlaceDesktopCityGroup() {
 
   const clearCity = () => {
     query.filter.coordinates = undefined
+    setCity(null)
     push(query)
   }
   return (
