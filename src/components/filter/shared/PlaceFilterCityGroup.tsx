@@ -1,11 +1,12 @@
-import { useTranslation } from 'next-i18next'
-import { useState } from 'react'
 import Input from '@turistikrota/ui/cjs/form/input'
 import Radio from '@turistikrota/ui/cjs/form/radio'
 import { useIsDesktop } from '@turistikrota/ui/cjs/hooks/dom'
+import { useTranslation } from 'next-i18next'
+import { useState } from 'react'
+import ScrollableSection from '~/components/ScrollableSection'
+import { usePlaceFilter } from '~/features/place.filter'
 import { useCities } from '~/hooks/location'
 import { City } from '~/static/location/cities'
-import { usePlaceFilter } from '~/features/place.filter'
 
 type Props = {
   className?: string
@@ -33,7 +34,7 @@ const PlaceFilterCityGroup: React.FC<Props> = ({ className }) => {
         suffix={<i className='bx bx-xs bx-search-alt-2'></i>}
         onChange={(e) => setSearchVal(e.target.value)}
       />
-      <div className={`${className ? className : 'max-h-[50vh] mt-2 space-y-1'} overflow-y-auto overflow-x-hidden`}>
+      <ScrollableSection className={className}>
         {cities.map((city, idx) => (
           <Radio
             key={city.name}
@@ -51,7 +52,7 @@ const PlaceFilterCityGroup: React.FC<Props> = ({ className }) => {
             {city.name}
           </Radio>
         ))}
-      </div>
+      </ScrollableSection>
     </>
   )
 }

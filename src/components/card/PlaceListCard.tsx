@@ -1,65 +1,47 @@
 import Carousel from '@turistikrota/ui/cjs/carousel'
+import Link from 'next/link'
+import { MouseEventHandler } from 'react'
+import { useTranslation } from 'react-i18next'
+import { PlaceListItem, TranslationItem, getTranslations } from '~/features/place.types'
+import { mapAndSortImages } from '~/utils/image'
+import { IsPayedCard, PlaceTypeCard, ReviewCard } from './Shared'
+import TimeSpentCard from './TimeSpentCard'
 
-const ImageSlider: React.FC = () => {
-  return <div>ImageSlider</div>
+type Props = {
+  item: PlaceListItem
 }
 
-const PlaceListCard: React.FC = () => {
+const PlaceListCard: React.FC<Props> = ({ item }) => {
+  const { t, i18n } = useTranslation('place')
+  const translations = getTranslations<TranslationItem>(item.translations, i18n.language, {
+    title: '',
+    slug: '',
+    description: '',
+  })
+
+  const checkOutsideClick: MouseEventHandler<HTMLAnchorElement> = (e) => {
+    // @ts-ignore
+    if (['i', 'button'].includes(e.target?.tagName.toLowerCase())) return e.preventDefault()
+  }
+
   return (
-    <div className='flex flex-col col-span-4 bg-second rounded-md'>
-      <Carousel
-        images={[
-          '/images/demo/villa-bliss-pa.jpg',
-          '/images/demo/villa-bliss-02.jpg',
-          '/images/demo/villa-bliss-03.jpg',
-          '/images/demo/villa-bliss-04.jpg',
-          '/images/demo/villa-bliss-05.jpg',
-          '/images/demo/villa-bliss-06.jpg',
-          '/images/demo/villa-bliss-07.jpg',
-          '/images/demo/villa-bliss-08.jpg',
-          '/images/demo/villa-bliss-09.jpg',
-          '/images/demo/villa-bliss-10.jpg',
-        ]}
-        sizeClassName='h-72'
-      />
-      <div className='flex flex-col gap-4 p-4'>
-        <div className='flex flex-col gap-2'>
-          <div className='flex flex-col gap-1'>
-            <div className='text-2xl font-bold'>Villa Bliss</div>
-            <div className='text-sm'>Kalkan, Antalya</div>
+    <Link href={translations.slug} className='col-span-4' target='_blank' onClick={checkOutsideClick}>
+      <div className='flex flex-col bg-second rounded-md'>
+        <Carousel images={mapAndSortImages(item.images)} sizeClassName='h-72' />
+        <div className='flex flex-col gap-2 p-4'>
+          <div className='text-2xl font-bold'>{translations.title}</div>
+          <div className='text-sm'>Kalkan, Antalya</div>
+          <div className='flex justify-between items-center'>
+            <ReviewCard star={item.review.averagePoint} total={item.review.total} />
+            <TimeSpentCard data={item.averageTimeSpent} />
           </div>
-          <div className='flex flex-col gap-1'>
-            <div className='text-sm'>Sleeps up to 8</div>
-            <div className='text-sm'>4 bedrooms</div>
-            <div className='text-sm'>4 bathrooms</div>
-          </div>
-        </div>
-        <div className='flex flex-col gap-2'>
-          <div className='flex flex-col gap-1'>
-            <div className='text-sm'>Private pool</div>
-            <div className='text-sm'>Air conditioning</div>
-            <div className='text-sm'>WiFi</div>
-          </div>
-          <div className='flex flex-col gap-1'>
-            <div className='text-sm'>Sea views</div>
-            <div className='text-sm'>Close to town</div>
-            <div className='text-sm'>Close to beach</div>
-          </div>
-        </div>
-        <div className='flex flex-col gap-2'>
-          <div className='flex flex-col gap-1'>
-            <div className='text-sm'>Private pool</div>
-            <div className='text-sm'>Air conditioning</div>
-            <div className='text-sm'>WiFi</div>
-          </div>
-          <div className='flex flex-col gap-1'>
-            <div className='text-sm'>Sea views</div>
-            <div className='text-sm'>Close to town</div>
-            <div className='text-sm'>Close to beach</div>
+          <div className='flex justify-between items-center'>
+            <IsPayedCard isPayed={item.isPayed} />
+            <PlaceTypeCard type={item.type} />
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 

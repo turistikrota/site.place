@@ -2,6 +2,23 @@
   "card": {
     "minute": "min",
     "hour": "h",
-    "time-spent": "{{min}} - {{max}} {{unit}}"
+    "time-spent": "{{min}} - {{max}} {{unit}}",
+    "free": "free admission",
+    "payed": "payed admission"
+  },
+  "types": {
+    "eating": "Eat",
+    "coffee": "Coffee",
+    "bar": "Bar",
+    "beach": "Beach",
+    "amaze": "Amaze",
+    "shopping": "Shopping",
+    "transport": "Transport",
+    "culture": "Culture",
+    "nature": "Nature",
+    "health": "Health",
+    "sport": "Sport",
+    "nightlife": "Nightlife",
+    "other": "Other"
   }
 }

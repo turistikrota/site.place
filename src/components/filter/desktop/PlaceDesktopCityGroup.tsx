@@ -22,6 +22,8 @@ export default function PlaceDesktopCityGroup() {
         }
       }
       setCity(city)
+    } else {
+      setCity(null)
     }
   }, [query])
 
@@ -32,7 +34,10 @@ export default function PlaceDesktopCityGroup() {
   return (
     <PlaceDesktopFilterSection className='pt-4'>
       <PlaceDesktopHead>
-        <PlaceDesktopHead.Title>{t('components.city-select.text')}</PlaceDesktopHead.Title>
+        <PlaceDesktopHead.Title>
+          {t('components.city-select.text')}
+          {!!city && <span className='text-sm text-gray-500 ml-1'>({city.name})</span>}
+        </PlaceDesktopHead.Title>
         {!!city && <PlaceDesktopHead.Clear onClear={clearCity} />}
       </PlaceDesktopHead>
       <PlaceFilterCityGroup className='max-h-60 mt-2' />

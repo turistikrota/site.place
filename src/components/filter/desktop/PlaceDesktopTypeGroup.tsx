@@ -1,9 +1,9 @@
-import { useTranslation } from 'next-i18next'
 import { DesktopInfoBox } from '@turistikrota/ui/cjs/accessibility/info'
+import { useTranslation } from 'next-i18next'
+import { usePlaceFilter } from '~/features/place.filter'
 import PlaceFilterTypeGroup from '../shared/PlaceFilterTypeGroup'
 import PlaceDesktopFilterSection from './PlaceDesktopFilterSection'
 import PlaceDesktopHead from './PlaceDesktopHead'
-import { usePlaceFilter } from '~/features/place.filter'
 
 export default function PlaceDesktopTypeGroup() {
   const { t } = useTranslation('filter')
@@ -23,7 +23,7 @@ export default function PlaceDesktopTypeGroup() {
         </PlaceDesktopHead.Title>
         {!!query.filter.distance && <PlaceDesktopHead.Clear onClear={clearTypes} />}
       </PlaceDesktopHead>
-      <PlaceFilterTypeGroup />
+      <PlaceFilterTypeGroup className='max-h-60 mt-2' />
     </PlaceDesktopFilterSection>
   )
 }

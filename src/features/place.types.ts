@@ -1,4 +1,4 @@
-import { I18nTranslation, ListResponse } from '@turistikrota/ui/cjs/types'
+import { I18nTranslation, ListResponse, isLocale } from '@turistikrota/ui/cjs/types'
 
 export type PlaceFilterRequest = {
   query?: string
@@ -65,6 +65,14 @@ export enum Type {
   Bar = 'bar',
   Beach = 'beach',
   Amaze = 'amaze',
+  Shopping = 'shopping',
+  Transport = 'transport',
+  Culture = 'culture',
+  Nature = 'nature',
+  Health = 'health',
+  Sport = 'sport',
+  Nightlife = 'nightlife',
+  Other = 'other',
 }
 
 export enum Sort {
@@ -79,12 +87,12 @@ export enum Order {
   Desc = 'desc',
 }
 
-type PlaceImage = {
+export type PlaceImage = {
   url: string
   order: number
 }
 
-type TranslationItem = {
+export type TranslationItem = {
   title: string
   description: string
   slug: string
@@ -140,4 +148,17 @@ export function isOrder(order: string): order is Order {
 
 export function isTimeSpent(timeSpent: any): timeSpent is TimeSpent {
   return timeSpent && typeof timeSpent.min === 'number' && typeof timeSpent.max === 'number'
+}
+
+export const getTranslations = <T>(obj: I18nTranslation<T>, locale: string, fb: T): T => {
+  if (isLocale(locale) && obj[locale]) {
+    return obj[locale]
+  }
+  if (obj.en) {
+    return obj.en
+  }
+  if (obj.tr) {
+    return obj.tr
+  }
+  return fb
 }

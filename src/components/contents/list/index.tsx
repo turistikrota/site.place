@@ -1,15 +1,16 @@
+import ContentLoader from '@turistikrota/ui/cjs/loader'
+import PlaceListCard from '~/components/card/PlaceListCard'
+import { ContentProps } from '~/features/place.types'
 import ListFilter from './ListFilter'
 import ListHead from './ListHead'
-import { ContentProps } from '~/features/place.types'
-import PlaceListCard from '~/components/card/PlaceListCard'
 
 function ListItemSection({ data, loading }: ContentProps) {
-  if (loading) return <div>loading...</div>
+  if (loading) return <ContentLoader />
   if (!data) return <div>no data</div>
   return (
     <section className='grow grid grid-cols-12 gap-4'>
-      {[...data.list, ...data.list, ...data.list].map((item, idx) => (
-        <PlaceListCard key={idx} />
+      {data.list.map((item, idx) => (
+        <PlaceListCard key={idx} item={item} />
       ))}
     </section>
   )
