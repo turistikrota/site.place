@@ -14,7 +14,7 @@ type Props = {
 export default function MapDynamic({
   children,
   position,
-  zoom = 13,
+  zoom = 10,
   onChange,
   className,
 }: React.PropsWithChildren<Props>) {

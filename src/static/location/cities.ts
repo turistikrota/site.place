@@ -1,5 +1,6 @@
-import cities from './tr-city-names.json'
+import { Coordinates } from '@turistikrota/ui/cjs/types'
 import { turkishSorting } from '@turistikrota/ui/cjs/utils/sort'
+import cities from './tr-city-names.json'
 
 export type City = (typeof cities)[0]
 
@@ -10,7 +11,41 @@ export const findCityByName = (name: string): City | null => {
   return city || null
 }
 
-export const findCityByCoordinates = (coordinates: [number, number]): City | null => {
+export const findCityByCoordinates = (coordinates: Coordinates): City | null => {
   const city = cities.find((city) => city.coordinates[0] === coordinates[0] && city.coordinates[1] === coordinates[1])
-  return city || null
+  if (city) return city
+  return null
+}
+
+const getDistanceFromLatLonInKm = (lat1: number, lon1: number, lat2: number, lon2: number) => {
+  const R = 6371 // Yeryüzü ortalama yarıçapı (km)
+  const dLat = deg2rad(lat2 - lat1)
+  const dLon = deg2rad(lon2 - lon1)
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2)
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+  const distance = R * c
+  return distance
+}
+
+const deg2rad = (deg: number): number => {
+  return deg * (Math.PI / 180)
+}
+
+export const findNearestCity = (coordinates: Coordinates): City | null => {
+  console.log('find nearest')
+  let nearestCity = null
+  let minDistance = Number.MAX_VALUE
+
+  for (const city of cities) {
+    const distance = getDistanceFromLatLonInKm(coordinates[0], coordinates[1], city.coordinates[0], city.coordinates[1])
+    if (distance < minDistance) {
+      minDistance = distance
+      nearestCity = city
+    }
+  }
+  console.log('nearest result', nearestCity)
+
+  return nearestCity
 }

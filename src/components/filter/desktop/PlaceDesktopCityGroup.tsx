@@ -1,8 +1,8 @@
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
-import { City, findCityByCoordinates } from '~/static/location/cities'
-import PlaceFilterCityGroup from '../shared/PlaceFilterCityGroup'
 import { usePlaceFilter } from '~/features/place.filter'
+import { City, findCityByCoordinates, findNearestCity } from '~/static/location/cities'
+import PlaceFilterCityGroup from '../shared/PlaceFilterCityGroup'
 import PlaceDesktopFilterSection from './PlaceDesktopFilterSection'
 import PlaceDesktopHead from './PlaceDesktopHead'
 
@@ -13,7 +13,15 @@ export default function PlaceDesktopCityGroup() {
 
   useEffect(() => {
     if (query.filter.coordinates) {
-      setCity(findCityByCoordinates(query.filter.coordinates))
+      let city = findCityByCoordinates(query.filter.coordinates)
+      if (!city) {
+        city = findNearestCity(query.filter.coordinates)
+        if (city) {
+          query.filter.coordinates = [city.coordinates[0], city.coordinates[1]]
+          push(query)
+        }
+      }
+      setCity(city)
     }
   }, [query])
 

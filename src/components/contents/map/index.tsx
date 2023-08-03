@@ -9,6 +9,7 @@ import { useEffect } from 'react'
 import { Marker, Popup } from 'react-leaflet'
 import PlaceMapCard from '~/components/card/PlaceMapCard'
 import MapDefaultConfig from '~/components/map/MapDefaultConfig'
+import { usePlaceFilter } from '~/features/place.filter'
 import { ContentProps } from '~/features/place.types'
 import { useSizeWithoutHeader } from '~/hooks/dom'
 
@@ -24,6 +25,8 @@ type MapProps = {
 
 export default function MapContent({ data }: ContentProps & MapProps) {
   const size = useSizeWithoutHeader()
+  const { query, push } = usePlaceFilter()
+
   useEffect(() => {
     Leaflet.Icon.Default.mergeOptions({
       iconRetinaUrl: '/images/marker-icon.png',
@@ -33,8 +36,9 @@ export default function MapContent({ data }: ContentProps & MapProps) {
   }, [])
 
   const onChange = (coordinates: Coordinates, zoom: number) => {
-    // re call api
-    console.log('moved', zoom)
+    query.filter.coordinates = coordinates
+    query.filter.distance = zoom
+    push(query)
   }
 
   const debouncedChange = debounce(onChange, 300)
