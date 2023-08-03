@@ -1,0 +1,7 @@
+{
+  "card": {
+    "minute": "dk",
+    "hour": "sa",
+    "time-spent": "{{min}} - {{max}} {{unit}}"
+  }
+}

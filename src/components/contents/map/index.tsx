@@ -1,9 +1,7 @@
 'use client'
 
-import { Locales } from '@turistikrota/ui/cjs/types'
 import Leaflet, { type LatLngTuple } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-import { useTranslation } from 'next-i18next'
 import dynamic from 'next/dynamic'
 import { useEffect } from 'react'
 import { Marker, Popup } from 'react-leaflet'
@@ -23,7 +21,6 @@ type MapProps = {
 }
 
 export default function MapContent({ data }: ContentProps & MapProps) {
-  const { i18n } = useTranslation()
   const size = useSizeWithoutHeader()
   useEffect(() => {
     Leaflet.Icon.Default.mergeOptions({
@@ -44,10 +41,7 @@ export default function MapContent({ data }: ContentProps & MapProps) {
         {data?.list.map((item, idx) => (
           <Marker key={idx} position={item.coordinates}>
             <Popup className='map-popup'>
-              <PlaceMapCard
-                slug={item.translations[i18n.language as Locales].slug}
-                images={item.images.sort((a, b) => a.order - b.order).map((image) => image.url)}
-              />
+              <PlaceMapCard item={item} />
             </Popup>
           </Marker>
         ))}
