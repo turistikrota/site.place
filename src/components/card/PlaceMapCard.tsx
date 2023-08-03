@@ -1,7 +1,7 @@
 import Carousel from '@turistikrota/ui/cjs/carousel'
+import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import { MouseEventHandler } from 'react'
-import { useTranslation } from 'react-i18next'
 import { PlaceListItem, TranslationItem, getTranslations } from '~/features/place.types'
 import { mapAndSortImages } from '~/utils/image'
 import { ReviewCard } from './Shared'

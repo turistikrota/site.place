@@ -98,7 +98,7 @@ export type TranslationItem = {
   slug: string
 }
 
-type FullTranslation = TranslationItem & {
+export type FullTranslation = TranslationItem & {
   markdownUrl: string
   seo: Seo
 }

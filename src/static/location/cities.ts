@@ -49,3 +49,22 @@ export const findNearestCity = (coordinates: Coordinates): City | null => {
 
   return nearestCity
 }
+
+export const findBestNearestCities = (coordinates: Coordinates, count: number): City[] => {
+  let nearestCities = []
+  let minDistance = Number.MAX_VALUE
+
+  for (const city of cities) {
+    const distance = getDistanceFromLatLonInKm(coordinates[0], coordinates[1], city.coordinates[0], city.coordinates[1])
+    if (distance < minDistance) {
+      minDistance = distance
+      nearestCities.push(city)
+    }
+  }
+  nearestCities = nearestCities.sort((a, b) => {
+    const distanceA = getDistanceFromLatLonInKm(coordinates[0], coordinates[1], a.coordinates[0], a.coordinates[1])
+    const distanceB = getDistanceFromLatLonInKm(coordinates[0], coordinates[1], b.coordinates[0], b.coordinates[1])
+    return distanceA - distanceB
+  })
+  return nearestCities.slice(0, count)
+}

@@ -1,5 +1,6 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import { Type } from '~/features/place.types'
+import { PlaceTypeItems, PlaceTypes } from '~/types/place'
 import FiveStars from '../Stars'
 
 type ReviewCardProps = {
@@ -42,80 +43,6 @@ export const IsPayedCard: React.FC<IsPayedProps> = ({ isPayed }) => {
       </div>
     </div>
   )
-}
-
-type PlaceTypeItems = {
-  icon: string
-  text: string
-  color: string
-}
-
-const PlaceTypes: Record<Type, PlaceTypeItems> = {
-  [Type.Eating]: {
-    icon: 'bx bx-food-menu',
-    text: 'types.eating',
-    color: 'bg-secondary-100 dark:bg-secondary-900',
-  },
-  [Type.Coffee]: {
-    icon: 'bx bx-coffee',
-    text: 'types.coffee',
-    color: 'bg-yellow-100 dark:bg-yellow-900',
-  },
-  [Type.Bar]: {
-    icon: 'bx bx-drink',
-    text: 'types.bar',
-    color: 'bg-blue-100 dark:bg-blue-900',
-  },
-  [Type.Beach]: {
-    icon: 'bx bx-swim',
-    text: 'types.beach',
-    color: 'bg-green-100 dark:bg-green-900',
-  },
-  [Type.Amaze]: {
-    icon: 'bx bx-cycling',
-    text: 'types.amaze',
-    color: 'bg-purple-100 dark:bg-purple-900',
-  },
-  [Type.Shopping]: {
-    icon: 'bx bx-shopping-bag',
-    text: 'types.shopping',
-    color: 'bg-orange-100 dark:bg-orange-900',
-  },
-  [Type.Transport]: {
-    icon: 'bx bx-bus',
-    text: 'types.transport',
-    color: 'bg-indigo-100 dark:bg-indigo-900',
-  },
-  [Type.Culture]: {
-    icon: 'bx bxs-landmark',
-    text: 'types.culture',
-    color: 'bg-gray-100 dark:bg-gray-900',
-  },
-  [Type.Nature]: {
-    icon: 'bx bxs-tree',
-    text: 'types.nature',
-    color: 'bg-teal-100 dark:bg-teal-900',
-  },
-  [Type.Health]: {
-    icon: 'bx bx-heart',
-    text: 'types.health',
-    color: 'bg-blue-100 dark:bg-blue-900',
-  },
-  [Type.Sport]: {
-    icon: 'bx bx-football',
-    text: 'types.sport',
-    color: 'bg-green-100 dark:bg-green-900',
-  },
-  [Type.Nightlife]: {
-    icon: 'bx bx-moon',
-    text: 'types.nightlife',
-    color: 'bg-indigo-100 dark:bg-indigo-900',
-  },
-  [Type.Other]: {
-    icon: 'bx bx-plus',
-    text: 'types.other',
-    color: 'bg-gray-100 dark:bg-gray-900',
-  },
 }
 
 export const PlaceTypeCard = ({ type }: PlaceTypeProps) => {

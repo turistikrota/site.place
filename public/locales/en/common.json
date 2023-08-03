@@ -37,5 +37,8 @@
   "content-switch": {
     "map": "Show Map",
     "list": "Show List"
+  },
+  "brace": {
+    "and": "and"
   }
 }
