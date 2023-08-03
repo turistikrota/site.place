@@ -1,6 +1,7 @@
 'use client'
 
 import { Coordinates } from '@turistikrota/ui/cjs/types'
+import debounce from '@turistikrota/ui/cjs/utils/debounce'
 import Leaflet, { type LatLngTuple } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import dynamic from 'next/dynamic'
@@ -32,8 +33,11 @@ export default function MapContent({ data }: ContentProps & MapProps) {
   }, [])
 
   const onChange = (coordinates: Coordinates, zoom: number) => {
-    console.log('moved')
+    // re call api
+    console.log('moved', zoom)
   }
+
+  const debouncedChange = debounce(onChange, 300)
 
   return (
     <div
@@ -41,7 +45,7 @@ export default function MapContent({ data }: ContentProps & MapProps) {
         height: size,
       }}
     >
-      <DynamicMap position={position} onChange={onChange}>
+      <DynamicMap position={position} onChange={debouncedChange}>
         <MapDefaultConfig />
         {data?.list.map((item, idx) => (
           <Marker key={idx} position={item.coordinates}>

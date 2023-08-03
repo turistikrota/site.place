@@ -40,7 +40,14 @@ export default function MapDynamic({
   }, [map, onMove])
 
   return (
-    <MapContainer ref={setMap} center={position} zoom={zoom} className={`h-full w-full min-h-full ${className}`}>
+    <MapContainer
+      minZoom={7}
+      maxZoom={15}
+      ref={setMap}
+      center={position}
+      zoom={zoom}
+      className={`h-full w-full min-h-full ${className}`}
+    >
       {children}
     </MapContainer>
   )
