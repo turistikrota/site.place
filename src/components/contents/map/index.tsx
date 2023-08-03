@@ -1,10 +1,13 @@
 'use client'
 
+import { Locales } from '@turistikrota/ui/cjs/types'
 import Leaflet, { type LatLngTuple } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+import { useTranslation } from 'next-i18next'
 import dynamic from 'next/dynamic'
 import { useEffect } from 'react'
 import { Marker, Popup } from 'react-leaflet'
+import PlaceMapCard from '~/components/card/PlaceMapCard'
 import MapDefaultConfig from '~/components/map/MapDefaultConfig'
 import { ContentProps } from '~/features/place.types'
 import { useSizeWithoutHeader } from '~/hooks/dom'
@@ -19,7 +22,8 @@ type MapProps = {
   position: LatLngTuple
 }
 
-export default function MapContent({}: ContentProps & MapProps) {
+export default function MapContent({ data }: ContentProps & MapProps) {
+  const { i18n } = useTranslation()
   const size = useSizeWithoutHeader()
   useEffect(() => {
     Leaflet.Icon.Default.mergeOptions({
@@ -37,11 +41,16 @@ export default function MapContent({}: ContentProps & MapProps) {
     >
       <DynamicMap position={position}>
         <MapDefaultConfig />
-        <Marker position={position}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
+        {data?.list.map((item, idx) => (
+          <Marker key={idx} position={item.coordinates}>
+            <Popup className='map-popup'>
+              <PlaceMapCard
+                slug={item.translations[i18n.language as Locales].slug}
+                images={item.images.sort((a, b) => a.order - b.order).map((image) => image.url)}
+              />
+            </Popup>
+          </Marker>
+        ))}
       </DynamicMap>
     </div>
   )
