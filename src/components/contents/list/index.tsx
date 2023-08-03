@@ -8,10 +8,11 @@ function ListItemSection({ data, loading }: ContentProps) {
   if (loading) return <ContentLoader />
   if (!data) return <div>no data</div>
   return (
-    <section className='grow grid grid-cols-12 gap-4'>
+    <section className='grow grid grid-cols-12 gap-4 md:min-h-[120vh] md:h-full'>
       {data.list.map((item, idx) => (
         <PlaceListCard key={idx} item={item} />
       ))}
+      <div className='pb-20 md:hidden'></div>
     </section>
   )
 }

@@ -10,7 +10,7 @@ export default function ScrollableSection({
 }: React.PropsWithChildren<Props>) {
   return (
     <div
-      className={`${className ? className : 'max-h-[50vh] mt-2 space-y-1'} ${
+      className={`${className ? className : 'max-h-[50vh] mt-2 space-y-2 md:space-y-1'} ${
         !disableOverflow ? 'overflow-y-auto overflow-x-hidden' : ''
       }`}
     >

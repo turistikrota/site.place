@@ -40,7 +40,7 @@ export default function PlaceFilterTypeGroup({ className }: Props) {
   return (
     <div className='space-y-4 lg:space-y-0'>
       <MobileInfoBox>{t('filter:components.types.description')}</MobileInfoBox>
-      <ScrollableSection className={className} disableOverflow={!className}>
+      <ScrollableSection className={className}>
         {types.map((type) => (
           <Checkbox
             key={type}

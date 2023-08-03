@@ -25,23 +25,25 @@ const PlaceListCard: React.FC<Props> = ({ item }) => {
   }
 
   return (
-    <Link href={translations.slug} className='col-span-4' target='_blank' onClick={checkOutsideClick}>
-      <div className='flex flex-col bg-second rounded-md'>
-        <Carousel images={mapAndSortImages(item.images)} sizeClassName='h-72' />
-        <div className='flex flex-col gap-2 p-4'>
-          <div className='text-2xl font-bold'>{translations.title}</div>
-          <div className='text-sm'>Kalkan, Antalya</div>
-          <div className='flex justify-between items-center'>
-            <ReviewCard star={item.review.averagePoint} total={item.review.total} />
-            <TimeSpentCard data={item.averageTimeSpent} />
-          </div>
-          <div className='flex justify-between items-center'>
-            <IsPayedCard isPayed={item.isPayed} />
-            <PlaceTypeCard type={item.type} />
+    <div className='flex flex-col col-span-12 md:col-span-4'>
+      <Link className='bg-second rounded-md' href={translations.slug} target='_blank' onClick={checkOutsideClick}>
+        <div>
+          <Carousel images={mapAndSortImages(item.images)} sizeClassName='h-72' />
+          <div className='flex flex-col gap-2 p-4'>
+            <div className='text-2xl font-bold'>{translations.title}</div>
+            <div className='text-sm'>Kalkan, Antalya</div>
+            <div className='flex justify-between items-center'>
+              <ReviewCard star={item.review.averagePoint} total={item.review.total} />
+              <TimeSpentCard data={item.averageTimeSpent} />
+            </div>
+            <div className='flex justify-between items-center'>
+              <IsPayedCard isPayed={item.isPayed} />
+              <PlaceTypeCard type={item.type} />
+            </div>
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   )
 }
 
