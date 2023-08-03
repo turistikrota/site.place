@@ -1,5 +1,6 @@
 'use client'
 
+import { Coordinates } from '@turistikrota/ui/cjs/types'
 import Leaflet, { type LatLngTuple } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import dynamic from 'next/dynamic'
@@ -30,13 +31,17 @@ export default function MapContent({ data }: ContentProps & MapProps) {
     })
   }, [])
 
+  const onChange = (coordinates: Coordinates, zoom: number) => {
+    console.log('moved')
+  }
+
   return (
     <div
       style={{
         height: size,
       }}
     >
-      <DynamicMap position={position}>
+      <DynamicMap position={position} onChange={onChange}>
         <MapDefaultConfig />
         {data?.list.map((item, idx) => (
           <Marker key={idx} position={item.coordinates}>
