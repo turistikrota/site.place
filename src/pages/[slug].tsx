@@ -1,10 +1,11 @@
-import Carousel from '@turistikrota/ui/cjs/carousel'
+import ImagePreview from '@turistikrota/ui/cjs/image/preview'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useMemo } from 'react'
 import MarkdownContent from '~/components/MarkdownContent'
 import FiveStars from '~/components/Stars'
 import FeatureCard, { FeatureVariants } from '~/components/card/FeatureCard'
+import PlaceImagePreview from '~/components/card/PlaceImagePreview'
 import { Services, apiUrl } from '~/config/services'
 import { FullTranslation, PlaceDetail, Type, getTranslations } from '~/features/place.types'
 import { useDayJS } from '~/hooks/dayjs'
@@ -32,6 +33,7 @@ type FeatureItem = {
 
 export default function PlaceDetail({ response, md }: Props) {
   const { t, i18n } = useTranslation('place')
+  const images = mapAndSortImages(response?.images)
   const translations = getTranslations<FullTranslation>(response.translations, i18n.language, {
     title: '',
     slug: '',
@@ -99,55 +101,57 @@ export default function PlaceDetail({ response, md }: Props) {
 
   return (
     <DefaultLayout>
-      <section className='max-w-7xl p-4 xl:px-0 mx-auto lg:h-full grow grid grid-cols-12 gap-4'>
-        <div className='col-span-12 md:col-span-8'>
-          <Carousel images={mapAndSortImages(response?.images)} sizeClassName='h-104' />
-          <section className='mt-4'>
-            <MarkdownContent content={md} />
-          </section>
-        </div>
-        <div className='col-span-12 md:col-span-4'>
-          <div className='flex flex-col h-full gap-20 p-4 py-0'>
-            <div className='flex flex-col gap-2'>
-              <div className='text-2xl font-bold'>{translations.title}</div>
-              <div className='text-sm'>{translations.description}</div>
-            </div>
-            <div className='grid grid-cols-4 gap-3'>
-              <div className='col-span-4 flex justify-between items-center'>
-                <FiveStars star={response.review.averagePoint} iconSize='bx-md' />
-                <div className='flex items-end gap-1'>
-                  <div className='text-4xl font-bold text-gray-600 dark:text-gray-300'>{response.review.total}</div>
-                  <div className='text-lg text-gray-600 dark:text-gray-300'>{t('reviews')}</div>
-                </div>
+      <ImagePreview list={images}>
+        <section className='max-w-7xl p-4 xl:px-0 mx-auto lg:h-full grow grid grid-cols-12 gap-4'>
+          <div className='col-span-12 md:col-span-8'>
+            <PlaceImagePreview images={images} />
+            <section className='mt-4'>
+              <MarkdownContent content={md} />
+            </section>
+          </div>
+          <div className='col-span-12 md:col-span-4'>
+            <div className='flex flex-col h-full gap-20 p-4 py-0'>
+              <div className='flex flex-col gap-2'>
+                <div className='text-2xl font-bold'>{translations.title}</div>
+                <div className='text-sm'>{translations.description}</div>
               </div>
-              {response.features.map((feature, idx) => (
-                <FeatureCard
-                  key={feature.uuid}
-                  icon={feature.icon}
-                  text={feature.translations.en.title}
-                  subtext={feature.translations.en.description}
-                  variant='primary'
-                  core
-                ></FeatureCard>
-              ))}
-              {features.map((feature, index) => (
-                <FeatureCard
-                  key={index}
-                  icon={feature.icon}
-                  text={feature.title}
-                  subtext={feature.text}
-                  variant={feature.variant as FeatureVariants}
-                ></FeatureCard>
-              ))}
-              <div className='text-gray-400 text-sm col-span-4'>
-                {t('base.updated', {
-                  date: dayjs(response.updatedAt).format('MMMM YYYY'),
-                })}
+              <div className='grid grid-cols-4 gap-3'>
+                <div className='col-span-4 flex justify-between items-center'>
+                  <FiveStars star={response.review.averagePoint} iconSize='bx-md' />
+                  <div className='flex items-end gap-1'>
+                    <div className='text-4xl font-bold text-gray-600 dark:text-gray-300'>{response.review.total}</div>
+                    <div className='text-lg text-gray-600 dark:text-gray-300'>{t('reviews')}</div>
+                  </div>
+                </div>
+                {response.features.map((feature, idx) => (
+                  <FeatureCard
+                    key={feature.uuid}
+                    icon={feature.icon}
+                    text={feature.translations.en.title}
+                    subtext={feature.translations.en.description}
+                    variant='primary'
+                    core
+                  ></FeatureCard>
+                ))}
+                {features.map((feature, index) => (
+                  <FeatureCard
+                    key={index}
+                    icon={feature.icon}
+                    text={feature.title}
+                    subtext={feature.text}
+                    variant={feature.variant as FeatureVariants}
+                  ></FeatureCard>
+                ))}
+                <div className='text-gray-400 text-sm col-span-4'>
+                  {t('base.updated', {
+                    date: dayjs(response.updatedAt).format('MMMM YYYY'),
+                  })}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ImagePreview>
     </DefaultLayout>
   )
 }
