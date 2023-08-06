@@ -1,5 +1,5 @@
 import { Coordinates } from '@turistikrota/ui/cjs/types'
-import { Map, type LatLngTuple } from 'leaflet'
+import Leaflet, { Map, type LatLngTuple } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { useCallback, useEffect, useState } from 'react'
 import { MapContainer } from 'react-leaflet'
@@ -38,6 +38,15 @@ export default function MapDynamic({
       map.off('move', onMove)
     }
   }, [map, onMove])
+
+  
+  useEffect(() => {
+    Leaflet.Icon.Default.mergeOptions({
+      iconRetinaUrl: '/images/marker-icon.png',
+      iconUrl: '/images/marker-icon.png',
+      shadowUrl: '',
+    })
+  }, [])
 
   return (
     <MapContainer

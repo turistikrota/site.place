@@ -57,5 +57,11 @@
   "base": {
     "reviews": "Reviews",
     "updated": "Updated at {{date}}"
+  },
+  "detail": {
+    "map": {
+      "title": "Map",
+      "description": "This is the map of the place."
+    }
   }
 }

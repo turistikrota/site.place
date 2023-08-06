@@ -49,7 +49,7 @@ export type PlaceDetail = {
   updatedAt: Date
 }
 
-type FeatureItem = {
+export type FeatureItem = {
   uuid: string
   icon: string
   translations: I18nTranslation<FeatureTranslation>
@@ -115,7 +115,7 @@ export type TimeSpent = {
   max: number
 }
 
-type Review = {
+export type Review = {
   total: number
   averagePoint: number
 }

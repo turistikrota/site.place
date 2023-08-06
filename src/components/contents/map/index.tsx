@@ -2,10 +2,9 @@
 
 import { Coordinates } from '@turistikrota/ui/cjs/types'
 import debounce from '@turistikrota/ui/cjs/utils/debounce'
-import Leaflet, { type LatLngTuple } from 'leaflet'
+import { type LatLngTuple } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import dynamic from 'next/dynamic'
-import { useEffect } from 'react'
 import { Marker, Popup } from 'react-leaflet'
 import PlaceMapCard from '~/components/card/PlaceMapCard'
 import MapDefaultConfig from '~/components/map/MapDefaultConfig'
@@ -26,14 +25,6 @@ type MapProps = {
 export default function MapContent({ data }: ContentProps & MapProps) {
   const size = useSizeWithoutHeader()
   const { query, push } = usePlaceFilter()
-
-  useEffect(() => {
-    Leaflet.Icon.Default.mergeOptions({
-      iconRetinaUrl: '/images/marker-icon.png',
-      iconUrl: '/images/marker-icon.png',
-      shadowUrl: '',
-    })
-  }, [])
 
   const onChange = (coordinates: Coordinates, zoom: number) => {
     query.filter.coordinates = coordinates
