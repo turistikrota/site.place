@@ -12,5 +12,5 @@ export default function PlaceImagePreview({ images }: Props) {
     preview.show(idx)
   }
 
-  return <Carousel images={images} sizeClassName='h-104' onClick={openPreview} autoPlay />
+  return <Carousel images={images} sizeClassName='h-104' onClick={openPreview} autoPlay showSubImages />
 }
