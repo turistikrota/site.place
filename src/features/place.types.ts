@@ -123,6 +123,7 @@ export type Review = {
 export type ContentProps = {
   loading: boolean
   data: ListResponse<PlaceListItem> | null
+  onNextPage?: () => void
 }
 
 export type Coordinates = [number, number]

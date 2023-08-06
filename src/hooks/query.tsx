@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { isPlaceListResponse } from '~/features/place.types'
 import { httpClient } from '~/http/client'
 import { deepEqual } from '~/utils/deepEqual'
 
@@ -7,6 +8,7 @@ type UseQueryResult<T = unknown> = {
   isLoading: boolean
   error: unknown | null
   refetch: () => void
+  nextPage: () => void
 }
 
 type CacheEntity<T = unknown> = {
@@ -30,7 +32,7 @@ export const useQuery = <T = unknown,>(
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [error, setError] = useState<Error | null>(null)
 
-  const fetcher = (url: string, skipCache: boolean = false) => {
+  const fetcher = (url: string, skipCache: boolean = false, isNextPage: boolean = false) => {
     let cached = false
     setIsLoading(true)
     if (!skipCache && typeof window !== 'undefined') {
@@ -48,13 +50,24 @@ export const useQuery = <T = unknown,>(
     if (cached) return
     let promise
     if (opts && opts.method === 'POST') {
+      if (isNextPage) {
+        if (isPlaceListResponse(data) && !data.isNext) return
+        opts.params.page = (opts.params.page || 1) + 1
+      }
       promise = httpClient.post(url, opts.params)
     } else {
       promise = httpClient.get(url)
     }
     promise
       .then((res) => {
-        setData(res.data)
+        if (isNextPage) {
+          setData((prevData: any) => ({
+            ...res.data,
+            list: [...prevData.list, ...res.data.list],
+          }))
+        } else {
+          setData(res.data)
+        }
         if (opts.cache && typeof window !== 'undefined') {
           const cacheEntity: CacheEntity<T> = {
             data: res.data,
@@ -84,5 +97,6 @@ export const useQuery = <T = unknown,>(
     isLoading,
     error,
     refetch: () => fetcher(url, true),
+    nextPage: () => fetcher(url, true, true),
   }
 }

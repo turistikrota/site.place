@@ -10,6 +10,7 @@ type UsePlacesResult = {
   isLoading: boolean
   error: unknown | null
   refetch: () => void
+  nextPage: () => void
 }
 
 export const usePlaces = (
@@ -21,6 +22,7 @@ export const usePlaces = (
     isLoading,
     error,
     refetch,
+    nextPage,
   } = useQuery<ListResponse<PlaceListItem>>(apiUrl(Services.Place, `/?${placeQueryToURL(query)}`), {
     cache: false,
     method: 'POST',
@@ -39,5 +41,6 @@ export const usePlaces = (
     isLoading,
     error,
     refetch,
+    nextPage,
   }
 }

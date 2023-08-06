@@ -50,11 +50,12 @@ const FixedButton: React.FC<ButtonProps> = ({ text, variant, icon, onClick }) =>
 
 export default function ContentSwitcher({ response, error }: Props) {
   const { t } = useTranslation('common')
-  const { query, isQueryChanged, clean } = usePlaceFilter()
+  const { query, isQueryChanged, isOnlyPageChanged, clean } = usePlaceFilter()
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
-  const { places, isLoading, refetch } = usePlaces(query, response)
+  const { places, isLoading, refetch, nextPage } = usePlaces(query, response)
   const [active, setActive] = useState<ContentType>('list')
   const debouncedFilter = debounce(() => {
+    if (isOnlyPageChanged) return nextPage()
     refetch()
   }, 500)
 
@@ -82,7 +83,7 @@ export default function ContentSwitcher({ response, error }: Props) {
             </Alert>
           </div>
         )}
-        <DynamicList data={places} loading={isLoading} />
+        <DynamicList data={places} loading={isLoading} isNext={places.isNext} />
         <FixedButton text={t('content-switch.map')} icon='map-alt' onClick={() => setActive('map')} variant='primary' />
       </>
     )

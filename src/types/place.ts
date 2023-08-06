@@ -85,3 +85,4 @@ export const PlaceTypes: Record<Type, PlaceTypeItems> = {
     color: 'bg-gray-100 dark:bg-gray-900',
   },
 }
+

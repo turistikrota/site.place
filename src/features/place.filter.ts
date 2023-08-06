@@ -195,6 +195,7 @@ type PlaceFilterHookResult = {
   clean: (cb?: Callback) => void
   isFiltered: boolean
   isQueryChanged: boolean
+  isOnlyPageChanged: boolean
 }
 
 export const usePlaceFilter = (): PlaceFilterHookResult => {
@@ -206,7 +207,7 @@ export const usePlaceFilter = (): PlaceFilterHookResult => {
 
   const debouncedPush = debounce((path: string, cb?: Callback) => {
     const url = `${pathname}?${path}`
-    router.push(url)
+    router.push(url, undefined, { shallow: true })
     if (cb) cb()
   }, 500)
 
@@ -233,6 +234,7 @@ export const usePlaceFilter = (): PlaceFilterHookResult => {
   return {
     query,
     isQueryChanged: lastQuery !== null && !deepEqual(lastQuery, query),
+    isOnlyPageChanged: lastQuery !== null && lastQuery.page !== query.page && deepEqual(lastQuery.filter, query.filter),
     isFiltered: Object.keys(query.filter).length > 0,
     clean: cleaner,
     push,
