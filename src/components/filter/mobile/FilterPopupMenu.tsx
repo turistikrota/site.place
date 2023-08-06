@@ -1,11 +1,11 @@
+import { Locales, isCoordinates } from '@turistikrota/ui/cjs/types'
 import { useTranslation } from 'next-i18next'
+import { PlaceFeatureListItem, PlaceFilterRequest, isPlaceType, isTimeSpent } from '~/features/place.types'
+import { usePlaceFilter } from '~/hooks/place.filter'
+import { usePlaceFeatures } from '~/hooks/usePlaceFeatures'
 import { findCityByCoordinates } from '~/static/location/cities'
 import FilterGroup from './FilterGroup'
-import { PlaceFeatureListItem, PlaceFilterRequest, isPlaceType, isTimeSpent } from '~/features/place.types'
 import { FilterComponents } from './types'
-import { Locales, isCoordinates } from '@turistikrota/ui/cjs/types'
-import { usePlaceFilter } from '~/features/place.filter'
-import { usePlaceFeatures } from '~/hooks/usePlaceFeatures'
 
 type Props = {
   onOpen: (component: FilterComponents, key: keyof PlaceFilterRequest) => void

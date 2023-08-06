@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
-import { usePlaceFilter } from '~/features/place.filter'
+import { usePlaceFilter } from '~/hooks/place.filter'
 import { City, findCityByCoordinates, findNearestCity } from '~/static/location/cities'
 import PlaceFilterCityGroup from '../shared/PlaceFilterCityGroup'
 import PlaceDesktopFilterSection from './PlaceDesktopFilterSection'

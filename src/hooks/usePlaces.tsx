@@ -1,6 +1,5 @@
 import { ListResponse } from '@turistikrota/ui/cjs/types'
 import { Services, apiUrl } from '~/config/services'
-import { placeQueryToURL } from '~/features/place.filter'
 import { PlaceFilterRequest, PlaceListItem } from '~/features/place.types'
 import { PaginationRequest } from '~/types/pagination'
 import { useQuery } from './query'
@@ -10,7 +9,7 @@ type UsePlacesResult = {
   isLoading: boolean
   error: unknown | null
   refetch: () => void
-  nextPage: () => void
+  nextPage: (page: number) => void
 }
 
 export const usePlaces = (
@@ -23,12 +22,15 @@ export const usePlaces = (
     error,
     refetch,
     nextPage,
-  } = useQuery<ListResponse<PlaceListItem>>(apiUrl(Services.Place, `/?${placeQueryToURL(query)}`), {
-    cache: false,
-    method: 'POST',
-    params: query,
-    withSSR: initial,
-  })
+  } = useQuery<ListResponse<PlaceListItem>>(
+    apiUrl(Services.Place, `/?page=${query.page ?? 1}&limit=${query.limit ?? 9}`),
+    {
+      cache: false,
+      method: 'POST',
+      params: query.filter,
+      withSSR: initial,
+    },
+  )
   return {
     places: places || {
       filteredTotal: 0,

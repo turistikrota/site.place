@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next'
-import ClearButton from './ClearButton'
 import { PlaceFilterRequest } from '~/features/place.types'
-import { usePlaceFilter } from '~/features/place.filter'
+import { usePlaceFilter } from '~/hooks/place.filter'
+import ClearButton from './ClearButton'
 
 type Props = {
   title: string

@@ -198,10 +198,12 @@ type PlaceFilterHookResult = {
   isOnlyPageChanged: boolean
 }
 
-export const usePlaceFilter = (): PlaceFilterHookResult => {
+export const usePlaceFilterProvider = (): PlaceFilterHookResult => {
   const searchParams = useSearchParams()
   const [query, setQuery] = useState<PaginationRequest<PlaceFilterRequest>>(getQueryByKeyBindings(searchParams))
-  const [lastQuery, setLastQuery] = useState<PaginationRequest<PlaceFilterRequest> | null>(query)
+  const [lastQuery, setLastQuery] = useState<PaginationRequest<PlaceFilterRequest> | null>(null)
+  const [isOnlyPageChanged, setIsOnlyPageChanged] = useState(false)
+  const [isQueryChanged, setIsQueryChanged] = useState(false)
   const pathname = usePathname()
   const router = useRouter()
 
@@ -220,21 +222,42 @@ export const usePlaceFilter = (): PlaceFilterHookResult => {
     debouncedPush(path, cb)
   }
 
-  useEffect(() => {
-    if (lastQuery && deepEqual(lastQuery, query)) return
-    setLastQuery(query)
-  }, [query])
-
+  const setAllQueries = (newQuery: PaginationRequest<PlaceFilterRequest>) => {
+    const oldQuery = { ...query }
+    setQuery(newQuery)
+    if (deepEqual(oldQuery, newQuery)) {
+      console.log('sa')
+      return
+    }
+    setLastQuery(oldQuery)
+    console.log('old', oldQuery)
+    console.log('new', newQuery)
+    if (oldQuery.page !== newQuery.page && deepEqual(oldQuery.filter, newQuery.filter)) {
+      setIsOnlyPageChanged(true)
+      setIsQueryChanged(false)
+    } else if (!deepEqual(oldQuery, newQuery)) {
+      setIsOnlyPageChanged(false)
+      setIsQueryChanged(true)
+    }
+  }
   useEffect(() => {
     const newQuery = getQueryByKeyBindings(searchParams)
-    if (placeToQuery(query) === placeToQuery(newQuery)) return
-    setQuery(newQuery)
+    if (query.page === newQuery.page && !deepEqual(query.filter, newQuery.filter)) {
+      newQuery.page = 1
+    }
+    if (query && placeToQuery(query) === placeToQuery(newQuery)) return
+    setAllQueries(newQuery)
   }, [searchParams])
+
+  useEffect(() => {
+    if (lastQuery !== null) return
+    setLastQuery(query)
+  }, [])
 
   return {
     query,
-    isQueryChanged: lastQuery !== null && !deepEqual(lastQuery, query),
-    isOnlyPageChanged: lastQuery !== null && lastQuery.page !== query.page && deepEqual(lastQuery.filter, query.filter),
+    isQueryChanged,
+    isOnlyPageChanged,
     isFiltered: Object.keys(query.filter).length > 0,
     clean: cleaner,
     push,

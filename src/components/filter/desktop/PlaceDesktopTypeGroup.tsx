@@ -1,6 +1,6 @@
 import { DesktopInfoBox } from '@turistikrota/ui/cjs/accessibility/info'
 import { useTranslation } from 'next-i18next'
-import { usePlaceFilter } from '~/features/place.filter'
+import { usePlaceFilter } from '~/hooks/place.filter'
 import PlaceFilterTypeGroup from '../shared/PlaceFilterTypeGroup'
 import PlaceDesktopFilterSection from './PlaceDesktopFilterSection'
 import PlaceDesktopHead from './PlaceDesktopHead'

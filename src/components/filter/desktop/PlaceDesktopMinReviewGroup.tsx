@@ -1,9 +1,9 @@
-import { useTranslation } from 'next-i18next'
 import { DesktopInfoBox } from '@turistikrota/ui/cjs/accessibility/info'
+import { useTranslation } from 'next-i18next'
+import { usePlaceFilter } from '~/hooks/place.filter'
 import PlaceFilterReviewGroup from '../shared/PlaceFilterReviewGroup'
 import PlaceDesktopFilterSection from './PlaceDesktopFilterSection'
 import PlaceDesktopHead from './PlaceDesktopHead'
-import { usePlaceFilter } from '~/features/place.filter'
 
 export default function PlaceDesktopMinReviewGroup() {
   const { t } = useTranslation('filter')

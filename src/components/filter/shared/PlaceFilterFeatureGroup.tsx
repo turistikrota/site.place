@@ -1,11 +1,11 @@
-import { useTranslation } from 'next-i18next'
-import { useEffect, useState } from 'react'
 import { DesktopInfoBox, MobileInfoBox } from '@turistikrota/ui/cjs/accessibility/info'
 import Checkbox from '@turistikrota/ui/cjs/form/checkbox'
 import { useIsDesktop } from '@turistikrota/ui/cjs/hooks/dom'
-import { usePlaceFilter } from '~/features/place.filter'
 import { Locales } from '@turistikrota/ui/cjs/types'
+import { useTranslation } from 'next-i18next'
+import { useEffect, useState } from 'react'
 import Spin from 'sspin'
+import { usePlaceFilter } from '~/hooks/place.filter'
 import { usePlaceFeatures } from '~/hooks/usePlaceFeatures'
 
 type Props = {

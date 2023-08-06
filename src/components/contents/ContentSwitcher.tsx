@@ -5,8 +5,8 @@ import debounce from '@turistikrota/ui/cjs/utils/debounce'
 import { useTranslation } from 'next-i18next'
 import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
-import { usePlaceFilter } from '~/features/place.filter'
 import { PlaceListItem } from '~/features/place.types'
+import { usePlaceFilter } from '~/hooks/place.filter'
 import { usePlaces } from '~/hooks/usePlaces'
 import { isValidationError } from '~/types/error'
 
@@ -55,14 +55,16 @@ export default function ContentSwitcher({ response, error }: Props) {
   const { places, isLoading, refetch, nextPage } = usePlaces(query, response)
   const [active, setActive] = useState<ContentType>('list')
   const debouncedFilter = debounce(() => {
-    if (isOnlyPageChanged) return nextPage()
+    console.log('debounced filter check', isOnlyPageChanged)
+    if (isOnlyPageChanged) return nextPage(places.page + 1)
     refetch()
   }, 500)
 
   useEffect(() => {
-    if (!isQueryChanged) return
+    console.log('is query changed check', isQueryChanged, isOnlyPageChanged)
+    if (!isQueryChanged && !isOnlyPageChanged) return
     debouncedFilter()
-  }, [isQueryChanged])
+  }, [query])
 
   useEffect(() => {
     if (!error || !isValidationError(error)) return

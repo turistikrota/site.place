@@ -1,10 +1,10 @@
-import { useTranslation } from 'next-i18next'
-import { useEffect, useState } from 'react'
 import { MobileInfoBox } from '@turistikrota/ui/cjs/accessibility/info'
 import InputRange from '@turistikrota/ui/cjs/form/range'
 import { useIsDesktop } from '@turistikrota/ui/cjs/hooks/dom'
+import { useTranslation } from 'next-i18next'
+import { useEffect, useState } from 'react'
 import { TimeSpent } from '~/features/place.types'
-import { usePlaceFilter } from '~/features/place.filter'
+import { usePlaceFilter } from '~/hooks/place.filter'
 
 export default function PlaceFilterTimeSpentGroup() {
   const { t } = useTranslation('filter')

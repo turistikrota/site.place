@@ -1,8 +1,9 @@
+import Dropdown from '@turistikrota/ui/cjs/dropdown'
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
-import Dropdown from '@turistikrota/ui/cjs/dropdown'
+import { usePlaceSort } from '~/features/place.filter'
 import { Order, Sort } from '~/features/place.types'
-import { usePlaceFilter, usePlaceSort } from '~/features/place.filter'
+import { usePlaceFilter } from '~/hooks/place.filter'
 
 type SortSectionProps = {
   selected?: Sort

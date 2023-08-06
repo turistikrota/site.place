@@ -8,9 +8,9 @@ import dynamic from 'next/dynamic'
 import { Marker, Popup } from 'react-leaflet'
 import PlaceMapCard from '~/components/card/PlaceMapCard'
 import MapDefaultConfig from '~/components/map/MapDefaultConfig'
-import { usePlaceFilter } from '~/features/place.filter'
 import { ContentProps } from '~/features/place.types'
 import { useSizeWithoutHeader } from '~/hooks/dom'
+import { usePlaceFilter } from '~/hooks/place.filter'
 
 const DynamicMap = dynamic(() => import('~/components/map/MapDynamic'), {
   ssr: false,

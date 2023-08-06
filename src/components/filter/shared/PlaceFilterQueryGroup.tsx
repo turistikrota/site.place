@@ -1,8 +1,8 @@
-import { useTranslation } from 'next-i18next'
-import { useEffect, useState } from 'react'
 import { MobileInfoBox } from '@turistikrota/ui/cjs/accessibility/info'
 import Input from '@turistikrota/ui/cjs/form/input'
-import { usePlaceFilter } from '~/features/place.filter'
+import { useTranslation } from 'next-i18next'
+import { useEffect, useState } from 'react'
+import { usePlaceFilter } from '~/hooks/place.filter'
 
 export default function PlaceFilterQueryGroup() {
   const [word, setWord] = useState<string>('')

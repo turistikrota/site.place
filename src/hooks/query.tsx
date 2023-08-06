@@ -8,7 +8,7 @@ type UseQueryResult<T = unknown> = {
   isLoading: boolean
   error: unknown | null
   refetch: () => void
-  nextPage: () => void
+  nextPage: (page: number) => void
 }
 
 type CacheEntity<T = unknown> = {
@@ -25,15 +25,24 @@ type Options<T> = {
 }
 
 export const useQuery = <T = unknown,>(
-  url: string,
+  defaultUrl: string,
   opts: Options<T> = { cache: false, withSSR: undefined },
 ): UseQueryResult<T> => {
+  const [url, setUrl] = useState<string>(defaultUrl)
   const [data, setData] = useState<T | null>(opts.withSSR || null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [error, setError] = useState<Error | null>(null)
 
-  const fetcher = (url: string, skipCache: boolean = false, isNextPage: boolean = false) => {
+  const fetcher = (skipCache: boolean = false, page?: number) => {
     let cached = false
+    console.log('fetcher run')
+    if (page) {
+      console.log('------------------------------------')
+      console.log('sa')
+      if (isPlaceListResponse(data) && !data.isNext) return
+      console.log('as')
+      console.log('------------------------------------')
+    }
     setIsLoading(true)
     if (!skipCache && typeof window !== 'undefined') {
       const cacheData = localStorage.getItem(url)
@@ -50,9 +59,8 @@ export const useQuery = <T = unknown,>(
     if (cached) return
     let promise
     if (opts && opts.method === 'POST') {
-      if (isNextPage) {
-        if (isPlaceListResponse(data) && !data.isNext) return
-        opts.params.page = (opts.params.page || 1) + 1
+      if (page) {
+        opts.params.page = page
       }
       promise = httpClient.post(url, opts.params)
     } else {
@@ -60,7 +68,7 @@ export const useQuery = <T = unknown,>(
     }
     promise
       .then((res) => {
-        if (isNextPage) {
+        if (page) {
           setData((prevData: any) => ({
             ...res.data,
             list: [...prevData.list, ...res.data.list],
@@ -88,15 +96,16 @@ export const useQuery = <T = unknown,>(
   }
 
   useEffect(() => {
+    setUrl(defaultUrl)
     if (!!opts.withSSR) return
-    fetcher(url, opts.cache)
-  }, [url])
+    fetcher(opts.cache)
+  }, [defaultUrl])
 
   return {
     data,
     isLoading,
     error,
-    refetch: () => fetcher(url, true),
-    nextPage: () => fetcher(url, true, true),
+    refetch: () => fetcher(true),
+    nextPage: (page: number) => fetcher(true, page),
   }
 }

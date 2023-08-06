@@ -4,6 +4,7 @@ import ContentSwitcher from '~/components/contents/ContentSwitcher'
 import { Services, apiUrl } from '~/config/services'
 import { getQueryByKeyBindings, placeQueryToURL } from '~/features/place.filter'
 import { PlaceListItem } from '~/features/place.types'
+import { PlaceFilterProvider } from '~/hooks/place.filter'
 import { httpClient } from '~/http/client'
 import MapLayout from '~/layouts/MapLayout'
 import { isApiError } from '~/types/error'
@@ -16,7 +17,9 @@ type Props = {
 export default function Home({ response, error }: Props) {
   return (
     <MapLayout>
-      <ContentSwitcher response={response} error={error} />
+      <PlaceFilterProvider>
+        <ContentSwitcher response={response} error={error} />
+      </PlaceFilterProvider>
     </MapLayout>
   )
 }

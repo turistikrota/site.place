@@ -1,8 +1,8 @@
 import { useTranslation } from 'next-i18next'
+import { usePlaceFilter } from '~/hooks/place.filter'
 import PlaceFilterIsPayedGroup from '../shared/PlaceFilterIsPayedGroup'
 import PlaceDesktopFilterSection from './PlaceDesktopFilterSection'
 import PlaceDesktopHead from './PlaceDesktopHead'
-import { usePlaceFilter } from '~/features/place.filter'
 
 export default function PlaceDesktopOtherGroup() {
   const { t } = useTranslation('filter')

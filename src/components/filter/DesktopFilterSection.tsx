@@ -1,7 +1,7 @@
 import StickySection from '@turistikrota/ui/cjs/section/sticky'
 import { useTranslation } from 'next-i18next'
-import { usePlaceFilter } from '~/features/place.filter'
 import { ContentProps } from '~/features/place.types'
+import { usePlaceFilter } from '~/hooks/place.filter'
 import PlaceDesktopHead from './desktop/PlaceDesktopHead'
 import PlaceFilterSection from './desktop/PlaceFilterSection'
 

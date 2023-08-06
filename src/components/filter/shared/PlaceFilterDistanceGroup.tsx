@@ -4,8 +4,8 @@ import { useIsDesktop } from '@turistikrota/ui/cjs/hooks/dom'
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import ScrollableSection from '~/components/ScrollableSection'
-import { usePlaceFilter } from '~/features/place.filter'
 import { Distance } from '~/features/place.types'
+import { usePlaceFilter } from '~/hooks/place.filter'
 
 const DefaultDistance: number = 100
 

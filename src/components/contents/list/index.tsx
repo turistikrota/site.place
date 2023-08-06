@@ -1,8 +1,9 @@
 import { useInfiniteScroll } from '@turistikrota/ui/cjs/hooks/dom'
-import ContentLoader from '@turistikrota/ui/cjs/loader'
+import debounce from '@turistikrota/ui/cjs/utils/debounce'
+import Spinner from 'sspin/dist/cjs/Spinner'
 import PlaceListCard from '~/components/card/PlaceListCard'
-import { usePlaceFilter } from '~/features/place.filter'
 import { ContentProps } from '~/features/place.types'
+import { usePlaceFilter } from '~/hooks/place.filter'
 import ListFilter from './ListFilter'
 import ListHead from './ListHead'
 
@@ -11,14 +12,15 @@ type Props = {
 }
 
 function ListItemSection({ data, loading }: ContentProps) {
-  if (loading) return <ContentLoader />
-  if (!data) return <div>no data</div>
   return (
     <section className='grow grid grid-cols-12 gap-4 md:min-h-[120vh] md:h-full'>
-      {data.list.map((item, idx) => (
-        <PlaceListCard key={idx} item={item} />
-      ))}
-      <div className='pb-20 md:hidden'></div>
+      {data && data.list.map((item, idx) => <PlaceListCard key={idx} item={item} />)}
+      {loading && (
+        <div className='col-span-12 flex items-center justify-center p-4'>
+          <Spinner />
+        </div>
+      )}
+      <div className='pb-20 md:pb-10'></div>
     </section>
   )
 }
@@ -26,13 +28,20 @@ function ListItemSection({ data, loading }: ContentProps) {
 export default function ListContent({ data, loading, isNext }: ContentProps & Props) {
   const { query, push } = usePlaceFilter()
 
-  const handleScroll = () => {
-    if (!isNext) return
+  const debouncedPush = debounce(() => {
+    console.log('debounced push call')
     query.page = (query.page || 1) + 1
     push(query)
+  }, 100)
+
+  const handleScroll = () => {
+    console.log('handle scroll check', isNext)
+    if (!isNext) return
+    console.log('handle scroll passed')
+    debouncedPush()
   }
 
-  useInfiniteScroll(handleScroll, loading)
+  useInfiniteScroll(handleScroll, loading, 10)
   return (
     <section className='max-w-7xl p-4 xl:p-0 mx-auto lg:h-full'>
       <ListHead />

@@ -1,10 +1,11 @@
-import { useTranslation } from 'next-i18next'
-import { useEffect, useState } from 'react'
 import RadioGroup from '@turistikrota/ui/cjs/form/radio/group'
 import Popup from '@turistikrota/ui/cjs/popup'
-import FilterHead from './FilterPopupHead'
+import { useTranslation } from 'next-i18next'
+import { useEffect, useState } from 'react'
+import { usePlaceSort } from '~/features/place.filter'
 import { Order, Sort } from '~/features/place.types'
-import { usePlaceFilter, usePlaceSort } from '~/features/place.filter'
+import { usePlaceFilter } from '~/hooks/place.filter'
+import FilterHead from './FilterPopupHead'
 
 type Props = {
   onClose: () => void

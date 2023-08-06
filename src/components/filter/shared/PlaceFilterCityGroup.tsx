@@ -4,8 +4,8 @@ import { useIsDesktop } from '@turistikrota/ui/cjs/hooks/dom'
 import { useTranslation } from 'next-i18next'
 import { useState } from 'react'
 import ScrollableSection from '~/components/ScrollableSection'
-import { usePlaceFilter } from '~/features/place.filter'
 import { useCities } from '~/hooks/location'
+import { usePlaceFilter } from '~/hooks/place.filter'
 import { City } from '~/static/location/cities'
 
 type Props = {
