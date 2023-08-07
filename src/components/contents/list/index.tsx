@@ -4,6 +4,7 @@ import Spinner from 'sspin/dist/cjs/Spinner'
 import PlaceListCard from '~/components/card/PlaceListCard'
 import { ContentProps } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
+import { deepMerge } from '~/utils/deepMerge'
 import ListFilter from './ListFilter'
 import ListHead from './ListHead'
 
@@ -29,15 +30,12 @@ export default function ListContent({ data, loading, isNext }: ContentProps & Pr
   const { query, push } = usePlaceFilter()
 
   const debouncedPush = debounce(() => {
-    console.log('debounced push call')
-    query.page = (query.page || 1) + 1
-    push(query)
+    const newPage = (query.page || 1) + 1
+    push(deepMerge(query, { page: newPage }))
   }, 100)
 
   const handleScroll = () => {
-    console.log('handle scroll check', isNext)
     if (!isNext) return
-    console.log('handle scroll passed')
     debouncedPush()
   }
 

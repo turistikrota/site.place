@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { PaginationRequest } from '~/types/pagination'
 import { deepEqual } from '~/utils/deepEqual'
+import { findDiff } from '~/utils/findDiff'
 import { Order, PlaceFilterRequest, Sort, Type, isDistance, isOrder, isPlaceType, isSort } from './place.types'
 
 export const getQueryByKeyBindings = (searchParams: ReadonlyURLSearchParams | URLSearchParams) => {
@@ -217,8 +218,8 @@ export const usePlaceFilterProvider = (): PlaceFilterHookResult => {
     debouncedPush('', cb)
   }
 
-  const push = (query: PaginationRequest<PlaceFilterRequest>, cb?: Callback) => {
-    const path = placeToQuery(query)
+  const push = (newQuery: PaginationRequest<PlaceFilterRequest>, cb?: Callback) => {
+    const path = placeToQuery(newQuery)
     debouncedPush(path, cb)
   }
 
@@ -226,18 +227,18 @@ export const usePlaceFilterProvider = (): PlaceFilterHookResult => {
     const oldQuery = { ...query }
     setQuery(newQuery)
     if (deepEqual(oldQuery, newQuery)) {
-      console.log('sa')
       return
     }
     setLastQuery(oldQuery)
-    console.log('old', oldQuery)
-    console.log('new', newQuery)
-    if (oldQuery.page !== newQuery.page && deepEqual(oldQuery.filter, newQuery.filter)) {
+    const diff = Object.keys(findDiff(oldQuery, newQuery))
+    if (diff.length === 1 && diff.includes('page')) {
       setIsOnlyPageChanged(true)
       setIsQueryChanged(false)
-    } else if (!deepEqual(oldQuery, newQuery)) {
+      return
+    } else if (diff.length === 0) {
       setIsOnlyPageChanged(false)
-      setIsQueryChanged(true)
+      setIsQueryChanged(false)
+      return
     }
   }
   useEffect(() => {

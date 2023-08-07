@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { isPlaceListResponse } from '~/features/place.types'
 import { httpClient } from '~/http/client'
 import { deepEqual } from '~/utils/deepEqual'
@@ -28,20 +28,21 @@ export const useQuery = <T = unknown,>(
   defaultUrl: string,
   opts: Options<T> = { cache: false, withSSR: undefined },
 ): UseQueryResult<T> => {
-  const [url, setUrl] = useState<string>(defaultUrl)
   const [data, setData] = useState<T | null>(opts.withSSR || null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [error, setError] = useState<Error | null>(null)
 
-  const fetcher = (skipCache: boolean = false, page?: number) => {
+  const fetchData = useCallback(
+    (skipCache: boolean = false, page?: number) => {
+      return fetcher(defaultUrl, skipCache, page)
+    },
+    [defaultUrl],
+  )
+
+  const fetcher = (url: string, skipCache: boolean = false, page?: number) => {
     let cached = false
-    console.log('fetcher run')
     if (page) {
-      console.log('------------------------------------')
-      console.log('sa')
       if (isPlaceListResponse(data) && !data.isNext) return
-      console.log('as')
-      console.log('------------------------------------')
     }
     setIsLoading(true)
     if (!skipCache && typeof window !== 'undefined') {
@@ -59,9 +60,6 @@ export const useQuery = <T = unknown,>(
     if (cached) return
     let promise
     if (opts && opts.method === 'POST') {
-      if (page) {
-        opts.params.page = page
-      }
       promise = httpClient.post(url, opts.params)
     } else {
       promise = httpClient.get(url)
@@ -96,16 +94,15 @@ export const useQuery = <T = unknown,>(
   }
 
   useEffect(() => {
-    setUrl(defaultUrl)
     if (!!opts.withSSR) return
-    fetcher(opts.cache)
+    fetchData()
   }, [defaultUrl])
 
   return {
     data,
     isLoading,
     error,
-    refetch: () => fetcher(true),
-    nextPage: (page: number) => fetcher(true, page),
+    refetch: () => fetchData(true),
+    nextPage: (page: number) => fetchData(true, page),
   }
 }
