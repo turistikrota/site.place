@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-i18next'
 import { usePlaceFilter } from '~/hooks/place.filter'
+import { deepMerge } from '~/utils/deepMerge'
 import PlaceFilterIsPayedGroup from '../shared/PlaceFilterIsPayedGroup'
 import PlaceDesktopFilterSection from './PlaceDesktopFilterSection'
 import PlaceDesktopHead from './PlaceDesktopHead'
@@ -9,8 +10,7 @@ export default function PlaceDesktopOtherGroup() {
   const { query, push } = usePlaceFilter()
 
   const clearIsPayed = () => {
-    query.filter.isPayed = undefined
-    push(query)
+    push(deepMerge(query, { filter: { isPayed: undefined } }))
   }
 
   return (

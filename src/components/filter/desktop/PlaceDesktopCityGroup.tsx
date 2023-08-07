@@ -2,6 +2,7 @@ import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import { usePlaceFilter } from '~/hooks/place.filter'
 import { City, findCityByCoordinates, findNearestCity } from '~/static/location/cities'
+import { deepMerge } from '~/utils/deepMerge'
 import PlaceFilterCityGroup from '../shared/PlaceFilterCityGroup'
 import PlaceDesktopFilterSection from './PlaceDesktopFilterSection'
 import PlaceDesktopHead from './PlaceDesktopHead'
@@ -17,8 +18,7 @@ export default function PlaceDesktopCityGroup() {
       if (!city) {
         city = findNearestCity(query.filter.coordinates)
         if (city) {
-          query.filter.coordinates = [city.coordinates[0], city.coordinates[1]]
-          push(query)
+          push(deepMerge(query, { filter: { coordinates: city.coordinates } }))
         }
       }
       setCity(city)
@@ -28,9 +28,8 @@ export default function PlaceDesktopCityGroup() {
   }, [query])
 
   const clearCity = () => {
-    query.filter.coordinates = undefined
     setCity(null)
-    push(query)
+    push(deepMerge(query, { filter: { coordinates: undefined } }))
   }
   return (
     <PlaceDesktopFilterSection className='pt-4'>

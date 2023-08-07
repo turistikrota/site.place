@@ -34,8 +34,7 @@ const PLaceFilterFeatureGroup: React.FC = () => {
       newList = [...selected, uuid]
     }
     setSelected(newList)
-    query.filter.featureUUIDs = newList
-    push(query)
+    push(deepMerge(query, { filter: { featureUUIDs: newList } }))
   }
 
   return (

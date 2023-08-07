@@ -1,6 +1,7 @@
 import { DesktopInfoBox } from '@turistikrota/ui/cjs/accessibility/info'
 import { useTranslation } from 'next-i18next'
 import { usePlaceFilter } from '~/hooks/place.filter'
+import { deepMerge } from '~/utils/deepMerge'
 import PlaceFilterTypeGroup from '../shared/PlaceFilterTypeGroup'
 import PlaceDesktopFilterSection from './PlaceDesktopFilterSection'
 import PlaceDesktopHead from './PlaceDesktopHead'
@@ -10,8 +11,7 @@ export default function PlaceDesktopTypeGroup() {
   const { query, push } = usePlaceFilter()
 
   const clearTypes = () => {
-    query.filter.types = undefined
-    push(query)
+    push(deepMerge(query, { filter: { types: undefined } }))
   }
 
   return (

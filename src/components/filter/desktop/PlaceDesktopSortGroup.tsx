@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { usePlaceSort } from '~/features/place.filter'
 import { Order, Sort } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
+import { deepMerge } from '~/utils/deepMerge'
 
 type SortSectionProps = {
   selected?: Sort
@@ -72,21 +73,14 @@ export default function PlaceDesktopSortGroup() {
     setIsDefault(isSortDefault && isOrderDefault)
   }, [query])
 
-  const clear = () => {
-    query.filter.sort = undefined
-    query.filter.order = undefined
-    push(query)
-  }
-
   const onSortSelect = (sort: Sort) => {
-    query.filter.sort = sort
-    push(query)
+    push(deepMerge(query, { filter: { sort } }))
   }
 
   const onOrderSelect = (order: Order) => {
-    query.filter.order = order
-    push(query)
+    push(deepMerge(query, { filter: { order } }))
   }
+
   return (
     <div className='flex gap-3'>
       <SortSection selected={query.filter.sort} onSelect={onSortSelect} />

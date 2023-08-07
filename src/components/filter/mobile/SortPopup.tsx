@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { usePlaceSort } from '~/features/place.filter'
 import { Order, Sort } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
+import { deepMerge } from '~/utils/deepMerge'
 import FilterHead from './FilterPopupHead'
 
 type Props = {
@@ -97,19 +98,15 @@ const SortPopup: React.FC<Props> = ({ onClose, open }) => {
   }, [query])
 
   const clear = () => {
-    query.filter.sort = undefined
-    query.filter.order = undefined
-    push(query)
+    push(deepMerge(query, { filter: { sort: undefined, order: undefined } }))
   }
 
   const onSortSelect = (sort: Sort) => {
-    query.filter.sort = sort
-    push(query)
+    push(deepMerge(query, { filter: { sort } }))
   }
 
   const onOrderSelect = (order: Order) => {
-    query.filter.order = order
-    push(query)
+    push(deepMerge(query, { filter: { order } }))
   }
 
   return (

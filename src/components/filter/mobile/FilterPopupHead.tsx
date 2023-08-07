@@ -1,6 +1,7 @@
 import { useTranslation } from 'next-i18next'
 import { PlaceFilterRequest } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
+import { deepMerge } from '~/utils/deepMerge'
 import ClearButton from './ClearButton'
 
 type Props = {
@@ -40,8 +41,7 @@ const FilterHead: FilterComponent = ({
 
   const clear = () => {
     if (filterKey) {
-      query.filter[filterKey] = undefined
-      push(query)
+      push(deepMerge(query, { filter: { [filterKey]: undefined } }))
     }
   }
   return (

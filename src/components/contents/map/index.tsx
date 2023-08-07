@@ -11,6 +11,7 @@ import MapDefaultConfig from '~/components/map/MapDefaultConfig'
 import { ContentProps } from '~/features/place.types'
 import { useSizeWithoutHeader } from '~/hooks/dom'
 import { usePlaceFilter } from '~/hooks/place.filter'
+import { deepMerge } from '~/utils/deepMerge'
 
 const DynamicMap = dynamic(() => import('~/components/map/MapDynamic'), {
   ssr: false,
@@ -27,9 +28,7 @@ export default function MapContent({ data }: ContentProps & MapProps) {
   const { query, push } = usePlaceFilter()
 
   const onChange = (coordinates: Coordinates, zoom: number) => {
-    query.filter.coordinates = coordinates
-    query.filter.distance = zoom
-    push(query)
+    push(deepMerge(query, { filter: { coordinates, distance: zoom } }))
   }
 
   const debouncedChange = debounce(onChange, 300)
