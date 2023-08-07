@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import Spin from 'sspin'
 import { usePlaceFilter } from '~/hooks/place.filter'
 import { usePlaceFeatures } from '~/hooks/usePlaceFeatures'
+import { deepMerge } from '~/utils/deepMerge'
 
 type Props = {
   onClose: () => void
@@ -20,9 +21,9 @@ const PLaceFilterFeatureGroup: React.FC = () => {
   const { query, push } = usePlaceFilter()
 
   useEffect(() => {
-    if (!!query.filter.featureUUIDs && !query.filter.featureUUIDs.every((uuid) => selected.find((f) => f === uuid))) {
-      setSelected([...query.filter.featureUUIDs])
-    }
+    const newFeatureUUIDs =
+      query.filter.featureUUIDs && query.filter.featureUUIDs.length ? query.filter.featureUUIDs : []
+    push(deepMerge(query, { filter: { featureUUIDs: newFeatureUUIDs } }))
   }, [query])
 
   const handleChange = (uuid: string) => {

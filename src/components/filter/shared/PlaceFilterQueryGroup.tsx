@@ -3,6 +3,7 @@ import Input from '@turistikrota/ui/cjs/form/input'
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import { usePlaceFilter } from '~/hooks/place.filter'
+import { deepMerge } from '~/utils/deepMerge'
 
 export default function PlaceFilterQueryGroup() {
   const [word, setWord] = useState<string>('')
@@ -17,8 +18,7 @@ export default function PlaceFilterQueryGroup() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setWord(e.target.value)
-    query.filter.query = e.target.value
-    push(query)
+    push(deepMerge(query, { filter: { query: e.target.value } }))
   }
 
   return (

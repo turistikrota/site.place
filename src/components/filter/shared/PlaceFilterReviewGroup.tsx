@@ -4,6 +4,7 @@ import { useIsDesktop } from '@turistikrota/ui/cjs/hooks/dom'
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import { usePlaceFilter } from '~/hooks/place.filter'
+import { deepMerge } from '~/utils/deepMerge'
 
 const list = [1, 2, 3, 4, 5]
 
@@ -23,8 +24,7 @@ export default function PlaceFilterReviewGroup() {
 
   const onSelect = (num: number) => {
     setMinReview(num)
-    query.filter.minReview = num
-    push(query)
+    push(deepMerge(query, { filter: { minReview: num } }))
   }
 
   return (

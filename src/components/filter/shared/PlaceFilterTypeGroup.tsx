@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import ScrollableSection from '~/components/ScrollableSection'
 import { Type } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
+import { deepMerge } from '~/utils/deepMerge'
 
 const types = Object.values(Type)
 
@@ -33,8 +34,7 @@ export default function PlaceFilterTypeGroup({ className }: Props) {
       newList = [...selected, type]
     }
     setSelected(newList)
-    query.filter.types = newList
-    push(query)
+    push(deepMerge(query, { filter: { types: newList } }))
   }
 
   return (

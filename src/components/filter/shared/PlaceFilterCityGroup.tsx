@@ -7,6 +7,7 @@ import ScrollableSection from '~/components/ScrollableSection'
 import { useCities } from '~/hooks/location'
 import { usePlaceFilter } from '~/hooks/place.filter'
 import { City } from '~/static/location/cities'
+import { deepMerge } from '~/utils/deepMerge'
 
 type Props = {
   className?: string
@@ -20,10 +21,8 @@ const PlaceFilterCityGroup: React.FC<Props> = ({ className }) => {
   const isDesktop = useIsDesktop()
 
   const onSelectCity = (city: City, direction: boolean) => {
-    if (direction) {
-      query.filter.coordinates = [city.coordinates[0], city.coordinates[1]]
-    }
-    push(query)
+    const newCoordinates = direction ? city.coordinates : null
+    push(deepMerge(query, { filter: { coordinates: newCoordinates } }))
   }
   return (
     <>

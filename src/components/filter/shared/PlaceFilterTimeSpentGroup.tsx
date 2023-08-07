@@ -5,6 +5,7 @@ import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import { TimeSpent } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
+import { deepMerge } from '~/utils/deepMerge'
 
 export default function PlaceFilterTimeSpentGroup() {
   const { t } = useTranslation('filter')
@@ -28,8 +29,7 @@ export default function PlaceFilterTimeSpentGroup() {
 
   const handleChange = (values: TimeSpent) => {
     setValues(values)
-    query.filter.timeSpent = values
-    push(query)
+    push(deepMerge(query, { filter: { timeSpent: values } }))
   }
 
   return (

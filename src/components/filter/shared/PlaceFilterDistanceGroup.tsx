@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import ScrollableSection from '~/components/ScrollableSection'
 import { Distance } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
+import { deepMerge } from '~/utils/deepMerge'
 
 const DefaultDistance: number = 100
 
@@ -32,11 +33,9 @@ export default function PlaceFilterDistanceGroup({ className }: Props) {
   const { query, push } = usePlaceFilter()
 
   useEffect(() => {
-    if (!!query.filter.distance && query.filter.distance !== distance) {
-      setDistance(query.filter.distance)
-    } else {
-      setDistance(DefaultDistance)
-    }
+    const newDistance =
+      query.filter.distance && query.filter.distance !== distance ? query.filter.distance : DefaultDistance
+    push(deepMerge(query, { filter: { distance: newDistance } }))
   }, [query])
 
   const handleChange = (dist: number, direction: boolean) => {
