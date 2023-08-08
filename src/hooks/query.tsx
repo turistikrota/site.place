@@ -86,6 +86,8 @@ export const useQuery = <T = unknown,>(
       .catch((err) => {
         if (err && err.response && err.response.data) {
           setError(err.response.data)
+        } else {
+          setError(err)
         }
       })
       .finally(() => {

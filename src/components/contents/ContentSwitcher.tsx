@@ -52,9 +52,11 @@ export default function ContentSwitcher({ response, error }: Props) {
   const { t } = useTranslation('common')
   const { query, isQueryChanged, isOnlyPageChanged, clean } = usePlaceFilter()
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
-  const { places, isLoading, refetch, nextPage } = usePlaces(query, response)
+  const { places, isLoading, refetch, nextPage, error: apiError } = usePlaces(query, response)
   const [active, setActive] = useState<ContentType>('list')
   const debouncedFilter = debounce(() => {
+    if (isLoading || !places || !!apiError) return
+    console.log('fetch')
     if (isOnlyPageChanged) return nextPage(places.page + 1)
     refetch()
   }, 500)
@@ -69,7 +71,7 @@ export default function ContentSwitcher({ response, error }: Props) {
     setErrorMessage(error.map((err) => err.message).join(', '))
     setTimeout(() => {
       setErrorMessage(null)
-    }, 5000)
+    }, 10000)
     clean()
   }, [error])
 

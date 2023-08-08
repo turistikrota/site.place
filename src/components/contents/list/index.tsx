@@ -30,6 +30,7 @@ export default function ListContent({ data, loading, isNext }: ContentProps & Pr
   const { query, push } = usePlaceFilter()
 
   const debouncedPush = debounce(() => {
+    console.log('handle scroll')
     const newPage = (query.page || 1) + 1
     push(deepMerge(query, { page: newPage }))
   }, 100)

@@ -33,16 +33,16 @@ export default function PlaceFilterDistanceGroup({ className }: Props) {
   const { query, push } = usePlaceFilter()
 
   useEffect(() => {
-    const newDistance =
-      query.filter.distance && query.filter.distance !== distance ? query.filter.distance : DefaultDistance
-    push(deepMerge(query, { filter: { distance: newDistance } }))
+    if (query.filter.distance !== distance) {
+      const newDistance = query.filter.distance || DefaultDistance
+      setDistance(newDistance)
+      push(deepMerge(query, { filter: { distance: newDistance } }))
+    }
   }, [query])
 
   const handleChange = (dist: number, direction: boolean) => {
-    if (direction) {
-      query.filter.distance = dist
-    }
-    push(query)
+    setDistance(dist)
+    push(deepMerge(query, { filter: { distance: direction ? dist : undefined } }))
   }
 
   return (

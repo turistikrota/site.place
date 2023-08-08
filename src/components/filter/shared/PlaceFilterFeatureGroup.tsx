@@ -21,9 +21,8 @@ const PLaceFilterFeatureGroup: React.FC = () => {
   const { query, push } = usePlaceFilter()
 
   useEffect(() => {
-    const newFeatureUUIDs =
-      query.filter.featureUUIDs && query.filter.featureUUIDs.length ? query.filter.featureUUIDs : []
-    push(deepMerge(query, { filter: { featureUUIDs: newFeatureUUIDs } }))
+    const newFeatureUUIDs = Array.isArray(query.filter.featureUUIDs) ? query.filter.featureUUIDs : undefined
+    push(deepMerge(query, { filter: { featureUUIDs: newFeatureUUIDs?.filter((f) => !!f) } }))
   }, [query])
 
   const handleChange = (uuid: string) => {
