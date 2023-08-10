@@ -1,7 +1,7 @@
+import { deepMerge } from '@turistikrota/ui/cjs/utils'
 import { useTranslation } from 'next-i18next'
 import { PlaceFilterRequest } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
-import { deepMerge } from '~/utils/deepMerge'
 import ClearButton from './ClearButton'
 
 type Props = {

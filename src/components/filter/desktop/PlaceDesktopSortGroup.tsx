@@ -1,10 +1,10 @@
 import Dropdown from '@turistikrota/ui/cjs/dropdown'
+import { deepMerge } from '@turistikrota/ui/cjs/utils'
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import { usePlaceSort } from '~/features/place.filter'
 import { Order, Sort } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
-import { deepMerge } from '~/utils/deepMerge'
 
 type SortSectionProps = {
   selected?: Sort

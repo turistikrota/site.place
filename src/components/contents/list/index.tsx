@@ -1,10 +1,10 @@
 import { useInfiniteScroll } from '@turistikrota/ui/cjs/hooks/dom'
+import { deepMerge } from '@turistikrota/ui/cjs/utils'
 import debounce from '@turistikrota/ui/cjs/utils/debounce'
 import Spinner from 'sspin/dist/cjs/Spinner'
 import PlaceListCard from '~/components/card/PlaceListCard'
 import { ContentProps } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
-import { deepMerge } from '~/utils/deepMerge'
 import ListFilter from './ListFilter'
 import ListHead from './ListHead'
 

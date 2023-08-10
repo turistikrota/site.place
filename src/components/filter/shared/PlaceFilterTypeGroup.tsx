@@ -1,12 +1,12 @@
 import { MobileInfoBox } from '@turistikrota/ui/cjs/accessibility/info'
 import Checkbox from '@turistikrota/ui/cjs/form/checkbox'
 import { useIsDesktop } from '@turistikrota/ui/cjs/hooks/dom'
+import { deepMerge } from '@turistikrota/ui/cjs/utils'
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import ScrollableSection from '~/components/ScrollableSection'
 import { Type } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
-import { deepMerge } from '~/utils/deepMerge'
 
 const types = Object.values(Type)
 

@@ -1,6 +1,6 @@
+import { deepMerge } from '@turistikrota/ui/cjs/utils'
 import { useTranslation } from 'next-i18next'
 import { usePlaceFilter } from '~/hooks/place.filter'
-import { deepMerge } from '~/utils/deepMerge'
 import PlaceFilterIsPayedGroup from '../shared/PlaceFilterIsPayedGroup'
 import PlaceDesktopFilterSection from './PlaceDesktopFilterSection'
 import PlaceDesktopHead from './PlaceDesktopHead'

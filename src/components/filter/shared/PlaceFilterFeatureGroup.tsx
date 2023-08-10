@@ -2,12 +2,12 @@ import { DesktopInfoBox, MobileInfoBox } from '@turistikrota/ui/cjs/accessibilit
 import Checkbox from '@turistikrota/ui/cjs/form/checkbox'
 import { useIsDesktop } from '@turistikrota/ui/cjs/hooks/dom'
 import { Locales } from '@turistikrota/ui/cjs/types'
+import { deepMerge } from '@turistikrota/ui/cjs/utils'
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import Spin from 'sspin'
 import { usePlaceFilter } from '~/hooks/place.filter'
 import { usePlaceFeatures } from '~/hooks/usePlaceFeatures'
-import { deepMerge } from '~/utils/deepMerge'
 
 type Props = {
   onClose: () => void

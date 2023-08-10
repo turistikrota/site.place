@@ -1,11 +1,11 @@
 import { MobileInfoBox } from '@turistikrota/ui/cjs/accessibility/info'
 import InputRange from '@turistikrota/ui/cjs/form/range'
 import { useIsDesktop } from '@turistikrota/ui/cjs/hooks/dom'
+import { deepMerge } from '@turistikrota/ui/cjs/utils'
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import { TimeSpent } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
-import { deepMerge } from '~/utils/deepMerge'
 
 export default function PlaceFilterTimeSpentGroup() {
   const { t } = useTranslation('filter')

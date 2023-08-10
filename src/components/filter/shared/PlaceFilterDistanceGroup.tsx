@@ -1,12 +1,12 @@
 import { MobileInfoBox } from '@turistikrota/ui/cjs/accessibility/info'
 import Radio from '@turistikrota/ui/cjs/form/radio'
 import { useIsDesktop } from '@turistikrota/ui/cjs/hooks/dom'
+import { deepMerge } from '@turistikrota/ui/cjs/utils'
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import ScrollableSection from '~/components/ScrollableSection'
 import { Distance } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
-import { deepMerge } from '~/utils/deepMerge'
 
 const DefaultDistance: number = 100
 

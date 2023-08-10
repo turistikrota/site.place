@@ -1,13 +1,13 @@
 import Input from '@turistikrota/ui/cjs/form/input'
 import Radio from '@turistikrota/ui/cjs/form/radio'
 import { useIsDesktop } from '@turistikrota/ui/cjs/hooks/dom'
+import { deepMerge } from '@turistikrota/ui/cjs/utils'
 import { useTranslation } from 'next-i18next'
 import { useState } from 'react'
 import ScrollableSection from '~/components/ScrollableSection'
 import { useCities } from '~/hooks/location'
 import { usePlaceFilter } from '~/hooks/place.filter'
 import { City } from '~/static/location/cities'
-import { deepMerge } from '~/utils/deepMerge'
 
 type Props = {
   className?: string

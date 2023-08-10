@@ -1,9 +1,9 @@
 import { MobileInfoBox } from '@turistikrota/ui/cjs/accessibility/info'
 import Input from '@turistikrota/ui/cjs/form/input'
+import { deepMerge } from '@turistikrota/ui/cjs/utils'
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import { usePlaceFilter } from '~/hooks/place.filter'
-import { deepMerge } from '~/utils/deepMerge'
 
 export default function PlaceFilterQueryGroup() {
   const [word, setWord] = useState<string>('')

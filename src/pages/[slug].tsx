@@ -1,6 +1,7 @@
 import { useIsMobile } from '@turistikrota/ui/cjs/hooks/dom'
 import ImagePreview from '@turistikrota/ui/cjs/image/preview'
 import StickySection from '@turistikrota/ui/cjs/section/sticky'
+import { getMdContent } from '@turistikrota/ui/cjs/utils/md'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import dynamic from 'next/dynamic'
@@ -11,7 +12,6 @@ import { Services, apiUrl } from '~/config/services'
 import { FullTranslation, PlaceDetail, getTranslations } from '~/features/place.types'
 import { httpClient } from '~/http/client'
 import DefaultLayout from '~/layouts/DefaultLayout'
-import { getMdContent } from '~/utils/getMdContent'
 import { mapAndSortImages } from '~/utils/image'
 
 type Props = {
@@ -39,10 +39,10 @@ export default function PlaceDetail({ response, md }: Props) {
 
   return (
     <DefaultLayout>
-      <ImagePreview list={images}>
+      <ImagePreview altPrefix={translations.title} list={images}>
         <section className='max-w-7xl p-4 xl:px-0 mx-auto lg:h-full grow grid grid-cols-12 gap-4'>
           <div className='col-span-12 md:col-span-8'>
-            <PlaceImagePreview images={images} />
+            <PlaceImagePreview title={translations.title} images={images} />
 
             {isMobile && (
               <section className='mt-4'>

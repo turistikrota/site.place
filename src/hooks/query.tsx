@@ -1,7 +1,7 @@
+import { deepEqual } from '@turistikrota/ui/cjs/utils'
 import { useCallback, useEffect, useState } from 'react'
 import { isPlaceListResponse } from '~/features/place.types'
 import { httpClient } from '~/http/client'
-import { deepEqual } from '~/utils/deepEqual'
 
 type UseQueryResult<T = unknown> = {
   data: T | null
