@@ -8,6 +8,8 @@ export type RouteType = {
   auth: {
     default: string
   }
+  aboutUs: string
+  base: string
 }
 
 export type Locales = 'en' | 'tr'
@@ -21,6 +23,8 @@ const Routes: Record<Locales, RouteType> = {
     auth: {
       default: SiteUrls.auth.tr,
     },
+    base: SiteUrls.root.tr,
+    aboutUs: `${SiteUrls.root.tr}/hakkimizda`,
   },
   en: {
     account: {
@@ -30,6 +34,8 @@ const Routes: Record<Locales, RouteType> = {
     auth: {
       default: SiteUrls.auth.en,
     },
+    base: SiteUrls.root.en,
+    aboutUs: `${SiteUrls.root.en}/about-us`,
   },
 }
 

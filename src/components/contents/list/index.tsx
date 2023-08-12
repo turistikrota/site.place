@@ -52,7 +52,7 @@ export default function ListContent({ data, loading, isNext }: ContentProps & Pr
 
   useInfiniteScroll(handleScroll, loading, 10)
   return (
-    <section className='max-w-7xl p-4 xl:p-0 mx-auto lg:h-full'>
+    <section className='max-w-7xl p-4 xl:py-0 mx-auto lg:h-full'>
       <ListHead />
       <section className='flex flex-col lg:flex-row gap-4'>
         <ListFilter data={data} loading={loading} />

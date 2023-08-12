@@ -1,4 +1,8 @@
 {
+  "list": {
+    "title": "Yerler",
+    "subtitle": "Favori yerlerinizi keşfedin."
+  },
   "card": {
     "minute": "dk",
     "hour": "s",

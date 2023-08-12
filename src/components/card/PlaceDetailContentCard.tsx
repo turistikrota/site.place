@@ -1,7 +1,15 @@
 import { Coordinates } from '@turistikrota/ui/cjs/types'
 import { useTranslation } from 'next-i18next'
 import { useMemo } from 'react'
-import { FeatureItem, FullTranslation, Review, TimeSpent, Type } from '~/features/place.types'
+import {
+  FeatureItem,
+  FeatureTranslation,
+  FullTranslation,
+  Review,
+  TimeSpent,
+  Type,
+  getTranslations,
+} from '~/features/place.types'
 import { useDayJS } from '~/hooks/dayjs'
 import { useTimeSpentUnit } from '~/hooks/timespent'
 import { useBraceText } from '~/hooks/useBraceText'
@@ -27,6 +35,11 @@ type CoreFeatureItem = {
   icon: string
   text: string
   variant?: string
+}
+
+const defaultFeature: FeatureTranslation = {
+  title: 'No title',
+  description: 'No description',
 }
 
 const PlaceDetailContentCard: React.FC<Props> = ({
@@ -112,8 +125,10 @@ const PlaceDetailContentCard: React.FC<Props> = ({
           <FeatureCard
             key={feature.uuid}
             icon={feature.icon}
-            text={feature.translations.en.title}
-            subtext={feature.translations.en.description}
+            text={getTranslations<FeatureTranslation>(feature.translations, i18n.language, defaultFeature).title}
+            subtext={
+              getTranslations<FeatureTranslation>(feature.translations, i18n.language, defaultFeature).description
+            }
             variant='primary'
             core
           ></FeatureCard>

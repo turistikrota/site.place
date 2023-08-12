@@ -58,11 +58,13 @@
     "core": "This feature verified by our team."
   },
   "header": {
+    "submodule": "places",
     "left": {
       "promotion": "Real tourism experience coming soon!"
     },
     "links": {
       "aboutUs": "About Us",
+      "home": "Back to Turistikrota",
       "login": "Login",
       "selectAccount": "Select Profile"
     },

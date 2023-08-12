@@ -1,21 +1,22 @@
+import { useTranslation } from 'next-i18next'
+
 type Props = {
   width?: number
   height?: number
 }
 
-function Beta() {
+function Submodule() {
+  const { t } = useTranslation('common')
   return (
-    <span className='absolute -top-2 -right-8'>
-      <span className='inline-flex items-center justify-center px-1 py-1 text-xs leading-none text-black bg-secondary rounded-md'>
-        beta
-      </span>
+    <span className='inline-flex items-center justify-center px-1.5 py-1.5 text-sm leading-none text-black dark:text-white bg-secondary dark:bg-secondary-600 rounded-md'>
+      {t('header.submodule')}
     </span>
   )
 }
 
 export default function Logo({ width = 186, height = 30 }: Props) {
   return (
-    <div className='relative'>
+    <div className='relative flex gap-1'>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox={`0 0 ${width} ${height}`} width={width} height={height}>
         <text
           style={{
@@ -42,7 +43,7 @@ export default function Logo({ width = 186, height = 30 }: Props) {
           </tspan>
         </text>
       </svg>
-      <Beta />
+      <Submodule />
     </div>
   )
 }

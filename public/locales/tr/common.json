@@ -58,13 +58,15 @@
     "core": "Bu özellik ekibimiz tarafından doğrulandı."
   },
   "header": {
+    "submodule": "yerler",
     "left": {
       "promotion": "Gerçek turizm deneyimi yakında geliyor!"
     },
     "links": {
       "aboutUs": "Hakkımızda",
       "login": "Giriş Yap",
-      "selectAccount": "Profili Seç"
+      "selectAccount": "Profili Seç",
+      "home": "Turistikrota'ya Dön"
     },
     "button": {
       "login": "Giriş Yap",

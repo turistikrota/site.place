@@ -88,7 +88,7 @@ export type FeatureItem = {
   translations: I18nTranslation<FeatureTranslation>
 }
 
-type FeatureTranslation = {
+export type FeatureTranslation = {
   title: string
   description: string
 }
