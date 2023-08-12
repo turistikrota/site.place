@@ -1,1 +1,1 @@
-module.exports = require("@turistikrota/ui/assets/postcss.config.cjs");
+module.exports = require('@turistikrota/ui/assets/postcss.config.cjs')

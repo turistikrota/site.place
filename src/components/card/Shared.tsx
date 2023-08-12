@@ -6,7 +6,6 @@ import FiveStars from '../Stars'
 type ReviewCardProps = {
   star: number
   total: number
-  
 }
 
 type IsPayedProps = {
@@ -48,7 +47,7 @@ export const IsPayedCard: React.FC<IsPayedProps> = ({ isPayed }) => {
 
 export const PlaceTypeCard = ({ type }: PlaceTypeProps) => {
   const { t } = useTranslation('place')
-  const current: PlaceTypeItems = !!PlaceTypes[type] ? PlaceTypes[type] : PlaceTypes[Type.Other]
+  const current: PlaceTypeItems = PlaceTypes[type] ? PlaceTypes[type] : PlaceTypes[Type.Other]
 
   return (
     <div className={`flex gap-1 px-2 py-1 rounded-md items-center ${current.color}`}>

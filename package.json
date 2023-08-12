@@ -6,7 +6,8 @@
     "dev": "next dev -p 5019",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@turistikrota/ui": "^0.2.5",
@@ -35,6 +36,7 @@
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
     "eslint-config-turistikrota": "^0.1.0",
+    "prettier": "^3.0.1",
     "typescript": "5.1.6"
   },
   "prettier": "@turistikrota/prettier-config"

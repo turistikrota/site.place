@@ -37,7 +37,7 @@ export async function getServerSideProps(ctx: any) {
   return {
     props: {
       ...(await serverSideTranslations(ctx.locale, ['common', 'filter', 'sort', 'place'])),
-      response: !!res.data
+      response: res.data
         ? res.data
         : {
             list: [],

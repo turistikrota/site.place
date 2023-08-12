@@ -39,7 +39,6 @@ export default function MapDynamic({
     }
   }, [map, onMove])
 
-  
   useEffect(() => {
     Leaflet.Icon.Default.mergeOptions({
       iconRetinaUrl: '/images/marker-icon.png',

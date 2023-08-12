@@ -27,7 +27,11 @@ export default function PlaceMapCard({ item }: Props) {
   return (
     <div className='flex flex-col bg-second rounded-md'>
       <Link href={translations.slug} target='_blank' onClick={checkOutsideClick}>
-        <Carousel images={mapAndSortImages(item.images)} sizeClassName='h-72 w-72' />
+        <Carousel
+          imageAltPrefix={translations.title}
+          images={mapAndSortImages(item.images)}
+          sizeClassName='h-72 w-72'
+        />
 
         <div className='flex flex-col gap-4 p-4'>
           <div className='flex flex-col gap-2'>

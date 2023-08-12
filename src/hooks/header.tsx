@@ -1,11 +1,11 @@
-import { useState } from 'react'
 import { useListener } from '@turistikrota/ui/cjs/hooks/dom'
+import { useState } from 'react'
 
 export const useHeaderFixed = () => {
   const [fixed, setFixed] = useState(false)
 
   useListener('scroll', () => {
-    let checkPoint = fixed ? 64 : 120
+    const checkPoint = fixed ? 64 : 120
     setFixed(window.scrollY >= checkPoint)
   })
 

@@ -43,7 +43,7 @@ const PlaceDetailContentCard: React.FC<Props> = ({
   const dayjs = useDayJS(i18n.language)
   const cities = findBestNearestCities(coordinates, 2)
   const cityTexts = useBraceText(cities.map((city) => city.name))
-  const currentType: PlaceTypeItems = !!PlaceTypes[type] ? PlaceTypes[type] : PlaceTypes[Type.Other]
+  const currentType: PlaceTypeItems = PlaceTypes[type] ? PlaceTypes[type] : PlaceTypes[Type.Other]
   const timeSpentUnit = useTimeSpentUnit(timeSpent)
 
   const coreFeatures = useMemo<CoreFeatureItem[]>(

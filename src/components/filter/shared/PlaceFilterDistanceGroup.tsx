@@ -8,7 +8,7 @@ import ScrollableSection from '~/components/ScrollableSection'
 import { Distance } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
 
-const DefaultDistance: number = 100
+const DefaultDistance = 100
 
 type Props = {
   className?: string

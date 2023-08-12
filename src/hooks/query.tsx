@@ -33,13 +33,13 @@ export const useQuery = <T = unknown,>(
   const [error, setError] = useState<Error | null>(null)
 
   const fetchData = useCallback(
-    (skipCache: boolean = false, page?: number) => {
+    (skipCache = false, page?: number) => {
       return fetcher(defaultUrl, skipCache, page)
     },
     [defaultUrl],
   )
 
-  const fetcher = (url: string, skipCache: boolean = false, page?: number) => {
+  const fetcher = (url: string, skipCache = false, page?: number) => {
     let cached = false
     if (page) {
       if (isPlaceListResponse(data) && !data.isNext) return
@@ -96,7 +96,7 @@ export const useQuery = <T = unknown,>(
   }
 
   useEffect(() => {
-    if (!!opts.withSSR) return
+    if (opts.withSSR) return
     fetchData()
   }, [defaultUrl])
 

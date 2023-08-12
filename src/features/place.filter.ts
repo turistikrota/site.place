@@ -22,7 +22,7 @@ export const getQueryByKeyBindings = (searchParams: ReadonlyURLSearchParams | UR
       }
     },
     lat: (value: string) => {
-      let lng = searchParams.get('lng')
+      const lng = searchParams.get('lng')
       if (lng) {
         const lat = parseFloat(value)
         const lng2 = parseFloat(lng)
@@ -32,7 +32,7 @@ export const getQueryByKeyBindings = (searchParams: ReadonlyURLSearchParams | UR
       }
     },
     lng: (value: string) => {
-      let lat = searchParams.get('lat')
+      const lat = searchParams.get('lat')
       if (lat) {
         const lng = parseFloat(value)
         const lat2 = parseFloat(lat)

@@ -33,9 +33,11 @@ const PlaceListCard: React.FC<Props> = ({ item }) => {
           <Carousel imageAltPrefix={translations.title} images={mapAndSortImages(item.images)} sizeClassName='h-72' />
           <div className='flex flex-col gap-2 p-4'>
             <div className='text-2xl font-bold'>{translations.title}</div>
-            <div className='text-sm'>{t('features.location.subtext', {
-              location: cities.map(c => c.name).join(', '),
-            })}</div>
+            <div className='text-sm'>
+              {t('features.location.subtext', {
+                location: cities.map((c) => c.name).join(', '),
+              })}
+            </div>
             <div className='flex justify-between items-center'>
               <ReviewCard star={item.review.averagePoint} total={item.review.total} />
               <TimeSpentCard data={item.averageTimeSpent} />
