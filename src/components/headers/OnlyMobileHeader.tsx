@@ -1,9 +1,13 @@
-import Logo from '../Logo'
-//import AccountHeaderButton from './AccountHeaderButton'
 import MobileHeader from '@turistikrota/ui/cjs/headers/mobile'
+import Logo from '../Logo'
+import AccountHeaderButton from './AccountHeaderButton'
 import HeaderLogo from './HeaderLogo'
 
-export default function OnlyMobileHeader() {
+type Props = {
+  accessTokenIsExists: boolean
+}
+
+export default function OnlyMobileHeader({ accessTokenIsExists }: Props) {
   return (
     <>
       <MobileHeader>
@@ -14,9 +18,7 @@ export default function OnlyMobileHeader() {
         </MobileHeader.Left>
         <MobileHeader.Fill className='hidden md:flex'>{``}</MobileHeader.Fill>
         <MobileHeader.Right>
-          {/* 
-          <AccountHeaderButton />
-        */}
+          <AccountHeaderButton accessTokenIsExists={accessTokenIsExists} />
         </MobileHeader.Right>
       </MobileHeader>
     </>

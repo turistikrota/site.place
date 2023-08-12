@@ -57,5 +57,21 @@
   "features": {
     "core": "This feature verified by our team."
   },
+  "header": {
+    "left": {
+      "promotion": "Real tourism experience coming soon!"
+    },
+    "links": {
+      "aboutUs": "About Us",
+      "login": "Login",
+      "selectAccount": "Select Profile"
+    },
+    "button": {
+      "login": "Login",
+      "select": "Select Profile",
+      "profile": "profile",
+      "loading": "Loading..."
+    }
+  },
   "url": "https://places.turistikrota.com/en"
 }

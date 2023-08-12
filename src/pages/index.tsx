@@ -12,11 +12,13 @@ import { isApiError } from '~/types/error'
 type Props = {
   response?: ListResponse<PlaceListItem>
   error?: any
+  accessTokenIsExists: boolean
+  isAccountCookieExists: boolean
 }
 
-export default function Home({ response, error }: Props) {
+export default function Home({ response, error, accessTokenIsExists, isAccountCookieExists }: Props) {
   return (
-    <MapLayout>
+    <MapLayout accessTokenIsExists={accessTokenIsExists} isAccountCookieExists={isAccountCookieExists}>
       <PlaceFilterProvider>
         <ContentSwitcher response={response} error={error} />
       </PlaceFilterProvider>
@@ -43,6 +45,8 @@ export async function getServerSideProps(ctx: any) {
             list: [],
           },
       error: !!err && isApiError(err) ? err.response.data : null,
+      accessTokenIsExists: !!ctx.req.cookies.accessToken,
+      isAccountCookieExists: !!ctx.req.cookies.isAccount,
     },
   }
 }
