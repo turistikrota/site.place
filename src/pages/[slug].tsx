@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic'
 import MarkdownContent from '~/components/MarkdownContent'
 import PlaceDetailContentCard from '~/components/card/PlaceDetailContentCard'
 import PlaceImagePreview from '~/components/card/PlaceImagePreview'
+import PlaceDetailSeo from '~/components/seo/PlaceDetailSeo'
 import { Services, apiUrl } from '~/config/services'
 import { FullTranslation, PlaceDetail, getTranslations } from '~/features/place.types'
 import { httpClient } from '~/http/client'
@@ -39,6 +40,7 @@ export default function PlaceDetail({ response, md }: Props) {
 
   return (
     <DefaultLayout>
+      <PlaceDetailSeo coordinates={response.coordinates} images={images} seoData={translations} />
       <ImagePreview altPrefix={translations.title} list={images}>
         <section className='max-w-7xl p-4 xl:px-0 mx-auto lg:h-full grow grid grid-cols-12 gap-4'>
           <div className='col-span-12 md:col-span-8'>
