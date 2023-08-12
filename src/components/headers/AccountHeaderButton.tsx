@@ -9,7 +9,7 @@ import Link from 'next/link'
 import { Config } from '~/config'
 import { AccountListItem, useAccount } from '~/hooks/account'
 import { getStaticRoute } from '~/static/page'
-import { getRedirectUrl } from '~/utils/auth'
+import { getAccountRedirectUrl, getRedirectUrl } from '~/utils/auth'
 
 setDefaultImageSrc(Config.cdn.notFound)
 
@@ -64,7 +64,7 @@ const SelectProfileButton = () => {
   const { t, i18n } = useTranslation('common')
   return (
     <Link
-      href={getStaticRoute(i18n.language).account.select}
+      href={getAccountRedirectUrl(i18n.language, window.location.href)}
       passHref={true}
       className='hover:bg-second dark:hover:bg-third rounded-md px-3 py-3 transition-colors duration-200 ease-in-out'
       aria-label={t('header.links.selectAccount')}

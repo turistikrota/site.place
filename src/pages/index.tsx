@@ -1,6 +1,7 @@
 import { ListResponse } from '@turistikrota/ui/cjs/types'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import ContentSwitcher from '~/components/contents/ContentSwitcher'
+import { Config } from '~/config'
 import { Services, apiUrl } from '~/config/services'
 import { getQueryByKeyBindings, placeQueryToURL } from '~/features/place.filter'
 import { PlaceListItem } from '~/features/place.types'
@@ -45,8 +46,8 @@ export async function getServerSideProps(ctx: any) {
             list: [],
           },
       error: !!err && isApiError(err) ? err.response.data : null,
-      accessTokenIsExists: !!ctx.req.cookies.accessToken,
-      isAccountCookieExists: !!ctx.req.cookies.isAccount,
+      accessTokenIsExists: !!ctx.req.cookies[Config.cookies.accessToken],
+      isAccountCookieExists: !!ctx.req.cookies[Config.cookies.accountName],
     },
   }
 }
