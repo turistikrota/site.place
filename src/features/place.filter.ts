@@ -53,7 +53,13 @@ export const getQueryByKeyBindings = (searchParams: ReadonlyURLSearchParams | UR
     },
     pay: (value: string) => {
       if (['on', 'off'].includes(value)) {
-        query.filter.isPayed = value === 'on'
+        if (value === 'on') {
+          query.filter.isPayed = true
+        } else if (value === 'off') {
+          query.filter.isPayed = false
+        } else {
+          query.filter.isPayed = undefined
+        }
       }
     },
     dist: (value: string) => {

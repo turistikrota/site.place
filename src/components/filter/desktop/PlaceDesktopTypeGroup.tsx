@@ -21,7 +21,7 @@ export default function PlaceDesktopTypeGroup() {
           {t('components.types.text')}
           <DesktopInfoBox>{t('components.types.description')}</DesktopInfoBox>
         </PlaceDesktopHead.Title>
-        {!!query.filter.distance && <PlaceDesktopHead.Clear onClear={clearTypes} />}
+        {!!query.filter.types && <PlaceDesktopHead.Clear onClear={clearTypes} />}
       </PlaceDesktopHead>
       <PlaceFilterTypeGroup className='max-h-60 mt-2' />
     </PlaceDesktopFilterSection>

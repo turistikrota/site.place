@@ -37,6 +37,12 @@
       "description": "Check this option if you want to see paid venues.",
       "label": "Paying Places"
     },
+    "is-free": {
+      "title": "Free Venues",
+      "text": "Free Locations",
+      "description": "Check this option if you want to see free venues.",
+      "label": "Free Places"
+    },
     "types": {
       "title": "Select Type",
       "text": "Types",

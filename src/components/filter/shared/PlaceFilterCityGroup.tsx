@@ -21,7 +21,11 @@ const PlaceFilterCityGroup: React.FC<Props> = ({ className }) => {
   const isDesktop = useIsDesktop()
 
   const onSelectCity = (city: City, direction: boolean) => {
-    const newCoordinates = direction ? city.coordinates : null
+    if (query.filter.coordinates === city.coordinates) {
+      push(deepMerge(query, { filter: { coordinates: undefined } }))
+      return
+    }
+    const newCoordinates = direction ? city.coordinates : undefined
     push(deepMerge(query, { filter: { coordinates: newCoordinates } }))
   }
   return (
