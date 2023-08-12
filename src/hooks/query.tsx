@@ -7,8 +7,8 @@ type UseQueryResult<T = unknown> = {
   data: T | null
   isLoading: boolean
   error: unknown | null
-  refetch: () => void
-  nextPage: (page: number) => void
+  refetch: (params: any) => void
+  nextPage: (params: any, page: number) => void
 }
 
 type CacheEntity<T = unknown> = {
@@ -33,13 +33,13 @@ export const useQuery = <T = unknown,>(
   const [error, setError] = useState<Error | null>(null)
 
   const fetchData = useCallback(
-    (skipCache = false, page?: number) => {
-      return fetcher(defaultUrl, skipCache, page)
+    (skipCache = false, params?: any, page?: number) => {
+      return fetcher(defaultUrl, skipCache, params, page)
     },
     [defaultUrl],
   )
 
-  const fetcher = (url: string, skipCache = false, page?: number) => {
+  const fetcher = (url: string, skipCache = false, params?: any, page?: number) => {
     let cached = false
     if (page) {
       if (isPlaceListResponse(data) && !data.isNext) return
@@ -49,7 +49,7 @@ export const useQuery = <T = unknown,>(
       const cacheData = localStorage.getItem(url)
       if (cacheData) {
         const cacheEntity: CacheEntity<T> = JSON.parse(cacheData)
-        if (cacheEntity.expiresAt > Date.now() && deepEqual(cacheEntity.params, opts.params)) {
+        if (cacheEntity.expiresAt > Date.now() && deepEqual(cacheEntity.params, params)) {
           cached = true
           setData(cacheEntity.data)
           setIsLoading(false)
@@ -60,7 +60,7 @@ export const useQuery = <T = unknown,>(
     if (cached) return
     let promise
     if (opts && opts.method === 'POST') {
-      promise = httpClient.post(url, opts.params)
+      promise = httpClient.post(url, params)
     } else {
       promise = httpClient.get(url)
     }
@@ -78,7 +78,7 @@ export const useQuery = <T = unknown,>(
           const cacheEntity: CacheEntity<T> = {
             data: res.data,
             expiresAt: Date.now() + 1000 * 60 * 60 * 24,
-            params: opts.params,
+            params: params,
           }
           localStorage.setItem(url, JSON.stringify(cacheEntity))
         }
@@ -97,14 +97,14 @@ export const useQuery = <T = unknown,>(
 
   useEffect(() => {
     if (opts.withSSR) return
-    fetchData()
+    fetchData(false, opts.params)
   }, [defaultUrl])
 
   return {
     data,
     isLoading,
     error,
-    refetch: () => fetchData(true),
-    nextPage: (page: number) => fetchData(true, page),
+    refetch: (params: any) => fetchData(true, params),
+    nextPage: (params: any, page: number) => fetchData(true, params, page),
   }
 }

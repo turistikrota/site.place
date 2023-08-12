@@ -234,11 +234,13 @@ export const usePlaceFilterProvider = (): PlaceFilterHookResult => {
       setIsOnlyPageChanged(true)
       setIsQueryChanged(false)
       return
-    } else if (diff.length === 0) {
+    } else if (diff.length === 0 && !deepEqual(oldQuery, newQuery)) {
       setIsOnlyPageChanged(false)
       setIsQueryChanged(false)
       return
     }
+    setIsOnlyPageChanged(false)
+    setIsQueryChanged(true)
   }
   useEffect(() => {
     const newQuery = getQueryByKeyBindings(searchParams)

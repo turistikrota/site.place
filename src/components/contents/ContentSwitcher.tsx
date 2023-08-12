@@ -56,10 +56,9 @@ export default function ContentSwitcher({ response, error }: Props) {
   const { places, isLoading, refetch, nextPage, error: apiError } = usePlaces(query, response)
   const [active, setActive] = useState<ContentType>('list')
   const debouncedFilter = debounce(() => {
-    if (isLoading || !places || !!apiError) return
-    console.log('fetch')
-    if (isOnlyPageChanged) return nextPage(places.page + 1)
-    refetch()
+    if (isLoading || !!apiError) return
+    if (isOnlyPageChanged) return nextPage(query.filter, places.page + 1)
+    refetch(query.filter)
   }, 500)
 
   useEffect(() => {

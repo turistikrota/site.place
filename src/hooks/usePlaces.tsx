@@ -8,8 +8,8 @@ type UsePlacesResult = {
   places: ListResponse<PlaceListItem>
   isLoading: boolean
   error: unknown | null
-  refetch: () => void
-  nextPage: (page: number) => void
+  refetch: (params: any) => void
+  nextPage: (params: any, page: number) => void
 }
 
 export const usePlaces = (
