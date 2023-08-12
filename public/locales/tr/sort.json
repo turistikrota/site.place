@@ -1,21 +1,21 @@
 {
   "mobile": {
-    "title": "Sıralama",
+    "title": "Sırala",
     "sort-by": {
-      "title": "Sıralama Alanı",
+      "title": "Ne göre sırala",
       "most_popular": "Popülerlik",
-      "most_liked": "Beğenilenler",
+      "most_liked": "Beğeni",
       "most_recent": "Eklenme Tarihi",
       "nearest": "Yakınlık",
       "clear-text": "Temizle",
-      "clear-aria-label": "Sıralama Alanını temizle"
+      "clear-aria-label": "Sıralama Ölçütünü Temizle"
     },
     "order-by": {
       "title": "Sıralama Yöntemi",
       "desc": "Azalan",
       "asc": "Artan",
       "clear-text": "Temizle",
-      "clear-aria-label": "Sıralama Yöntemini temizle"
+      "clear-aria-label": "Sıralama Yöntemini Temizle"
     }
   }
 }

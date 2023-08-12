@@ -1,7 +1,67 @@
 {
   "card": {
     "minute": "dk",
-    "hour": "sa",
-    "time-spent": "{{min}} - {{max}} {{unit}}"
+    "hour": "s",
+    "time-spent": "{{min}} - {{max}} {{unit}}",
+    "free": "ücretsiz giriş",
+    "payed": "ücretli giriş"
+  },
+  "types": {
+    "eating": "Yemek",
+    "coffee": "Kahve",
+    "bar": "Bar",
+    "beach": "Plaj",
+    "amaze": "Eğlence",
+    "shopping": "Alışveriş",
+    "transport": "Ulaşım",
+    "culture": "Kültür",
+    "nature": "Doğa",
+    "health": "Sağlık",
+    "sport": "Spor",
+    "nightlife": "Gece Hayatı",
+    "other": "Diğer"
+  },
+  "types_desc": {
+    "eating": "Burada yemek yiyebilirsiniz.",
+    "coffee": "Burada kahve içebilirsiniz.",
+    "bar": "Burada alkollü içecekler içebilirsiniz.",
+    "beach": "Bu bir plajdır.",
+    "amaze": "Burada eğlenceli vakit geçirebilirsiniz.",
+    "shopping": "Burada alışveriş yapabilirsiniz.",
+    "transport": "Buradan toplu taşıma araçlarına binebilirsiniz.",
+    "culture": "Burada yeni şeyler öğrenebilirsiniz.",
+    "nature": "Burada doğanın tadını çıkarabilirsiniz.",
+    "health": "Burada tıbbi yardım alabilirsiniz.",
+    "sport": "Burada spor yapabilirsiniz.",
+    "nightlife": "Burada gece eğlenceli vakit geçirebilirsiniz.",
+    "other": "Burada başka aktiviteler yapabilirsiniz."
+  },
+  "features": {
+    "location": {
+      "text": "Konum",
+      "subtext": "Bu mekan {{location}}'e en yakın yerde."
+    },
+    "time": {
+      "text": "Ortalama geçirilen zaman",
+      "subtext": "Burada {{min}} - {{max}} {{unit}} geçireceksiniz."
+    },
+    "payed": {
+      "text": "Giriş",
+      "subtext": "Bu yere giriş ücretlidir."
+    },
+    "free": {
+      "text": "Giriş",
+      "subtext": "Bu yere ücretsiz ziyaret edebilirsiniz."
+    }
+  },
+  "base": {
+    "reviews": "Yorumlar",
+    "updated": "{{date}} tarihinde güncellendi"
+  },
+  "detail": {
+    "map": {
+      "title": "Harita",
+      "description": "Bu yerin haritasıdır."
+    }
   }
 }

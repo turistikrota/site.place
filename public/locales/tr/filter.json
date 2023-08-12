@@ -1,80 +1,86 @@
 {
-  "title": "Filter",
-  "city": "City",
-  "features": "Features",
+  "title": "Filtre",
+  "city": "Şehir",
+  "features": "Özellikler",
   "components": {
     "city-select": {
-      "title": "Select City",
-      "text": "City"
+      "title": "Şehir Seçin",
+      "text": "Şehir"
     },
     "distance": {
-      "title": "Distance",
-      "text": "Distance",
-      "description": "Enter how many kilometers from the city center you want to see the places you want to see.",
-      "label": "Distance (km)"
+      "title": "Mesafe",
+      "text": "Mesafe",
+      "description": "Görmek istediğiniz yerlerin şehir merkezine kaç kilometre uzaklıkta olmasını istediğinizi girin.",
+      "label": "Mesafe (km)"
     },
     "features": {
-      "title": "Select Feature",
-      "text": "Features",
-      "description": "Choose which features you want to see the venues."
+      "title": "Özellik Seçin",
+      "text": "Özellikler",
+      "description": "Mekanlarda görmek istediğiniz özellikleri seçin."
     },
     "time-spent": {
-      "title": "Avg. Elapsed Time",
-      "text": "Average Elapsed Time",
-      "description": "Determine the average time interval you will spend in venues. The time interval is calculated in minutes.",
-      "minText": "En az",
-      "maxText": "En çok"
+      "title": "Ort. Geçirilen Zaman",
+      "text": "Ortalama Geçirilen Zaman",
+      "description": "Mekanlarda geçireceğiniz ortalama zaman aralığını belirleyin. Zaman aralığı dakika olarak hesaplanmaktadır.",
+      "minText": "Min",
+      "maxText": "Maks"
     },
     "query": {
-      "title": "Word Search",
-      "text": "Word Search",
-      "description": "Search venue name, description, or tags.",
-      "label": "Word"
+      "title": "Kelime ile Ara",
+      "text": "Kelime ile Ara",
+      "description": "Mekan adı, açıklama veya etiketlerle arama yapın.",
+      "label": "Kelime"
     },
     "is-payed": {
-      "title": "Paid Venues",
-      "text": "Paid Locations",
-      "description": "Check this option if you want to see paid venues.",
-      "label": "Paying Places"
+      "title": "Ücretli Mekanlar",
+      "text": "Ücretli Yerler",
+      "description": "Ücretli mekanları görmek istiyorsanız bu seçeneği işaretleyin.",
+      "label": "Ücretli Yerler"
+    },
+    "is-free": {
+      "title": "Ücretsiz Mekanlar",
+      "text": "Ücretsiz Yerler",
+      "description": "Ücretsiz mekanları görmek istiyorsanız bu seçeneği işaretleyin.",
+      "label": "Ücretsiz Yerler"
     },
     "types": {
-      "title": "Select Type",
-      "text": "Types",
-      "description": "Choose which types of venues you want to see.",
+      "title": "Tür Seçin",
+      "text": "Türler",
+      "description": "Görmek istediğiniz mekan türlerini seçin.",
       "translation": {
-        "eating": "Eating - Drinking",
-        "coffee": "Coffee",
-        "bar": "bar",
-        "beach": "beach",
-        "amaze": "entertainment"
+        "eating": "Yeme - İçme",
+        "coffee": "Kahve",
+        "bar": "Bar",
+        "beach": "Plaj",
+        "amaze": "Eğlence"
       }
     },
     "review": {
-      "title": "Review Score",
-      "text": "Review Score",
-      "description": "Determine the review range of venues.",
+      "title": "Yorum Puanı",
+      "text": "Yorum Puanı",
+      "description": "Mekanların yorum aralığını belirleyin.",
       "labels": {
-        "x": "{{star}} Stars and Up",
-        "last": "{{star}} stars only"
+        "x": "{{star}} Yıldız ve Üzeri",
+        "last": "Sadece {{star}} yıldız"
       }
     },
     "other": {
-      "title": "Other Filters"
+      "title": "Diğer Filtreler"
     }
   },
-  "clear-all": "Clear All Filters",
-  "clear-filter": "Clear Filter",
-  "apply": "Apply",
-  "see-results": "See Results ({{count}})",
-  "results": "{{count}} results found",
+  "clear-all": "Tüm Filtreleri Temizle",
+  "clear-filter": "Filtreyi Temizle",
+  "apply": "Uygula",
+  "see-results": "Sonuçları Gör ({{count}})",
+  "results": "{{count}} sonuç bulundu",
   "tools": {
-    "min": "At least {{time}} minutes",
-    "max": "max {{time}} minutes",
-    "range": "{{min}} - {{max}} minutes",
-    "paid": "Paid"
+    "min": "En az {{time}} dakika",
+    "max": "maks {{time}} dakika",
+    "range": "{{min}} - {{max}} dakika",
+    "paid": "Ücretli"
   },
   "switch": {
-    "filter": "Filter",
-    "sort": "Sort"
+    "filter": "Filtre",
+    "sort": "Sırala"
   }
 }
