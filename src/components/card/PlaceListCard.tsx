@@ -6,6 +6,7 @@ import { PlaceListItem, TranslationItem, getTranslations } from '~/features/plac
 import { mapAndSortImages } from '~/utils/image'
 import { IsPayedCard, PlaceTypeCard, ReviewCard } from './Shared'
 import TimeSpentCard from './TimeSpentCard'
+import { findBestNearestCities } from '~/static/location/cities'
 
 type Props = {
   item: PlaceListItem
@@ -13,6 +14,7 @@ type Props = {
 
 const PlaceListCard: React.FC<Props> = ({ item }) => {
   const { t, i18n } = useTranslation('place')
+  const cities = findBestNearestCities(item.coordinates, 2)
   const translations = getTranslations<TranslationItem>(item.translations, i18n.language, {
     title: '',
     slug: '',
@@ -28,10 +30,12 @@ const PlaceListCard: React.FC<Props> = ({ item }) => {
     <div className='flex flex-col col-span-12 md:col-span-4'>
       <Link className='bg-second rounded-md' href={translations.slug} target='_blank' onClick={checkOutsideClick}>
         <div>
-          <Carousel images={mapAndSortImages(item.images)} sizeClassName='h-72' />
+          <Carousel imageAltPrefix={translations.title} images={mapAndSortImages(item.images)} sizeClassName='h-72' />
           <div className='flex flex-col gap-2 p-4'>
             <div className='text-2xl font-bold'>{translations.title}</div>
-            <div className='text-sm'>Kalkan, Antalya</div>
+            <div className='text-sm'>{t('features.location.subtext', {
+              location: cities.map(c => c.name).join(', '),
+            })}</div>
             <div className='flex justify-between items-center'>
               <ReviewCard star={item.review.averagePoint} total={item.review.total} />
               <TimeSpentCard data={item.averageTimeSpent} />
