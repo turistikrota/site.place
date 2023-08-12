@@ -30,6 +30,19 @@
       "max": "Max"
     }
   },
+  "seo": {
+    "list": {
+      "title": "Places",
+      "description": "Discover the most popular places all over Turkey with Turistikrota. Find the best venues with hand-picked venue recommendations, filtering options by category, and user reviews.",
+      "keywords": "places, turistikrota, places in Turkey, Turkey",
+      "descriptionWithCity": "{{city}} is one of the most popular cities in Turkey. Discover the most popular places in {{city}} with Turistikrota. Find the best venues with hand-picked venue recommendations, filtering options by category, and user reviews.",
+      "descriptionWithType": "Discover the most popular places in {{type}} with Turistikrota. Find the best venues with hand-picked venue recommendations, filtering options by category, and user reviews.",
+      "descriptionWithCityAndType": "{{type}} is one of the most popular places in {{city}}. Discover the most popular places in {{city}} with Turistikrota. Find the best venues with hand-picked venue recommendations, filtering options by category, and user reviews.",
+      "titleWithCity": "Places in {{city}}",
+      "titleWithType": "Places in {{type}}",
+      "titleWithCityAndType": "Places in {{type}} - {{city}}"
+    }
+  },
   "switch": {
     "filter": "Filter",
     "sort": "Sort"
@@ -43,5 +56,6 @@
   },
   "features": {
     "core": "This feature verified by our team."
-  }
+  },
+  "url": "https://places.turistikrota.com/en"
 }

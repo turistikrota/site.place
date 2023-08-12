@@ -9,6 +9,7 @@ import { PlaceListItem } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
 import { usePlaces } from '~/hooks/usePlaces'
 import { isValidationError } from '~/types/error'
+import PlaceListSeo from '../seo/PlaceListSeo'
 
 type Props = {
   response?: ListResponse<PlaceListItem>
@@ -78,6 +79,7 @@ export default function ContentSwitcher({ response, error }: Props) {
   if (active === 'list') {
     return (
       <>
+        <PlaceListSeo coordinates={query.filter.coordinates} type={query.filter.types} />
         {errorMessage && (
           <div className='p-4 pb-0'>
             <Alert type='error' closable onClose={() => setErrorMessage('')}>
@@ -93,6 +95,7 @@ export default function ContentSwitcher({ response, error }: Props) {
 
   return (
     <>
+      <PlaceListSeo coordinates={query.filter.coordinates} type={query.filter.types} />
       {errorMessage && (
         <div className='p-4 pb-0'>
           <Alert type='error' closable onClose={() => setErrorMessage(null)}>

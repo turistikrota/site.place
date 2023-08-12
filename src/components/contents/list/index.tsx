@@ -2,6 +2,7 @@ import { useInfiniteScroll } from '@turistikrota/ui/cjs/hooks/dom'
 import { deepMerge } from '@turistikrota/ui/cjs/utils'
 import debounce from '@turistikrota/ui/cjs/utils/debounce'
 import Spinner from 'sspin/dist/cjs/Spinner'
+import NoResultsFound from '~/components/card/NoResultsFound'
 import PlaceListCard from '~/components/card/PlaceListCard'
 import { ContentProps } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
@@ -12,7 +13,11 @@ type Props = {
   isNext: boolean
 }
 
-function ListItemSection({ data, loading }: ContentProps) {
+type ListItemProps = {
+  onClear: () => void
+}
+
+function ListItemSection({ data, loading, onClear }: ContentProps & ListItemProps) {
   return (
     <section className='grow grid grid-cols-12 gap-4 md:min-h-[120vh] md:h-full'>
       {data && data.list.map((item, idx) => <PlaceListCard key={idx} item={item} />)}
@@ -21,13 +26,18 @@ function ListItemSection({ data, loading }: ContentProps) {
           <Spinner />
         </div>
       )}
+      {!loading && data && data.list.length === 0 && (
+        <div className='col-span-12'>
+          <NoResultsFound onResetFilters={onClear} />
+        </div>
+      )}
       <div className='pb-20 md:pb-10'></div>
     </section>
   )
 }
 
 export default function ListContent({ data, loading, isNext }: ContentProps & Props) {
-  const { query, push } = usePlaceFilter()
+  const { query, push, clean } = usePlaceFilter()
 
   const debouncedPush = debounce(() => {
     console.log('handle scroll')
@@ -46,7 +56,7 @@ export default function ListContent({ data, loading, isNext }: ContentProps & Pr
       <ListHead />
       <section className='flex flex-col lg:flex-row gap-4'>
         <ListFilter data={data} loading={loading} />
-        <ListItemSection data={data} loading={loading} />
+        <ListItemSection data={data} loading={loading} onClear={clean} />
       </section>
     </section>
   )

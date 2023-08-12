@@ -12,7 +12,7 @@ type SeoProps = {
 const PlaceDetailSeo: React.FC<SeoProps> = ({ seoData, images, coordinates }) => {
   return (
     <Head>
-      <title>{seoData.seo.title}</title>
+      <title>{seoData.seo.title} | Turistikrota</title>
 
       <meta name='description' content={seoData.seo.description} />
       <meta name='keywords' content={seoData.seo.keywords} />

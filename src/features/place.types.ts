@@ -16,6 +16,39 @@ export type PlaceFilterRequest = {
   order?: Order
 }
 
+export enum Type {
+  Eating = 'eating',
+  Coffee = 'coffee',
+  Bar = 'bar',
+  Beach = 'beach',
+  Amaze = 'amaze',
+  Shopping = 'shopping',
+  Transport = 'transport',
+  Culture = 'culture',
+  Nature = 'nature',
+  Health = 'health',
+  Sport = 'sport',
+  Nightlife = 'nightlife',
+  Other = 'other',
+}
+
+export enum Sort {
+  Popular = 'most_popular',
+  Liked = 'most_liked',
+  Recent = 'most_recent',
+  Near = 'nearest',
+}
+
+export enum Order {
+  Asc = 'asc',
+  Desc = 'desc',
+}
+
+export type TimeSpent = {
+  min: number
+  max: number
+}
+
 export type PlaceFeatureListItem = {
   uuid: string
   icon: string
@@ -60,34 +93,6 @@ type FeatureTranslation = {
   description: string
 }
 
-export enum Type {
-  Eating = 'eating',
-  Coffee = 'coffee',
-  Bar = 'bar',
-  Beach = 'beach',
-  Amaze = 'amaze',
-  Shopping = 'shopping',
-  Transport = 'transport',
-  Culture = 'culture',
-  Nature = 'nature',
-  Health = 'health',
-  Sport = 'sport',
-  Nightlife = 'nightlife',
-  Other = 'other',
-}
-
-export enum Sort {
-  Popular = 'most_popular',
-  Liked = 'most_liked',
-  Recent = 'most_recent',
-  Near = 'nearest',
-}
-
-export enum Order {
-  Asc = 'asc',
-  Desc = 'desc',
-}
-
 export type PlaceImage = {
   url: string
   order: number
@@ -108,11 +113,6 @@ type Seo = {
   title: string
   description: string
   keywords: string
-}
-
-export type TimeSpent = {
-  min: number
-  max: number
 }
 
 export type Review = {
