@@ -1,11 +1,15 @@
 import MobileHeader from '@turistikrota/ui/cjs/headers/mobile'
+import dynamic from 'next/dynamic'
 import Logo from '../Logo'
-import AccountHeaderButton from './AccountHeaderButton'
 import HeaderLogo from './HeaderLogo'
 
 type Props = {
   accessTokenIsExists: boolean
 }
+
+const AccountHeaderButton = dynamic(() => import('./AccountHeaderButton'), {
+  ssr: false,
+})
 
 export default function OnlyMobileHeader({ accessTokenIsExists }: Props) {
   return (

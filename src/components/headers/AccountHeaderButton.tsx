@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { Config } from '~/config'
 import { AccountListItem, useAccount } from '~/hooks/account'
 import { getStaticRoute } from '~/static/page'
+import { getRedirectUrl } from '~/utils/auth'
 
 setDefaultImageSrc(Config.cdn.notFound)
 
@@ -42,7 +43,7 @@ const ProfileButton = ({ account }: { account: AccountListItem }) => {
 const LoginButton = () => {
   const { t, i18n } = useTranslation('common')
   return (
-    <Link href={getStaticRoute(i18n.language).auth.default}>
+    <Link href={getRedirectUrl(i18n.language, window.location.href)} passHref={true}>
       <MobileHeader.Button ariaLabel={t('header.button.login')} title={t('header.button.login')}>
         <i className='bx bx-user'></i>
       </MobileHeader.Button>
@@ -64,6 +65,7 @@ const SelectProfileButton = () => {
   return (
     <Link
       href={getStaticRoute(i18n.language).account.select}
+      passHref={true}
       className='hover:bg-second dark:hover:bg-third rounded-md px-3 py-3 transition-colors duration-200 ease-in-out'
       aria-label={t('header.links.selectAccount')}
       title={t('header.links.selectAccount')}

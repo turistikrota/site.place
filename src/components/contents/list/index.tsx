@@ -14,10 +14,11 @@ type Props = {
 }
 
 type ListItemProps = {
+  isFiltered: boolean
   onClear: () => void
 }
 
-function ListItemSection({ data, loading, onClear }: ContentProps & ListItemProps) {
+function ListItemSection({ data, loading, onClear, isFiltered }: ContentProps & ListItemProps) {
   return (
     <section className='grow grid grid-cols-12 gap-4 md:min-h-[120vh] md:h-full'>
       {data && data.list.map((item, idx) => <PlaceListCard key={idx} item={item} />)}
@@ -28,7 +29,7 @@ function ListItemSection({ data, loading, onClear }: ContentProps & ListItemProp
       )}
       {!loading && data && data.list.length === 0 && (
         <div className='col-span-12'>
-          <NoResultsFound onResetFilters={onClear} />
+          <NoResultsFound onResetFilters={onClear} isFiltered={isFiltered} />
         </div>
       )}
       <div className='pb-20 md:pb-10'></div>
@@ -37,10 +38,9 @@ function ListItemSection({ data, loading, onClear }: ContentProps & ListItemProp
 }
 
 export default function ListContent({ data, loading, isNext }: ContentProps & Props) {
-  const { query, push, clean } = usePlaceFilter()
+  const { query, push, clean, isFiltered } = usePlaceFilter()
 
   const debouncedPush = debounce(() => {
-    console.log('handle scroll')
     const newPage = (query.page || 1) + 1
     push(deepMerge(query, { page: newPage }))
   }, 100)
@@ -56,7 +56,7 @@ export default function ListContent({ data, loading, isNext }: ContentProps & Pr
       <ListHead />
       <section className='flex flex-col lg:flex-row gap-4'>
         <ListFilter data={data} loading={loading} />
-        <ListItemSection data={data} loading={loading} onClear={clean} />
+        <ListItemSection data={data} loading={loading} onClear={clean} isFiltered={isFiltered} />
       </section>
     </section>
   )

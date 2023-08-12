@@ -1,8 +1,11 @@
 import { getStaticRoute } from '~/static/page'
 
-export const openLoginWithRedirect = (lang: string) => {
-  const currentUrl = window.location.href
-  window.open(getStaticRoute(lang).auth.default + '?redirect=' + currentUrl, '_self')
+export const getRedirectUrl = (lang: string, url: string) => {
+  return getStaticRoute(lang).auth.default + '?redirect=' + url
+}
+
+export const openLoginWithRedirect = (lang: string, url: string) => {
+  window.open(getRedirectUrl(lang, url), '_self')
 }
 
 export const openLogin = (lang: string) => {
