@@ -9,6 +9,7 @@ import { PlaceListItem } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
 import { usePlaces } from '~/hooks/usePlaces'
 import { isValidationError } from '~/types/error'
+import { deepMerge } from '~/utils/deepMerge'
 import PlaceListSeo from '../seo/PlaceListSeo'
 
 type Props = {
@@ -51,7 +52,7 @@ const FixedButton: React.FC<ButtonProps> = ({ text, variant, icon, onClick }) =>
 
 export default function ContentSwitcher({ response, error }: Props) {
   const { t } = useTranslation('common')
-  const { query, isQueryChanged, isOnlyPageChanged, clean } = usePlaceFilter()
+  const { query, push, isQueryChanged, isOnlyPageChanged, clean } = usePlaceFilter()
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const { places, isLoading, refetch, nextPage, error: apiError } = usePlaces(query, response)
   const [active, setActive] = useState<ContentType>('list')
@@ -65,6 +66,14 @@ export default function ContentSwitcher({ response, error }: Props) {
     if (!isQueryChanged && !isOnlyPageChanged) return
     debouncedFilter()
   }, [query])
+
+  useEffect(() => {
+    if (active === 'list' && query.limit) {
+      return push(deepMerge(query, { limit: undefined }))
+    } else if (active === 'map' && query.limit !== 1000) {
+      push(deepMerge(query, { limit: 1000, page: 1 }))
+    }
+  }, [active])
 
   useEffect(() => {
     if (!error || !isValidationError(error)) return

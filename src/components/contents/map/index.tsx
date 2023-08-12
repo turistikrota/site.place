@@ -1,7 +1,6 @@
 'use client'
 
 import { Coordinates } from '@turistikrota/ui/cjs/types'
-import { deepMerge } from '@turistikrota/ui/cjs/utils'
 import debounce from '@turistikrota/ui/cjs/utils/debounce'
 import { type LatLngTuple } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -12,6 +11,7 @@ import MapDefaultConfig from '~/components/map/MapDefaultConfig'
 import { ContentProps } from '~/features/place.types'
 import { useSizeWithoutHeader } from '~/hooks/dom'
 import { usePlaceFilter } from '~/hooks/place.filter'
+import { deepMerge } from '~/utils/deepMerge'
 
 const DynamicMap = dynamic(() => import('~/components/map/MapDynamic'), {
   ssr: false,
