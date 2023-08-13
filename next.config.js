@@ -5,7 +5,7 @@ const nextConfig = {
   output: 'standalone',
   reactStrictMode: true,
   images: {
-    domains: ['https://s3.turistikrota.com'],
+    domains: ['s3.turistikrota.com', 'avatar.turistikrota.com'],
   },
   i18n,
   experimental: {
