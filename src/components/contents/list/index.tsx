@@ -1,4 +1,4 @@
-import { useInfiniteScroll } from '@turistikrota/ui/cjs/hooks/dom'
+import { useInfiniteScroll, useWindowWidth } from '@turistikrota/ui/cjs/hooks/dom'
 import { deepMerge } from '@turistikrota/ui/cjs/utils'
 import debounce from '@turistikrota/ui/cjs/utils/debounce'
 import Spinner from 'sspin/dist/cjs/Spinner'
@@ -19,14 +19,17 @@ type ListItemProps = {
 }
 
 function ListItemSection({ data, loading, onClear, isFiltered }: ContentProps & ListItemProps) {
+  const isWidthExist = useWindowWidth()
   return (
-    <section className='grow grid grid-cols-12 gap-4 md:min-h-[120vh] md:h-full'>
-      {data && data.list.map((item, idx) => <PlaceListCard key={idx} item={item} />)}
+    <section
+      className={`grow grid grid-cols-12 gap-4 md:min-h-[120vh] md:h-full ${!isWidthExist ? 'ml-0 md:ml-80' : ''}`}
+    >
       {loading && (
         <div className='col-span-12 flex items-center justify-center p-4'>
           <Spinner />
         </div>
       )}
+      {!loading && data && data.list.map((item, idx) => <PlaceListCard key={idx} item={item} />)}
       {!loading && data && data.list.length === 0 && (
         <div className='col-span-12'>
           <NoResultsFound onResetFilters={onClear} isFiltered={isFiltered} />
