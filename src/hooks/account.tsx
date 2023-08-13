@@ -70,6 +70,7 @@ const AccountFetcher: React.FC<React.PropsWithChildren<ProviderProps>> = ({
       .then((res) => {
         if (isAccountListItem(res.data)) {
           setCurrent(res.data)
+          localStorage.setItem(AccountStorage.CurrentAccount, JSON.stringify(res.data))
         }
       })
       .catch((err) => {
