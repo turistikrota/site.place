@@ -15,18 +15,16 @@ export default function MapLayout({
 }: React.PropsWithChildren<Props>) {
   const size = useSizeWithoutHeader()
   return (
-    <>
+    <AccountProvider accessTokenIsExists={accessTokenIsExists} isAccountCookieExists={isAccountCookieExists}>
       <OnlyMobileHeader accessTokenIsExists={accessTokenIsExists} />
-      <AccountProvider accessTokenIsExists={accessTokenIsExists} isAccountCookieExists={isAccountCookieExists}>
-        <main
-          className='h-full'
-          style={{
-            minHeight: size,
-          }}
-        >
-          <TooltipProvider>{children}</TooltipProvider>
-        </main>
-      </AccountProvider>
-    </>
+      <main
+        className='h-full'
+        style={{
+          minHeight: size,
+        }}
+      >
+        <TooltipProvider>{children}</TooltipProvider>
+      </main>
+    </AccountProvider>
   )
 }

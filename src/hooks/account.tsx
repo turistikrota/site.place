@@ -63,7 +63,15 @@ const AccountFetcher: React.FC<React.PropsWithChildren<ProviderProps>> = ({
   useEffect(() => {
     if (typeof window === 'undefined') return
     const item = localStorage.getItem(AccountStorage.CurrentAccount)
-    if (accessTokenIsExists && (!isAccountCookieExists || !!item)) return
+    if (accessTokenIsExists && (!isAccountCookieExists || !!item)) {
+      if (item) {
+        const account = JSON.parse(item)
+        if (isAccountListItem(account)) {
+          setCurrent(account)
+        }
+      }
+      return
+    }
     setLoading(true)
     httpClient
       .get(apiUrl(Services.Account, '/selected'))

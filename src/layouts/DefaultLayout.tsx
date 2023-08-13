@@ -13,13 +13,11 @@ export default function DefaultLayout({
   isAccountCookieExists,
 }: React.PropsWithChildren<Props>) {
   return (
-    <>
+    <AccountProvider accessTokenIsExists={accessTokenIsExists} isAccountCookieExists={isAccountCookieExists}>
       <OnlyMobileHeader accessTokenIsExists={accessTokenIsExists} />
-      <AccountProvider accessTokenIsExists={accessTokenIsExists} isAccountCookieExists={isAccountCookieExists}>
-        <main>
-          <TooltipProvider>{children}</TooltipProvider>
-        </main>
-      </AccountProvider>
-    </>
+      <main>
+        <TooltipProvider>{children}</TooltipProvider>
+      </main>
+    </AccountProvider>
   )
 }
