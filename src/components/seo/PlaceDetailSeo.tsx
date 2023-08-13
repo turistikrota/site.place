@@ -1,6 +1,7 @@
 import { Coordinates } from '@turistikrota/ui/cjs/types'
 import Head from 'next/head'
 import { FullTranslation } from '~/features/place.types'
+import { makeHtmlTitle } from '~/utils/seo'
 import BaseSeo from './BaseSeo'
 
 type SeoProps = {
@@ -10,9 +11,10 @@ type SeoProps = {
 }
 
 const PlaceDetailSeo: React.FC<SeoProps> = ({ seoData, images, coordinates }) => {
+  const title = makeHtmlTitle(seoData.seo.title)
   return (
     <Head>
-      <title>{seoData.seo.title} | Turistikrota</title>
+      <title>{title}</title>
 
       <meta name='description' content={seoData.seo.description} />
       <meta name='keywords' content={seoData.seo.keywords} />

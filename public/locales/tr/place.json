@@ -67,5 +67,10 @@
       "title": "Harita",
       "description": "Bu yerin haritasıdır."
     }
+  },
+  "notFound": {
+    "title": "Yer bulunamadı",
+    "description": "Aradığınız yer bulunamadı.",
+    "backHome": "Ana sayfaya dön"
   }
 }

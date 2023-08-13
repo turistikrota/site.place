@@ -67,5 +67,10 @@
       "title": "Map",
       "description": "This is the map of the place."
     }
+  },
+  "notFound": {
+    "title": "Place not found",
+    "description": "The place you searched for was not found.",
+    "backHome": "Back to home"
   }
 }

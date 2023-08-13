@@ -1,4 +1,3 @@
-import { useTranslation } from 'next-i18next'
 import { createContext, useContext, useEffect, useState } from 'react'
 import { Services, apiUrl } from '~/config/services'
 import { httpClient } from '~/http/client'
@@ -36,6 +35,8 @@ export function isAccountListItem(response: any): response is AccountListItem {
 type AccountContext = {
   loading: boolean
   current?: AccountListItem
+  setLoading: (loading: boolean) => void
+  setCurrent: (current?: AccountListItem) => void
 }
 
 type ProviderProps = {
@@ -45,18 +46,19 @@ type ProviderProps = {
 
 const AccountContext = createContext<AccountContext>({
   loading: false,
+  current: undefined,
+  setLoading: () => {},
+  setCurrent: () => {},
 })
 
 export const useAccount = () => useContext(AccountContext)
 
-export const AccountProvider: React.FC<React.PropsWithChildren<ProviderProps>> = ({
+const AccountFetcher: React.FC<React.PropsWithChildren<ProviderProps>> = ({
   children,
   accessTokenIsExists,
   isAccountCookieExists,
 }) => {
-  const { i18n } = useTranslation()
-  const [loading, setLoading] = useState(false)
-  const [current, setCurrent] = useState<AccountListItem | undefined>(undefined)
+  const { setLoading, setCurrent } = useAccount()
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -84,14 +86,29 @@ export const AccountProvider: React.FC<React.PropsWithChildren<ProviderProps>> =
       })
   }, [isAccountCookieExists])
 
+  return <>{children}</>
+}
+
+export const AccountProvider: React.FC<React.PropsWithChildren<ProviderProps>> = ({
+  children,
+  accessTokenIsExists,
+  isAccountCookieExists,
+}) => {
+  const [loading, setLoading] = useState(false)
+  const [current, setCurrent] = useState<AccountListItem | undefined>(undefined)
+
   return (
     <AccountContext.Provider
       value={{
         loading,
         current,
+        setLoading,
+        setCurrent,
       }}
     >
-      {children}
+      <AccountFetcher accessTokenIsExists={accessTokenIsExists} isAccountCookieExists={isAccountCookieExists}>
+        {children}
+      </AccountFetcher>
     </AccountContext.Provider>
   )
 }

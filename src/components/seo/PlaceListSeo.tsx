@@ -2,6 +2,7 @@ import { useTranslation } from 'next-i18next'
 import Head from 'next/head'
 import { Coordinates, Type } from '~/features/place.types'
 import { findBestNearestCities } from '~/static/location/cities'
+import { makeHtmlTitle } from '~/utils/seo'
 import BaseSeo from './BaseSeo'
 
 type SeoProps = {
@@ -37,10 +38,12 @@ const PlaceListSeo: React.FC<SeoProps> = ({ coordinates, type }) => {
     keywords += `, ${types}`
   }
 
+  title = makeHtmlTitle(title)
+
   return (
     <Head>
       <BaseSeo />
-      <title>{title} | Turistikrota</title>
+      <title>{title}</title>
       <meta name='description' content={description} />
       <meta name='keywords' content={keywords} />
       <meta property='og:title' content={title} />
