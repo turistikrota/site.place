@@ -1,4 +1,5 @@
 import '@turistikrota/ui/assets/config.css'
+import '@turistikrota/ui/fonts/verdana.css'
 import 'boxicons/css/boxicons.min.css'
 import { appWithTranslation } from 'next-i18next'
 import type { AppProps } from 'next/app'

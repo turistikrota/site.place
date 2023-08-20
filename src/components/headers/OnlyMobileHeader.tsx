@@ -1,10 +1,10 @@
 import MobileHeader from '@turistikrota/ui/cjs/headers/mobile'
 import TopHeader from '@turistikrota/ui/cjs/headers/top'
+import Logo from '@turistikrota/ui/cjs/logo'
 import { useTranslation } from 'next-i18next'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { getStaticRoute } from '~/static/page'
-import Logo from '../Logo'
 import HeaderLogo from './HeaderLogo'
 
 type Props = {
@@ -41,7 +41,9 @@ export default function OnlyMobileHeader({ accessTokenIsExists }: Props) {
       <MobileHeader>
         <MobileHeader.Left>
           <HeaderLogo>
-            <Logo width={186} height={30} />
+            <Logo width={186} height={30} className='flex gap-1'>
+              <Logo.SubModule>{t('header.submodule')}</Logo.SubModule>
+            </Logo>
           </HeaderLogo>
         </MobileHeader.Left>
         <MobileHeader.Fill className='hidden md:flex'>{``}</MobileHeader.Fill>
