@@ -5,7 +5,7 @@
   },
   "card": {
     "minute": "dk",
-    "hour": "s",
+    "hour": "saat",
     "time-spent": "{{min}} - {{max}} {{unit}}",
     "free": "ücretsiz giriş",
     "payed": "ücretli giriş"

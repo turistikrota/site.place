@@ -5,7 +5,7 @@
   },
   "card": {
     "minute": "min",
-    "hour": "h",
+    "hour": "hour",
     "time-spent": "{{min}} - {{max}} {{unit}}",
     "free": "free admission",
     "payed": "payed admission"
