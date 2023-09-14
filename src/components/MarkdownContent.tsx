@@ -27,7 +27,8 @@ export default function MarkdownContent({ content }: Props) {
             {children}
           </a>
         ),
-        ul: ({ children }) => <ul className='text-base'>{children}</ul>,
+        ul: ({ children }) => <ul className='text-base list-disc list-inside'>{children}</ul>,
+        img: ({ src, alt }) => <img className='w-full h-auto object-cover my-1 mx-auto' src={src} alt={alt} />,
       }}
     >
       {content}
