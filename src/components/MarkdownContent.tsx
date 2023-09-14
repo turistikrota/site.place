@@ -28,7 +28,12 @@ export default function MarkdownContent({ content }: Props) {
           </a>
         ),
         ul: ({ children }) => <ul className='text-base list-disc list-inside'>{children}</ul>,
-        img: ({ src, alt }) => <img className='w-full h-auto object-cover my-1 mx-auto' src={src} alt={alt} />,
+        li: ({ children }) => <li className='text-base text-gray-700 dark:text-gray-400'>{children}</li>,
+        strong: ({ children }) => (
+          <strong className='text-base font-bold text-gray-800 dark:text-gray-300'>{children}</strong>
+        ),
+        b: ({ children }) => <b className='text-base font-bold text-gray-800 dark:text-gray-300'>{children}</b>,
+        img: ({ src, alt }) => <img className='h-auto object-cover my-4 mx-auto rounded-md' src={src} alt={alt} />,
       }}
     >
       {content}
