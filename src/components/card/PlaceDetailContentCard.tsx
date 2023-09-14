@@ -11,7 +11,7 @@ import {
   getTranslations,
 } from '~/features/place.types'
 import { useDayJS } from '~/hooks/dayjs'
-import { useTimeSpentUnit } from '~/hooks/timespent'
+import { useTimeSpent, useTimeSpentUnit } from '~/hooks/timespent'
 import { useBraceText } from '~/hooks/useBraceText'
 import { findBestNearestCities } from '~/static/location/cities'
 import { PlaceTypeItems, PlaceTypes } from '~/types/place'
@@ -58,6 +58,7 @@ const PlaceDetailContentCard: React.FC<Props> = ({
   const cityTexts = useBraceText(cities.map((city) => city.name))
   const currentType: PlaceTypeItems = PlaceTypes[type] ? PlaceTypes[type] : PlaceTypes[Type.Other]
   const timeSpentUnit = useTimeSpentUnit(timeSpent)
+  const spent = useTimeSpent(timeSpent)
 
   const coreFeatures = useMemo<CoreFeatureItem[]>(
     () =>
@@ -84,8 +85,8 @@ const PlaceDetailContentCard: React.FC<Props> = ({
           icon: 'bx bx-time',
           title: t('features.time.text'),
           text: t('features.time.subtext', {
-            min: timeSpent.min,
-            max: timeSpent.max,
+            min: spent.min,
+            max: spent.max,
             unit: t(timeSpentUnit),
           }),
         },

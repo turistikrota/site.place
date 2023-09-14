@@ -20,3 +20,6 @@ export const useTimeSpentUnit = (data: TimeSpent): string => {
 
   return unit
 }
+
+export const useTimeSpent = (data: TimeSpent): TimeSpent =>
+  data.max > 60 ? { min: Math.round(data.min / 60), max: Math.round(data.max / 60) } : data

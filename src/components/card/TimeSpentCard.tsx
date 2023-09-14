@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next'
 import { TimeSpent } from '~/features/place.types'
-import { useTimeSpentUnit } from '~/hooks/timespent'
+import { useTimeSpent, useTimeSpentUnit } from '~/hooks/timespent'
 
 type Props = {
   data: TimeSpent
@@ -9,12 +9,13 @@ type Props = {
 const TimeSpentCard: React.FC<Props> = ({ data }) => {
   const { t } = useTranslation('place')
   const unit = useTimeSpentUnit(data)
+  const spent = useTimeSpent(data)
 
   return (
     <div className='text-gray-500 dark:text-gray-300' suppressHydrationWarning>
       {t('card.time-spent', {
-        min: data.max > 60 ? Math.round(data.min / 60) : data.min,
-        max: data.max > 60 ? Math.round(data.max / 60) : data.max,
+        min: spent.min,
+        max: spent.max,
         unit: t(unit),
       })}
     </div>
