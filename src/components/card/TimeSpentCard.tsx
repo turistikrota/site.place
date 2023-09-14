@@ -13,7 +13,7 @@ const TimeSpentCard: React.FC<Props> = ({ data }) => {
   return (
     <div className='text-gray-500 dark:text-gray-300' suppressHydrationWarning>
       {t('card.time-spent', {
-        min: data.min > 60 ? Math.round(data.min / 60) : data.min,
+        min: data.max > 60 ? Math.round(data.min / 60) : data.min,
         max: data.max > 60 ? Math.round(data.max / 60) : data.max,
         unit: t(unit),
       })}
