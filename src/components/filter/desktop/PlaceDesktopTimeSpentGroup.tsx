@@ -21,7 +21,7 @@ export default function PlaceDesktopTimeSpentGroup() {
           {t('components.time-spent.title')}
           <DesktopInfoBox>{t('components.time-spent.description')}</DesktopInfoBox>
         </PlaceDesktopHead.Title>
-        {!!query.filter.distance && <PlaceDesktopHead.Clear onClear={clearTimeSpent} />}
+        {!!query.filter.timeSpent && <PlaceDesktopHead.Clear onClear={clearTimeSpent} />}
       </PlaceDesktopHead>
       <PlaceFilterTimeSpentGroup />
     </PlaceDesktopFilterSection>

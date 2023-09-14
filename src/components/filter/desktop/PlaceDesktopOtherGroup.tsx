@@ -17,7 +17,7 @@ export default function PlaceDesktopOtherGroup() {
     <PlaceDesktopFilterSection>
       <PlaceDesktopHead>
         <PlaceDesktopHead.Title>{t('components.other.title')}</PlaceDesktopHead.Title>
-        {!!query.filter.distance && <PlaceDesktopHead.Clear onClear={clearIsPayed} />}
+        {!!query.filter.isPayed && <PlaceDesktopHead.Clear onClear={clearIsPayed} />}
       </PlaceDesktopHead>
       <PlaceFilterIsPayedGroup />
     </PlaceDesktopFilterSection>

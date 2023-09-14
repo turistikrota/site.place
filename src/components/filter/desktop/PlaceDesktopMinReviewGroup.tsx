@@ -21,7 +21,7 @@ export default function PlaceDesktopMinReviewGroup() {
           {t('components.review.text')}
           <DesktopInfoBox>{t('components.review.description')}</DesktopInfoBox>
         </PlaceDesktopHead.Title>
-        {!!query.filter.distance && <PlaceDesktopHead.Clear onClear={clearReview} />}
+        {(!!query.filter.minReview || !!query.filter.maxReview) && <PlaceDesktopHead.Clear onClear={clearReview} />}
       </PlaceDesktopHead>
       <PlaceFilterReviewGroup />
     </PlaceDesktopFilterSection>

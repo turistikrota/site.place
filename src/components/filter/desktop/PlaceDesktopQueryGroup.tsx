@@ -21,7 +21,7 @@ export default function PlaceDesktopQueryGroup() {
           {t('components.query.text')}
           <DesktopInfoBox>{t('components.query.description')}</DesktopInfoBox>
         </PlaceDesktopHead.Title>
-        {!!query.filter.distance && <PlaceDesktopHead.Clear onClear={clearQuery} />}
+        {!!query.filter.query && <PlaceDesktopHead.Clear onClear={clearQuery} />}
       </PlaceDesktopHead>
       <PlaceFilterQueryGroup />
     </PlaceDesktopFilterSection>
