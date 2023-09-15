@@ -12,571 +12,978 @@
         <priority>1.0</priority>
     </url>
 
+
   <!-- Gaziantep -->
   <url>
-  <loc>https://places.turistikrota.com?lat=37.302092&lng=37.6808791</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=37.302092&lng=37.6808791</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=37.302092&lng=37.6808791</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Giresun -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.751964&lng=38.6814949</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.751964&lng=38.6814949</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.751964&lng=38.6814949</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Ağrı -->
   <url>
-  <loc>https://places.turistikrota.com?lat=39.4934&lng=42.8337</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=39.4934&lng=42.8337</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=39.4934&lng=42.8337</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Denizli -->
   <url>
-  <loc>https://places.turistikrota.com?lat=37.361797&lng=29.006714</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=37.361797&lng=29.006714</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=37.361797&lng=29.006714</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Kilis -->
   <url>
-  <loc>https://places.turistikrota.com?lat=36.83432&lng=37.216747</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=36.83432&lng=37.216747</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=36.83432&lng=37.216747</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Manisa -->
   <url>
-  <loc>https://places.turistikrota.com?lat=38.8632609&lng=27.2506321</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=38.8632609&lng=27.2506321</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=38.8632609&lng=27.2506321</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Hatay -->
   <url>
-  <loc>https://places.turistikrota.com?lat=35.875588&lng=36.14773</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=35.875588&lng=36.14773</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=35.875588&lng=36.14773</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Kayseri -->
   <url>
-  <loc>https://places.turistikrota.com?lat=38.219167&lng=35.210938</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=38.219167&lng=35.210938</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=38.219167&lng=35.210938</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Ordu -->
   <url>
-  <loc>https://places.turistikrota.com?lat=41.1414229&lng=37.2833553</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=41.1414229&lng=37.2833553</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=41.1414229&lng=37.2833553</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Siirt -->
   <url>
-  <loc>https://places.turistikrota.com?lat=37.98142199999999&lng=42.06434</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=37.98142199999999&lng=42.06434</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=37.98142199999999&lng=42.06434</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Sinop -->
   <url>
-  <loc>https://places.turistikrota.com?lat=41.938269&lng=34.374597</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=41.938269&lng=34.374597</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=41.938269&lng=34.374597</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Uşak -->
   <url>
-  <loc>https://places.turistikrota.com?lat=38.815703&lng=29.1581671</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=38.815703&lng=29.1581671</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=38.815703&lng=29.1581671</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Adıyaman -->
   <url>
-  <loc>https://places.turistikrota.com?lat=37.74980499999999&lng=38.025159</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=37.74980499999999&lng=38.025159</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=37.74980499999999&lng=38.025159</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Isparta -->
   <url>
-  <loc>https://places.turistikrota.com?lat=37.715724&lng=31.40847309999999</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=37.715724&lng=31.40847309999999</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=37.715724&lng=31.40847309999999</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- İzmir -->
   <url>
-  <loc>https://places.turistikrota.com?lat=38.284248&lng=26.561384</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=38.284248&lng=26.561384</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=38.284248&lng=26.561384</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Muğla -->
   <url>
-  <loc>https://places.turistikrota.com?lat=37.3838038&lng=27.9971173</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=37.3838038&lng=27.9971173</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=37.3838038&lng=27.9971173</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Niğde -->
   <url>
-  <loc>https://places.turistikrota.com?lat=37.46905599999999&lng=34.38548</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=37.46905599999999&lng=34.38548</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=37.46905599999999&lng=34.38548</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Aksaray -->
   <url>
-  <loc>https://places.turistikrota.com?lat=38.2505508&lng=33.5546071</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=38.2505508&lng=33.5546071</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=38.2505508&lng=33.5546071</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Antalya -->
   <url>
-  <loc>https://places.turistikrota.com?lat=37.0254509&lng=31.023438</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=37.0254509&lng=31.023438</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=37.0254509&lng=31.023438</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Bursa -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.1759632&lng=29.0932627</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.1759632&lng=29.0932627</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.1759632&lng=29.0932627</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Bilecik -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.1735462&lng=30.5235917</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.1735462&lng=30.5235917</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.1735462&lng=30.5235917</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Çankırı -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.665909&lng=33.9098309</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.665909&lng=33.9098309</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.665909&lng=33.9098309</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Samsun -->
   <url>
-  <loc>https://places.turistikrota.com?lat=41.616763&lng=35.466584</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=41.616763&lng=35.466584</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=41.616763&lng=35.466584</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Şırnak -->
   <url>
-  <loc>https://places.turistikrota.com?lat=37.45137769999999&lng=42.823238</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=37.45137769999999&lng=42.823238</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=37.45137769999999&lng=42.823238</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Adana -->
   <url>
-  <loc>https://places.turistikrota.com?lat=36.781523&lng=35.36688</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=36.781523&lng=35.36688</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=36.781523&lng=35.36688</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Erzurum -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.054258&lng=41.2777771</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.054258&lng=41.2777771</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.054258&lng=41.2777771</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Gümüşhane -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.6133&lng=39.3656999</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.6133&lng=39.3656999</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.6133&lng=39.3656999</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Kars -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.749192&lng=43.241508</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.749192&lng=43.241508</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.749192&lng=43.241508</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Kocaeli -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.8172851&lng=29.6325305</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.8172851&lng=29.6325305</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.8172851&lng=29.6325305</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Rize -->
   <url>
-  <loc>https://places.turistikrota.com?lat=41.007622&lng=40.572128</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=41.007622&lng=40.572128</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=41.007622&lng=40.572128</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Tekirdağ -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.9926379&lng=27.5055532</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.9926379&lng=27.5055532</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.9926379&lng=27.5055532</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Diyarbakır -->
   <url>
-  <loc>https://places.turistikrota.com?lat=38.029674&lng=40.200105</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=38.029674&lng=40.200105</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=38.029674&lng=40.200105</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Tokat -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.3065916&lng=35.891636</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.3065916&lng=35.891636</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.3065916&lng=35.891636</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Osmaniye -->
   <url>
-  <loc>https://places.turistikrota.com?lat=37.062415&lng=36.145216</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=37.062415&lng=36.145216</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=37.062415&lng=36.145216</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Balıkesir -->
   <url>
-  <loc>https://places.turistikrota.com?lat=39.91391&lng=28.156902</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=39.91391&lng=28.156902</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=39.91391&lng=28.156902</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Bolu -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.761385&lng=32.020328</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.761385&lng=32.020328</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.761385&lng=32.020328</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Konya -->
   <url>
-  <loc>https://places.turistikrota.com?lat=38.694552&lng=31.981478</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=38.694552&lng=31.981478</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=38.694552&lng=31.981478</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Nevşehir -->
   <url>
-  <loc>https://places.turistikrota.com?lat=38.540977&lng=34.992952</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=38.540977&lng=34.992952</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=38.540977&lng=34.992952</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Ankara -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.01782&lng=32.725521</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.01782&lng=32.725521</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.01782&lng=32.725521</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Bayburt -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.155765&lng=39.969112</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.155765&lng=39.969112</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.155765&lng=39.969112</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Karaman -->
   <url>
-  <loc>https://places.turistikrota.com?lat=36.696092&lng=32.616829</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=36.696092&lng=32.616829</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=36.696092&lng=32.616829</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Ardahan -->
   <url>
-  <loc>https://places.turistikrota.com?lat=41.520351&lng=42.797145</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=41.520351&lng=42.797145</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=41.520351&lng=42.797145</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Bingöl -->
   <url>
-  <loc>https://places.turistikrota.com?lat=39.4248687&lng=40.5861434</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=39.4248687&lng=40.5861434</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=39.4248687&lng=40.5861434</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Iğdır -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.036318&lng=43.6374542</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.036318&lng=43.6374542</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.036318&lng=43.6374542</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Aydın -->
   <url>
-  <loc>https://places.turistikrota.com?lat=37.8179794&lng=28.1956408</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=37.8179794&lng=28.1956408</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=37.8179794&lng=28.1956408</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Afyonkarahisar -->
   <url>
-  <loc>https://places.turistikrota.com?lat=38.530709&lng=31.2411748</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=38.530709&lng=31.2411748</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=38.530709&lng=31.2411748</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Yozgat -->
   <url>
-  <loc>https://places.turistikrota.com?lat=39.8268152&lng=34.8078986</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=39.8268152&lng=34.8078986</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=39.8268152&lng=34.8078986</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Zonguldak -->
   <url>
-  <loc>https://places.turistikrota.com?lat=41.4703111&lng=31.8046185</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=41.4703111&lng=31.8046185</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=41.4703111&lng=31.8046185</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Karabük -->
   <url>
-  <loc>https://places.turistikrota.com?lat=41.2551&lng=32.3531</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=41.2551&lng=32.3531</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=41.2551&lng=32.3531</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Düzce -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.8387&lng=31.1626</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.8387&lng=31.1626</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.8387&lng=31.1626</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Kırşehir -->
   <url>
-  <loc>https://places.turistikrota.com?lat=38.916749&lng=34.26343</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=38.916749&lng=34.26343</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=38.916749&lng=34.26343</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Kırklareli -->
   <url>
-  <loc>https://places.turistikrota.com?lat=41.515282&lng=27.687418</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=41.515282&lng=27.687418</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=41.515282&lng=27.687418</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Kütahya -->
   <url>
-  <loc>https://places.turistikrota.com?lat=39.7117999&lng=29.4258001</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=39.7117999&lng=29.4258001</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=39.7117999&lng=29.4258001</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Muş -->
   <url>
-  <loc>https://places.turistikrota.com?lat=39.071678&lng=41.7688</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=39.071678&lng=41.7688</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=39.071678&lng=41.7688</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Trabzon -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.929867&lng=39.8929591</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.929867&lng=39.8929591</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.929867&lng=39.8929591</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Van -->
   <url>
-  <loc>https://places.turistikrota.com?lat=38.6782201&lng=43.310765</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=38.6782201&lng=43.310765</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=38.6782201&lng=43.310765</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Mersin -->
   <url>
-  <loc>https://places.turistikrota.com?lat=36.865187&lng=34.449017</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=36.865187&lng=34.449017</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=36.865187&lng=34.449017</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Amasya -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.760551&lng=36.322542</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.760551&lng=36.322542</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.760551&lng=36.322542</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Bartın -->
   <url>
-  <loc>https://places.turistikrota.com?lat=41.45098&lng=32.579052</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=41.45098&lng=32.579052</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=41.45098&lng=32.579052</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Artvin -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.966901&lng=41.758564</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.966901&lng=41.758564</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.966901&lng=41.758564</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Erzincan -->
   <url>
-  <loc>https://places.turistikrota.com?lat=39.6889374&lng=39.6837718</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=39.6889374&lng=39.6837718</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=39.6889374&lng=39.6837718</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Eskişehir -->
   <url>
-  <loc>https://places.turistikrota.com?lat=39.8034095&lng=30.4674459</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=39.8034095&lng=30.4674459</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=39.8034095&lng=30.4674459</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Kastamonu -->
   <url>
-  <loc>https://places.turistikrota.com?lat=41.040825&lng=34.202772</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=41.040825&lng=34.202772</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=41.040825&lng=34.202772</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Yalova -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.6585013&lng=29.2742064</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.6585013&lng=29.2742064</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.6585013&lng=29.2742064</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Burdur -->
   <url>
-  <loc>https://places.turistikrota.com?lat=37.673426&lng=29.706479</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=37.673426&lng=29.706479</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=37.673426&lng=29.706479</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Çanakkale -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.000668&lng=27.186381</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.000668&lng=27.186381</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.000668&lng=27.186381</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Edirne -->
   <url>
-  <loc>https://places.turistikrota.com?lat=41.266979&lng=26.687679</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=41.266979&lng=26.687679</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=41.266979&lng=26.687679</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Hakkari -->
   <url>
-  <loc>https://places.turistikrota.com?lat=37.426737&lng=44.395713</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=37.426737&lng=44.395713</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=37.426737&lng=44.395713</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- İstanbul -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.9921348&lng=28.8997273</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.9921348&lng=28.8997273</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.9921348&lng=28.8997273</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Malatya -->
   <url>
-  <loc>https://places.turistikrota.com?lat=38.3396115&lng=38.2976143</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=38.3396115&lng=38.2976143</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=38.3396115&lng=38.2976143</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Sakarya -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.389549&lng=30.491917</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.389549&lng=30.491917</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.389549&lng=30.491917</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Şanlıurfa -->
   <url>
-  <loc>https://places.turistikrota.com?lat=37.317226&lng=39.814937</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=37.317226&lng=39.814937</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=37.317226&lng=39.814937</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Bitlis -->
   <url>
-  <loc>https://places.turistikrota.com?lat=38.501998&lng=42.281276</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=38.501998&lng=42.281276</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=38.501998&lng=42.281276</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Elazığ -->
   <url>
-  <loc>https://places.turistikrota.com?lat=38.366787&lng=38.950271</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=38.366787&lng=38.950271</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=38.366787&lng=38.950271</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Kahramanmaraş -->
   <url>
-  <loc>https://places.turistikrota.com?lat=37.384419&lng=36.720071</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=37.384419&lng=36.720071</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=37.384419&lng=36.720071</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Mardin -->
   <url>
-  <loc>https://places.turistikrota.com?lat=37.23012&lng=40.8419979</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=37.23012&lng=40.8419979</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=37.23012&lng=40.8419979</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Kırıkkale -->
   <url>
-  <loc>https://places.turistikrota.com?lat=39.844068&lng=33.465317</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=39.844068&lng=33.465317</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=39.844068&lng=33.465317</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Çorum -->
   <url>
-  <loc>https://places.turistikrota.com?lat=40.44238929999999&lng=34.4507395</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=40.44238929999999&lng=34.4507395</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=40.44238929999999&lng=34.4507395</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Tunceli -->
   <url>
-  <loc>https://places.turistikrota.com?lat=38.979886&lng=39.4841369</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=38.979886&lng=39.4841369</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=38.979886&lng=39.4841369</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Batman -->
   <url>
-  <loc>https://places.turistikrota.com?lat=38.3339822&lng=41.4201364</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=38.3339822&lng=41.4201364</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=38.3339822&lng=41.4201364</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Sivas -->
   <url>
-  <loc>https://places.turistikrota.com?lat=39.618127&lng=37.80227199999999</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://places.turistikrota.com/?lat=39.618127&lng=37.80227199999999</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yerler.turistikrota.com/?lat=39.618127&lng=37.80227199999999</loc>
+    <lastmod>2023-09-15T08:21:51.157Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+
 
 </urlset>
