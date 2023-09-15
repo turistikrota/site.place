@@ -120,9 +120,15 @@ export async function getServerSideProps(ctx: any) {
     }
   }
   const locale = ctx.locale ?? 'tr'
-  const res = await httpClient.get(apiUrl(Services.Place, `/${slug}`)).catch((_err) => {
-    return { data: undefined, status: 500 }
-  })
+  const res = await httpClient
+    .get(apiUrl(Services.Place, `/${slug}`), {
+      headers: {
+        'Accept-Language': locale,
+      },
+    })
+    .catch((_err) => {
+      return { data: undefined, status: 500 }
+    })
   if (res.status === 404) {
     return {
       notFound: true,
