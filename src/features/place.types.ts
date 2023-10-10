@@ -69,8 +69,15 @@ export type PlaceListItem = {
   isPayed: boolean
   type: Type
 }
+
+export type Restoration = {
+  startDate: string
+  endDate: string
+}
+
 export type PlaceDetail = {
   features: FeatureItem[]
+  restorations: Restoration[]
   images: PlaceImage[]
   translations: I18nTranslation<FullTranslation>
   averageTimeSpent: TimeSpent
