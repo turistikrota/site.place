@@ -25,6 +25,12 @@
     "nightlife": "Nightlife",
     "other": "Other"
   },
+  "restoration": {
+    "title": "In Restoration",
+    "description": "This place is currently in restoration.",
+    "soon": "It will be available again soon.",
+    "soonWithDate": "It will be available again on {{date}}."
+  },
   "types_desc": {
     "eating": "This is a place where you can eat.",
     "coffee": "This is a place where you can drink coffee.",

@@ -10,6 +10,7 @@ import Link from 'next/link'
 import MarkdownContent from '~/components/MarkdownContent'
 import PlaceDetailContentCard from '~/components/card/PlaceDetailContentCard'
 import PlaceImagePreview from '~/components/card/PlaceImagePreview'
+import PlaceRestorationCard from '~/components/card/PlaceRestorationCard'
 import PlaceDetailSeo from '~/components/seo/PlaceDetailSeo'
 import { Services, apiUrl } from '~/config/services'
 import { FullTranslation, PlaceDetail, getTranslations } from '~/features/place.types'
@@ -66,6 +67,7 @@ export default function PlaceDetail({ response, md, accessTokenIsExists, isAccou
       <ImagePreview altPrefix={translations.title} list={images}>
         <section className='max-w-7xl p-4 xl:px-0 mx-auto lg:h-full grow grid grid-cols-12 gap-4'>
           <div className='col-span-12 md:col-span-8'>
+            <PlaceRestorationCard restorations={response?.restorations ?? []} />
             <PlaceImagePreview title={translations.title} images={images} />
 
             {isMobile && (
