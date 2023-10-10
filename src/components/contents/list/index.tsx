@@ -21,9 +21,7 @@ type ListItemProps = {
 function ListItemSection({ data, loading, onClear, isFiltered }: ContentProps & ListItemProps) {
   const isWidthExist = useWindowWidth()
   return (
-    <section
-      className={`grow grid grid-cols-12 gap-4 md:min-h-[120vh] md:h-full ${!isWidthExist ? 'ml-0 md:ml-80' : ''}`}
-    >
+    <section className={`grow grid grid-cols-12 gap-4 md:h-full ${!isWidthExist ? 'ml-0 md:ml-80' : ''}`}>
       {loading && (
         <div className='col-span-12 flex items-center justify-center p-4'>
           <Spinner />

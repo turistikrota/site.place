@@ -30,7 +30,7 @@ export default function PlaceMapCard({ item }: Props) {
         <Carousel
           imageAltPrefix={translations.title}
           images={mapAndSortImages(item.images)}
-          sizeClassName='h-72 w-72'
+          sizeClassName='h-75 w-75'
         />
 
         <div className='flex flex-col gap-4 p-4'>
