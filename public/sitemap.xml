@@ -11,6 +11,90 @@
         <priority>1.0</priority>
     </url>
     
+    <!-- Sapanca Teleferiği: Sapanca Gölü'nün Panoramik Manzarası -->
+    <url>
+      <loc>https://places.turistikrota.com/sapanca-cable-car-panoramic-views-of-sapanca-lake</loc>
+      <lastmod>2023-10-12T09:17:47.929Z</lastmod>
+      <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>https://yerler.turistikrota.com/sapanca-teleferigi-sapanca-golu-nun-panoramik-manzarasi</loc>
+      <lastmod>2023-10-12T09:17:47.929Z</lastmod>
+      <priority>0.8</priority>
+    </url>
+    
+    <!-- Sapanca Yürüyüş Yolu: Doğa, Spor ve Huzur -->
+    <url>
+      <loc>https://places.turistikrota.com/sapanca-walking-path-nature-exercise-and-relaxation</loc>
+      <lastmod>2023-10-12T09:17:47.929Z</lastmod>
+      <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>https://yerler.turistikrota.com/sapanca-yuruyus-yolu-doga-spor-ve-huzur</loc>
+      <lastmod>2023-10-12T09:17:47.929Z</lastmod>
+      <priority>0.8</priority>
+    </url>
+    
+    <!-- Serdivan Gölpark: Doğa, Aktiviteler ve Dinlenme -->
+    <url>
+      <loc>https://places.turistikrota.com/serdivan-g-lpark-nature-activities-and-relaxation</loc>
+      <lastmod>2023-10-12T09:17:47.929Z</lastmod>
+      <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>https://yerler.turistikrota.com/serdivan-golpark-doga-aktiviteler-ve-dinlenme</loc>
+      <lastmod>2023-10-12T09:17:47.929Z</lastmod>
+      <priority>0.8</priority>
+    </url>
+    
+    <!-- Sakarya İl Ormanı Tabiat Parkı: Doğanın Cazibesi -->
+    <url>
+      <loc>https://places.turistikrota.com/sakarya-nature-park-scenic-beauty-and-activities-galore</loc>
+      <lastmod>2023-10-12T09:17:47.929Z</lastmod>
+      <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>https://yerler.turistikrota.com/sakarya-il-ormani-tabiat-parki-doganin-cazibesi</loc>
+      <lastmod>2023-10-12T09:17:47.929Z</lastmod>
+      <priority>0.8</priority>
+    </url>
+    
+    <!-- Justinianus Köprüsü: Sakarya'nın Bizans Harikası -->
+    <url>
+      <loc>https://places.turistikrota.com/justinianus-bridge-a-byzantine-marvel-in-sakarya</loc>
+      <lastmod>2023-10-12T09:17:47.929Z</lastmod>
+      <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>https://yerler.turistikrota.com/justinianus-koprusu-sakarya-nin-bizans-harikasi</loc>
+      <lastmod>2023-10-12T09:17:47.929Z</lastmod>
+      <priority>0.8</priority>
+    </url>
+    
+    <!-- Gölya Tabiat Parkı: Sakarya'nın Huzurlu Kaçamak Yeri -->
+    <url>
+      <loc>https://places.turistikrota.com/g-lya-nature-park-sakarya-s-serene-getaway</loc>
+      <lastmod>2023-10-12T09:17:47.929Z</lastmod>
+      <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>https://yerler.turistikrota.com/golya-tabiat-parki-sakarya-nin-huzurlu-kacamak-yeri</loc>
+      <lastmod>2023-10-12T09:17:47.929Z</lastmod>
+      <priority>0.8</priority>
+    </url>
+    
+    <!-- Acarlar Longozu: Türkiye'nin En Büyük Longoz Ormanı -->
+    <url>
+      <loc>https://places.turistikrota.com/acarlar-floodplain-forest-turkey-s-largest-longoz-forest</loc>
+      <lastmod>2023-10-12T09:17:47.929Z</lastmod>
+      <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>https://yerler.turistikrota.com/acarlar-longozu-turkiye-nin-en-buyuk-longoz-ormani</loc>
+      <lastmod>2023-10-12T09:17:47.929Z</lastmod>
+      <priority>0.8</priority>
+    </url>
+    
   <!-- Gaziantep -->
   <url>
     <loc>https://places.turistikrota.com/?lat=37.302092&amp;lng=37.6808791</loc>
