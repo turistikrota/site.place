@@ -32,15 +32,15 @@
   },
   "seo": {
     "list": {
-      "title": "Mekanlar",
-      "description": "Turistikrota ile Türkiye'nin en popüler yerlerini keşfedin. Kategoriye göre filtreleme seçenekleri ve kullanıcı yorumlarıyla en iyi mekanları bulun.",
-      "keywords": "mekanlar, turistikrota, Türkiye'deki mekanlar, Türkiye",
-      "descriptionWithCity": "{{city}} Türkiye'nin en popüler şehirlerinden biridir. Turistikrota ile {{city}}'deki en popüler mekanları keşfedin. Kategoriye göre filtreleme seçenekleri ve kullanıcı yorumlarıyla en iyi mekanları bulun.",
-      "descriptionWithType": "Turistikrota ile {{type}}'deki en popüler mekanları keşfedin. Kategoriye göre filtreleme seçenekleri ve kullanıcı yorumlarıyla en iyi mekanları bulun.",
-      "descriptionWithCityAndType": "{{type}}, {{city}}'deki en popüler mekanlardan biridir. Turistikrota ile {{city}}'deki en popüler mekanları keşfedin. Kategoriye göre filtreleme seçenekleri ve kullanıcı yorumlarıyla en iyi mekanları bulun.",
-      "titleWithCity": "{{city}}'deki Mekanlar",
-      "titleWithType": "{{type}}'deki Mekanlar",
-      "titleWithCityAndType": "{{type}} - {{city}}'deki Mekanlar"
+      "title": "Yerler",
+      "description": "Turistikrota ile Türkiye'nin en popüler yerlerini keşfedin. Kategoriye göre filtreleme seçenekleri ve kullanıcı yorumlarıyla en iyi yerleri bulun.",
+      "keywords": "yerler, turistikrota, Türkiye'deki yerler, Türkiye",
+      "descriptionWithCity": "{{city}} Türkiye'nin en popüler şehirlerinden biridir. Turistikrota ile {{city}}'deki en popüler yerleri keşfedin. Kategoriye göre filtreleme seçenekleri ve kullanıcı yorumlarıyla en iyi yerleri bulun.",
+      "descriptionWithType": "Turistikrota ile {{type}}'deki en popüler yerleri keşfedin. Kategoriye göre filtreleme seçenekleri ve kullanıcı yorumlarıyla en iyi yerleri bulun.",
+      "descriptionWithCityAndType": "{{type}}, {{city}}'deki en popüler yerlerden biridir. Turistikrota ile {{city}}'deki en popüler yerleri keşfedin. Kategoriye göre filtreleme seçenekleri ve kullanıcı yorumlarıyla en iyi yerleri bulun.",
+      "titleWithCity": "{{city}}'deki Yerler",
+      "titleWithType": "{{type}}'deki Yerler",
+      "titleWithCityAndType": "{{type}} - {{city}}'deki Yerler"
     }
   },
   "switch": {

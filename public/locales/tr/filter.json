@@ -16,12 +16,12 @@
     "features": {
       "title": "Özellik Seçin",
       "text": "Özellikler",
-      "description": "Mekanlarda görmek istediğiniz özellikleri seçin."
+      "description": "Yerlerde görmek istediğiniz özellikleri seçin."
     },
     "time-spent": {
       "title": "Ort. Geçirilen Zaman",
       "text": "Ortalama Geçirilen Zaman",
-      "description": "Mekanlarda geçireceğiniz ortalama zaman aralığını belirleyin. Zaman aralığı dakika olarak hesaplanmaktadır.",
+      "description": "Yerlerde geçireceğiniz ortalama zaman aralığını belirleyin. Zaman aralığı dakika olarak hesaplanmaktadır.",
       "minText": "Min",
       "maxText": "Maks"
     },
@@ -32,15 +32,15 @@
       "label": "Kelime"
     },
     "is-payed": {
-      "title": "Ücretli Mekanlar",
+      "title": "Ücretli Yerler",
       "text": "Ücretli Yerler",
-      "description": "Ücretli mekanları görmek istiyorsanız bu seçeneği işaretleyin.",
+      "description": "Ücretli yerleri görmek istiyorsanız bu seçeneği işaretleyin.",
       "label": "Ücretli Yerler"
     },
     "is-free": {
-      "title": "Ücretsiz Mekanlar",
+      "title": "Ücretsiz Yerler",
       "text": "Ücretsiz Yerler",
-      "description": "Ücretsiz mekanları görmek istiyorsanız bu seçeneği işaretleyin.",
+      "description": "Ücretsiz yerleri görmek istiyorsanız bu seçeneği işaretleyin.",
       "label": "Ücretsiz Yerler"
     },
     "types": {
@@ -58,7 +58,7 @@
     "review": {
       "title": "Yorum Puanı",
       "text": "Yorum Puanı",
-      "description": "Mekanların yorum aralığını belirleyin.",
+      "description": "Yerlerin yorum aralığını belirleyin.",
       "labels": {
         "x": "{{star}} Yıldız ve Üzeri",
         "last": "Sadece {{star}} yıldız"
