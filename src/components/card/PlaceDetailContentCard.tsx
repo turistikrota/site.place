@@ -15,7 +15,6 @@ import { useTimeSpent, useTimeSpentUnit } from '~/hooks/timespent'
 import { useBraceText } from '~/hooks/useBraceText'
 import { findBestNearestCities } from '~/static/location/cities'
 import { PlaceTypeItems, PlaceTypes } from '~/types/place'
-import FiveStars from '../Stars'
 import FeatureCard, { FeatureVariants } from './FeatureCard'
 
 type Props = {
@@ -115,13 +114,6 @@ const PlaceDetailContentCard: React.FC<Props> = ({
         <div className='text-sm'>{translations.description}</div>
       </div>
       <div className='grid grid-cols-4 gap-3'>
-        <div className='col-span-4 flex justify-between items-center'>
-          <FiveStars star={review.averagePoint} iconSize='bx-md' />
-          <div className='flex items-end gap-1'>
-            <div className='text-4xl font-bold text-gray-600 dark:text-gray-300'>{review.total}</div>
-            <div className='text-lg text-gray-600 dark:text-gray-300'>{t('reviews')}</div>
-          </div>
-        </div>
         {features.map((feature, idx) => (
           <FeatureCard
             key={feature.uuid}

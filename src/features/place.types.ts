@@ -29,12 +29,15 @@ export enum Type {
   Health = 'health',
   Sport = 'sport',
   Nightlife = 'nightlife',
+  Garden = 'garden',
+  Temple = 'temple',
+  Museum = 'museum',
+  Antique = 'antique',
+  ThemePark = 'themePark',
   Other = 'other',
 }
 
 export enum Sort {
-  Popular = 'most_popular',
-  Liked = 'most_liked',
   Recent = 'most_recent',
   Near = 'nearest',
 }

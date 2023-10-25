@@ -23,6 +23,11 @@
     "health": "Sağlık",
     "sport": "Spor",
     "nightlife": "Gece Hayatı",
+    "garden": "Bahçe",
+    "temple": "İbadethane",
+    "museum": "Müze",
+    "antique": "Antik",
+    "themePark": "Eğlence Parkı",
     "other": "Diğer"
   },
   "types_desc": {
@@ -38,6 +43,11 @@
     "health": "Burada tıbbi yardım alabilirsiniz.",
     "sport": "Burada spor yapabilirsiniz.",
     "nightlife": "Burada gece eğlenceli vakit geçirebilirsiniz.",
+    "garden": "Burada doğanın tadını çıkarabilirsiniz.",
+    "temple": "Burada ibadet edebilirsiniz.",
+    "museum": "Burada yeni şeyler öğrenebilirsiniz.",
+    "antique": "Burada antik şeyler görebilirsiniz.",
+    "themePark": "Burada eğlenceli vakit geçirebilirsiniz.",
     "other": "Burada başka aktiviteler yapabilirsiniz."
   },
   "features": {

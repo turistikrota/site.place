@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { MouseEventHandler } from 'react'
 import { PlaceListItem, TranslationItem, getTranslations } from '~/features/place.types'
 import { mapAndSortImages } from '~/utils/image'
-import { ReviewCard } from './Shared'
+import { PlaceTypeCard } from './Shared'
 import TimeSpentCard from './TimeSpentCard'
 
 type Props = {
@@ -38,7 +38,7 @@ export default function PlaceMapCard({ item }: Props) {
             <div className='flex flex-col gap-1'>
               <div className='text-xl font-bold'>{translations.title}</div>
               <div className='flex justify-between items-center'>
-                <ReviewCard star={item.review.averagePoint} total={item.review.total} />
+                <PlaceTypeCard type={item.type} />
                 <TimeSpentCard data={item.averageTimeSpent} />
               </div>
             </div>

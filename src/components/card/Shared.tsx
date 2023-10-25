@@ -1,12 +1,6 @@
 import { useTranslation } from 'next-i18next'
 import { Type } from '~/features/place.types'
 import { PlaceTypeItems, PlaceTypes } from '~/types/place'
-import FiveStars from '../Stars'
-
-type ReviewCardProps = {
-  star: number
-  total: number
-}
 
 type IsPayedProps = {
   isPayed: boolean
@@ -14,15 +8,6 @@ type IsPayedProps = {
 
 type PlaceTypeProps = {
   type: Type
-}
-
-export const ReviewCard: React.FC<ReviewCardProps> = ({ star, total }) => {
-  return (
-    <div className='flex gap-1 items-center'>
-      <FiveStars star={star} iconSize='bx-xs' />
-      <div className='text-sm text-gray-600 dark:text-gray-300'>{total}</div>
-    </div>
-  )
 }
 
 export const IsPayedCard: React.FC<IsPayedProps> = ({ isPayed }) => {
