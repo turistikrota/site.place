@@ -23,7 +23,7 @@ export default function MarkdownContent({ content }: Props) {
         h6: ({ children }) => <h6 className='text-base font-bold'>{children}</h6>,
         p: ({ children }) => <p className='text-base text-gray-700 dark:text-gray-400'>{children}</p>,
         a: ({ children, href }) => (
-          <a className='text-base' href={href}>
+          <a className='text-primary' href={href}>
             {children}
           </a>
         ),
