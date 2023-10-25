@@ -3,10 +3,10 @@ import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import { MouseEventHandler } from 'react'
 import { PlaceListItem, TranslationItem, getTranslations } from '~/features/place.types'
-import { mapAndSortImages } from '~/utils/image'
-import { IsPayedCard, PlaceTypeCard, ReviewCard } from './Shared'
-import TimeSpentCard from './TimeSpentCard'
 import { findBestNearestCities } from '~/static/location/cities'
+import { mapAndSortImages } from '~/utils/image'
+import { IsPayedCard, PlaceTypeCard } from './Shared'
+import TimeSpentCard from './TimeSpentCard'
 
 type Props = {
   item: PlaceListItem
@@ -39,7 +39,7 @@ const PlaceListCard: React.FC<Props> = ({ item }) => {
               })}
             </div>
             <div className='flex justify-between items-center'>
-              <ReviewCard star={item.review.averagePoint} total={item.review.total} />
+              <div></div>
               <TimeSpentCard data={item.averageTimeSpent} />
             </div>
             <div className='flex justify-between items-center'>

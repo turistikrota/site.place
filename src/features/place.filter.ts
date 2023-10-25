@@ -281,7 +281,7 @@ type PlaceSortHookResult = {
 
 export const usePlaceSort = (): PlaceSortHookResult => {
   return {
-    defaultSort: Sort.Popular,
+    defaultSort: Sort.Recent,
     defaultOrder: Order.Desc,
     orders: Object.values(Order),
     sorts: Object.values(Sort),
