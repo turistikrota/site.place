@@ -10,11 +10,11 @@ import PlaceDesktopTypeGroup from './PlaceDesktopTypeGroup'
 export default function PlaceFilterSection() {
   return (
     <>
+      <PlaceDesktopQueryGroup />
       <PlaceDesktopCityGroup />
       <PlaceDesktopDistanceGroup />
       <PlaceDesktopTypeGroup />
       <PlaceDesktopFeatureGroup />
-      <PlaceDesktopQueryGroup />
       <PlaceDesktopTimeSpentGroup />
       <PlaceDesktopMinReviewGroup />
       <PlaceDesktopIsPayedGroup />
