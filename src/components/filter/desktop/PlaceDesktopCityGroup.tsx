@@ -32,7 +32,7 @@ export default function PlaceDesktopCityGroup() {
     push(deepMerge(query, { filter: { coordinates: undefined } }))
   }
   return (
-    <PlaceDesktopFilterSection className='pt-4'>
+    <PlaceDesktopFilterSection>
       <PlaceDesktopHead>
         <PlaceDesktopHead.Title>
           {t('components.city-select.text')}
