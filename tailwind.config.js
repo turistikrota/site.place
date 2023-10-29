@@ -15,6 +15,9 @@ module.exports = withTouristicUI({
         75: '18.8125rem',
         76: '19rem',
       },
+      backgroundImage: {
+        watermark: 'var(--background-url)',
+      },
     },
   },
 })
