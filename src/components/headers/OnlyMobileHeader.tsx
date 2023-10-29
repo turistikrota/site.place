@@ -38,7 +38,7 @@ export default function OnlyMobileHeader({ accessTokenIsExists }: Props) {
         </TopHeader.Right>
       </TopHeader>
 
-      <MobileHeader>
+      <MobileHeader withTopHeader>
         <MobileHeader.Left>
           <HeaderLogo>
             <Logo width={186} height={30} className='flex gap-1'>
