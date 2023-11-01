@@ -92,7 +92,7 @@ const PlaceDetailContentCard: React.FC<Props> = ({
         {
           variant: 'warning',
           condition: isPayed,
-          icon: 'bx bx-dollar',
+          icon: `bx bx-${i18n.language == 'tr' ? 'lira' : 'dollar'}`,
           title: t('features.payed.text'),
           text: t('features.payed.subtext'),
         },
