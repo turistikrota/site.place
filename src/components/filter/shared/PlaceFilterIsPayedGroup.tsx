@@ -15,6 +15,8 @@ export default function PlaceFilterIsPayedGroup() {
   useEffect(() => {
     if (!!query.filter.isPayed && query.filter.isPayed !== isPayed) {
       setIsPayed(query.filter.isPayed)
+    } else if (!query.filter.isPayed) {
+      setIsPayed(undefined)
     }
   }, [query])
 
