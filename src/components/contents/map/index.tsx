@@ -25,7 +25,7 @@ type MapProps = {
 export default function MapContent({ data, onChange }: ContentProps & MapProps) {
   const size = useSizeWithoutHeader()
 
-  const debouncedChange = debounce(onChange, 300)
+  const debouncedChange = debounce(onChange, 100)
 
   return (
     <div

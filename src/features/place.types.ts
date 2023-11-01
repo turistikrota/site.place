@@ -14,7 +14,10 @@ export type PlaceFilterRequest = {
   maxAveragePoint?: number
   sort?: Sort
   order?: Order
+  v?: ContentType
 }
+
+export type ContentType = 'list' | 'map'
 
 export enum Type {
   Eating = 'eating',
@@ -179,4 +182,8 @@ export const getTranslations = <T>(obj: I18nTranslation<T>, locale: string, fb: 
     return obj.tr
   }
   return fb
+}
+
+export function isContentType(contentType: string): contentType is ContentType {
+  return ['list', 'map'].includes(contentType)
 }

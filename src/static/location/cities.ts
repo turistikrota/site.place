@@ -34,7 +34,6 @@ const deg2rad = (deg: number): number => {
 }
 
 export const findNearestCity = (coordinates: Coordinates): City | null => {
-  console.log('find nearest')
   let nearestCity = null
   let minDistance = Number.MAX_VALUE
 
@@ -45,8 +44,6 @@ export const findNearestCity = (coordinates: Coordinates): City | null => {
       nearestCity = city
     }
   }
-  console.log('nearest result', nearestCity)
-
   return nearestCity
 }
 
