@@ -15,6 +15,8 @@ export default function PlaceFilterIsPayedGroup() {
   useEffect(() => {
     if (!!query.filter.isPayed && query.filter.isPayed !== isPayed) {
       setIsPayed(query.filter.isPayed)
+    } else if (!query.filter.isPayed) {
+      setIsPayed(undefined)
     }
   }, [query])
 
@@ -29,7 +31,7 @@ export default function PlaceFilterIsPayedGroup() {
   }
 
   return (
-    <>
+    <div className='space-y-4 lg:space-y-0'>
       <MobileInfoBox>{t('components.is-payed.description')}</MobileInfoBox>
       <Checkbox name='isPayed' id='isPayed' onChange={handlePayedChange} value={isPayed === true} reversed={!isDesktop}>
         {t('components.is-payed.label')}
@@ -39,6 +41,6 @@ export default function PlaceFilterIsPayedGroup() {
         {t('components.is-free.label')}
         <DesktopInfoBox>{t('components.is-free.description')}</DesktopInfoBox>
       </Checkbox>
-    </>
+    </div>
   )
 }

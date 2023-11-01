@@ -15,27 +15,23 @@ const PlaceListSeo: React.FC<SeoProps> = ({ coordinates, type }) => {
   let title = t('seo.list.title')
   let description = t('seo.list.description')
   let keywords = t('seo.list.keywords')
-  let canonical = t('url')
   const cities = coordinates ? findBestNearestCities(coordinates, 1) : undefined
   const types = type && type.length > 0 ? type[0] : undefined
 
   if (cities && cities.length > 0) {
     if (types) {
-      title = t('seo.list.titleWithCityAndType', { city: cities[0].name, type: types })
-      description = t('seo.list.descriptionWithCityAndType', { city: cities[0].name, type: types })
-      canonical += `?lat=${cities[0].coordinates[0]}&lng=${cities[0].coordinates[1]}&type=${types}`
-      keywords += `, ${cities[0].name}, ${types}`
+      title = t('seo.list.titleWithCityAndType', { city: cities[0].name, type: t(`types.${types}`) })
+      description = t('seo.list.descriptionWithCityAndType', { city: cities[0].name, type: t(`types.${types}`) })
+      keywords += `, ${cities[0].name}, ${t(`types.${types}`)}`
     } else {
       title = t('seo.list.titleWithCity', { city: cities[0].name })
       description = t('seo.list.descriptionWithCity', { city: cities[0].name })
-      canonical += `?lat=${cities[0].coordinates[0]}&lng=${cities[0].coordinates[1]}`
       keywords += `, ${cities[0].name}`
     }
   } else if (types) {
-    title = t('seo.list.titleWithType', { type: types })
-    description = t('seo.list.descriptionWithType', { type: types })
-    canonical += `?type=${types}`
-    keywords += `, ${types}`
+    title = t('seo.list.titleWithType', { type: t(`types.${types}`) })
+    description = t('seo.list.descriptionWithType', { type: t(`types.${types}`) })
+    keywords += `, ${t(`types.${types}`)}`
   }
 
   title = makeHtmlTitle(title)
@@ -54,7 +50,6 @@ const PlaceListSeo: React.FC<SeoProps> = ({ coordinates, type }) => {
       <meta name='twitter:card' content='summary_large_image' />
       <meta name='twitter:site' content='@turistikrota' />
       <meta name='twitter:creator' content='@turistikrota' />
-      <link rel='canonical' href={canonical} />
     </Head>
   )
 }

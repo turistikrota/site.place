@@ -33,5 +33,5 @@ export const usePlaceFilter = () => useContext(PlaceFilterContext)
 
 export const PlaceFilterProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const { ...values } = usePlaceFilterProvider()
-  return <PlaceFilterContext.Provider value={values}>{children}</PlaceFilterContext.Provider>
+  return <PlaceFilterContext.Provider value={{ ...values }}>{children}</PlaceFilterContext.Provider>
 }
