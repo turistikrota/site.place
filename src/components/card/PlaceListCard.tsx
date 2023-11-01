@@ -27,12 +27,18 @@ const PlaceListCard: React.FC<Props> = ({ item }) => {
   }
 
   return (
-    <div className='flex flex-col col-span-12 md:col-span-4'>
-      <Link className='bg-second rounded-md' href={translations.slug} target='_blank' onClick={checkOutsideClick}>
+    <div className='flex flex-col col-span-12 md:col-span-4 bg-second rounded-md'>
+      <Link href={translations.slug} target='_blank' onClick={checkOutsideClick}>
         <div>
-          <Carousel imageAltPrefix={translations.title} images={mapAndSortImages(item.images)} sizeClassName='h-72' />
+          <Carousel
+            imageAltPrefix={translations.title}
+            images={mapAndSortImages(item.images)}
+            sizeClassName='h-72'
+            imageClassName='rounded-b-none'
+            imgLoadingClassName='rounded-t-md'
+          />
           <div className='flex flex-col gap-2 p-4'>
-            <div className='text-2xl font-bold'>{translations.title}</div>
+            <div className='text-xl font-bold line-clamp-2s'>{translations.title}</div>
             <div className='text-sm'>
               {t('features.location.subtext', {
                 location: cities.map((c) => c.name).join(', '),

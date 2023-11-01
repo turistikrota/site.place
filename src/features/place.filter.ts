@@ -198,6 +198,7 @@ type Callback = () => void
 type PlaceFilterHookResult = {
   query: PaginationRequest<PlaceFilterRequest>
   push: (query: PaginationRequest<PlaceFilterRequest>, cb?: Callback) => void
+  immediatePush: (query: PaginationRequest<PlaceFilterRequest>, cb?: Callback) => void
   clean: (cb?: Callback) => void
   isFiltered: boolean
   isQueryChanged: boolean
@@ -228,6 +229,13 @@ export const usePlaceFilterProvider = (): PlaceFilterHookResult => {
     debouncedPush(path, cb)
   }
 
+  const immediatePush = (newQuery: PaginationRequest<PlaceFilterRequest>, cb?: Callback) => {
+    const path = placeToQuery(newQuery)
+    const url = `${pathname}?${path}`
+    router.push(url, undefined, { shallow: true })
+    if (cb) cb()
+  }
+
   const setAllQueries = (newQuery: PaginationRequest<PlaceFilterRequest>) => {
     const oldQuery = { ...query }
     setQuery(newQuery)
@@ -248,6 +256,7 @@ export const usePlaceFilterProvider = (): PlaceFilterHookResult => {
     setIsOnlyPageChanged(false)
     setIsQueryChanged(true)
   }
+
   useEffect(() => {
     const newQuery = getQueryByKeyBindings(searchParams)
     if (query.page === newQuery.page && !deepEqual(query.filter, newQuery.filter)) {
@@ -269,6 +278,7 @@ export const usePlaceFilterProvider = (): PlaceFilterHookResult => {
     isFiltered: Object.keys(query.filter).length > 0,
     clean: cleaner,
     push,
+    immediatePush,
   }
 }
 

@@ -5,7 +5,7 @@ import debounce from '@turistikrota/ui/cjs/utils/debounce'
 import { useTranslation } from 'next-i18next'
 import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
-import { PlaceListItem } from '~/features/place.types'
+import { Coordinates, PlaceListItem } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
 import { usePlaces } from '~/hooks/usePlaces'
 import { isValidationError } from '~/types/error'
@@ -52,7 +52,7 @@ const FixedButton: React.FC<ButtonProps> = ({ text, variant, icon, onClick }) =>
 
 export default function ContentSwitcher({ response, error }: Props) {
   const { t } = useTranslation('common')
-  const { query, push, isQueryChanged, isOnlyPageChanged, clean } = usePlaceFilter()
+  const { query, push, immediatePush, isQueryChanged, isOnlyPageChanged, clean } = usePlaceFilter()
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const { places, isLoading, refetch, nextPage, error: apiError } = usePlaces(query, response)
   const [active, setActive] = useState<ContentType>('list')
@@ -68,14 +68,6 @@ export default function ContentSwitcher({ response, error }: Props) {
   }, [query])
 
   useEffect(() => {
-    if (active === 'list' && query.limit) {
-      return push(deepMerge(query, { limit: undefined }))
-    } else if (active === 'map' && query.limit !== 1000) {
-      push(deepMerge(query, { limit: 1000, page: 1 }))
-    }
-  }, [active])
-
-  useEffect(() => {
     if (!error || !isValidationError(error)) return
     setErrorMessage(error.map((err) => err.message).join(', '))
     setTimeout(() => {
@@ -83,6 +75,19 @@ export default function ContentSwitcher({ response, error }: Props) {
     }, 10000)
     clean()
   }, [error])
+
+  const toggleActive = (newActive: ContentType) => {
+    if (newActive === 'list' && query.limit) {
+      return immediatePush(deepMerge(query, { limit: undefined, page: 1 }))
+    } else if (newActive === 'map' && query.limit !== 1000) {
+      immediatePush(deepMerge(query, { limit: 1000, page: 1 }))
+    }
+    setActive(newActive)
+  }
+
+  const onCoordinateChange = (coordinates: Coordinates, zoom: number) => {
+    push(deepMerge(query, { filter: { coordinates, distance: zoom } }))
+  }
 
   if (active === 'list') {
     return (
@@ -96,7 +101,12 @@ export default function ContentSwitcher({ response, error }: Props) {
           </div>
         )}
         <DynamicList data={places} loading={isLoading} isNext={places.isNext} />
-        <FixedButton text={t('content-switch.map')} icon='map-alt' onClick={() => setActive('map')} variant='primary' />
+        <FixedButton
+          text={t('content-switch.map')}
+          icon='map-alt'
+          onClick={() => toggleActive('map')}
+          variant='primary'
+        />
       </>
     )
   }
@@ -111,11 +121,11 @@ export default function ContentSwitcher({ response, error }: Props) {
           </Alert>
         </div>
       )}
-      <DynamicMap data={places} loading={isLoading} position={[41.0082, 28.9784]} />
+      <DynamicMap data={places} loading={isLoading} onChange={onCoordinateChange} position={[41.0082, 28.9784]} />
       <FixedButton
         text={t('content-switch.list')}
         icon='list-ul'
-        onClick={() => setActive('list')}
+        onClick={() => toggleActive('list')}
         variant='secondary'
       />
     </>

@@ -7,6 +7,7 @@ type Callback = () => void
 
 type PlaceFilterContext = {
   query: PaginationRequest<PlaceFilterRequest>
+  immediatePush: (query: PaginationRequest<PlaceFilterRequest>, cb?: Callback) => void
   push: (query: PaginationRequest<PlaceFilterRequest>, cb?: Callback) => void
   clean: (cb?: Callback) => void
   isFiltered: boolean
@@ -21,6 +22,7 @@ const PlaceFilterContext = createContext<PlaceFilterContext>({
     filter: {},
   },
   push: () => {},
+  immediatePush: () => {},
   clean: () => {},
   isFiltered: false,
   isQueryChanged: false,
