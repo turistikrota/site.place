@@ -23,12 +23,12 @@ type Props = {
   response: PlaceDetail
   md: string
   accessTokenIsExists: boolean
-  isAccountCookieExists: boolean
+  accountCookie: string
 }
 
 const PlaceDetailMapCard = dynamic(() => import('~/components/card/PlaceDetailMapCard'), { ssr: false })
 
-export default function PlaceDetail({ response, md, accessTokenIsExists, isAccountCookieExists }: Props) {
+export default function PlaceDetail({ response, md, accessTokenIsExists, accountCookie }: Props) {
   const { t, i18n } = useTranslation('place')
   const images = mapAndSortImages(response?.images ?? [])
   const isMobile = useIsMobile()
@@ -62,7 +62,7 @@ export default function PlaceDetail({ response, md, accessTokenIsExists, isAccou
   }
 
   return (
-    <DefaultLayout accessTokenIsExists={accessTokenIsExists} isAccountCookieExists={isAccountCookieExists}>
+    <DefaultLayout accessTokenIsExists={accessTokenIsExists} accountCookie={accountCookie}>
       <PlaceDetailSeo coordinates={response?.coordinates} images={images} seoData={translations} />
       <ImagePreview altPrefix={translations.title} list={images}>
         <section className='max-w-7xl p-4 xl:px-0 mx-auto lg:h-full grow grid grid-cols-12 gap-4'>
@@ -146,7 +146,7 @@ export async function getServerSideProps(ctx: any) {
       response: res.data ? res.data : null,
       md,
       accessTokenIsExists: !!ctx.req.cookies.accessToken,
-      isAccountCookieExists: !!ctx.req.cookies.isAccount,
+      accountCookie: ctx.req.cookies['.s.a.u'],
     },
   }
 }

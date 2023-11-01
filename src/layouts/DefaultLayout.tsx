@@ -4,16 +4,16 @@ import { AccountProvider } from '~/hooks/account'
 
 type Props = {
   accessTokenIsExists: boolean
-  isAccountCookieExists: boolean
+  accountCookie: string
 }
 
 export default function DefaultLayout({
   children,
   accessTokenIsExists,
-  isAccountCookieExists,
+  accountCookie,
 }: React.PropsWithChildren<Props>) {
   return (
-    <AccountProvider accessTokenIsExists={accessTokenIsExists} isAccountCookieExists={isAccountCookieExists}>
+    <AccountProvider accessTokenIsExists={accessTokenIsExists} accountCookie={accountCookie}>
       <OnlyMobileHeader accessTokenIsExists={accessTokenIsExists} />
       <main>
         <TooltipProvider>{children}</TooltipProvider>
