@@ -15,15 +15,15 @@ export const IsPayedCard: React.FC<IsPayedProps> = ({ isPayed }) => {
 
   if (isPayed)
     return (
-      <div className='flex gap-1 px-2 py-1 rounded-md items-center bg-orange-100 dark:bg-orange-900'>
-        <div className='text-sm text-gray-600 dark:text-gray-300' suppressHydrationWarning>
+      <div className='flex gap-1 px-2 py-1 rounded-md items-center bg-orange-200 bg-opacity-20  dark:bg-orange-600 dark:bg-opacity-20'>
+        <div className='text-sm text-orange-600 dark:text-orange-200' suppressHydrationWarning>
           {t('card.payed')}
         </div>
       </div>
     )
   return (
-    <div className='flex gap-1 px-2 py-1 rounded-md items-center bg-green-100 dark:bg-green-900'>
-      <div className='text-sm text-gray-600 dark:text-gray-300' suppressHydrationWarning>
+    <div className='flex gap-1 px-2 py-1 rounded-md items-center bg-green-200 bg-opacity-20  dark:bg-green-600 dark:bg-opacity-20'>
+      <div className='text-sm text-green-600 dark:text-green-200' suppressHydrationWarning>
         {t('card.free')}
       </div>
     </div>
