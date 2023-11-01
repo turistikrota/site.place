@@ -41,7 +41,7 @@ type AccountContext = {
 
 type ProviderProps = {
   accessTokenIsExists: boolean
-  isAccountCookieExists: boolean
+  accountCookie: string
 }
 
 const AccountContext = createContext<AccountContext>({
@@ -56,21 +56,21 @@ export const useAccount = () => useContext(AccountContext)
 const AccountFetcher: React.FC<React.PropsWithChildren<ProviderProps>> = ({
   children,
   accessTokenIsExists,
-  isAccountCookieExists,
+  accountCookie,
 }) => {
   const { setLoading, setCurrent } = useAccount()
 
   useEffect(() => {
     if (typeof window === 'undefined') return
     const item = localStorage.getItem(AccountStorage.CurrentAccount)
-    if (accessTokenIsExists && (!isAccountCookieExists || !!item)) {
+    if (accessTokenIsExists && (!accountCookie || !!item)) {
       if (item) {
         const account = JSON.parse(item)
-        if (isAccountListItem(account)) {
+        if (isAccountListItem(account) && account.userName === accountCookie) {
           setCurrent(account)
+          return
         }
       }
-      return
     }
     setLoading(true)
     httpClient
@@ -93,7 +93,7 @@ const AccountFetcher: React.FC<React.PropsWithChildren<ProviderProps>> = ({
       .finally(() => {
         setLoading(false)
       })
-  }, [isAccountCookieExists])
+  }, [accountCookie])
 
   return <>{children}</>
 }
@@ -101,7 +101,7 @@ const AccountFetcher: React.FC<React.PropsWithChildren<ProviderProps>> = ({
 export const AccountProvider: React.FC<React.PropsWithChildren<ProviderProps>> = ({
   children,
   accessTokenIsExists,
-  isAccountCookieExists,
+  accountCookie,
 }) => {
   const [loading, setLoading] = useState(false)
   const [current, setCurrent] = useState<AccountListItem | undefined>(undefined)
@@ -115,7 +115,7 @@ export const AccountProvider: React.FC<React.PropsWithChildren<ProviderProps>> =
         setCurrent,
       }}
     >
-      <AccountFetcher accessTokenIsExists={accessTokenIsExists} isAccountCookieExists={isAccountCookieExists}>
+      <AccountFetcher accessTokenIsExists={accessTokenIsExists} accountCookie={accountCookie}>
         {children}
       </AccountFetcher>
     </AccountContext.Provider>

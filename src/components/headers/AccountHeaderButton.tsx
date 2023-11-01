@@ -29,7 +29,15 @@ const ProfileButton = ({ account }: { account: AccountListItem }) => {
       <div className='group relative flex items-center flex-row space-x-1 md:hover:bg-second dark:hover:bg-third rounded-md md:px-3 transition-colors duration-200 ease-in-out'>
         <div className='flex flex-col items-end justify-center w-12 h-12 rounded-full md:items-center'>
           <MobileHeader.Avatar>
-            <Image src={src} onError={onError} width={48} height={48} alt={account.fullName} title={account.fullName} />
+            <Image
+              src={src}
+              onError={onError}
+              className='rounded-md'
+              width={48}
+              height={48}
+              alt={account.fullName}
+              title={account.fullName}
+            />
           </MobileHeader.Avatar>
         </div>
         <div className='hidden flex-col items-start justify-center md:flex'>
