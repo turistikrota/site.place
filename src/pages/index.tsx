@@ -14,12 +14,12 @@ type Props = {
   response?: ListResponse<PlaceListItem>
   error?: any
   accessTokenIsExists: boolean
-  isAccountCookieExists: boolean
+  accountCookie: string
 }
 
-export default function Home({ response, error, accessTokenIsExists, isAccountCookieExists }: Props) {
+export default function Home({ response, error, accessTokenIsExists, accountCookie }: Props) {
   return (
-    <MapLayout accessTokenIsExists={accessTokenIsExists} isAccountCookieExists={isAccountCookieExists}>
+    <MapLayout accessTokenIsExists={accessTokenIsExists} accountCookie={accountCookie}>
       <PlaceFilterProvider>
         <ContentSwitcher response={response} error={error} />
       </PlaceFilterProvider>
@@ -47,7 +47,7 @@ export async function getServerSideProps(ctx: any) {
           },
       error: !!err && isApiError(err) ? err.response.data : null,
       accessTokenIsExists: !!ctx.req.cookies[Config.cookies.accessToken],
-      isAccountCookieExists: !!ctx.req.cookies[Config.cookies.accountName],
+      accountCookie: !!ctx.req.cookies[Config.cookies.accountName],
     },
   }
 }
