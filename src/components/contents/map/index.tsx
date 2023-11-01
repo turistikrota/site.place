@@ -10,8 +10,6 @@ import PlaceMapCard from '~/components/card/PlaceMapCard'
 import MapDefaultConfig from '~/components/map/MapDefaultConfig'
 import { ContentProps } from '~/features/place.types'
 import { useSizeWithoutHeader } from '~/hooks/dom'
-import { usePlaceFilter } from '~/hooks/place.filter'
-import { deepMerge } from '~/utils/deepMerge'
 
 const DynamicMap = dynamic(() => import('~/components/map/MapDynamic'), {
   ssr: false,
@@ -21,15 +19,11 @@ const position: LatLngTuple = [41.0082, 28.9784]
 
 type MapProps = {
   position: LatLngTuple
+  onChange: (coordinates: Coordinates, zoom: number) => void
 }
 
-export default function MapContent({ data }: ContentProps & MapProps) {
+export default function MapContent({ data, onChange }: ContentProps & MapProps) {
   const size = useSizeWithoutHeader()
-  const { query, push } = usePlaceFilter()
-
-  const onChange = (coordinates: Coordinates, zoom: number) => {
-    push(deepMerge(query, { filter: { coordinates, distance: zoom } }))
-  }
 
   const debouncedChange = debounce(onChange, 300)
 
