@@ -4,7 +4,17 @@ import { ReadonlyURLSearchParams, usePathname, useSearchParams } from 'next/navi
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { PaginationRequest } from '~/types/pagination'
-import { Order, PlaceFilterRequest, Sort, Type, isDistance, isOrder, isPlaceType, isSort } from './place.types'
+import {
+  Order,
+  PlaceFilterRequest,
+  Sort,
+  Type,
+  isContentType,
+  isDistance,
+  isOrder,
+  isPlaceType,
+  isSort,
+} from './place.types'
 
 export const getQueryByKeyBindings = (searchParams: ReadonlyURLSearchParams | URLSearchParams) => {
   const query: PaginationRequest<PlaceFilterRequest> = { filter: {} }
@@ -120,6 +130,11 @@ export const getQueryByKeyBindings = (searchParams: ReadonlyURLSearchParams | UR
       }
       query.filter.order = undefined
     },
+    v: (value: string) => {
+      if (isContentType(value)) {
+        query.filter.v = value
+      }
+    },
   }
   searchParams.forEach((value, key) => {
     if (Object.keys(keyBindings).includes(key)) {
@@ -190,6 +205,9 @@ export const placeToQuery = (place: PaginationRequest<PlaceFilterRequest>): stri
   if (place.filter.order) {
     query.append('order', place.filter.order)
   }
+  if (place.filter.v) {
+    query.append('v', place.filter.v)
+  }
   return query.toString()
 }
 
@@ -243,7 +261,7 @@ export const usePlaceFilterProvider = (): PlaceFilterHookResult => {
       return
     }
     setLastQuery(oldQuery)
-    const diff = Object.keys(findDiff(oldQuery, newQuery))
+    const diff = Object.keys(findDiff(oldQuery, newQuery)).filter((key) => key !== 'v')
     if (diff.length === 1 && diff.includes('page')) {
       setIsOnlyPageChanged(true)
       setIsQueryChanged(false)

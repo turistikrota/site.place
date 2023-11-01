@@ -4,8 +4,8 @@ import { ListResponse, Variant } from '@turistikrota/ui/cjs/types'
 import debounce from '@turistikrota/ui/cjs/utils/debounce'
 import { useTranslation } from 'next-i18next'
 import dynamic from 'next/dynamic'
-import { useEffect, useState } from 'react'
-import { Coordinates, PlaceListItem } from '~/features/place.types'
+import { useEffect, useMemo, useState } from 'react'
+import { ContentType, Coordinates, PlaceListItem } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
 import { usePlaces } from '~/hooks/usePlaces'
 import { isValidationError } from '~/types/error'
@@ -16,9 +16,6 @@ type Props = {
   response?: ListResponse<PlaceListItem>
   error: any
 }
-
-type ContentType = 'list' | 'map'
-
 export type ContentProps = {
   loading: boolean
   data: ListResponse<PlaceListItem> | null
@@ -55,7 +52,9 @@ export default function ContentSwitcher({ response, error }: Props) {
   const { query, push, immediatePush, isQueryChanged, isOnlyPageChanged, clean } = usePlaceFilter()
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const { places, isLoading, refetch, nextPage, error: apiError } = usePlaces(query, response)
-  const [active, setActive] = useState<ContentType>('list')
+  const active = useMemo(() => {
+    return query.filter.v ? query.filter.v : 'list'
+  }, [query.filter])
   const debouncedFilter = debounce(() => {
     if (isLoading || !!apiError) return
     if (isOnlyPageChanged) return nextPage(query.filter, places.page + 1)
@@ -78,11 +77,10 @@ export default function ContentSwitcher({ response, error }: Props) {
 
   const toggleActive = (newActive: ContentType) => {
     if (newActive === 'list' && query.limit) {
-      return immediatePush(deepMerge(query, { limit: undefined, page: 1 }))
+      return immediatePush(deepMerge(query, { limit: undefined, page: 1, filter: { v: 'list' } }))
     } else if (newActive === 'map' && query.limit !== 1000) {
-      immediatePush(deepMerge(query, { limit: 1000, page: 1 }))
+      immediatePush(deepMerge(query, { limit: 1000, page: 1, filter: { v: 'map' } }))
     }
-    setActive(newActive)
   }
 
   const onCoordinateChange = (coordinates: Coordinates, zoom: number) => {
