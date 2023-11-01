@@ -40,25 +40,27 @@ const PLaceFilterFeatureGroup: React.FC = () => {
   }
 
   return (
-    <Spin loading={isLoading}>
-      <div className='space-y-4 lg:space-y-0'>
-        <MobileInfoBox>{t('components.features.description')}</MobileInfoBox>
-        {features.map((feature) => (
-          <Checkbox
-            key={feature.uuid}
-            id={feature.uuid}
-            name='feature'
-            value={selected.includes(feature.uuid)}
-            onChange={() => handleChange(feature.uuid)}
-            reversed={!isDesktop}
-            effect={isDesktop ? 'hover' : undefined}
-          >
-            {feature.translations[i18n.language as Locales].title}
-            <DesktopInfoBox>{feature.translations[i18n.language as Locales].description}</DesktopInfoBox>
-          </Checkbox>
-        ))}
-      </div>
-    </Spin>
+    <section>
+      <Spin loading={isLoading}>
+        <div className='space-y-4 lg:space-y-0'>
+          <MobileInfoBox>{t('components.features.description')}</MobileInfoBox>
+          {features.map((feature) => (
+            <Checkbox
+              key={feature.uuid}
+              id={feature.uuid}
+              name='feature'
+              value={selected.includes(feature.uuid)}
+              onChange={() => handleChange(feature.uuid)}
+              reversed={!isDesktop}
+              effect={isDesktop ? 'hover' : undefined}
+            >
+              {feature.translations[i18n.language as Locales].title}
+              <DesktopInfoBox>{feature.translations[i18n.language as Locales].description}</DesktopInfoBox>
+            </Checkbox>
+          ))}
+        </div>
+      </Spin>
+    </section>
   )
 }
 
