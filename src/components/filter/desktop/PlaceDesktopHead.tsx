@@ -10,13 +10,11 @@ type PlaceDesktopHeadType = React.FC<React.PropsWithChildren> & {
 }
 
 const Title: React.FC<React.PropsWithChildren<TitleProps>> = ({ children, className }) => {
-  return (
-    <div className={`font-bold text-lg text-gray-700 dark:text-gray-200 ${className ? className : ''}`}>{children}</div>
-  )
+  return <div className={`font-bold text-gray-700 dark:text-gray-200 ${className ? className : ''}`}>{children}</div>
 }
 
 const PlaceDesktopHead: PlaceDesktopHeadType = ({ children }) => {
-  return <div className='flex justify-between items-center mb-4'>{children}</div>
+  return <div className='flex justify-between items-center mb-2'>{children}</div>
 }
 
 PlaceDesktopHead.Title = Title
