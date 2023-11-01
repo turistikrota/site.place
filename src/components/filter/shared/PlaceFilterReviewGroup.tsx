@@ -19,6 +19,8 @@ export default function PlaceFilterReviewGroup() {
   useEffect(() => {
     if (!!query.filter.minReview && query.filter.minReview !== minReview) {
       setMinReview(query.filter.minReview)
+    } else if (!query.filter.minReview) {
+      setMinReview(0)
     }
   }, [query])
 
