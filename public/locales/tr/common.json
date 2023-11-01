@@ -80,7 +80,7 @@
     "description": "Filtrelerinizle eşleşen herhangi bir sonuç bulamadık.",
     "button": "Filtreleri Sıfırla"
   },
-  "url": "https://places.turistikrota.com/tr",
+  "url": "https://yerler.turistikrota.com",
   "types": {
     "eating": "Yemek",
     "coffee": "Kahve",

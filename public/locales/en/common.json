@@ -80,7 +80,7 @@
     "description": "We couldn't find any results matching your filters.",
     "button": "Reset Filters"
   },
-  "url": "https://places.turistikrota.com/en",
+  "url": "https://places.turistikrota.com",
   "types": {
     "eating": "Eat",
     "coffee": "Coffee",
