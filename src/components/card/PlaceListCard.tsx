@@ -3,6 +3,7 @@ import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import { MouseEventHandler } from 'react'
 import { PlaceListItem, TranslationItem, getTranslations } from '~/features/place.types'
+import { useBraceText } from '~/hooks/useBraceText'
 import { findBestNearestCities } from '~/static/location/cities'
 import { mapAndSortImages } from '~/utils/image'
 import { IsPayedCard, PlaceTypeCard } from './Shared'
@@ -14,12 +15,13 @@ type Props = {
 
 const PlaceListCard: React.FC<Props> = ({ item }) => {
   const { t, i18n } = useTranslation('place')
-  const cities = findBestNearestCities(item.coordinates, 2)
+  const cities = findBestNearestCities(item.coordinates, 3)
   const translations = getTranslations<TranslationItem>(item.translations, i18n.language, {
     title: '',
     slug: '',
     description: '',
   })
+  const cityText = useBraceText(cities.map((c) => c.name))
 
   const checkOutsideClick: MouseEventHandler<HTMLAnchorElement> = (e) => {
     // @ts-ignore
@@ -41,7 +43,7 @@ const PlaceListCard: React.FC<Props> = ({ item }) => {
             <div className='text-xl font-bold line-clamp-2s'>{translations.title}</div>
             <div className='text-sm'>
               {t('features.location.subtext', {
-                location: cities.map((c) => c.name).join(', '),
+                location: cityText,
               })}
             </div>
             <div className='flex justify-between items-center'>
