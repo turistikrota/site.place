@@ -15,7 +15,14 @@ export default function PlaceFilterTimeSpentGroup() {
   const isDesktop = useIsDesktop()
 
   useEffect(() => {
-    if (!firstSet || !query.filter.timeSpent) return
+    if (!query.filter.timeSpent) {
+      setValues({ min: 0, max: 0 })
+    }
+    if (!firstSet) return
+    if (!query.filter.timeSpent) {
+      setValues({ min: 0, max: 0 })
+      return
+    }
     const minIsZero = query.filter.timeSpent.min === 0
     const maxIsZero = query.filter.timeSpent.max === 0
     const minIsDifferent = query.filter.timeSpent.min !== values.min
