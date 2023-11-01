@@ -14,6 +14,8 @@ export default function PlaceFilterQueryGroup() {
   useEffect(() => {
     if (!!query.filter.query && query.filter.query !== word) {
       setWord(query.filter.query)
+    } else {
+      setWord('')
     }
   }, [query])
 
