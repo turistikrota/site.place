@@ -8,7 +8,11 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        <Script async={true} src='https://www.googletagmanager.com/gtag/js?id=G-6JLF4Y5XMX'></Script>
+        <Script
+          async={true}
+          src='https://www.googletagmanager.com/gtag/js?id=G-6JLF4Y5XMX'
+          strategy='afterInteractive'
+        ></Script>
         <Script id='google-tag' strategy='afterInteractive'>
           {`
   window.dataLayer = window.dataLayer || [];
