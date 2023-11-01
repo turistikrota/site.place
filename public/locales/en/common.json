@@ -39,8 +39,8 @@
       "descriptionWithType": "Discover the most popular places in {{type}} with Turistikrota. Find the best venues with hand-picked venue recommendations, filtering options by category, and user reviews.",
       "descriptionWithCityAndType": "{{type}} is one of the most popular places in {{city}}. Discover the most popular places in {{city}} with Turistikrota. Find the best venues with hand-picked venue recommendations, filtering options by category, and user reviews.",
       "titleWithCity": "Places in {{city}}",
-      "titleWithType": "Places in {{type}}",
-      "titleWithCityAndType": "Places in {{type}} - {{city}}"
+      "titleWithType": "{{type}} - Places in Turkey",
+      "titleWithCityAndType": "{{type}} - Places in {{city}}"
     }
   },
   "switch": {
@@ -80,5 +80,25 @@
     "description": "We couldn't find any results matching your filters.",
     "button": "Reset Filters"
   },
-  "url": "https://places.turistikrota.com/en"
+  "url": "https://places.turistikrota.com/en",
+  "types": {
+    "eating": "Eat",
+    "coffee": "Coffee",
+    "bar": "Bar",
+    "beach": "Beach",
+    "amaze": "Amaze",
+    "shopping": "Shopping",
+    "transport": "Transport",
+    "culture": "Culture",
+    "nature": "Nature",
+    "health": "Health",
+    "sport": "Sport",
+    "nightlife": "Nightlife",
+    "garden": "Garden",
+    "temple": "Temple",
+    "museum": "Museum",
+    "antique": "Antique",
+    "themePark": "Theme Park",
+    "other": "Other"
+  }
 }

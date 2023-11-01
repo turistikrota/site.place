@@ -39,7 +39,7 @@
       "descriptionWithType": "Turistikrota ile {{type}}'deki en popüler yerleri keşfedin. Kategoriye göre filtreleme seçenekleri ve kullanıcı yorumlarıyla en iyi yerleri bulun.",
       "descriptionWithCityAndType": "{{type}}, {{city}}'deki en popüler yerlerden biridir. Turistikrota ile {{city}}'deki en popüler yerleri keşfedin. Kategoriye göre filtreleme seçenekleri ve kullanıcı yorumlarıyla en iyi yerleri bulun.",
       "titleWithCity": "{{city}}'deki Yerler",
-      "titleWithType": "{{type}}'deki Yerler",
+      "titleWithType": "{{type}} - Türkiye'deki Yerler",
       "titleWithCityAndType": "{{type}} - {{city}}'deki Yerler"
     }
   },
@@ -80,5 +80,25 @@
     "description": "Filtrelerinizle eşleşen herhangi bir sonuç bulamadık.",
     "button": "Filtreleri Sıfırla"
   },
-  "url": "https://places.turistikrota.com/tr"
+  "url": "https://places.turistikrota.com/tr",
+  "types": {
+    "eating": "Yemek",
+    "coffee": "Kahve",
+    "bar": "Bar",
+    "beach": "Plaj",
+    "amaze": "Eğlence",
+    "shopping": "Alışveriş",
+    "transport": "Ulaşım",
+    "culture": "Kültür",
+    "nature": "Doğa",
+    "health": "Sağlık",
+    "sport": "Spor",
+    "nightlife": "Gece Hayatı",
+    "garden": "Bahçe",
+    "temple": "İbadethane",
+    "museum": "Müze",
+    "antique": "Antik",
+    "themePark": "Eğlence Parkı",
+    "other": "Diğer"
+  }
 }

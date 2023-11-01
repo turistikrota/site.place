@@ -21,10 +21,10 @@ const PlaceListSeo: React.FC<SeoProps> = ({ coordinates, type }) => {
 
   if (cities && cities.length > 0) {
     if (types) {
-      title = t('seo.list.titleWithCityAndType', { city: cities[0].name, type: types })
-      description = t('seo.list.descriptionWithCityAndType', { city: cities[0].name, type: types })
+      title = t('seo.list.titleWithCityAndType', { city: cities[0].name, type: t(`types.${types}`) })
+      description = t('seo.list.descriptionWithCityAndType', { city: cities[0].name, type: t(`types.${types}`) })
       canonical += `?lat=${cities[0].coordinates[0]}&lng=${cities[0].coordinates[1]}&type=${types}`
-      keywords += `, ${cities[0].name}, ${types}`
+      keywords += `, ${cities[0].name}, ${t(`types.${types}`)}`
     } else {
       title = t('seo.list.titleWithCity', { city: cities[0].name })
       description = t('seo.list.descriptionWithCity', { city: cities[0].name })
@@ -32,10 +32,10 @@ const PlaceListSeo: React.FC<SeoProps> = ({ coordinates, type }) => {
       keywords += `, ${cities[0].name}`
     }
   } else if (types) {
-    title = t('seo.list.titleWithType', { type: types })
-    description = t('seo.list.descriptionWithType', { type: types })
+    title = t('seo.list.titleWithType', { type: t(`types.${types}`) })
+    description = t('seo.list.descriptionWithType', { type: t(`types.${types}`) })
     canonical += `?type=${types}`
-    keywords += `, ${types}`
+    keywords += `, ${t(`types.${types}`)}`
   }
 
   title = makeHtmlTitle(title)

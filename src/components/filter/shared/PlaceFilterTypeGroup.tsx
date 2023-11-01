@@ -1,9 +1,8 @@
 import { MobileInfoBox } from '@turistikrota/ui/cjs/accessibility/info'
 import Checkbox from '@turistikrota/ui/cjs/form/checkbox'
 import { useIsDesktop } from '@turistikrota/ui/cjs/hooks/dom'
-import { deepMerge } from '@turistikrota/ui/cjs/utils'
 import { useTranslation } from 'next-i18next'
-import { useEffect, useState } from 'react'
+import { useMemo } from 'react'
 import ScrollableSection from '~/components/ScrollableSection'
 import { Type } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
@@ -15,15 +14,13 @@ type Props = {
 }
 
 export default function PlaceFilterTypeGroup({ className }: Props) {
-  const [selected, setSelected] = useState<Type[]>([])
   const { t } = useTranslation(['filter', 'place'])
   const { query, push } = usePlaceFilter()
   const isDesktop = useIsDesktop()
 
-  useEffect(() => {
-    if (!!query.filter.types && !query.filter.types.every((name) => selected.find((f) => f === name))) {
-      setSelected([...query.filter.types])
-    }
+  const selected = useMemo(() => {
+    if (!query.filter.types) return []
+    return query.filter.types
   }, [query])
 
   const handleChange = (type: Type) => {
@@ -33,8 +30,13 @@ export default function PlaceFilterTypeGroup({ className }: Props) {
     } else {
       newList = [...selected, type]
     }
-    setSelected(newList)
-    push(deepMerge(query, { filter: { types: newList } }))
+    push({
+      ...query,
+      filter: {
+        ...query.filter,
+        types: newList,
+      },
+    })
   }
 
   return (
