@@ -30,8 +30,8 @@ const PlaceListCard: React.FC<Props> = ({ item }) => {
 
   return (
     <div className='flex flex-col col-span-12 md:col-span-4 bg-second rounded-md'>
-      <Link href={translations.slug} target='_blank' onClick={checkOutsideClick}>
-        <div>
+      <Link href={translations.slug} target='_blank' onClick={checkOutsideClick} className='h-full'>
+        <div className='h-full flex flex-col'>
           <Carousel
             imageAltPrefix={translations.title}
             images={mapAndSortImages(item.images)}
@@ -39,20 +39,24 @@ const PlaceListCard: React.FC<Props> = ({ item }) => {
             imageClassName='rounded-b-none'
             imgLoadingClassName='rounded-t-md'
           />
-          <div className='flex flex-col gap-2 p-4'>
-            <div className='text-xl font-bold line-clamp-2s'>{translations.title}</div>
-            <div className='text-sm'>
-              {t('features.location.subtext', {
-                location: cityText,
-              })}
+          <div className='flex flex-col h-full justify-between p-4'>
+            <div className='flex flex-col gap-2'>
+              <div className='text-xl font-bold line-clamp-2'>{translations.title}</div>
+              <div className='text-sm'>
+                {t('features.location.subtext', {
+                  location: cityText,
+                })}
+              </div>
             </div>
-            <div className='flex justify-between items-center'>
-              <div></div>
-              <TimeSpentCard data={item.averageTimeSpent} />
-            </div>
-            <div className='flex justify-between items-center'>
-              <IsPayedCard isPayed={item.isPayed} />
-              <PlaceTypeCard type={item.type} />
+            <div className='flex flex-col gap-2'>
+              <div className='flex justify-between items-center'>
+                <div></div>
+                <TimeSpentCard data={item.averageTimeSpent} />
+              </div>
+              <div className='flex justify-between items-center'>
+                <IsPayedCard isPayed={item.isPayed} />
+                <PlaceTypeCard type={item.type} />
+              </div>
             </div>
           </div>
         </div>
