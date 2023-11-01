@@ -3,6 +3,7 @@
     "title": "Places",
     "subtitle": "Discover your favorite places."
   },
+  "directions": "Get Directions",
   "card": {
     "minute": "min",
     "hour": "hour",

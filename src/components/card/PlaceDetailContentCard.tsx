@@ -16,6 +16,7 @@ import { useBraceText } from '~/hooks/useBraceText'
 import { findBestNearestCities } from '~/static/location/cities'
 import { PlaceTypeItems, PlaceTypes } from '~/types/place'
 import FeatureCard, { FeatureVariants } from './FeatureCard'
+import OpenWithGoogleMaps from './OpenWithGoogleMaps'
 
 type Props = {
   translations: FullTranslation
@@ -135,6 +136,7 @@ const PlaceDetailContentCard: React.FC<Props> = ({
             variant={feature.variant as FeatureVariants}
           ></FeatureCard>
         ))}
+        <OpenWithGoogleMaps coordinates={coordinates} />
         <div className='text-gray-400 text-sm col-span-4'>
           {t('base.updated', {
             date: dayjs(updatedAt).format('MMMM YYYY'),
