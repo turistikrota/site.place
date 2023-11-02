@@ -119,7 +119,13 @@ export default function ContentSwitcher({ response, error }: Props) {
           </Alert>
         </div>
       )}
-      <DynamicMap data={places} loading={isLoading} onChange={onCoordinateChange} position={[41.0082, 28.9784]} />
+      <DynamicMap
+        data={places}
+        loading={isLoading}
+        onChange={onCoordinateChange}
+        filterCoordinates={query.filter.coordinates}
+        position={[41.0082, 28.9784]}
+      />
       <FixedButton
         text={t('content-switch.list')}
         icon='list-ul'

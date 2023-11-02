@@ -3,18 +3,24 @@ import Radio from '@turistikrota/ui/cjs/form/radio'
 import { useIsDesktop } from '@turistikrota/ui/cjs/hooks/dom'
 import { deepMerge } from '@turistikrota/ui/cjs/utils'
 import { useTranslation } from 'next-i18next'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import ScrollableSection from '~/components/ScrollableSection'
 import { Distance } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
 
 const DefaultDistance = 100
 
+const EARTH_RADIUS = 6371
+
 type Props = {
   className?: string
 }
 
-const DistanceLabels: Record<Distance, string> = {
+const calculateRadius = (lat: number, zoomLevel: number): number => {
+  return ((40075016.686 * Math.abs(Math.cos((lat * Math.PI) / 180))) / Math.pow(2, zoomLevel + 8)) * 1000
+}
+
+const DefaultDistanceLabels: Record<Distance, string> = {
   7: '50 km',
   8: '30 km',
   9: '20 km',
@@ -26,11 +32,37 @@ const DistanceLabels: Record<Distance, string> = {
   15: '200 m',
 }
 
+const getRadiusLabel = (zoomLevel: number): string => {
+  const radius = zoomLevel
+  if (radius >= 1000) {
+    return `${Math.round(radius / 1000)} km`
+  }
+  return `${Math.round(radius)} m`
+}
+
 export default function PlaceFilterDistanceGroup({ className }: Props) {
   const [distance, setDistance] = useState<number>(DefaultDistance)
   const { t } = useTranslation('filter')
   const isDesktop = useIsDesktop()
   const { query, push } = usePlaceFilter()
+
+  const DistanceLabels: Record<Distance, string> = useMemo(() => {
+    if (!query.filter.coordinates) {
+      return DefaultDistanceLabels
+    }
+    const latitude = query.filter.coordinates[0]
+    return {
+      7: getRadiusLabel(calculateRadius(latitude, 7)),
+      8: getRadiusLabel(calculateRadius(latitude, 8)),
+      9: getRadiusLabel(calculateRadius(latitude, 9)),
+      10: getRadiusLabel(calculateRadius(latitude, 10)),
+      11: getRadiusLabel(calculateRadius(latitude, 11)),
+      12: getRadiusLabel(calculateRadius(latitude, 12)),
+      13: getRadiusLabel(calculateRadius(latitude, 13)),
+      14: getRadiusLabel(calculateRadius(latitude, 14)),
+      15: getRadiusLabel(calculateRadius(latitude, 15)),
+    }
+  }, [query.filter.coordinates])
 
   useEffect(() => {
     if (query.filter.distance !== distance) {

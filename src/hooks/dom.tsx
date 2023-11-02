@@ -1,3 +1,3 @@
 export const useSizeWithoutHeader = () => {
-  return 'calc(100vh - 63px)'
+  return 'calc(100vh - 96px)'
 }
