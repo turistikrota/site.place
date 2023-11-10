@@ -32,7 +32,7 @@ const ProfileButton = ({ account }: { account: AccountListItem }) => {
             <Image
               src={src}
               onError={onError}
-              className='rounded-md'
+              className='rounded-md h-full object-cover'
               width={48}
               height={48}
               alt={account.fullName}
