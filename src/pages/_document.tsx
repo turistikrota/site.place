@@ -1,3 +1,4 @@
+import GlassEffect from '@turistikrota/ui/cjs/design/glass'
 import { Head, Html, Main, NextScript } from 'next/document'
 import Script from 'next/script'
 
@@ -6,6 +7,7 @@ export default function Document() {
     <Html lang='en'>
       <Head />
       <body>
+        <GlassEffect.Fixed />
         <Main />
         <NextScript />
         <Script
