@@ -1,7 +1,29 @@
+import PerfectImage from '@turistikrota/ui/cjs/image/perfect'
+import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 
 type Props = {
   content: string
+}
+
+type ImageProps = {
+  src: string
+  alt: string
+}
+
+const ImageLoader: React.FC<ImageProps> = ({ src, alt }) => {
+  const [loading, setLoading] = useState(true)
+  return (
+    <span className={`${loading ? 'relative min-h-full md:h-128 h-72 my-4 w-full flex rounded-md' : ''}`}>
+      <PerfectImage
+        imgClassName='h-auto object-cover my-4 mx-auto rounded-md'
+        loadingClassName='rounded-md'
+        src={src}
+        alt={alt}
+        onImageLoaded={() => setLoading(false)}
+      />
+    </span>
+  )
 }
 
 export default function MarkdownContent({ content }: Props) {
@@ -33,7 +55,7 @@ export default function MarkdownContent({ content }: Props) {
           <strong className='text-base font-bold text-gray-800 dark:text-gray-300'>{children}</strong>
         ),
         b: ({ children }) => <b className='text-base font-bold text-gray-800 dark:text-gray-300'>{children}</b>,
-        img: ({ src, alt }) => <img className='h-auto object-cover my-4 mx-auto rounded-md' src={src} alt={alt} />,
+        img: ({ src, alt }) => src && alt && <ImageLoader src={src} alt={alt} />,
       }}
     >
       {content}
