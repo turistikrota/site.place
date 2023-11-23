@@ -35,12 +35,145 @@
       "title": "Places",
       "description": "Discover the most popular places all over Turkey with Turistikrota. Find the best venues with hand-picked venue recommendations, filtering options by category, and user reviews.",
       "keywords": "places, turistikrota, places in Turkey, Turkey",
-      "descriptionWithCity": "{{city}} is one of the most popular cities in Turkey. Discover the most popular places in {{city}} with Turistikrota. Find the best venues with hand-picked venue recommendations, filtering options by category, and user reviews.",
-      "descriptionWithType": "Discover the most popular places in {{type}} with Turistikrota. Find the best venues with hand-picked venue recommendations, filtering options by category, and user reviews.",
-      "descriptionWithCityAndType": "{{type}} is one of the most popular places in {{city}}. Discover the most popular places in {{city}} with Turistikrota. Find the best venues with hand-picked venue recommendations, filtering options by category, and user reviews.",
-      "titleWithCity": "Places in {{city}}",
-      "titleWithType": "{{type}} - Places in Turkey",
-      "titleWithCityAndType": "{{type}} - Places in {{city}}"
+      "typeTexts": {
+        "withSuffix": "{{type}} Places",
+        "withoutSuffix": "{{type}}"
+      },
+      "cityTexts": {
+        "base": "Places in {{city}}",
+        "description": "{{city}} is one of the most popular cities in Turkey. Discover the most popular spots in {{city}} with Touristic Route. Find the best places with filtering options by category and user reviews."
+      },
+      "cityAndTypeTexts": {
+        "withSuffix": "Places in {{city}} for {{type}}",
+        "withoutSuffix": "{{city}} {{type}}",
+        "withoutThat": "{{city}} {{type}}"
+      },
+      "types": {
+        "eating": {
+          "title": "Places to Eat",
+          "descriptionWithCity": "Discover the most popular places to eat in {{city}} with Turistikrota. Find the tastiest meals, learn important information, and visit recommended places.",
+          "descriptionWithoutCity": "Discover the most popular places to eat in Turkey with Turistikrota. Find the tastiest meals, learn important information, and visit recommended places.",
+          "keywords": "food, places to eat, restaurant, diner, cafe, coffee, places to eat in Turkey, restaurants in Turkey, diners in Turkey",
+          "keywordsWithCity": "food, places to eat, restaurant, diner, cafe, coffee, places to eat in {{city}}, restaurants in {{city}}, diners in {{city}}"
+        },
+        "coffee": {
+          "title": "Places to Drink Coffee",
+          "descriptionWithCity": "Discover the most popular coffee spots in {{city}} with Turistikrota. Find the tastiest coffee, learn important information, and visit recommended places.",
+          "descriptionWithoutCity": "Discover the most popular coffee spots in Turkey with Turistikrota. Find the tastiest coffee, learn important information, and visit recommended places.",
+          "keywords": "coffee, coffee spots, cafe, coffee spots in Turkey, cafes in Turkey",
+          "keywordsWithCity": "coffee, coffee spots, cafe, coffee spots in {{city}}, cafes in {{city}}"
+        },
+        "bar": {
+          "title": "Bars",
+          "descriptionWithCity": "Discover the most popular bars in {{city}} with Turistikrota. Find the tastiest drinks and cocktails, learn important information, and visit recommended places.",
+          "descriptionWithoutCity": "Discover the most popular bars in Turkey with Turistikrota. Find the tastiest drinks and cocktails, learn important information, and visit recommended places.",
+          "keywords": "bar, bars, bars in Turkey",
+          "keywordsWithCity": "bar, bars, bars in {{city}}"
+        },
+        "beach": {
+          "title": "Beaches",
+          "descriptionWithCity": "Discover the most popular beaches in {{city}} with Turistikrota. Find the most beautiful beaches, learn important information, and visit recommended places.",
+          "descriptionWithoutCity": "Discover the most popular beaches in Turkey with Turistikrota. Find the most beautiful beaches, learn important information, and visit recommended places.",
+          "keywords": "beach, beaches, beaches in Turkey",
+          "keywordsWithCity": "beach, beaches, beaches in {{city}}"
+        },
+        "amaze": {
+          "title": "Amusement Centers",
+          "descriptionWithCity": "Discover the most popular amusement centers in {{city}} with Turistikrota. Find the most entertaining places, enjoy the fun, and visit recommended places.",
+          "descriptionWithoutCity": "Discover the most popular amusement centers in Turkey with Turistikrota. Find the most entertaining places, enjoy the fun, and visit recommended places.",
+          "keywords": "entertainment, amusement centers, amusement centers in Turkey",
+          "keywordsWithCity": "entertainment, amusement centers, amusement centers in {{city}}"
+        },
+        "shopping": {
+          "title": "Shopping Centers",
+          "descriptionWithCity": "Discover the most popular shopping centers in {{city}} with Turistikrota. Find the most beautiful shopping centers, learn important information, and visit recommended places.",
+          "descriptionWithoutCity": "Discover the most popular shopping centers in Turkey with Turistikrota. Find the most beautiful shopping centers, learn important information, and visit recommended places.",
+          "keywords": "shopping, shopping centers, shopping centers in Turkey",
+          "keywordsWithCity": "shopping, shopping centers, shopping centers in {{city}}"
+        },
+        "transport": {
+          "title": "Transport Hubs",
+          "descriptionWithCity": "Discover the most popular transport hubs in {{city}} with Turistikrota. Find the best transport hubs, learn important information, and visit recommended places.",
+          "descriptionWithoutCity": "Discover the most popular transport hubs in Turkey with Turistikrota. Find the best transport hubs, learn important information, and visit recommended places.",
+          "keywords": "transport, transport hubs, transport hubs in Turkey",
+          "keywordsWithCity": "transport, transport hubs, transport hubs in {{city}}"
+        },
+        "culture": {
+          "title": "Cultural Centers",
+          "descriptionWithCity": "Discover the most popular cultural centers in {{city}} with Turistikrota. Find the most beautiful cultural centers, learn important information, and visit recommended places.",
+          "descriptionWithoutCity": "Discover the most popular cultural centers in Turkey with Turistikrota. Find the most beautiful cultural centers, learn important information, and visit recommended places.",
+          "keywords": "culture, cultural centers, cultural centers in Turkey",
+          "keywordsWithCity": "culture, cultural centers, cultural centers in {{city}}"
+        },
+        "nature": {
+          "title": "Natural Beauties",
+          "descriptionWithCity": "Discover the most popular natural beauties in {{city}} with Turistikrota. Find the most beautiful natural sights, immerse yourself in nature, and visit recommended places.",
+          "descriptionWithoutCity": "Discover the most popular natural beauties in Turkey with Turistikrota. Find the most beautiful natural sights, immerse yourself in nature, and visit recommended places.",
+          "keywords": "nature, natural beauties, natural beauties in Turkey",
+          "keywordsWithCity": "nature, natural beauties, natural beauties in {{city}}"
+        },
+        "health": {
+          "title": "Health Areas",
+          "descriptionWithCity": "Discover the most popular health areas in {{city}} with Turistikrota. Find the best health areas, maintain your well-being, and visit recommended places.",
+          "descriptionWithoutCity": "Discover the most popular health areas in Turkey with Turistikrota. Find the best health areas, maintain your well-being, and visit recommended places.",
+          "keywords": "health, health areas, health areas in Turkey",
+          "keywordsWithCity": "health, health areas, health areas in {{city}}"
+        },
+        "sport": {
+          "title": "Sports Centers",
+          "descriptionWithCity": "Discover the most popular sports centers in {{city}} with Turistikrota. Find the best sports centers, maintain your health, and visit recommended places.",
+          "descriptionWithoutCity": "Discover the most popular sports centers in Turkey with Turistikrota. Find the best sports centers, maintain your health, and visit recommended places.",
+          "keywords": "sports, sports centers, sports centers in Turkey",
+          "keywordsWithCity": "sports, sports centers, sports centers in {{city}}"
+        },
+        "nightlife": {
+          "title": "Nightlife",
+          "descriptionWithCity": "Discover the most popular nightlife spots in {{city}} with Turistikrota. Find the best nightlife venues, enjoy the fun, and visit recommended places.",
+          "descriptionWithoutCity": "Discover the most popular nightlife spots in Turkey with Turistikrota. Find the best nightlife venues, enjoy the fun, and visit recommended places.",
+          "keywords": "nightlife, nightlife venues, nightlife venues in Turkey",
+          "keywordsWithCity": "nightlife, nightlife venues, nightlife venues in {{city}}"
+        },
+        "garden": {
+          "title": "Gardens",
+          "descriptionWithCity": "Discover the most popular gardens in {{city}} with Turistikrota. Find the most beautiful gardens, be at one with nature, and visit recommended places.",
+          "descriptionWithoutCity": "Discover the most popular gardens in Turkey with Turistikrota. Find the most beautiful gardens, be at one with nature, and visit recommended places.",
+          "keywords": "garden, gardens, gardens in Turkey",
+          "keywordsWithCity": "garden, gardens, gardens in {{city}}"
+        },
+        "temple": {
+          "title": "Places of Worship",
+          "descriptionWithCity": "Discover the most popular places of worship in {{city}} with Turistikrota. Find the most beautiful places of worship, learn important information, and visit recommended places.",
+          "descriptionWithoutCity": "Discover the most popular places of worship in Turkey with Turistikrota. Find the most beautiful places of worship, learn important information, and visit recommended places.",
+          "keywords": "temple, places of worship, places of worship in Turkey",
+          "keywordsWithCity": "temple, places of worship, places of worship in {{city}}"
+        },
+        "museum": {
+          "title": "Museums",
+          "descriptionWithCity": "Discover the most popular museums in {{city}} with Turistikrota. Find the most beautiful museums, learn important information, and visit recommended places.",
+          "descriptionWithoutCity": "Discover the most popular museums in Turkey with Turistikrota. Find the most beautiful museums, learn important information, and visit recommended places.",
+          "keywords": "museum, museums, museums in Turkey",
+          "keywordsWithCity": "museum, museums, museums in {{city}}"
+        },
+        "antique": {
+          "title": "Antique Structures",
+          "descriptionWithCity": "Discover the most popular antique structures in {{city}} with Turistikrota. Find the most beautiful antique structures, learn important information, and visit recommended places.",
+          "descriptionWithoutCity": "Discover the most popular antique structures in Turkey with Turistikrota. Find the most beautiful antique structures, learn important information, and visit recommended places.",
+          "keywords": "antique, antique structures, antique structures in Turkey",
+          "keywordsWithCity": "antique, antique structures, antique structures in {{city}}"
+        },
+        "themePark": {
+          "title": "Theme Parks",
+          "descriptionWithCity": "Discover the most popular theme parks in {{city}} with Turistikrota. Find the most beautiful theme parks, enjoy the fun, and visit recommended places.",
+          "descriptionWithoutCity": "Discover the most popular theme parks in Turkey with Turistikrota. Find the most beautiful theme parks, enjoy the fun, and visit recommended places.",
+          "keywords": "theme park, theme parks, theme parks in Turkey",
+          "keywordsWithCity": "theme park, theme parks, theme parks in {{city}}"
+        },
+        "other": {
+          "title": "Other",
+          "descriptionWithCity": "Discover other popular spots in {{city}} with Turistikrota. Find the most beautiful places, learn important information, and visit recommended places.",
+          "descriptionWithoutCity": "Discover other popular spots in Turkey with Turistikrota. Find the most beautiful places, learn important information, and visit recommended places."
+        }
+      }
     }
   },
   "switch": {

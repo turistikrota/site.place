@@ -1,13 +1,17 @@
+import CubeEffect from '@turistikrota/ui/cjs/design/cube'
 import GlassEffect from '@turistikrota/ui/cjs/design/glass'
+import { useTranslation } from 'next-i18next'
 import { Head, Html, Main, NextScript } from 'next/document'
 import Script from 'next/script'
 
 export default function Document() {
+  const { i18n } = useTranslation()
   return (
-    <Html lang='en'>
+    <Html lang={i18n.language}>
       <Head />
       <body>
         <GlassEffect.Fixed />
+        <CubeEffect.All />
         <Main />
         <NextScript />
         <Script
