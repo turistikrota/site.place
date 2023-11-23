@@ -1,3 +1,4 @@
+import Card from '@turistikrota/ui/cjs/cards/default'
 import Carousel from '@turistikrota/ui/cjs/carousel'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
@@ -29,7 +30,10 @@ const PlaceListCard: React.FC<Props> = ({ item }) => {
   }
 
   return (
-    <div className='flex flex-col col-span-12 md:col-span-4 bg-second rounded-md'>
+    <Card
+      className='flex flex-col col-span-12 md:col-span-4 shadow-md hover:shadow-lg dark:shadow-none dark:hover:shadow-none transition-shadow duration-200'
+      noPadding
+    >
       <Link href={translations.slug} target='_blank' onClick={checkOutsideClick} className='h-full'>
         <div className='h-full flex flex-col'>
           <Carousel
@@ -61,7 +65,7 @@ const PlaceListCard: React.FC<Props> = ({ item }) => {
           </div>
         </div>
       </Link>
-    </div>
+    </Card>
   )
 }
 

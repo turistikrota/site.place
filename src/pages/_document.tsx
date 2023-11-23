@@ -1,3 +1,4 @@
+import CubeEffect from '@turistikrota/ui/cjs/design/cube'
 import GlassEffect from '@turistikrota/ui/cjs/design/glass'
 import { Head, Html, Main, NextScript } from 'next/document'
 import Script from 'next/script'
@@ -8,6 +9,7 @@ export default function Document() {
       <Head />
       <body>
         <GlassEffect.Fixed />
+        <CubeEffect.All />
         <Main />
         <NextScript />
         <Script
