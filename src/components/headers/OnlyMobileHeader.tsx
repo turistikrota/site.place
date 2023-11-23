@@ -41,9 +41,7 @@ export default function OnlyMobileHeader({ accessTokenIsExists }: Props) {
       <MobileHeader withTopHeader>
         <MobileHeader.Left>
           <HeaderLogo>
-            <Logo width={186} height={30} className='flex gap-1'>
-              <Logo.SubModule>{t('header.submodule')}</Logo.SubModule>
-            </Logo>
+            <Logo width={186} height={30} />
           </HeaderLogo>
         </MobileHeader.Left>
         <MobileHeader.Fill className='hidden md:flex'>{``}</MobileHeader.Fill>
