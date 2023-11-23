@@ -35,12 +35,147 @@
       "title": "Yerler",
       "description": "Turistikrota ile Türkiye'nin en popüler yerlerini keşfedin. Kategoriye göre filtreleme seçenekleri ve kullanıcı yorumlarıyla en iyi yerleri bulun.",
       "keywords": "yerler, turistikrota, Türkiye'deki yerler, Türkiye",
-      "descriptionWithCity": "{{city}} Türkiye'nin en popüler şehirlerinden biridir. Turistikrota ile {{city}}'deki en popüler yerleri keşfedin. Kategoriye göre filtreleme seçenekleri ve kullanıcı yorumlarıyla en iyi yerleri bulun.",
-      "descriptionWithType": "Turistikrota ile {{type}}'deki en popüler yerleri keşfedin. Kategoriye göre filtreleme seçenekleri ve kullanıcı yorumlarıyla en iyi yerleri bulun.",
-      "descriptionWithCityAndType": "{{type}}, {{city}}'deki en popüler yerlerden biridir. Turistikrota ile {{city}}'deki en popüler yerleri keşfedin. Kategoriye göre filtreleme seçenekleri ve kullanıcı yorumlarıyla en iyi yerleri bulun.",
-      "titleWithCity": "{{city}}'deki Yerler",
-      "titleWithType": "{{type}} - Türkiye'deki Yerler",
-      "titleWithCityAndType": "{{type}} - {{city}}'deki Yerler"
+      "typeTexts": {
+        "withSuffix": "{{type}} Yerler",
+        "withoutSuffix": "{{type}}"
+      },
+      "cityTexts": {
+        "base": "{{city}}ki Yerler",
+        "description": "{{city}} Türkiye'nin en popüler şehirlerinden biridir. Turistikrota ile {{city}}ki en popüler yerleri keşfedin. Kategoriye göre filtreleme seçenekleri ve kullanıcı yorumlarıyla en iyi yerleri bulun."
+      },
+      "cityAndTypeTexts": {
+        "withSuffix": "{{city}}ki {{type}} Yerler",
+        "withoutSuffix": "{{city}}ki {{type}}",
+        "withoutThat": "{{city}} {{type}}"
+      },
+      "types": {
+        "eating": {
+          "title": "Yemek Yenebilecek Yerler",
+          "descriptionWithCity": "Turistikrota ile {{city}}ki en popüler yemek yenebilecek yerleri keşfedin. En lezzetli yemekleri bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "descriptionWithoutCity": "Turistikrota ile Türkiye'deki en popüler yemek yenebilecek yerleri keşfedin. En lezzetli yemekleri bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "keywords": "yemek, yemek yenebilecek yerler, restoran, lokanta, kafe, kahve, Türkiye'deki yemek yenebilecek yerler, Türkiye'deki restoranlar, Türkiye'deki lokantalar",
+          "keywordsWithCity": "yemek, yemek yenebilecek yerler, restoran, lokanta, kafe, kahve, {{city}}ki yemek yenebilecek yerler, {{city}}ki restoranlar, {{city}}ki lokantalar"
+        },
+        "coffee": {
+          "title": "Kahve İçilebilecek Yerler",
+          "descriptionWithCity": "Turistikrota ile {{city}}ki en popüler kahve içilebilecek yerleri keşfedin. En lezzetli kahveleri bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "descriptionWithoutCity": "Turistikrota ile Türkiye'deki en popüler kahve içilebilecek yerleri keşfedin. En lezzetli kahveleri bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "keywords": "kahve, kahve içilebilecek yerler, kafe, Türkiye'deki kahve içilebilecek yerler, Türkiye'deki kafeler",
+          "keywordsWithCity": "kahve, kahve içilebilecek yerler, kafe, {{city}}ki kahve içilebilecek yerler, {{city}}ki kafeler"
+        },
+        "bar": {
+          "title": "Barlar",
+          "descriptionWithCity": "Turistikrota ile {{city}}ki en popüler barları keşfedin. En lezzetli içecekleri ve kokteylleri bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "descriptionWithoutCity": "Turistikrota ile Türkiye'deki en popüler barları keşfedin. En lezzetli içecekleri ve kokteylleri bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "keywords": "bar, barlar, Türkiye'deki barlar",
+          "keywordsWithCity": "bar, barlar, {{city}}ki barlar"
+        },
+        "beach": {
+          "title": "Plajlar",
+          "descriptionWithCity": "Turistikrota ile {{city}}ki en popüler plajları keşfedin. En güzel plajları bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "descriptionWithoutCity": "Turistikrota ile Türkiye'deki en popüler plajları keşfedin. En güzel plajları bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "keywords": "plaj, plajlar, Türkiye'deki plajlar",
+          "keywordsWithCity": "plaj, plajlar, {{city}}ki plajlar"
+        },
+        "amaze": {
+          "title": "Eğlence Merkezleri",
+          "descriptionWithCity": "Turistikrota ile {{city}}ki en popüler eğlence merkezlerini keşfedin. En eğlenceli yerleri bulun, eğlencenin tadını çıkarın ve önerilen yerleri ziyaret edin.",
+          "descriptionWithoutCity": "Turistikrota ile Türkiye'deki en popüler eğlence merkezlerini keşfedin. En eğlenceli yerleri bulun, eğlencenin tadını çıkarın ve önerilen yerleri ziyaret edin.",
+          "keywords": "eğlence, eğlence merkezleri, Türkiye'deki eğlence merkezleri",
+          "keywordsWithCity": "eğlence, eğlence merkezleri, {{city}}ki eğlence merkezleri"
+        },
+        "shopping": {
+          "title": "Alışveriş Merkezleri",
+          "descriptionWithCity": "Turistikrota ile {{city}}ki en popüler alışveriş merkezlerini keşfedin. En güzel alışveriş merkezlerini bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "descriptionWithoutCity": "Turistikrota ile Türkiye'deki en popüler alışveriş merkezlerini keşfedin. En güzel alışveriş merkezlerini bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "keywords": "alışveriş, alışveriş merkezleri, Türkiye'deki alışveriş merkezleri",
+          "keywordsWithCity": "alışveriş, alışveriş merkezleri, {{city}}ki alışveriş merkezleri"
+        },
+        "transport": {
+          "title": "Ulaşım Merkezleri",
+          "descriptionWithCity": "Turistikrota ile {{city}}ki en popüler ulaşım merkezlerini keşfedin. En güzel ulaşım merkezlerini bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "descriptionWithoutCity": "Turistikrota ile Türkiye'deki en popüler ulaşım merkezlerini keşfedin. En güzel ulaşım merkezlerini bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "keywords": "ulaşım, ulaşım merkezleri, Türkiye'deki ulaşım merkezleri",
+          "keywordsWithCity": "ulaşım, ulaşım merkezleri, {{city}}ki ulaşım merkezleri"
+        },
+        "culture": {
+          "title": "Kültürel Merkezler",
+          "descriptionWithCity": "Turistikrota ile {{city}}ki en popüler kültürel merkezleri keşfedin. En güzel kültürel merkezleri bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "descriptionWithoutCity": "Turistikrota ile Türkiye'deki en popüler kültürel merkezleri keşfedin. En güzel kültürel merkezleri bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "keywords": "kültür, kültürel merkezler, Türkiye'deki kültürel merkezler",
+          "keywordsWithCity": "kültür, kültürel merkezler, {{city}}ki kültürel merkezler"
+        },
+        "nature": {
+          "title": "Doğal Güzellikler",
+          "descriptionWithCity": "Turistikrota ile {{city}}ki en popüler doğal güzellikleri keşfedin. En güzel doğal güzellikleri bulun, doğayla iç içe olun ve önerilen yerleri ziyaret edin.",
+          "descriptionWithoutCity": "Turistikrota ile Türkiye'deki en popüler doğal güzellikleri keşfedin. En güzel doğal güzellikleri bulun, doğayla iç içe olun ve önerilen yerleri ziyaret edin.",
+          "keywords": "doğa, doğal güzellikler, Türkiye'deki doğal güzellikler",
+          "keywordsWithCity": "doğa, doğal güzellikler, {{city}}ki doğal güzellikler"
+        },
+        "health": {
+          "title": "Sağlık Alanları",
+          "descriptionWithCity": "Turistikrota ile {{city}}ki en popüler sağlık alanlarını keşfedin. En güzel sağlık alanlarını bulun, sağlığınızı koruyun ve önerilen yerleri ziyaret edin.",
+          "descriptionWithoutCity": "Turistikrota ile Türkiye'deki en popüler sağlık alanlarını keşfedin. En güzel sağlık alanlarını bulun, sağlığınızı koruyun ve önerilen yerleri ziyaret edin.",
+          "keywords": "sağlık, sağlık alanları, Türkiye'deki sağlık alanları",
+          "keywordsWithCity": "sağlık, sağlık alanları, {{city}}ki sağlık alanları"
+        },
+        "sport": {
+          "title": "Spor Merkezleri",
+          "descriptionWithCity": "Turistikrota ile {{city}}ki en popüler spor merkezlerini keşfedin. En güzel spor merkezlerini bulun, sağlığınızı koruyun ve önerilen yerleri ziyaret edin.",
+          "descriptionWithoutCity": "Turistikrota ile Türkiye'deki en popüler spor merkezlerini keşfedin. En güzel spor merkezlerini bulun, sağlığınızı koruyun ve önerilen yerleri ziyaret edin.",
+          "keywords": "spor, spor merkezleri, Türkiye'deki spor merkezleri",
+          "keywordsWithCity": "spor, spor merkezleri, {{city}}ki spor merkezleri"
+        },
+        "nightlife": {
+          "title": "Gece Hayatı",
+          "descriptionWithCity": "Turistikrota ile {{city}}ki en popüler gece hayatı mekanlarını keşfedin. En güzel gece hayatı mekanlarını bulun, eğlencenin tadını çıkarın ve önerilen yerleri ziyaret edin.",
+          "descriptionWithoutCity": "Turistikrota ile Türkiye'deki en popüler gece hayatı mekanlarını keşfedin. En güzel gece hayatı mekanlarını bulun, eğlencenin tadını çıkarın ve önerilen yerleri ziyaret edin.",
+          "keywords": "gece hayatı, gece hayatı mekanları, Türkiye'deki gece hayatı mekanları",
+          "keywordsWithCity": "gece hayatı, gece hayatı mekanları, {{city}}ki gece hayatı mekanları"
+        },
+        "garden": {
+          "title": "Bahçeler",
+          "descriptionWithCity": "Turistikrota ile {{city}}ki en popüler bahçeleri keşfedin. En güzel bahçeleri bulun, doğayla iç içe olun ve önerilen yerleri ziyaret edin.",
+          "descriptionWithoutCity": "Turistikrota ile Türkiye'deki en popüler bahçeleri keşfedin. En güzel bahçeleri bulun, doğayla iç içe olun ve önerilen yerleri ziyaret edin.",
+          "keywords": "bahçe, bahçeler, Türkiye'deki bahçeler",
+          "keywordsWithCity": "bahçe, bahçeler, {{city}}ki bahçeler"
+        },
+        "temple": {
+          "title": "İbadethaneler",
+          "descriptionWithCity": "Turistikrota ile {{city}}ki en popüler ibadethaneleri keşfedin. En güzel ibadethaneleri bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "descriptionWithoutCity": "Turistikrota ile Türkiye'deki en popüler ibadethaneleri keşfedin. En güzel ibadethaneleri bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "keywords": "ibadethane, ibadethaneler, Türkiye'deki ibadethaneler",
+          "keywordsWithCity": "ibadethane, ibadethaneler, {{city}}ki ibadethaneler"
+        },
+        "museum": {
+          "title": "Müzeler",
+          "descriptionWithCity": "Turistikrota ile {{city}}ki en popüler müzeleri keşfedin. En güzel müzeleri bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "descriptionWithoutCity": "Turistikrota ile Türkiye'deki en popüler müzeleri keşfedin. En güzel müzeleri bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "keywords": "müze, müzeler, Türkiye'deki müzeler",
+          "keywordsWithCity": "müze, müzeler, {{city}}ki müzeler"
+        },
+        "antique": {
+          "title": "Antik Yapılar",
+          "descriptionWithCity": "Turistikrota ile {{city}}ki en popüler antik yapıları keşfedin. En güzel antik yapıları bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "descriptionWithoutCity": "Turistikrota ile Türkiye'deki en popüler antik yapıları keşfedin. En güzel antik yapıları bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "keywords": "antik, antik yapılar, Türkiye'deki antik yapılar",
+          "keywordsWithCity": "antik, antik yapılar, {{city}}ki antik yapılar"
+        },
+        "themePark": {
+          "title": "Tema Parkları",
+          "descriptionWithCity": "Turistikrota ile {{city}}ki en popüler tema parklarını keşfedin. En güzel tema parklarını bulun, eğlencenin tadını çıkarın ve önerilen yerleri ziyaret edin.",
+          "descriptionWithoutCity": "Turistikrota ile Türkiye'deki en popüler tema parklarını keşfedin. En güzel tema parklarını bulun, eğlencenin tadını çıkarın ve önerilen yerleri ziyaret edin.",
+          "keywords": "tema parkı, tema parkları, Türkiye'deki tema parkları",
+          "keywordsWithCity": "tema parkı, tema parkları, {{city}}ki tema parkları"
+        },
+        "other": {
+          "title": "Diğer",
+          "descriptionWithCity": "Turistikrota ile {{city}}ki en popüler diğer yerleri keşfedin. En güzel diğer yerleri bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "descriptionWithoutCity": "Turistikrota ile Türkiye'deki en popüler diğer yerleri keşfedin. En güzel diğer yerleri bulun, önemli bilgileri öğrenin ve önerilen yerleri ziyaret edin.",
+          "keywords": "diğer, Türkiye'deki diğer yerler",
+          "keywordsWithCity": "diğer, {{city}}ki diğer yerler"
+        }
+      }
     }
   },
   "switch": {
