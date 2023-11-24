@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next'
 import { Coordinates, Type } from '~/features/place.types'
-import { findBestNearestCities } from '~/static/location/cities'
+import { findNearestDistrict } from '~/static/location/districts'
 import { withLocativeSuffix } from '~/utils/turkish'
 
 type Result = {
@@ -28,29 +28,29 @@ export const useListSeo = ({ coordinates, type }: SeoProps): Result => {
   let title = t('seo.list.title')
   let description = t('seo.list.description')
   let keywords = t('seo.list.keywords')
-  const cities = coordinates ? findBestNearestCities(coordinates, 1) : undefined
+  const district = coordinates ? findNearestDistrict(coordinates) : undefined
   const types = type && type.length > 0 ? type[0] : undefined
 
-  if (cities && cities.length > 0) {
+  if (district) {
     if (types) {
       title = t(`seo.list.cityAndTypeTexts.${getCityAndTypeText(types)}`, {
-        city: withLocativeSuffix(i18n.language, cities[0].name),
+        city: withLocativeSuffix(i18n.language, district.cityName),
         type: t(`seo.list.types.${types}.title`),
       })
 
       description = t(`seo.list.types.${types}.descriptionWithCity`, {
-        city: withLocativeSuffix(i18n.language, cities[0].name),
+        city: withLocativeSuffix(i18n.language, district.cityName),
       })
-      keywords += `, ${withLocativeSuffix(i18n.language, cities[0].name)}, ${t(
+      keywords += `, ${withLocativeSuffix(i18n.language, district.cityName)}, ${t(
         `seo.list.types.${types}.keywordsWithCity`,
         {
-          city: withLocativeSuffix(i18n.language, cities[0].name),
+          city: withLocativeSuffix(i18n.language, district.cityName),
         },
       )}`
     } else {
-      title = t('seo.list.cityTexts.base', { city: withLocativeSuffix(i18n.language, cities[0].name) })
-      description = t('seo.list.cityTexts.description', { city: withLocativeSuffix(i18n.language, cities[0].name) })
-      keywords += `, ${cities[0].name}`
+      title = t('seo.list.cityTexts.base', { city: withLocativeSuffix(i18n.language, district.cityName) })
+      description = t('seo.list.cityTexts.description', { city: withLocativeSuffix(i18n.language, district.cityName) })
+      keywords += `, ${district.cityName}`
     }
   } else if (types) {
     title = t(`seo.list.typeTexts.${getCityAndTypeText(types, false)}`, { type: t(`seo.list.types.${types}.title`) })
