@@ -54,7 +54,7 @@
   "features": {
     "location": {
       "text": "Konum",
-      "subtext": "Bu mekan {{location}}'e en yakın yerde."
+      "subtext": "Bu mekan {{location}} semtlerine en yakın yerde."
     },
     "time": {
       "text": "Ortalama geçirilen zaman",
