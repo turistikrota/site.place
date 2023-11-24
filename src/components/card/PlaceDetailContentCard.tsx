@@ -13,7 +13,7 @@ import {
 import { useDayJS } from '~/hooks/dayjs'
 import { useTimeSpent, useTimeSpentUnit } from '~/hooks/timespent'
 import { useBraceText } from '~/hooks/useBraceText'
-import { findBestNearestCities } from '~/static/location/cities'
+import { findNearestDistrictNames } from '~/static/location/districts'
 import { PlaceTypeItems, PlaceTypes } from '~/types/place'
 import FeatureCard, { FeatureVariants } from './FeatureCard'
 import OpenWithGoogleMaps from './OpenWithGoogleMaps'
@@ -54,8 +54,7 @@ const PlaceDetailContentCard: React.FC<Props> = ({
 }) => {
   const { t, i18n } = useTranslation('place')
   const dayjs = useDayJS(i18n.language)
-  const cities = findBestNearestCities(coordinates, 2)
-  const cityTexts = useBraceText(cities.map((city) => city.name))
+  const cityTexts = useBraceText(findNearestDistrictNames(coordinates, 3))
   const currentType: PlaceTypeItems = PlaceTypes[type] ? PlaceTypes[type] : PlaceTypes[Type.Other]
   const timeSpentUnit = useTimeSpentUnit(timeSpent)
   const spent = useTimeSpent(timeSpent)
