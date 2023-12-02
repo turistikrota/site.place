@@ -19,8 +19,6 @@ export default function PlaceFilterQueryGroup() {
     }
   }, [query])
 
-  const debouncedPush = debounce((filter) => push(filter), 500)
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setWord(e.target.value)
     push({
@@ -28,7 +26,7 @@ export default function PlaceFilterQueryGroup() {
       filter: {
         ...query.filter,
         query: e.target.value,
-      }
+      },
     })
   }
 
