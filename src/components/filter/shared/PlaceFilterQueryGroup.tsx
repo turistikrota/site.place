@@ -14,7 +14,7 @@ export default function PlaceFilterQueryGroup() {
   useEffect(() => {
     if (!!query.filter.query && query.filter.query !== word) {
       setWord(query.filter.query)
-    } else if (!query.filter.query) {
+    } else if (!query.filter.query && word !== '') {
       setWord('')
     }
   }, [query])
@@ -23,7 +23,13 @@ export default function PlaceFilterQueryGroup() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setWord(e.target.value)
-    debouncedPush(deepMerge(query, { filter: { query: e.target.value } }))
+    push({
+      ...query,
+      filter: {
+        ...query.filter,
+        query: e.target.value,
+      }
+    })
   }
 
   return (
