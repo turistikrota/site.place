@@ -52,7 +52,12 @@
         "coffee": "Kahve",
         "bar": "Bar",
         "beach": "Plaj",
-        "amaze": "Eğlence"
+        "amaze": "Eğlence",
+        "shopping": "Alışveriş",
+        "transport": "Ulaşım",
+        "culture": "Kültür",
+        "nature": "Doğa",
+        "health": "Sağlık",
       }
     },
     "review": {

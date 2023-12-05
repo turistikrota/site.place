@@ -85,17 +85,17 @@ const componentValueParsers: Record<FilterComponents, (value: any, options: Pars
     if (!value || !isTimeSpent(value)) return ''
     if (value.min > 0) {
       if (value.max > 0) {
-        return opts.t('tools.range', {
+        return opts.t('filter:tools.range', {
           min: value.min,
           max: value.max,
         })
       }
-      return opts.t('tools.min', {
+      return opts.t('filter:tools.min', {
         time: value.min,
       })
     }
     if (value.max > 0) {
-      return opts.t('tools.max', {
+      return opts.t('filter:tools.max', {
         time: value.max,
       })
     }
@@ -107,7 +107,7 @@ const componentValueParsers: Record<FilterComponents, (value: any, options: Pars
   },
   'is-payed': (value, opts) => {
     if (typeof value === 'undefined') return ''
-    return value ? opts.t('tools.paid') : ''
+    return value ? opts.t('filter:tools.paid') : ''
   },
   types: (value, opts) => {
     if (!value || !Array.isArray(value)) return ''
@@ -116,7 +116,7 @@ const componentValueParsers: Record<FilterComponents, (value: any, options: Pars
       if (acc.length > 0) {
         acc += ', '
       }
-      acc += opts.t(`components.types.translation.${type}`)
+      acc += opts.t(`common:types.${type}`)
       return acc
     }, '')
   },
@@ -124,14 +124,14 @@ const componentValueParsers: Record<FilterComponents, (value: any, options: Pars
     const val = Number(value)
     if (isNaN(val)) return ''
 
-    return opts.t(val === 5 ? 'components.review.labels.last' : 'components.review.labels.x', {
+    return opts.t(val === 5 ? 'filter:components.review.labels.last' : 'filter:components.review.labels.x', {
       star: val,
     })
   },
 }
 
 const FilterMenu: React.FC<Props> = ({ onOpen }) => {
-  const { t, i18n } = useTranslation('filter')
+  const { t, i18n } = useTranslation(['filter', 'common'])
   const { query } = usePlaceFilter()
   const { features } = usePlaceFeatures()
 
@@ -140,7 +140,7 @@ const FilterMenu: React.FC<Props> = ({ onOpen }) => {
       {items.map((item) => (
         <FilterGroup
           key={item.component}
-          title={t(`components.${item.component}.text`)}
+          title={t(`filter:components.${item.component}.text`)}
           onClick={() => onOpen(item.component, item.queryKey)}
           values={componentValueParsers[item.component](query.filter[item.queryKey], {
             features,
