@@ -108,7 +108,7 @@ const FilterPopup: React.FC<Props> = ({ onClose, open, data, loading }) => {
           <>
             <FilterMenu onOpen={onOpenFilter}></FilterMenu>
             <Condition value={isFiltered}>
-              <Button className='mt-12' variant='primary' onClick={onClearFilter} disabled={loading}>
+              <Button className='mt-12' variant='primary' onClick={onCloseFilter} disabled={loading}>
                 {t('see-results', {
                   count: data?.filteredTotal ?? 0,
                 })}

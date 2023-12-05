@@ -107,7 +107,7 @@ const componentValueParsers: Record<FilterComponents, (value: any, options: Pars
   },
   'is-payed': (value, opts) => {
     if (typeof value === 'undefined') return ''
-    return value ? opts.t('filter:tools.paid') : ''
+    return value ? opts.t('filter:tools.paid') : opts.t('filter:tools.free')
   },
   types: (value, opts) => {
     if (!value || !Array.isArray(value)) return ''

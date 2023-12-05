@@ -82,7 +82,8 @@
     "min": "En az {{time}} dakika",
     "max": "maks {{time}} dakika",
     "range": "{{min}} - {{max}} dakika",
-    "paid": "Ücretli"
+    "paid": "Ücretli",
+    "free": "Ücretsiz"
   },
   "switch": {
     "filter": "Filtre",
