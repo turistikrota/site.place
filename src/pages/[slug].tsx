@@ -65,7 +65,7 @@ export default function PlaceDetail({ response, md, accessTokenIsExists, account
     <DefaultLayout accessTokenIsExists={accessTokenIsExists} accountCookie={accountCookie}>
       <PlaceDetailSeo coordinates={response?.coordinates} images={images} seoData={translations} />
       <ImagePreview altPrefix={translations.title} list={images}>
-        <section className='max-w-7xl p-4 xl:px-0 mx-auto lg:h-full grow grid grid-cols-12 gap-4'>
+        <section className='max-w-7xl p-4 xl:px-0 mx-auto lg:h-full grow grid grid-cols-12'>
           <div className='col-span-12 md:col-span-8'>
             <PlaceRestorationCard restorations={response?.restorations ?? []} />
             <PlaceImagePreview title={translations.title} images={images} />
@@ -95,7 +95,7 @@ export default function PlaceDetail({ response, md, accessTokenIsExists, account
             <div className='pb-20 md:pb-10'></div>
           </div>
           {!isMobile && (
-            <StickySection customWidth='w-96' innerClassName=''>
+            <StickySection customWidth='w-96' innerClassName='px-4'>
               <PlaceDetailContentCard
                 coordinates={response?.coordinates}
                 features={response?.features}

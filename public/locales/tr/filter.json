@@ -52,7 +52,12 @@
         "coffee": "Kahve",
         "bar": "Bar",
         "beach": "Plaj",
-        "amaze": "Eğlence"
+        "amaze": "Eğlence",
+        "shopping": "Alışveriş",
+        "transport": "Ulaşım",
+        "culture": "Kültür",
+        "nature": "Doğa",
+        "health": "Sağlık",
       }
     },
     "review": {
@@ -77,7 +82,8 @@
     "min": "En az {{time}} dakika",
     "max": "maks {{time}} dakika",
     "range": "{{min}} - {{max}} dakika",
-    "paid": "Ücretli"
+    "paid": "Ücretli",
+    "free": "Ücretsiz"
   },
   "switch": {
     "filter": "Filtre",

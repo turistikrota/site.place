@@ -77,7 +77,8 @@
     "min": "At least {{time}} minutes",
     "max": "max {{time}} minutes",
     "range": "{{min}} - {{max}} minutes",
-    "paid": "Paid"
+    "paid": "Paid",
+    "free": "Free"
   },
   "switch": {
     "filter": "Filter",

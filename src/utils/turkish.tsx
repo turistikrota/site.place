@@ -12,10 +12,13 @@ export function locativeSuffix(name: string, apostrophe = true): string {
   let suffix = lastVowel && vowelsBack.includes(lastVowel) ? 'da' : 'de'
 
   if (apostrophe) {
+    /*
     const lastTwoChars = name.slice(-2)
     if (vowels.includes(lastTwoChars[0]) || lastTwoChars[1] === 'e' || lastTwoChars[1] === 'a') {
       suffix = "'" + suffix
     }
+     */
+    suffix = "'" + suffix
   }
 
   return name + suffix

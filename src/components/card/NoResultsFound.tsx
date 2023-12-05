@@ -13,8 +13,8 @@ const NoResultsFound: React.FC<NoResultsFoundProps> = ({ onResetFilters, isFilte
   return (
     <div className='flex flex-col items-center justify-center py-12 text-gray-600 dark:text-gray-200'>
       <i className='bx bx-2xl bx-search-alt'></i>
-      <h1 className='text-2xl font-bold mb-4'>{t('notFound.title')}</h1>
-      <p className='text-lg mb-6'>{t('notFound.description')}</p>
+      <h1 className='text-2xl font-bold mb-2 text-center'>{t('notFound.title')}</h1>
+      <p className='text-lg mb-2 text-center text-gray-700 dark:text-gray-300'>{t('notFound.description')}</p>
       {isFiltered && onResetFilters && (
         <Button onClick={() => onResetFilters()} block={false} variant='secondary'>
           {t('notFound.button')}
