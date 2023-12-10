@@ -1,3 +1,4 @@
+import Button from '@turistikrota/ui/cjs/button'
 import PerfectImage from '@turistikrota/ui/cjs/image/perfect'
 import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
@@ -39,14 +40,19 @@ export default function MarkdownContent({ content }: Props) {
             {children}
           </h2>
         ),
-        h3: ({ children }) => <h3 className='text-lg font-bold text-gray-800 dark:text-gray-300 mb-1'>{children}</h3>,
+        h3: ({ children }) => (
+          <h3 className='text-lg font-bold text-gray-800 dark:text-gray-300 mt-2 mb-1'>{children}</h3>
+        ),
         h4: ({ children }) => <h4 className='text-base font-bold'>{children}</h4>,
         h5: ({ children }) => <h5 className='text-base font-bold'>{children}</h5>,
         h6: ({ children }) => <h6 className='text-base font-bold'>{children}</h6>,
         p: ({ children }) => <p className='text-base text-gray-700 dark:text-gray-400'>{children}</p>,
         a: ({ children, href }) => (
-          <a className='text-primary' href={href}>
-            {children}
+          <a href={href} target='_blank' rel='noreferrer'>
+            <Button className='mt-2 flex justify-center items-center gap-2' block={false}>
+              <i className='bx text-lg bx-link-external'></i>
+              {children}
+            </Button>
           </a>
         ),
         ul: ({ children }) => <ul className='text-base list-disc list-inside'>{children}</ul>,
@@ -55,7 +61,9 @@ export default function MarkdownContent({ content }: Props) {
           <strong className='text-base font-bold text-gray-800 dark:text-gray-300'>{children}</strong>
         ),
         b: ({ children }) => <b className='text-base font-bold text-gray-800 dark:text-gray-300'>{children}</b>,
+        br: () => <></>,
         img: ({ src, alt }) => src && alt && <ImageLoader src={src} alt={alt} />,
+        em: ({ children }) => <em className='text-base italic'>{children}</em>,
       }}
     >
       {content}
