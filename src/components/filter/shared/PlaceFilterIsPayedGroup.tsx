@@ -13,7 +13,6 @@ export default function PlaceFilterIsPayedGroup() {
   const isDesktop = useIsDesktop()
 
   useEffect(() => {
-    console.log('query::', query)
     if (typeof query.filter.isPayed !== 'undefined' && query.filter.isPayed !== isPayed) {
       setIsPayed(query.filter.isPayed)
     } else if (typeof query.filter.isPayed === 'undefined') {
