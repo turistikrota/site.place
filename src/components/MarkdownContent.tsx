@@ -15,9 +15,9 @@ type ImageProps = {
 const ImageLoader: React.FC<ImageProps> = ({ src, alt }) => {
   const [loading, setLoading] = useState(true)
   return (
-    <span className={`${loading ? 'relative min-h-full md:h-128 h-72 my-4 w-full flex rounded-md' : ''}`}>
+    <span className={`${loading ? 'relative min-h-full md:h-128 h-72 z-10 my-4 w-full flex rounded-md' : ''}`}>
       <PerfectImage
-        imgClassName='h-auto object-cover my-4 mx-auto rounded-md'
+        imgClassName='h-auto object-cover my-4 z-10 mx-auto rounded-md'
         loadingClassName='rounded-md'
         src={src}
         alt={alt}
