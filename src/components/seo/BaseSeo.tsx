@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 
 const BaseSeo: React.FC = () => {
   const { t } = useTranslation('common')
