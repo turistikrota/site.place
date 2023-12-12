@@ -1,92 +1,93 @@
 {
-  "title": "Filtre",
-  "city": "Şehir",
-  "features": "Özellikler",
-  "components": {
-    "city-select": {
-      "title": "Şehir Seçin",
-      "text": "Şehir"
-    },
-    "distance": {
-      "title": "Mesafe",
-      "text": "Mesafe",
-      "description": "Görmek istediğiniz yerlerin şehir merkezine kaç kilometre uzaklıkta olmasını istediğinizi girin.",
-      "label": "Mesafe (km)"
-    },
-    "features": {
-      "title": "Özellik Seçin",
-      "text": "Özellikler",
-      "description": "Yerlerde görmek istediğiniz özellikleri seçin."
-    },
-    "time-spent": {
-      "title": "Ort. Geçirilen Zaman",
-      "text": "Ortalama Geçirilen Zaman",
-      "description": "Yerlerde geçireceğiniz ortalama zaman aralığını belirleyin. Zaman aralığı dakika olarak hesaplanmaktadır.",
-      "minText": "Min",
-      "maxText": "Maks"
-    },
-    "query": {
-      "title": "Kelime ile Ara",
-      "text": "Kelime ile Ara",
-      "description": "Mekan adı, açıklama veya etiketlerle arama yapın.",
-      "label": "Kelime"
-    },
-    "is-payed": {
-      "title": "Ücretli Yerler",
-      "text": "Ücretli Yerler",
-      "description": "Ücretli yerleri görmek istiyorsanız bu seçeneği işaretleyin.",
-      "label": "Ücretli Yerler"
-    },
-    "is-free": {
-      "title": "Ücretsiz Yerler",
-      "text": "Ücretsiz Yerler",
-      "description": "Ücretsiz yerleri görmek istiyorsanız bu seçeneği işaretleyin.",
-      "label": "Ücretsiz Yerler"
-    },
-    "types": {
-      "title": "Tür Seçin",
-      "text": "Türler",
-      "description": "Görmek istediğiniz mekan türlerini seçin.",
-      "translation": {
-        "eating": "Yeme - İçme",
-        "coffee": "Kahve",
-        "bar": "Bar",
-        "beach": "Plaj",
-        "amaze": "Eğlence",
-        "shopping": "Alışveriş",
-        "transport": "Ulaşım",
-        "culture": "Kültür",
-        "nature": "Doğa",
-        "health": "Sağlık",
+    "title": "Filtre",
+    "city": "Şehir",
+    "features": "Özellikler",
+    "components": {
+      "city-select": {
+        "title": "Şehir Seçin",
+        "text": "Şehir"
+      },
+      "distance": {
+        "title": "Mesafe",
+        "text": "Mesafe",
+        "description": "Görmek istediğiniz yerlerin şehir merkezine kaç kilometre uzaklıkta olmasını istediğinizi girin.",
+        "label": "Mesafe (km)"
+      },
+      "features": {
+        "title": "Özellik Seçin",
+        "text": "Özellikler",
+        "description": "Yerlerde görmek istediğiniz özellikleri seçin."
+      },
+      "time-spent": {
+        "title": "Ort. Geçirilen Zaman",
+        "text": "Ortalama Geçirilen Zaman",
+        "description": "Yerlerde geçireceğiniz ortalama zaman aralığını belirleyin. Zaman aralığı dakika olarak hesaplanmaktadır.",
+        "minText": "Min",
+        "maxText": "Maks"
+      },
+      "query": {
+        "title": "Kelime ile Ara",
+        "text": "Kelime ile Ara",
+        "description": "Mekan adı, açıklama veya etiketlerle arama yapın.",
+        "label": "Kelime"
+      },
+      "is-payed": {
+        "title": "Ücretli Yerler",
+        "text": "Ücretli Yerler",
+        "description": "Ücretli yerleri görmek istiyorsanız bu seçeneği işaretleyin.",
+        "label": "Ücretli Yerler"
+      },
+      "is-free": {
+        "title": "Ücretsiz Yerler",
+        "text": "Ücretsiz Yerler",
+        "description": "Ücretsiz yerleri görmek istiyorsanız bu seçeneği işaretleyin.",
+        "label": "Ücretsiz Yerler"
+      },
+      "types": {
+        "title": "Tür Seçin",
+        "text": "Türler",
+        "description": "Görmek istediğiniz mekan türlerini seçin.",
+        "translation": {
+          "eating": "Yeme - İçme",
+          "coffee": "Kahve",
+          "bar": "Bar",
+          "beach": "Plaj",
+          "amaze": "Eğlence",
+          "shopping": "Alışveriş",
+          "transport": "Ulaşım",
+          "culture": "Kültür",
+          "nature": "Doğa",
+          "health": "Sağlık"
+        }
+      },
+      "review": {
+        "title": "Yorum Puanı",
+        "text": "Yorum Puanı",
+        "description": "Yerlerin yorum aralığını belirleyin.",
+        "labels": {
+          "x": "{{star}} Yıldız ve Üzeri",
+          "last": "Sadece {{star}} yıldız"
+        }
+      },
+      "other": {
+        "title": "Diğer Filtreler"
       }
     },
-    "review": {
-      "title": "Yorum Puanı",
-      "text": "Yorum Puanı",
-      "description": "Yerlerin yorum aralığını belirleyin.",
-      "labels": {
-        "x": "{{star}} Yıldız ve Üzeri",
-        "last": "Sadece {{star}} yıldız"
-      }
+    "clear-all": "Tüm Filtreleri Temizle",
+    "clear-filter": "Filtreyi Temizle",
+    "apply": "Uygula",
+    "see-results": "Sonuçları Gör ({{count}})",
+    "results": "{{count}} sonuç bulundu",
+    "tools": {
+      "min": "En az {{time}} dakika",
+      "max": "maks {{time}} dakika",
+      "range": "{{min}} - {{max}} dakika",
+      "paid": "Ücretli",
+      "free": "Ücretsiz"
     },
-    "other": {
-      "title": "Diğer Filtreler"
+    "switch": {
+      "filter": "Filtre",
+      "sort": "Sırala"
     }
-  },
-  "clear-all": "Tüm Filtreleri Temizle",
-  "clear-filter": "Filtreyi Temizle",
-  "apply": "Uygula",
-  "see-results": "Sonuçları Gör ({{count}})",
-  "results": "{{count}} sonuç bulundu",
-  "tools": {
-    "min": "En az {{time}} dakika",
-    "max": "maks {{time}} dakika",
-    "range": "{{min}} - {{max}} dakika",
-    "paid": "Ücretli",
-    "free": "Ücretsiz"
-  },
-  "switch": {
-    "filter": "Filtre",
-    "sort": "Sırala"
   }
-}
+  

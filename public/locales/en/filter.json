@@ -50,9 +50,14 @@
       "translation": {
         "eating": "Eating - Drinking",
         "coffee": "Coffee",
-        "bar": "bar",
-        "beach": "beach",
-        "amaze": "entertainment"
+        "bar": "Bar",
+        "beach": "Beach",
+        "amaze": "Entertainment",
+        "shopping": "Shopping",
+        "transport": "Transportation",
+        "culture": "Culture",
+        "nature": "Nature",
+        "health": "Health"
       }
     },
     "review": {
