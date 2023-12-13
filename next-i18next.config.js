@@ -2,7 +2,7 @@
 module.exports = {
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'tr'],
+    locales: ['en'],
     domains: [
       {
         domain: 'places.turistikrota.com',
@@ -19,5 +19,6 @@ module.exports = {
     ],
     localeDetection: false,
     reloadOnPrerender: process.env.NODE_ENV === 'development',
+    debug: process.env.NODE_ENV === 'development',
   },
 }

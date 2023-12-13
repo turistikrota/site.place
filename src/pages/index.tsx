@@ -28,6 +28,7 @@ export default function Home({ response, error, accessTokenIsExists, accountCook
 }
 
 export async function getServerSideProps(ctx: any) {
+  console.log('locale::', ctx.locale)
   const urlSearchParams = new URLSearchParams(ctx.query)
   const query = getQueryByKeyBindings(urlSearchParams)
   let err: any
