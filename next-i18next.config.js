@@ -8,11 +8,13 @@ module.exports = {
         domain: 'places.turistikrota.com',
         defaultLocale: 'en',
         http: true,
+        locales: ['en'],
       },
       {
         domain: 'yerler.turistikrota.com',
         defaultLocale: 'tr',
         http: true,
+        locales: ['tr'],
       },
     ],
     localeDetection: false,
