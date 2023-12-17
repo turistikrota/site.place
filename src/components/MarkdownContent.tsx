@@ -60,8 +60,8 @@ export default function MarkdownContent({ content }: Props) {
         strong: ({ children }) => (
           <strong className='text-base font-bold text-gray-800 dark:text-gray-300'>{children}</strong>
         ),
+        hr: ({ children }) => <hr className='my-2'>{children}</hr>,
         b: ({ children }) => <b className='text-base font-bold text-gray-800 dark:text-gray-300'>{children}</b>,
-        br: () => <></>,
         img: ({ src, alt }) => src && alt && <ImageLoader src={src} alt={alt} />,
         em: ({ children }) => <em className='text-base italic'>{children}</em>,
       }}
