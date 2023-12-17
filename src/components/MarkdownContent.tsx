@@ -15,7 +15,7 @@ type ImageProps = {
 const ImageLoader: React.FC<ImageProps> = ({ src, alt }) => {
   const [loading, setLoading] = useState(true)
   return (
-    <span className={`${loading ? 'relative min-h-full md:h-128 h-72 z-10 my-4 w-full flex rounded-md' : ''}`}>
+    <span className={`md-img ${loading ? 'relative min-h-full md:h-128 h-72 z-10 my-4 w-full flex rounded-md' : ''}`}>
       <PerfectImage
         imgClassName='h-auto object-cover my-4 z-10 mx-auto rounded-md'
         loadingClassName='rounded-md'
@@ -46,7 +46,9 @@ export default function MarkdownContent({ content }: Props) {
         h4: ({ children }) => <h4 className='text-base font-bold'>{children}</h4>,
         h5: ({ children }) => <h5 className='text-base font-bold'>{children}</h5>,
         h6: ({ children }) => <h6 className='text-base font-bold'>{children}</h6>,
-        p: ({ children }) => <p className='text-base text-gray-700 dark:text-gray-400'>{children}</p>,
+        p: ({ children }) => (
+          <p className='text-base text-gray-700 dark:text-gray-400 hide-br-before-em br.hideable'>{children}</p>
+        ),
         a: ({ children, href }) => (
           <a href={href} target='_blank' rel='noreferrer'>
             <Button className='mt-2 flex justify-center items-center gap-2' block={false}>
@@ -60,11 +62,13 @@ export default function MarkdownContent({ content }: Props) {
         strong: ({ children }) => (
           <strong className='text-base font-bold text-gray-800 dark:text-gray-300'>{children}</strong>
         ),
+        br: () => <br className='hideable' />,
         hr: ({ children }) => <hr className='my-2'>{children}</hr>,
         b: ({ children }) => <b className='text-base font-bold text-gray-800 dark:text-gray-300'>{children}</b>,
         img: ({ src, alt }) => src && alt && <ImageLoader src={src} alt={alt} />,
         em: ({ children }) => <em className='text-base italic'>{children}</em>,
       }}
+      className='md-container'
     >
       {content}
     </ReactMarkdown>

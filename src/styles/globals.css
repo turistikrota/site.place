@@ -5,3 +5,8 @@
 body {
   height: 100vh;
 }
+
+.hide-br-before-em br.hideable:has(+ em) {
+  display: none !important;
+  visibility: hidden !important;
+}
