@@ -1,5 +1,5 @@
-import Carousel from '@turistikrota/ui/cjs/carousel'
-import { useImagePreview } from '@turistikrota/ui/cjs/image/preview'
+import Carousel from '@turistikrota/ui/carousel'
+import { useImagePreview } from '@turistikrota/ui/image/preview'
 
 type Props = {
   images: string[]

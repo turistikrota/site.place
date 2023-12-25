@@ -1,4 +1,4 @@
-import { Coordinates } from '@turistikrota/ui/cjs/types'
+import { Coordinates } from '@turistikrota/ui/types'
 import { useTranslation } from 'next-i18next'
 import { useMemo } from 'react'
 import {

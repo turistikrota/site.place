@@ -1,4 +1,4 @@
-import { Coordinates } from '@turistikrota/ui/cjs/types'
+import { Coordinates } from '@turistikrota/ui/types'
 import Head from 'next/head'
 import { FullTranslation } from '~/features/place.types'
 import { makeHtmlTitle } from '~/utils/seo'

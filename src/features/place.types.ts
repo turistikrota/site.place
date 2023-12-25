@@ -1,4 +1,4 @@
-import { I18nTranslation, ListResponse, isLocale } from '@turistikrota/ui/cjs/types'
+import { I18nTranslation, ListResponse, isLocale } from '@turistikrota/ui/types'
 
 export type PlaceFilterRequest = {
   query?: string

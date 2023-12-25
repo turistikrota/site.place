@@ -1,4 +1,4 @@
-import Tooltip, { TooltipProvider } from '@turistikrota/ui/cjs/tooltip'
+import Tooltip, { TooltipProvider } from '@turistikrota/ui/tooltip'
 import { useTranslation } from 'next-i18next'
 
 export type FeatureVariants =

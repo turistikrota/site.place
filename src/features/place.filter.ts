@@ -1,19 +1,19 @@
-import { deepEqual, findDiff } from '@turistikrota/ui/cjs/utils'
-import debounce from '@turistikrota/ui/cjs/utils/debounce'
+import { deepEqual, findDiff } from '@turistikrota/ui/utils'
+import debounce from '@turistikrota/ui/utils/debounce'
 import { ReadonlyURLSearchParams, usePathname, useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { PaginationRequest } from '~/types/pagination'
 import {
-  Order,
-  PlaceFilterRequest,
-  Sort,
-  Type,
-  isContentType,
-  isDistance,
-  isOrder,
-  isPlaceType,
-  isSort,
+    Order,
+    PlaceFilterRequest,
+    Sort,
+    Type,
+    isContentType,
+    isDistance,
+    isOrder,
+    isPlaceType,
+    isSort,
 } from './place.types'
 
 export const getQueryByKeyBindings = (searchParams: ReadonlyURLSearchParams | URLSearchParams) => {

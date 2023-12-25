@@ -1,4 +1,4 @@
-import Alert from '@turistikrota/ui/cjs/alert'
+import Alert from '@turistikrota/ui/alert'
 import { useTranslation } from 'next-i18next'
 import { useMemo } from 'react'
 import { Restoration } from '~/features/place.types'

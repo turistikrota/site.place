@@ -226,15 +226,25 @@
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
   integrity sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
 
+"@turistikrota/fonts@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@turistikrota/fonts/-/fonts-1.0.1.tgz#df21e8f6bbfb8640f8e052e22673418abe8cb808"
+  integrity sha512-ehWnf3sowG8w9GF8DObM5D9bse9QZVjaOJkjLiWPeMAG+7Gco7CQtLFpex4aFGNOjBSw7F8VdMl1P3ql7KA0IQ==
+
+"@turistikrota/location-tr@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@turistikrota/location-tr/-/location-tr-0.0.8.tgz#60cee3067f6ccafc424a7e7f235074c7ad306c51"
+  integrity sha512-DlhoNWvXz+TxLyAVYburZ2F/Fuu82oA984nV7suS3MTG/AE0FMmokpgAABFCgYztSAVOWrF+f4gV0yj0IpUa3w==
+
 "@turistikrota/prettier-config@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@turistikrota/prettier-config/-/prettier-config-0.1.0.tgz#cdd8cd3ab2e5b2533cd7771cb13864f1d3e93e33"
   integrity sha512-JUA3RF4TBZV5maAsWmPBroSq31s8TqATlvRwEKwH3HTxRJIPq/4WSDVDMBHbzmcVyAflQVKoqOpF21cLUAk7Bg==
 
-"@turistikrota/ui@^0.9.2":
-  version "0.9.2"
-  resolved "https://registry.yarnpkg.com/@turistikrota/ui/-/ui-0.9.2.tgz#be088f82f8d622fe6183b8b814ccdcee2c4fb7cc"
-  integrity sha512-E7hnP2RvPUqimpLJCPeTDL4EoZJeU67X8kumm0jckTX8xXgkAYgRJk6gE4cO/XUnAIYrRuBSKXV72MFk7On+Vw==
+"@turistikrota/ui@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@turistikrota/ui/-/ui-1.0.0.tgz#e53f0b7c3435328dee0cf908d9c1b3d6dc152b12"
+  integrity sha512-kn0U4rTH9s0tiahBrwGMy1ILcReV0gRnOpRbRrVVk+ML88bQ+Be7OqQzJCNYopXtPJRlRYkLTCCrq1QSjV6PEA==
   dependencies:
     cssnano "^6.0.1"
     react-circular-progressbar "^2.1.0"

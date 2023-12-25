@@ -10,7 +10,9 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@turistikrota/ui": "^0.9.2",
+    "@turistikrota/fonts": "^1.0.1",
+    "@turistikrota/location-tr": "^0.0.8",
+    "@turistikrota/ui": "^1.0.0",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
     "boxicons": "^2.1.4",

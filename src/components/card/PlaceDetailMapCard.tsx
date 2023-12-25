@@ -1,6 +1,6 @@
 'use client'
 
-import { Coordinates } from '@turistikrota/ui/cjs/types'
+import { Coordinates } from '@turistikrota/ui/types'
 import 'leaflet/dist/leaflet.css'
 import dynamic from 'next/dynamic'
 import { Circle, Marker } from 'react-leaflet'

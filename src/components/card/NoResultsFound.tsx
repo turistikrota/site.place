@@ -1,5 +1,5 @@
 // NoResultsFound.tsx
-import Button from '@turistikrota/ui/cjs/button'
+import Button from '@turistikrota/ui/button'
 import { useTranslation } from 'next-i18next'
 import React from 'react'
 

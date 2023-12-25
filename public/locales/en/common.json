@@ -213,6 +213,11 @@
     "description": "We couldn't find any results matching your filters.",
     "button": "Reset Filters"
   },
+  "notFoundPage": {
+    "title": "Page Not Found",
+    "subtitle": "We couldn't find the page you're looking for. Please check the address you entered.",
+    "button": "Return to Homepage"
+  },
   "url": "https://places.turistikrota.com",
   "types": {
     "eating": "Eat",

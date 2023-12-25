@@ -1,4 +1,4 @@
-import Button from '@turistikrota/ui/cjs/button'
+import Button from '@turistikrota/ui/button'
 import Link from 'next/link'
 
 type Props = {
