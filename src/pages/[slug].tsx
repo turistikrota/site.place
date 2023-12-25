@@ -1,4 +1,4 @@
-import { useIsMobile } from '@turistikrota/ui/hooks/dom'
+import { useIsDesktop } from '@turistikrota/ui/hooks/dom'
 import ImagePreview from '@turistikrota/ui/image/preview'
 import ErrorPage from '@turistikrota/ui/pages/error'
 import StickySection from '@turistikrota/ui/section/sticky'
@@ -31,7 +31,7 @@ const PlaceDetailMapCard = dynamic(() => import('~/components/card/PlaceDetailMa
 export default function PlaceDetail({ response, md, accessTokenIsExists, accountCookie }: Props) {
   const { t, i18n } = useTranslation('place')
   const images = mapAndSortImages(response?.images ?? [])
-  const isMobile = useIsMobile()
+  const isDesktop = useIsDesktop()
   const translations = getTranslations<FullTranslation>(response?.translations ?? {}, i18n.language, {
     title: '',
     slug: '',
@@ -65,12 +65,12 @@ export default function PlaceDetail({ response, md, accessTokenIsExists, account
     <DefaultLayout accessTokenIsExists={accessTokenIsExists} accountCookie={accountCookie}>
       <PlaceDetailSeo coordinates={response?.coordinates} images={images} seoData={translations} />
       <ImagePreview altPrefix={translations.title} list={images}>
-        <section className='max-w-7xl p-2 xl:px-0 mx-auto lg:h-full grow grid grid-cols-12'>
-          <div className='col-span-12 md:col-span-8'>
+        <section className='max-w-7xl p-2 xl:px-0 mx-auto lg:h-full lg:flex grow grid grid-cols-12'>
+          <div className={'col-span-12 w-full'}>
             <PlaceRestorationCard restorations={response?.restorations ?? []} />
             <PlaceImagePreview title={translations.title} images={images} />
 
-            {isMobile && (
+            {!isDesktop && (
               <section className='mt-2'>
                 <PlaceDetailContentCard
                   coordinates={response.coordinates}
@@ -94,8 +94,8 @@ export default function PlaceDetail({ response, md, accessTokenIsExists, account
             </section>
             <div className='pb-20 md:pb-10'></div>
           </div>
-          {!isMobile && (
-            <StickySection customWidth='w-96' innerClassName='px-2'>
+          {isDesktop && (
+            <StickySection customWidth='w-128 xl:w-144' innerClassName='px-2'>
               <PlaceDetailContentCard
                 coordinates={response?.coordinates}
                 features={response?.features}

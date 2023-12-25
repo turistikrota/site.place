@@ -108,7 +108,7 @@ const PlaceDetailContentCard: React.FC<Props> = ({
   )
 
   return (
-    <div className='flex flex-col h-full gap-10 md:gap-20 py-0 '>
+    <div className='flex flex-col h-full gap-4 py-0 '>
       <div className='flex flex-col gap-2'>
         <h1 className='text-2xl font-bold'>{translations.title}</h1>
         <div className='text-sm'>{translations.description}</div>
