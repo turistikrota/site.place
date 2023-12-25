@@ -1,4 +1,4 @@
-import { ListResponse } from '@turistikrota/ui/cjs/types'
+import { ListResponse } from '@turistikrota/ui/types'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import ContentSwitcher from '~/components/contents/ContentSwitcher'
 import { Config } from '~/config'

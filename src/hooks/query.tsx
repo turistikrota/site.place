@@ -1,4 +1,4 @@
-import { deepEqual } from '@turistikrota/ui/cjs/utils'
+import { deepEqual } from '@turistikrota/ui/utils'
 import { useCallback, useEffect, useState } from 'react'
 import { isPlaceListResponse } from '~/features/place.types'
 import { httpClient } from '~/http/client'

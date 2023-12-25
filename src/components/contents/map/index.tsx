@@ -1,7 +1,7 @@
 'use client'
 
-import { Coordinates } from '@turistikrota/ui/cjs/types'
-import debounce from '@turistikrota/ui/cjs/utils/debounce'
+import { Coordinates } from '@turistikrota/ui/types'
+import debounce from '@turistikrota/ui/utils/debounce'
 import { type LatLngTuple } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import dynamic from 'next/dynamic'

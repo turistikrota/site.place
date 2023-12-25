@@ -1,8 +1,8 @@
 'use client'
 
-import MobileHeader from '@turistikrota/ui/cjs/headers/mobile'
-import { setDefaultImageSrc, useImageSrc } from '@turistikrota/ui/cjs/hooks/image'
-import UserName from '@turistikrota/ui/cjs/username'
+import MobileHeader from '@turistikrota/ui/headers/mobile'
+import { setDefaultImageSrc, useImageSrc } from '@turistikrota/ui/hooks/image'
+import UserName from '@turistikrota/ui/username'
 import { useTranslation } from 'next-i18next'
 import Image from 'next/image'
 import Link from 'next/link'

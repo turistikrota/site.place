@@ -1,4 +1,4 @@
-import { Locales, isCoordinates } from '@turistikrota/ui/cjs/types'
+import { Locales, isCoordinates } from '@turistikrota/ui/types'
 import { useTranslation } from 'next-i18next'
 import { PlaceFeatureListItem, PlaceFilterRequest, isPlaceType, isTimeSpent } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'

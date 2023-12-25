@@ -1,4 +1,4 @@
-import { Coordinates } from '@turistikrota/ui/cjs/types'
+import { Coordinates } from '@turistikrota/ui/types'
 import Leaflet, { Map, type LatLngTuple } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { useCallback, useEffect, useState } from 'react'

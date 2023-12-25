@@ -1,4 +1,4 @@
-import { useListener } from '@turistikrota/ui/cjs/hooks/dom'
+import { useListener } from '@turistikrota/ui/hooks/dom'
 import { useState } from 'react'
 
 export const useHeaderFixed = () => {

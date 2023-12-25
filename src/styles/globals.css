@@ -10,3 +10,7 @@ body {
   display: none !important;
   visibility: hidden !important;
 }
+
+#__next {
+  height: 100%;
+}

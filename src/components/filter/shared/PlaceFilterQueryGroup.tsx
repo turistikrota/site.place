@@ -1,5 +1,5 @@
-import { MobileInfoBox } from '@turistikrota/ui/cjs/accessibility/info'
-import Input from '@turistikrota/ui/cjs/form/input'
+import { MobileInfoBox } from '@turistikrota/ui/accessibility/info'
+import Input from '@turistikrota/ui/form/input'
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import { usePlaceFilter } from '~/hooks/place.filter'

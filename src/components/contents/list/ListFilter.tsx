@@ -1,4 +1,4 @@
-import { useIsDesktop, useWindowWidth } from '@turistikrota/ui/cjs/hooks/dom'
+import { useIsDesktop, useWindowWidth } from '@turistikrota/ui/hooks/dom'
 import DesktopFilterSection from '~/components/filter/DesktopFilterSection'
 import MobileFilterSection from '~/components/filter/MobileFilterSection'
 import { ContentProps } from '~/features/place.types'

@@ -1,5 +1,5 @@
-import Dropdown from '@turistikrota/ui/cjs/dropdown'
-import { deepMerge } from '@turistikrota/ui/cjs/utils'
+import Dropdown from '@turistikrota/ui/dropdown'
+import { deepMerge } from '@turistikrota/ui/utils'
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import { usePlaceSort } from '~/features/place.filter'

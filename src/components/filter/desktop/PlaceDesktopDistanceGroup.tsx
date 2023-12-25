@@ -1,5 +1,5 @@
-import { DesktopInfoBox } from '@turistikrota/ui/cjs/accessibility/info'
-import { deepMerge } from '@turistikrota/ui/cjs/utils'
+import { DesktopInfoBox } from '@turistikrota/ui/accessibility/info'
+import { deepMerge } from '@turistikrota/ui/utils'
 import { useTranslation } from 'next-i18next'
 import { usePlaceFilter } from '~/hooks/place.filter'
 import PlaceFilterDistanceGroup from '../shared/PlaceFilterDistanceGroup'

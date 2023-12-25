@@ -1,5 +1,5 @@
-import Button from '@turistikrota/ui/cjs/button'
-import PerfectImage from '@turistikrota/ui/cjs/image/perfect'
+import Button from '@turistikrota/ui/button'
+import PerfectImage from '@turistikrota/ui/image/perfect'
 import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 

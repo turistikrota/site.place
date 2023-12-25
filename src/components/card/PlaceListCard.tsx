@@ -1,5 +1,5 @@
-import Card from '@turistikrota/ui/cjs/cards/default'
-import Carousel from '@turistikrota/ui/cjs/carousel'
+import Card from '@turistikrota/ui/cards/default'
+import Carousel from '@turistikrota/ui/carousel'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import { MouseEventHandler } from 'react'

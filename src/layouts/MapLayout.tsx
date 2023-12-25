@@ -1,4 +1,4 @@
-import { TooltipProvider } from '@turistikrota/ui/cjs/tooltip/provider'
+import { TooltipProvider } from '@turistikrota/ui/tooltip/provider'
 import OnlyMobileHeader from '~/components/headers/OnlyMobileHeader'
 import { AccountProvider } from '~/hooks/account'
 import { useSizeWithoutHeader } from '~/hooks/dom'
