@@ -20,7 +20,7 @@ const ListHead: React.FC = () => {
   })
   const { t } = useTranslation('place')
   return (
-    <section className='flex items-center justify-between w-full border-none pt-0 lg:pt-4 pb-4'>
+    <section className='flex items-center justify-between w-full border-none pt-0 lg:pt-2 pb-2'>
       <div className='flex flex-col'>
         <h1 className='text-3xl font-bold text-gray-800 dark:text-gray-300'>{title}</h1>
         <p className='text-sm text-gray-600 dark:text-gray-400'>{minimizeDescription(description)}</p>

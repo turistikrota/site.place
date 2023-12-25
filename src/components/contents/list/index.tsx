@@ -20,7 +20,7 @@ type ListItemProps = {
 function ListItemSection({ data, loading, onClear, isFiltered }: ContentProps & ListItemProps) {
   const isWidthExist = useWindowWidth()
   return (
-    <section className={`grow grid grid-cols-12 gap-4 md:h-full ${!isWidthExist ? 'ml-0 md:ml-80' : ''}`}>
+    <section className={`grow grid grid-cols-12 gap-2 md:h-full ${!isWidthExist ? 'ml-0 md:ml-80' : ''}`}>
       {data && data.list.map((item, idx) => <PlaceListCard key={idx} item={item} />)}
       {data && data.list.length === 0 && (
         <div className='col-span-12'>
@@ -47,9 +47,9 @@ export default function ListContent({ data, loading, isNext }: ContentProps & Pr
 
   useInfiniteScroll(handleScroll, loading, 10)
   return (
-    <section className='max-w-7xl p-4 xl:py-0 mx-auto lg:h-full'>
+    <section className='max-w-7xl p-2 xl:py-0 mx-auto lg:h-full'>
       <ListHead />
-      <section className='flex flex-col lg:flex-row gap-4'>
+      <section className='flex flex-col lg:flex-row gap-2'>
         <ListFilter data={data} loading={loading} />
         <ListItemSection data={data} loading={loading} onClear={clean} isFiltered={isFiltered} />
       </section>

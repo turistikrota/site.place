@@ -42,7 +42,7 @@ const PlaceListCard: React.FC<Props> = ({ item }) => {
             imageClassName='rounded-b-none'
             imgLoadingClassName='rounded-t-md'
           />
-          <div className='flex flex-col h-full justify-between p-4'>
+          <div className='flex flex-col h-full justify-between p-2'>
             <div className='flex flex-col gap-2'>
               <div className='text-xl font-bold line-clamp-2'>{translations.title}</div>
               <div className='text-sm'>
