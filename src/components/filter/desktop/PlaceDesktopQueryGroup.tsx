@@ -15,7 +15,7 @@ export default function PlaceDesktopQueryGroup() {
   }
 
   return (
-    <PlaceDesktopFilterSection className='pt-4'>
+    <PlaceDesktopFilterSection className='pt-2'>
       <PlaceDesktopHead>
         <PlaceDesktopHead.Title className='flex'>
           {t('components.query.text')}

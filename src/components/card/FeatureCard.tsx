@@ -44,13 +44,13 @@ export default function FeatureCard({ text, icon, subtext, variant = 'default', 
   const { t } = useTranslation('common')
   return (
     <div
-      className={`col-span-4 relative grid grid-cols-6 items-center px-0 py-4 rounded-md ${VariantClasses[variant]}`}
+      className={`col-span-4 relative grid grid-cols-6 items-center px-0 py-2 rounded-md ${VariantClasses[variant]}`}
     >
       <div className='col-span-1 flex items-center justify-center'>
         <i className={`${icon} bx-xl`}></i>
       </div>
       <div className='col-span-5'>
-        <div className='text-2xl font-bold'>{text}</div>
+        <div className='text-xl font-bold'>{text}</div>
         <div className='text-sm'>{subtext}</div>
       </div>
       {core && (

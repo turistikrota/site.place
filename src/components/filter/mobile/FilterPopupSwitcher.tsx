@@ -8,7 +8,7 @@ type Props = {
 const FilterPopupSwitcher: React.FC<Props> = ({ onFilterOpen, onSortOpen }) => {
   const { t } = useTranslation('common')
   return (
-    <section className='w-full p-2 md:p-4 rounded-md relative bg-second grid grid-cols-2 col-span-12'>
+    <section className='w-full p-2 rounded-md relative bg-second grid grid-cols-2 col-span-12'>
       <div className='flex items-center col-span-1 justify-center'>
         <button
           className='flex items-center justify-center'

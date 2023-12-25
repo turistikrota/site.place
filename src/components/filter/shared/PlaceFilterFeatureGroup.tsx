@@ -42,7 +42,7 @@ const PLaceFilterFeatureGroup: React.FC = () => {
   return (
     <section>
       <Spin loading={isLoading}>
-        <div className='space-y-4 lg:space-y-0'>
+        <div className='space-y-2 lg:space-y-0'>
           <MobileInfoBox>{t('components.features.description')}</MobileInfoBox>
           {features.map((feature) => (
             <Checkbox

@@ -92,7 +92,7 @@ export default function ContentSwitcher({ response, error }: Props) {
       <>
         <PlaceListSeo coordinates={query.filter.coordinates} type={query.filter.types} />
         {errorMessage && (
-          <div className='p-4 pb-0'>
+          <div className='p-2 pb-0'>
             <Alert type='error' closable onClose={() => setErrorMessage('')}>
               {errorMessage}
             </Alert>
@@ -113,7 +113,7 @@ export default function ContentSwitcher({ response, error }: Props) {
     <>
       <PlaceListSeo coordinates={query.filter.coordinates} type={query.filter.types} />
       {errorMessage && (
-        <div className='p-4 pb-0'>
+        <div className='p-2 pb-0'>
           <Alert type='error' closable onClose={() => setErrorMessage(null)}>
             {errorMessage}
           </Alert>

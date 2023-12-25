@@ -28,7 +28,7 @@ const PlaceRestorationCard: React.FC<Props> = ({ restorations }) => {
   }, [dayjs, restorations])
   if (!visible) return
   return (
-    <Alert type='warning' showIcon className='mb-4'>
+    <Alert type='warning' showIcon className='mb-2'>
       <Alert.Title>{t('restoration.title')}</Alert.Title>
       <Alert.Description>
         {t('restoration.description')}&nbsp;

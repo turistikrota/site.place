@@ -34,7 +34,7 @@ export default function PlaceMapCard({ item }: Props) {
           sizeClassName='h-75 w-75'
         />
 
-        <div className='flex flex-col gap-4 p-4'>
+        <div className='flex flex-col gap-2 p-2'>
           <div className='flex flex-col gap-2'>
             <div className='flex flex-col gap-1'>
               <div className='text-xl font-bold'>{translations.title}</div>
