@@ -5,15 +5,15 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { PaginationRequest } from '~/types/pagination'
 import {
-    Order,
-    PlaceFilterRequest,
-    Sort,
-    Type,
-    isContentType,
-    isDistance,
-    isOrder,
-    isPlaceType,
-    isSort,
+  Order,
+  PlaceFilterRequest,
+  Sort,
+  Type,
+  isContentType,
+  isDistance,
+  isOrder,
+  isPlaceType,
+  isSort,
 } from './place.types'
 
 export const getQueryByKeyBindings = (searchParams: ReadonlyURLSearchParams | URLSearchParams) => {
