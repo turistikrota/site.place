@@ -1,7 +1,7 @@
-import Dropdown from '@turistikrota/ui/dropdown'
 import { deepMerge } from '@turistikrota/ui/utils'
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
+import Dropdown from '~/components/dropdown'
 import { usePlaceSort } from '~/features/place.filter'
 import { Order, Sort } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
