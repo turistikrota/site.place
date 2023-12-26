@@ -30,7 +30,7 @@ const PlaceListCard: React.FC<Props> = ({ item }) => {
 
   return (
     <Card
-      className='flex flex-col col-span-12 md:col-span-4 shadow-md hover:shadow-lg dark:shadow-none dark:hover:shadow-none transition-shadow duration-200'
+      className='flex flex-col col-span-12 md:col-span-4 hover:border-primary transition-colors duration-200'
       noPadding
     >
       <Link href={translations.slug} target='_blank' onClick={checkOutsideClick} className='h-full'>

@@ -25,7 +25,7 @@ export default function PlaceMapCard({ item }: Props) {
   }
 
   return (
-    <div className='flex flex-col bg-second rounded-md'>
+    <div className='flex flex-col bg-default rounded-md'>
       <Link href={translations.slug} target='_blank' onClick={checkOutsideClick}>
         <Carousel
           imageAltPrefix={translations.title}
