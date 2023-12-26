@@ -24,6 +24,6 @@
   left: 0.5rem !important;
   right: unset !important;
   color: rgb(var(--foreground-rgb)) !important;
-  background: rgba(0, 0, 0, 0.4) !important;
+  background: var(--default-background) !important;
   border-radius: 0.5rem !important;
 }
