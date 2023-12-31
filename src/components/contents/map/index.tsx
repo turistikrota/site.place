@@ -2,7 +2,7 @@
 
 import { Coordinates } from '@turistikrota/ui/types'
 import debounce from '@turistikrota/ui/utils/debounce'
-import { type LatLngTuple } from 'leaflet'
+import { Icon, type LatLngTuple } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import dynamic from 'next/dynamic'
 import { useMemo } from 'react'
@@ -42,7 +42,17 @@ export default function MapContent({ data, onChange, filterCoordinates }: Conten
       <DynamicMap position={position} onChange={debouncedChange}>
         <MapDefaultConfig />
         {data?.list.map((item, idx) => (
-          <Marker key={idx} position={item.coordinates}>
+          <Marker
+            key={idx}
+            position={item.coordinates}
+            icon={
+              new Icon.Default({
+                iconUrl: `/images/marker/${item.type}.png`,
+                iconSize: [48, 48],
+                iconAnchor: [24, 48],
+              })
+            }
+          >
             <Popup className='map-popup'>
               <PlaceMapCard item={item} />
             </Popup>
