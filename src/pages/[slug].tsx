@@ -90,7 +90,7 @@ export default function PlaceDetail({ response, md, accessTokenIsExists, account
             <section className='mt-2'>
               <h3 className='text-lg font-bold'>{t('detail.map.title')}</h3>
               <p className='text-sm text-gray-500 mb-2'>{t('detail.map.description')}</p>
-              <PlaceDetailMapCard coordinates={response?.coordinates} />
+              <PlaceDetailMapCard coordinates={response?.coordinates} type={response?.type} />
             </section>
             <div className='pb-20 md:pb-10'></div>
           </div>
