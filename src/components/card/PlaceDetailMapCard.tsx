@@ -27,8 +27,8 @@ const PlaceDetailMapCard: React.FC<Props> = ({ coordinates, type }) => {
           icon={
             new Icon.Default({
               iconUrl: `/images/marker/${type}.png`,
-              iconSize: [48, 48],
-              iconAnchor: [24, 48],
+              iconSize: [38, 38],
+              iconAnchor: [19, 38],
             })
           }
         />
