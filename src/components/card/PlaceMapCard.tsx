@@ -30,8 +30,7 @@ export default function PlaceMapCard({ item }: Props) {
         <Carousel
           imageAltPrefix={translations.title}
           images={mapAndSortImages(item.images)}
-          imageClassName='rounded-b-none'
-          sizeClassName='h-75 w-75'
+          variant={Carousel.Variants.Map}
         />
 
         <div className='flex flex-col gap-2 p-2'>

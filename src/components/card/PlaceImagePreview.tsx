@@ -17,10 +17,10 @@ export default function PlaceImagePreview({ images, title }: Props) {
     <Carousel
       imageAltPrefix={title}
       images={images}
-      sizeClassName='h-104'
       onClick={openPreview}
       autoPlay
-      showSubImages
+      variant={Carousel.Variants.DetailVertical}
+      showPreview
     />
   )
 }

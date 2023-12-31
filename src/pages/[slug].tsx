@@ -15,6 +15,7 @@ import PlaceDetailSeo from '~/components/seo/PlaceDetailSeo'
 import { Services, apiUrl } from '~/config/services'
 import { FullTranslation, PlaceDetail, getTranslations } from '~/features/place.types'
 import { httpClient } from '~/http/client'
+import AnalyticLayout from '~/layouts/AnalyticLayout'
 import DefaultLayout from '~/layouts/DefaultLayout'
 import { mapAndSortImages } from '~/utils/image'
 import { makeHtmlTitle, renderHtmlTitle } from '~/utils/seo'
@@ -62,55 +63,57 @@ export default function PlaceDetail({ response, md, accessTokenIsExists, account
   }
 
   return (
-    <DefaultLayout accessTokenIsExists={accessTokenIsExists} accountCookie={accountCookie}>
-      <PlaceDetailSeo coordinates={response?.coordinates} images={images} seoData={translations} />
-      <ImagePreview altPrefix={translations.title} list={images}>
-        <section className='max-w-7xl p-2 xl:px-0 mx-auto lg:h-full lg:flex grow grid grid-cols-12'>
-          <div className={'col-span-12 w-full'}>
-            <PlaceRestorationCard restorations={response?.restorations ?? []} />
-            <PlaceImagePreview title={translations.title} images={images} />
+    <AnalyticLayout>
+      <DefaultLayout accessTokenIsExists={accessTokenIsExists} accountCookie={accountCookie}>
+        <PlaceDetailSeo coordinates={response?.coordinates} images={images} seoData={translations} />
+        <ImagePreview altPrefix={translations.title} list={images}>
+          <section className='max-w-7xl p-2 xl:px-0 mx-auto lg:h-full lg:flex grow grid grid-cols-12'>
+            <div className={'col-span-12 w-full'}>
+              <PlaceRestorationCard restorations={response?.restorations ?? []} />
+              <PlaceImagePreview title={translations.title} images={images} />
 
-            {!isDesktop && (
+              {!isDesktop && (
+                <section className='mt-2'>
+                  <PlaceDetailContentCard
+                    coordinates={response.coordinates}
+                    features={response.features}
+                    isPayed={response.isPayed}
+                    review={response.review}
+                    timeSpent={response.averageTimeSpent}
+                    translations={translations}
+                    type={response.type}
+                    updatedAt={response.updatedAt}
+                  />
+                </section>
+              )}
               <section className='mt-2'>
-                <PlaceDetailContentCard
-                  coordinates={response.coordinates}
-                  features={response.features}
-                  isPayed={response.isPayed}
-                  review={response.review}
-                  timeSpent={response.averageTimeSpent}
-                  translations={translations}
-                  type={response.type}
-                  updatedAt={response.updatedAt}
-                />
+                <MarkdownContent content={md} />
               </section>
+              <section className='mt-2'>
+                <h3 className='text-lg font-bold'>{t('detail.map.title')}</h3>
+                <p className='text-sm text-gray-500 mb-2'>{t('detail.map.description')}</p>
+                <PlaceDetailMapCard coordinates={response?.coordinates} type={response?.type} />
+              </section>
+              <div className='pb-20 md:pb-10'></div>
+            </div>
+            {isDesktop && (
+              <StickySection customWidth='w-128 xl:w-144' innerClassName='px-2'>
+                <PlaceDetailContentCard
+                  coordinates={response?.coordinates}
+                  features={response?.features}
+                  isPayed={response?.isPayed}
+                  review={response?.review}
+                  timeSpent={response?.averageTimeSpent}
+                  translations={translations}
+                  type={response?.type}
+                  updatedAt={response?.updatedAt}
+                />
+              </StickySection>
             )}
-            <section className='mt-2'>
-              <MarkdownContent content={md} />
-            </section>
-            <section className='mt-2'>
-              <h3 className='text-lg font-bold'>{t('detail.map.title')}</h3>
-              <p className='text-sm text-gray-500 mb-2'>{t('detail.map.description')}</p>
-              <PlaceDetailMapCard coordinates={response?.coordinates} type={response?.type} />
-            </section>
-            <div className='pb-20 md:pb-10'></div>
-          </div>
-          {isDesktop && (
-            <StickySection customWidth='w-128 xl:w-144' innerClassName='px-2'>
-              <PlaceDetailContentCard
-                coordinates={response?.coordinates}
-                features={response?.features}
-                isPayed={response?.isPayed}
-                review={response?.review}
-                timeSpent={response?.averageTimeSpent}
-                translations={translations}
-                type={response?.type}
-                updatedAt={response?.updatedAt}
-              />
-            </StickySection>
-          )}
-        </section>
-      </ImagePreview>
-    </DefaultLayout>
+          </section>
+        </ImagePreview>
+      </DefaultLayout>
+    </AnalyticLayout>
   )
 }
 

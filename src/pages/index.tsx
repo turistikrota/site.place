@@ -7,6 +7,7 @@ import { getQueryByKeyBindings, placeQueryToURL } from '~/features/place.filter'
 import { PlaceListItem } from '~/features/place.types'
 import { PlaceFilterProvider } from '~/hooks/place.filter'
 import { httpClient } from '~/http/client'
+import AnalyticLayout from '~/layouts/AnalyticLayout'
 import MapLayout from '~/layouts/MapLayout'
 import { isApiError } from '~/types/error'
 
@@ -19,11 +20,13 @@ type Props = {
 
 export default function Home({ response, error, accessTokenIsExists, accountCookie }: Props) {
   return (
-    <MapLayout accessTokenIsExists={accessTokenIsExists} accountCookie={accountCookie}>
-      <PlaceFilterProvider>
-        <ContentSwitcher response={response} error={error} />
-      </PlaceFilterProvider>
-    </MapLayout>
+    <AnalyticLayout>
+      <MapLayout accessTokenIsExists={accessTokenIsExists} accountCookie={accountCookie}>
+        <PlaceFilterProvider>
+          <ContentSwitcher response={response} error={error} />
+        </PlaceFilterProvider>
+      </MapLayout>
+    </AnalyticLayout>
   )
 }
 
