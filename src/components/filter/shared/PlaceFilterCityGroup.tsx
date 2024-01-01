@@ -30,7 +30,7 @@ const PlaceFilterCityGroup: React.FC<Props> = ({ className }) => {
       return
     }
     const newCoordinates = direction ? city.coordinates : undefined
-    push(deepMerge(query, { filter: { coordinates: newCoordinates, distance: 12 } }))
+    push(deepMerge(query, { filter: { coordinates: newCoordinates, distance: 13 } }))
   }
   return (
     <>
