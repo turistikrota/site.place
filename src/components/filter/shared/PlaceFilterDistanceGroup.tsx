@@ -8,7 +8,7 @@ import ScrollableSection from '~/components/ScrollableSection'
 import { Distance } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
 
-const DefaultDistance = 100
+const DefaultDistance: Distance = 12
 
 const EARTH_RADIUS = 6371
 
@@ -21,15 +21,18 @@ const calculateRadius = (lat: number, zoomLevel: number): number => {
 }
 
 const DefaultDistanceLabels: Record<Distance, string> = {
-  7: '50 km',
-  8: '30 km',
-  9: '20 km',
-  10: '10 km',
-  11: '5 km',
-  12: '2 km',
-  13: '1 km',
-  14: '500 m',
-  15: '200 m',
+  7: '500 km',
+  8: '300 km',
+  9: '200 km',
+  10: '100 km',
+  11: '80 km',
+  12: '60 km',
+  13: '40 km',
+  14: '20 km',
+  15: '10 km',
+  16: '5 km',
+  17: '3 km',
+  18: '2 km',
 }
 
 const getRadiusLabel = (zoomLevel: number): string => {
@@ -61,6 +64,9 @@ export default function PlaceFilterDistanceGroup({ className }: Props) {
       13: getRadiusLabel(calculateRadius(latitude, 13)),
       14: getRadiusLabel(calculateRadius(latitude, 14)),
       15: getRadiusLabel(calculateRadius(latitude, 15)),
+      16: getRadiusLabel(calculateRadius(latitude, 16)),
+      17: getRadiusLabel(calculateRadius(latitude, 17)),
+      18: getRadiusLabel(calculateRadius(latitude, 18)),
     }
   }, [query.filter.coordinates])
 

@@ -14,7 +14,7 @@ type Props = {
 export default function MapDynamic({
   children,
   position,
-  zoom = 10,
+  zoom = 12,
   onChange,
   className,
 }: React.PropsWithChildren<Props>) {
@@ -52,7 +52,7 @@ export default function MapDynamic({
   return (
     <MapContainer
       minZoom={7}
-      maxZoom={15}
+      maxZoom={18}
       ref={setMap}
       center={position}
       zoom={zoom}
