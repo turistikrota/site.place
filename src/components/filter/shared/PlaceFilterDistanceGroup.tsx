@@ -86,10 +86,13 @@ export default function PlaceFilterDistanceGroup({ className }: Props) {
             key={dist}
             name='distance'
             id={`distance-${dist}`}
-            checked={distance === +dist}
+            value={distance === +dist}
             reverse={!isDesktop}
             effect={isDesktop ? 'hover' : undefined}
             onChange={(e) => handleChange(+dist, e)}
+            onClick={(e) => {
+              if (!e) handleChange(+dist, e)
+            }}
           >
             {label}
           </Radio>

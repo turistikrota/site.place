@@ -29,6 +29,10 @@ export default function PlaceFilterReviewGroup() {
     push(deepMerge(query, { filter: { minReview: num } }))
   }
 
+  const clear = () => {
+    push(deepMerge(query, { filter: { minReview: undefined } }))
+  }
+
   return (
     <>
       <MobileInfoBox>{t('components.review.description')}</MobileInfoBox>
@@ -38,9 +42,12 @@ export default function PlaceFilterReviewGroup() {
             key={num}
             name='min-review'
             id={`min-review-${num}`}
-            checked={minReview === num}
+            value={minReview === num}
             reverse={!isDesktop}
             onChange={() => onSelect(num)}
+            onClick={(e) => {
+              if (!e) clear()
+            }}
             effect={isDesktop ? 'hover' : undefined}
           >
             <i className='bx bx-sm bxs-star text-yellow-400 mr-2 lg:ml-1'></i>

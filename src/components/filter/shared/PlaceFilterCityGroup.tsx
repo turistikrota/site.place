@@ -21,7 +21,11 @@ const PlaceFilterCityGroup: React.FC<Props> = ({ className }) => {
   const isDesktop = useIsDesktop()
 
   const onSelectCity = (city: City, direction: boolean) => {
-    if (query.filter.coordinates === city.coordinates) {
+    if (
+      query.filter.coordinates &&
+      query.filter.coordinates[0] === city.coordinates[0] &&
+      query.filter.coordinates[1] === city.coordinates[1]
+    ) {
       push(deepMerge(query, { filter: { coordinates: undefined } }))
       return
     }
@@ -43,14 +47,18 @@ const PlaceFilterCityGroup: React.FC<Props> = ({ className }) => {
             key={city.name}
             name='city'
             id={city.name}
-            checked={
-              query.filter.coordinates &&
-              query.filter.coordinates[0] === city.coordinates[0] &&
-              query.filter.coordinates[1] === city.coordinates[1]
+            value={
+              (query.filter.coordinates &&
+                query.filter.coordinates[0] === city.coordinates[0] &&
+                query.filter.coordinates[1] === city.coordinates[1]) ||
+              false
             }
             reverse={!isDesktop}
             effect={isDesktop ? 'hover' : undefined}
             onChange={(e) => onSelectCity(city, e)}
+            onClick={(e) => {
+              if (!e) onSelectCity(city, e)
+            }}
           >
             {city.name}
           </Radio>
