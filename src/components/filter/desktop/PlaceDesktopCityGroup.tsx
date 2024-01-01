@@ -18,7 +18,7 @@ export default function PlaceDesktopCityGroup() {
       if (!city) {
         city = findNearestCity(query.filter.coordinates)
         if (city) {
-          push(deepMerge(query, { filter: { coordinates: city.coordinates } }))
+          push(deepMerge(query, { filter: { coordinates: city.coordinates, distance: 12 } }))
         }
       }
       setCity(city)
@@ -29,7 +29,7 @@ export default function PlaceDesktopCityGroup() {
 
   const clearCity = () => {
     setCity(null)
-    push(deepMerge(query, { filter: { coordinates: undefined } }))
+    push(deepMerge(query, { filter: { coordinates: undefined, distance: undefined } }))
   }
   return (
     <PlaceDesktopFilterSection>
