@@ -26,7 +26,7 @@ const PlaceFilterCityGroup: React.FC<Props> = ({ className }) => {
       query.filter.coordinates[0] === city.coordinates[0] &&
       query.filter.coordinates[1] === city.coordinates[1]
     ) {
-      push(deepMerge(query, { filter: { coordinates: undefined } }))
+      push(deepMerge(query, { filter: { coordinates: undefined, distance: undefined } }))
       return
     }
     const newCoordinates = direction ? city.coordinates : undefined
