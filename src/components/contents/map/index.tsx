@@ -46,7 +46,7 @@ export default function MapContent({ data, onChange, filterCoordinates }: Conten
             key={idx}
             position={item.coordinates}
             icon={
-              new Icon.Default({
+              new Icon({
                 iconUrl: `/images/marker/${item.type}.png`,
                 iconSize: [48, 48],
                 iconAnchor: [24, 48],
