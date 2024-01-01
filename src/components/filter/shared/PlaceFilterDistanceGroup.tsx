@@ -8,7 +8,7 @@ import ScrollableSection from '~/components/ScrollableSection'
 import { Distance } from '~/features/place.types'
 import { usePlaceFilter } from '~/hooks/place.filter'
 
-const DefaultDistance: Distance = 12
+const DefaultDistance: Distance = 7
 
 const EARTH_RADIUS = 6371
 
