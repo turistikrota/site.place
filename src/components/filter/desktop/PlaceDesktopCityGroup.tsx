@@ -18,7 +18,7 @@ export default function PlaceDesktopCityGroup() {
       if (!city) {
         city = findNearestCity(query.filter.coordinates)
         if (city) {
-          push(deepMerge(query, { filter: { coordinates: city.coordinates, distance: 12 } }))
+          push(deepMerge(query, { filter: { coordinates: city.coordinates, distance: 13 } }))
         }
       }
       setCity(city)
