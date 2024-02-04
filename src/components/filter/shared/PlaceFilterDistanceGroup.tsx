@@ -10,8 +10,6 @@ import { usePlaceFilter } from '~/hooks/place.filter'
 
 const DefaultDistance: Distance = 7
 
-const EARTH_RADIUS = 6371
-
 type Props = {
   className?: string
 }
@@ -44,7 +42,7 @@ const getRadiusLabel = (zoomLevel: number): string => {
 }
 
 export default function PlaceFilterDistanceGroup({ className }: Props) {
-  const [distance, setDistance] = useState<number>(DefaultDistance)
+  const [distance, setDistance] = useState<number | undefined>(undefined)
   const { t } = useTranslation('filter')
   const isDesktop = useIsDesktop()
   const { query, push } = usePlaceFilter()
