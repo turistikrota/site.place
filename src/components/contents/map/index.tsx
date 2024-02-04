@@ -11,6 +11,7 @@ import PlaceMapCard from '~/components/card/PlaceMapCard'
 import MapDefaultConfig from '~/components/map/MapDefaultConfig'
 import { ContentProps } from '~/features/place.types'
 import { useSizeWithoutHeader } from '~/hooks/dom'
+import { usePlaceFilter } from '~/hooks/place.filter'
 
 const DynamicMap = dynamic(() => import('~/components/map/MapDynamic'), {
   ssr: false,
@@ -26,6 +27,7 @@ type MapProps = {
 
 export default function MapContent({ data, onChange, filterCoordinates }: ContentProps & MapProps) {
   const size = useSizeWithoutHeader()
+  const { query } = usePlaceFilter()
   const position: LatLngTuple = useMemo(
     () => (filterCoordinates ? filterCoordinates : defaultPosition),
     [filterCoordinates],
@@ -39,7 +41,7 @@ export default function MapContent({ data, onChange, filterCoordinates }: Conten
         height: size,
       }}
     >
-      <DynamicMap position={position} onChange={debouncedChange}>
+      <DynamicMap position={position} zoom={query.filter.distance} onChange={debouncedChange}>
         <MapDefaultConfig />
         {data?.list.map((item, idx) => (
           <Marker
