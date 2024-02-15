@@ -194,6 +194,19 @@
   },
   "header": {
     "submodule": "yerler",
+    "sites": {
+      "main": {
+        "link": "https://turistikrota.com/tr"
+      },
+      "places": {
+        "link": "/",
+        "title": "yerler"
+      },
+      "listing": {
+        "link": "https://ilan.turistikrota.com",
+        "title": "ilan"
+      }
+    },
     "left": {
       "promotion": "Gerçek turizm deneyimi yakında geliyor!"
     },
