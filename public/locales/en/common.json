@@ -192,6 +192,19 @@
   },
   "header": {
     "submodule": "places",
+    "sites": {
+      "main": {
+        "link": "https://turistikrota.com/en"
+      },
+      "places": {
+        "link": "/",
+        "title": "places"
+      },
+      "listing": {
+        "link": "https://listing.turistikrota.com",
+        "title": "listing"
+      }
+    },
     "left": {
       "promotion": "Real tourism experience coming soon!"
     },
