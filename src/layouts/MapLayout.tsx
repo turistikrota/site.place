@@ -12,13 +12,13 @@ export default function MapLayout({ children, accessTokenIsExists, accountCookie
   const size = useSizeWithoutHeader()
   return (
     <AccountProvider accessTokenIsExists={accessTokenIsExists} accountCookie={accountCookie}>
-      <OnlyMobileHeader accessTokenIsExists={accessTokenIsExists} />
       <main
         className='h-full'
         style={{
           minHeight: size,
         }}
       >
+        <OnlyMobileHeader accessTokenIsExists={accessTokenIsExists} />
         <TooltipProvider>{children}</TooltipProvider>
       </main>
     </AccountProvider>
