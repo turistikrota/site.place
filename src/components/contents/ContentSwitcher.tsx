@@ -54,7 +54,7 @@ export default function ContentSwitcher({ response, error }: Props) {
   const { places, isLoading, refetch, nextPage, error: apiError } = usePlaces(query, response)
   const active = useMemo(() => {
     return query.filter.v ? query.filter.v : 'list'
-  }, [query.filter])
+  }, [query.filter.v])
   const debouncedFilter = debounce(() => {
     if (isLoading || !!apiError) return
     if (isOnlyPageChanged) return nextPage(query.filter, places.page + 1)
@@ -76,11 +76,16 @@ export default function ContentSwitcher({ response, error }: Props) {
   }, [error])
 
   const toggleActive = (newActive: ContentType) => {
-    if (newActive === 'list' && query.limit) {
-      return immediatePush(deepMerge(query, { limit: undefined, page: 1, filter: { v: 'list' } }))
-    } else if (newActive === 'map' && query.limit !== 1000) {
-      immediatePush(deepMerge(query, { limit: 1000, page: 1, filter: { v: 'map' } }))
-    }
+    if (active === newActive) return
+    immediatePush({
+      ...query,
+      limit: newActive === 'list' ? undefined : 1000,
+      page: 1,
+      filter: {
+        ...query.filter,
+        v: newActive,
+      },
+    })
   }
 
   const onCoordinateChange = (coordinates: Coordinates, zoom: number) => {
